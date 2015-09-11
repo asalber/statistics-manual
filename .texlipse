@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Thu Sep 10 12:24:35 CEST 2015
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=
+mainTexFile=statistics_course.tex
+outputFile=statistics_course.pdf
+langSpell=en
+markDer=true
+srcDir=

@@ -1,0 +1,184 @@
+% Author: Alfredo Sánchez Alberca (asalber@gmail.com)
+% ASPECT RATIO FOR YOUTUBE VIDEO
+%\documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,dvips,red,xcolor=table]{beamer}
+% ASPECT RATIO FOR PROJECTOR
+\documentclass[mathserif,profesionalfont,10pt,red,xcolor=table]{beamer}
+% ARTICLE VERSION 
+%\documentclass[10pt,a4paper,titlepage]{article} 
+%\usepackage[hyperref]{beamerarticle}
+
+\usepackage{pxfonts} 
+%\usepackage{lucidaso}  
+%\usepackage{eulervm}
+%\usepackage{mathpazo}
+%\renewcommand{\rmdefault}{ibh}
+\setbeamersize{text margin left=.5cm, text margin right=.5cm}
+
+%\usetheme[width=0pt,height=20pt,hideallsubsections]{PaloAlto}
+%\useoutertheme[width=0pt,height=30pt,hideallsubsections]{sidebar}
+\useoutertheme{default}
+\useinnertheme[shadow]{rounded}
+%\useoutertheme{shadow}
+%\usecolortheme[named=red]{structure}
+%\useinnertheme[shadow]{rounded}
+%\usecolortheme{sidebartab}
+%\usecolortheme[overlystylish]{albatross}
+%\usecolortheme{crane}
+%\usecolortheme{lily}
+\usecolortheme{whale}
+\usecolortheme{rose}
+%\setbeamercovered{transparent} 
+
+%\beamertemplateshadingbackground{blue!10}{yellow!10} 
+
+% REMOVE NAVIGATIONS SYMBOLS
+\setbeamertemplate{navigation symbols}{}
+
+% LIST ITEMS
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize} %to set the body size of second nested level
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize} %to set the body size of third nested level
+\setbeamertemplate{itemize item}{\smallsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to set
+% the symbol size of first level items
+\setbeamertemplate{itemize subitem}{\smallsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to set
+% the symbol size of second level items
+\setbeamertemplate{itemize subsubitem}{\smallsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to
+% set the symbol size of third level itemsç
+\setbeamertemplate{itemize/enumerate body begin}{\setlength{\leftmargini}{.45cm}} %to set the first level item indent
+\setbeamertemplate{itemize/enumerate subbody begin}{\setlength{\leftmarginii}{.45cm}} %to set the second level item
+% indent
+\setbeamertemplate{itemize/enumerate subsubbody begin}{\setlength{\leftmarginiii}{.45cm}} %to set the third level item
+% indent
+
+
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+% HANDOUTS 
+% \setbeameroption{show notes}
+% \setbeamertemplate{note page}[plain]
+% \setbeamerfont{note page}{size=\scriptsize}
+
+% FOOT
+\setbeamertemplate{footline}[split]
+% \vbox{%
+% \tinycolouredline{structure}{\color{white}\textbf{Curso B\'asico de Estad\'istica \hfill%
+% \insertshortinstitute\hfill
+% \insertframenumber{} / \inserttotalframenumber
+% }}%
+% }}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usetikzlibrary{arrows,calc}
+%\usepackage[usenames,dvipsnames]{pstricks}
+%\usepackage{pst-all,pst-math,pst-plot,pst-infixplot,pst-xkey,pstricks-add}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{pdfauthor={Alfredo S\'anchez Alberca (asalber@ceu.es)}, pdftitle={Elementary Statistics Course}}
+\usepackage{breakurl}
+
+
+\usepackage{wrapfig}
+\newcommand{\videobox}{\begin{wrapfigure}[5]{r}{0.15\textwidth}
+ \vspace{-18.5pt}
+\fbox{\textcolor{white}{\rule{80px}{60px}}}
+\end{wrapfigure}}
+
+% Organización de varias diapositvas por página
+%\usepackage{pgfpages} 
+%\pgfpagesuselayout{4 on 1}[a4paper,landscape, border shrink=5mm]
+\usepackage[english]{babel}
+
+
+% COLORS
+\definecolor{color1}{RGB}{5,161,230}
+\definecolor{color2}{RGB}{174,49,54}
+\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
+\definecolor{blueceu}{RGB}{5,161,230} % Blue color of CEU logo
+\definecolor{greenceu}{RGB}{185,209,16} % Green color of CEU logo
+\definecolor{redceu}{RGB}{137,28,36} % Red color of CEU logo
+\definecolor{grayceu}{RGB}{111,107,83} % Gray color of CEU logo
+\definecolor{coral}{rgb}{1,0.5,0.31} % Orange color for graphics
+\definecolor{royalblue1}{rgb}{0.28,0.46,1} % Blue color for graphics
+\definecolor{mygreen}{rgb}{0,0.8,0} % Green color for graphics
+\definecolor{chaptergrey}{RGB}{5,161,230} % Blue color of CEU logo
+
+% SPACE BETWEEN PARAGRAFS
+\setlength{\parskip}{0.5em}
+
+% THEORMEM ENVIRONMENTS
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{theorem}[theorem]{Theorem}
+
+% MARGINS FOR ARTICLE
+\mode<article>{\usepackage{fullpage}}
+\mode<article>{\usepackage[headsep=1cm, top=3cm, bottom=3cm, left=2.54cm, right=2.54cm]{geometry}}
+
+% HEADINGS AND FOOTERS FOR ARTICLE
+\mode<article>{
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{\sffamily\slshape Elementary Statistics Course}
+\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\floatpagefraction}{.8}
+%\renewcommand{\textfraction}{.1} 
+}
+
+% SECTION COLOR FOR ARTICLE
+\mode<article>{
+\usepackage{titlesec}
+\titleformat{\section}{\color{royalblue1}\normalfont\Large\bfseries}{\color{royalblue1}\thesection}{1em}{}
+\titleformat{\subsection}{\color{royalblue1}\normalfont\large\bfseries}{\color{royalblue1}\thesubsection}{1em}{}
+}
+
+% SET COLOR TEXT
+%\definecolor{gris}{gray}{0.2}
+%\color{gris}
+
+%=====================================================================BODY=====
+
+%---------------------------------------------------------------------cover----
+\mode<article>{\title{\Huge \ssfamily Elementary Statistics Course}}
+\mode<presentation>{\title{Elementary Statistics Course}}
+\author[]{Alfredo Sánchez Alberca (\texttt{\url{asalber@ceu.es}})} 
+\mode<presentation>{\institute[USP CEU]{\includegraphics[scale=0.2]{img/logo_uspceu}}}
+\date{\mode<article>{\includegraphics[scale=0.2]{img/logo_uspceu}\\[1cm] }
+%Curso 2012-2013\\ 
+\textcopyleft Copyleft}
+
+\begin{document}
+\mode<article>{\thispagestyle{empty}\maketitle}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\titlepage  
+\end{frame} 
+ 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\mode<presentation>{\frametitle{License \includegraphics[scale=0.06]{img/cc-logo}}}
+\mode<article>{\null \vfill \noindent \textbf{\Large License} \includegraphics[scale=0.06]{img/cc-logo} \medskip \hrule
+depth 3pt \smallskip}
+\input{license}
+\mode<article>{\smallskip \hrule depth 3pt}
+\end{frame} 
+
+\mode<article>{\newpage}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\mode<presentation>{\frametitle{Contenidos}}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\include{introduction}
+%\include{descriptive}  
+\end{document}
