@@ -1,0 +1,25 @@
+\begin{pspicture}(-1,-0.5)(9,5)
+\psaxes[arrows=->,ticks=none,labels=none](0,0)(0,0)(6,5)
+\pspolygon[fillcolor=royalblue1,fillstyle=solid,linestyle=none](1,1)(5,4)(5,1)
+\uncover<2-3>{\pspolygon[fillcolor=coral,fillstyle=solid,linestyle=none](1,1)(3.67,3)(3.67,1)}
+\psline[linestyle=dashed](0,1)(5,1)
+\psline[linestyle=dashed](0,4)(5,4)
+\psline[linestyle=dashed](1,0)(1,1)
+\psline[linestyle=dashed](5,0)(5,4)
+\psline[linecolor=blue](1,1)(5,4)
+\psarc(1,1){0.3}{0}{35}
+\rput[r](-0.1,1){$N_{i-1}$}
+\rput[r](-0.1,4){$N_{i}$}
+\rput[t](1,-0.1){$l_{i-1}$}
+\rput[t](5,-0.1){$l_{i}$}
+\rput[l](1.4,1.2){$\alpha$}
+\rput[l](6,3){\color{royalblue1} $\tg(\alpha) = \dfrac{N_i-N_{i-1}}{l_i-l_{i-1}}$}
+\uncover<2->{
+\rput[r](-0.1,3){$n/2$}
+\psline[linestyle=dashed](0,3)(3.67,3)
+\psline[linestyle=dashed](3.67,0)(3.67,3)
+\rput[t](3.67,-0.1){$Me$}
+%\pspolygon[fillcolor=coral,fillstyle=solid,linestyle=none](1,1)(3.67,3)(3.67,1)
+\rput[l](6,2){\color{coral}$\tg(\alpha) = \dfrac{n/2-N_{i-1}}{Me-l_{i-1}}$}
+}
+\end{pspicture}

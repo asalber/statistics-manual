@@ -1,0 +1,27 @@
+\begin{pspicture}(0,-3.65375)(13,4)
+\rput(10,0){\setlength\arraycolsep{3mm}
+\setlength\arrayrulewidth{0.5pt}
+\begin{array}{rrr}
+\hline
+\multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{N_i} \\
+\hline
+(150,160] & 2 & 2 \\
+(160,170] & 8 & 10 \\
+\rowcolor{coral} (170,180] & 11 & 21 \\
+(180,190] & 7  & 28 \\
+(190,200] & 2  & 30 \\ 
+\hline 
+\end{array}}
+\rput(1.9442188,-2.38625){\psaxes[linewidth=0.04,ticksize=0.10583333cm,dx=2.0cm,dy=1.0cm,Dx=10,Dy=5,Ox=150](0,0)(0,0)(10.01,6)}
+\rput(6.7046876,-3.47625){$X = $ Estatura}
+\rput{-270.0}(0.6721875,0.5359375){\rput(0.1621875,0.72375){Frecuencia Absoluta Acumulada $N_i$}}
+\uncover<2->{\pspolygon[fillcolor=royalblue1,fillstyle=solid,linestyle=none](5.9642186,-0.38625)(7.9642186,1.81375)(7.9642186,-0.38625)}
+\psline[linewidth=0.04,linecolor=blue](1.9642187,-2.38625)(3.9642189,-1.98625)(5.9642186,-0.38625)(7.9642186,1.81375)(9.964219,3.21375)(11.964219,3.61375)
+\uncover<2->{
+\psline[linewidth=0.04,linecolor=gray,linestyle=dashed,dash=0.16cm 0.16cm](1.9642187,-0.38625)(5.9642186,-0.38625)(5.9642186,-2.38625)(5.9842186,-2.40625) 
+\psline[linewidth=0.04,linecolor=gray,linestyle=dashed,dash=0.16cm 0.16cm](1.9642187,1.81375)(7.9642186,1.81375)(7.9642186,-2.38625)(7.9842186,-2.40625)
+\psline[linewidth=0.04,linecolor=orange,linestyle=dashed,dash=0.16cm 0.16cm](1.9642187,0.61375)(6.9642186,0.61375)(6.9642186,-2.38625)(6.9842186,-2.40625)
+\rput[r](1.2,0.62){$\dfrac{n}{2}=$}
+\rput[c](7,-2.8){$Me$}
+}
+\end{pspicture}
