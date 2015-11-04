@@ -1,10 +1,10 @@
 % Author: Alfredo Sánchez Alberca (asalber@gmail.com)
-\section{Estadística Descriptiva}
+\section{Frequency distributions: Tabulation and charts}
 
 \mode<presentation>{
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Estadística Descriptiva}
+\frametitle{Frequency distribution: Tabulation and charts}
 \tableofcontents[sectionstyle=show/hide,hideothersubsections]
 \end{frame}
 }
@@ -12,147 +12,93 @@
 
 %---------------------------------------------------------------------slide----
 \begin{frame} 
-\frametitle{Estadística descriptiva}
-La estadística descriptiva es la parte de la estadística encargada de representar, analizar y resumir la información contenida en la muestra.
+\frametitle{Descriptive Statistics}
+Descriptive Statistics is the part of Statistics in charge of representing, analysing and summarizing the information
+contained in the sample.
 
-Tras el proceso de muestreo, es la siguiente etapa de todo estudio estadístico y suele consistir en:
+After the sampling process, is the next step in every statistical study and usually consists of:
 \begin{enumerate}
-\item Clasificar, agrupar y ordenar los datos de la muestra.
-\item Representar dichos datos gráficamente y en forma de tablas.
-\item Calcular medidas que resuman la información que contiene la muestra (\emph{estadísticos muestrales}).
+\item Classify, group and sort the data of the sample.
+\item Tabulate and plot data according to their frequencies.
+\item Calculate numerical measures that summarize the information contained in the sample (\emph{sample statistics}).
 \end{enumerate} 
 
-Su poder inferencial es mínimo, por lo que nunca deben sacarse conclusiones sobre la población a partir de las medidas resumen que aporta la estadística descriptiva.
-\note{Como se vió en el tema introductorio, la estadística trata de conocer las poblaciones a partir del estudio de
-muestras. Una vez obtenida la muestra de la población, el siguiente paso en cualquier estudio estadístico es el
-análisis descriptivo de la muestra y este es el objeto la estadística descriptiva, que es la parte de la estadística
-encargada de representar, analizar y resumir la información contenida en la muestra. El objetivo es exprimir bien la
-muestra para sacarle toda la información posible y sintetizar dicha información para hacerla comprensible.
-
-Las tareas que realiza la estadística descriptiva suelen ser:
-\begin{enumerate}
-\item Clasificar, agrupar y ordenar los datos de la muestra.
-\item Representar dichos datos gráficamente y en forma de tablas.
-\item Calcular medidas que resuman la información que contiene la muestra (\emph{estadísticos muestrales}).
-\end{enumerate} 
-
-Aunque una buena descripción de la muestra facilita el posterior conocimiento de la población, nunca deben sacarse
-conclusiones sobre la población a partir de las medidas resumen que aporta la estadística descriptiva, ya que de esto
-se encarga la estadística inferencial que se vera más adelante en este curso.}
+It has no inferential power $\Rightarrow$ \alert{\emph{Do not generalize to the population!}} 
 \end{frame}
 
 
+\subsection{Frequency distribution}
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Clasificación de la muestra}
-El estudio de una variable estadística comienza por medir la variable en los individuos de la muestra y clasificar los valores obtenidos.
+\frametitle{Sample classification}
+The study of a statistical variable starts measuring the variable in the individuals of the sample and classifying the
+values.
 
-Existen dos formas de clasificar estos valores:
+There are two ways of classifying data:
 \begin{description}
-\item[Sin agrupar:] Ordenar todos los valores obtenidos en la muestra de menor a mayor. Se utiliza con atributos y variables discretas con pocos valores diferentes.
-\item[Agrupados:] Agrupar los valores en clases (intervalos) y ordenar dichas clases de menor a mayor. Se utiliza con variables discretas con muchos valores diferentes, y con variables continuas.
+\item[Non-grouping] Sort values from lowest to highest value (if there is an order).
+Used with qualitative variables and discrete variables with few distinct values.
+\item[Grouping] Group values in intervals (classes) and sort them from lowest to highest intervals. 
+Used with continuous variables and discrete variables with many distinct values. 
 \end{description}
-\note{La matriz de datos contiene toda la información de la muestra pero resulta difícil de interpretar, por lo que para
-sintetizar y resumir esa información se realizan varias tareas que empiezan por la clasificación de los valores. 
-
-Esta clasificación consiste en ordenar los valores de menor a mayor, cuando existe un orden entre dichos valores, o
-simplemente en reunir los valores iguales cuando no hay un orden entre ellos.
-
-En las variables cuantitativas, cuando el número de valores distintos es muy grande, estos suelen agruparse en
-intervalos.}
 \end{frame}
 
 
-\subsection{Distribución de frecuencias}
-
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Clasificación de la muestra}
+\frametitle{Sample classification}
 \begin{center}
 \includegraphics[scale=0.5]{img/descriptive/clasificacion_muestra}
 \end{center}
-\note{En este ejemplo tenemos una muestra de 10 individuos en los que se ha medido su estatura. Como se trata de una
-variable cuantitativa, la clasificación consiste, primero en ordenar las estaturas de menor a mayor.}
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Recuento de frecuencias}
+\frametitle{Frequency count}
 \begin{center}
 \includegraphics[scale=0.5]{img/descriptive/recuento_frecuencias}
 \end{center}
-\note{Y a continuación, si hay valores repetidos, contar la frecuencia de repetición de cada estatura o cuántas
-estaturas caen en cada uno de los intervalos que hayamos definido en caso de agrupar los datos. Por ejemplo, la primera
-estatura se repite dos veces y por tanto tiene frecuencia 2, la segunda estatura se repite tres veces y tiene frecuencia 3 y así sucesivamente. 
-}
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Frecuencias muestrales}
-\begin{definicion}[Frecuencias muestrales]
-Dada una muestra de tamaño $n$ de una variable $X$, para cada valor de la variable $x_i$ observado en la muestra, se define
+\frametitle{Sample frequencies}
+\begin{definition}[Sample frequencies]
+Given a sample of $n$ values of a variable $X$, for every value $x_i$ of the variable
+is defined 
 \begin{itemize}
-\item \structure{Frecuencia absoluta $n_i$}: Es el número de individuos de la
-muestra que presentan el valor $x_i$.
-\item \structure{Frecuencia relativa $f_i$}: Es la proporción de individuos de
-la muestra que presentan el valor $x_i$. 
+\item \structure{Absolute frequency $n_i$}: Is the number of times that value $x_i$ appears in the sample.
+\item \structure{Frecuencia relativa $f_i$}: Is the proportion of times that value $x_i$ appears in the sample.
 \[
 f_i = \frac{n_i}{n}
 \]
-\item \structure{Frecuencia absoluta acumulada $N_i$}: Es el número de
-individuos de la muestra que presentan un valor menor o igual que $x_i$.
+\item \structure{Cumulative absolute frequency $N_i$}: Is the number of values less than or equal to $x_i$ in the
+sample.
 \[
 N_i = n_1 + \cdots + n_i
 \]
-\item \structure{Frecuencia relativa acumulada $F_i$}: Es la proporción de
-individuos de la muestra que presentan un valor menor o igual que $x_i$.
+\item \structure{Cumulative relative frequency $F_i$}: Is the proportion of values less than or equal to $x_i$ in the
+sample.
 \[
 F_i = \frac{N_i}{n}
 \]
 \end{itemize}
-\end{definicion}
-\note{Existen distintos tipos de frecuenicas que pueden calcularse. 
-Dada una muestra de tamaño $n$ de una variable $X$, para cada valor de la variable $x_i$ observado en la muestra, se define
-\begin{itemize}
-\item La frecuencia absoluta, que se representa como $n_i$, es el número de individuos de la
-muestra que presentan el valor $x_i$, es decir el número de veces que se repite dicho valor.
-\item La frecuencia relativa, que se denota $f_i$, es la proporción de individuos de
-la muestra que presentan el valor $x_i$. La frecuencia relativa se calcula dividiendo la frecuencia absoluta entre el
-tamaño de la muestra.
-\[
-f_i = \frac{n_i}{n}
-\]
-Cuando se multiplica por 100 se convierte en un porcentaje.
-\item La frecuencia absoluta acumulada, que se escribe $N_i$, es el número de
-individuos de la muestra que presentan un valor menor o igual que $x_i$. Se calcula acumulando las frecuencias
-absolutas de los valores menores o iguales a $x_i$ y de ahí su nombre.
-\[
-N_i = n_1 + \cdots + n_i
-\]
-\item La frecuencia relativa acumulada, que se escribre $F_i$, es la proporción de
-individuos de la muestra que presentan un valor menor o igual que $x_i$. Puede calcularse acumulando las frecuencias
-relativas de los valores menores o iguales que $x_i$ o bien dividiendo la frecuencia absoluta cumulada de $x_i$ entre
-el tamaño de la muestra.
-\[
-F_i = \frac{N_i}{n}
-\]
-Al igual que la frecuencia relativa, si se multiplica por 100 se convierte en el porcentaje acumulado.
-\end{itemize}
- }
+\end{definition}
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Tabla de frecuencias}
-Al conjunto de valores observados en la muestra junto a sus respectivas frecuencias se le denomina \structure{\textbf{distribución muestral de frecuencias}} y suele representarse mediante una \structure{\textbf{tabla de frecuencias}}.
+\frametitle{Frequency table}
+The set of values of a variable with their respective frequencies is called \structure{\textbf{frequency distribution}}
+of the variable in the sample, and it is usually represented as a \structure{\textbf{frequency table}}.
 \begin{center}
 \begin{tabular}{|>{\centering}p{1.8cm}|>{\centering}p{1.8cm}|>{\centering}p{1.8cm}|>{\centering}p{1.8cm}|p{1.8cm}<{\centering}|}
 \hline
-\structure{Valores de $X$} & \structure{Frecuencia Absoluta} & \structure{Frecuencia Relativa} & \structure{Frecuencia Absoluta Acumulada} & \structure{Frecuencia Relativa Acumulada} \\
+\structure{$X$ values} & \structure{Absolute frequency} & \structure{Relative frequency} & \structure{Cumulative
+absolute frequency} & \structure{Cumulative relative frequency} \\
 \hline
 $x_1$ & $n_1$ & $f_1$ & $N_1$ & $F_1$\\
 $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$\\
@@ -162,27 +108,19 @@ $x_k$ & $n_k$ & $f_k$ & $N_k$ & $F_k$\\
 \hline
 \end{tabular}
 \end{center}
-\note{Normalmente las frecuencias muestrales suelen organizarse en forma de tabla en la que cada fila corresponde a un
-valor de la variable o un intervalo de valores, que se ordenan, siempre que sea posible, de menor a mayor, y cada
-columna corresponde a una frecuencia.
-
-En esta tabla siempre se debe cumplir que la suma de las frecuencias absolutas es igual al tamaño de la muestra, la
-suma de las frecuencias relativas vale 1, la última frecuencia absoluta acumulada es el tamaño de la muestra y la
-última frecuencia relativa acumulada es 1. De no ser así, habríamos cometido algún error en el cálculo de las
-frecuencias.}
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Tabla de frecuencias}
-\framesubtitle{Ejemplo de datos sin agrupar}
-En una encuesta a 25 matrimonios sobre el número de hijos que tenían se obtuvieron los siguientes datos:
+\frametitle{Frequency table}
+\framesubtitle{Example of quantitative variable and non-grouped data}
+The number of children in 25 families are:
 \begin{center}
 1, 2, 4, 2, 2, 2, 3, 2, 1, 1, 0, 2, 2, \\
  0, 2, 2, 1, 2, 2, 3, 1, 2, 2, 1, 2
 \end{center}
-La tabla de frecuencias asociada a esta muestra es
+The frequency table for the number of children in this sample is 
 \[
 \setlength\arraycolsep{3mm}
 \setlength\arrayrulewidth{0.5pt}
@@ -194,56 +132,26 @@ x_i & n_i & f_i & N_i & F_i\\
 1 & 6 & 0.24 & 8 & 0.32\\
 2 & 14 & 0.56 & 22 & 0.88\\
 3 & 2  & 0.08 & 24 & 0.96\\
-4 & 1 & 0.04 & 25 & 1 \\ 
-\hline 
+4 & 1 & 0.04 & 25 & 1 \\
+\hline
 \sum & 25 & 1 \\
 \hline
 \end{array}
 \]
-\note{En este ejemplo se han tomado 25 matrimonios en los que se ha medido el número de hijos que tenían. Se trata de
-una variable cuantitativa discreta puesto que sólo puede tomar valores enteros positivos y además en la muestra sólo
-aparece 5 valores disntintos que son 0, 1, 2, 3 y 4 hijos, por lo que no es necesario agrupar los datos en intervalos.
-
-Para construir la tabla de frecuencias se comienza por el recuento de las frecuencias absolutas. Como puede observarse
-en la muestra, hay dos matrimonios que tienen 0 hijos, y por tanto, la frecuencia absoluta del 0 es 2, el 1
-aparece 6 veces, el 2, 3 veces, el 3, 2 veces y finalmente el 4 sólo aparece una vez. Observese cómo la suma de las
-frecuencias absolutas da 25 que es el tamaño muestral.
-
-A continuación se calculan las frecuencias relativas, simplemente dividiendo cada frecuencia absoluta por el tamaño de
-la muestra que es 25. Por ejemplo, la frecuencia relativa del 0 es 2 entre 25 que es 0.08, y es la proporción de
-matrimonios en la muestra que tienen 0 hijos.  Si se multiplica por 100 da un 8\%, es decir, el 8\% de los matrimonios
-tienen 0 hijos. Obsérvese cómo la suma de las frecuencias relativas vale 1. 
-
-Después se calculan las frecuencias absolutas acumuladas. Así, por ejemplo, la frecuencia absoluta acumulada del 0 es
-el número de matrimonios que tienen 0 o menos hijos, y al ser el 0 el menor de los valores de la muestra, coincide con
-la su frecuencia absoluta, que vale 2. La frecuencia absoluta acumulada del 1 es el número de matrimonios que tienen 1
-o menos hijos, de manera que habría que acumula la frecuencia absoluta del 1 y del 0, es decir, 2 mas 6, que da un
-total de 8, y así sucesivamente. En general para calcular cada frecuencia absoluta acumulada se puede tomar la
-frecuencia absoluta acumulada anterior y sumarle la frecuencia absoluta del valor. 8+14=22, 22+2=24 y 24+1=25.
-Obsérvese cómo la última frecuencia absoluta acumulada vale 25 que es el tamaño de la muestra.
-
-Finalmente, se calculan las frecuencias relativas acumuladas, que pueden calcularse, bien acumulando las frecuencias
-relativas del mismo modo que se acumulaban las absolutas, o bien dividiendo las frecuencias absolutas acumuladas por el
-tamaño de la muestra. Así, por ejemplo, la frecuencia relativa acumulada del 0 es 2 entre 25, que vale 0.08 y coincide
-con su frecuencia relativa. La frecuencia relativa acumulada del 1 es 8 entre 25 que vale 0.32 y es la proporción de
-matrimonios en la muestra con 1 o menos hijos. Si se multiplica por 100 tenemos que hay un 32\% de matrimonios con 1 o
-menos hijos. Y del mismo modo se calculan el resto de frecuencias relativas acumuladas, hasta llegar a la última que
-siempre vale 1.
-}
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Tabla de frecuencias}
-\framesubtitle{Ejemplo de datos agrupados}
-Se ha medido la estatura (en cm) de 30 universitarios obteniendo:
+\frametitle{Frequency table}
+\framesubtitle{Example of quantitative variable and grouped data}
+The heights (in cm) of 30 students are:
 \begin{center}
 179, 173, 181, 170, 158, 174, 172, 166, 194, 185,\\
 162, 187, 198, 177, 178, 165, 154, 188, 166, 171,\\
 175, 182, 167, 169, 172, 186, 172, 176, 168, 187.
 \end{center}
-La tabla de frecuencias asociada a esta muestra es
+The frequency table for the height in this sample is
 \[
 \setlength\arraycolsep{3mm}
 \setlength\arrayrulewidth{0.5pt}
@@ -255,69 +163,58 @@ La tabla de frecuencias asociada a esta muestra es
 (160,170] & 8 & 0.27 & 10 & 0.34\\
 (170,180] & 11 & 0.36 & 21 & 0.70\\
 (180,190] & 7  & 0.23 & 28 & 0.93\\
-(190,200] & 2 & 0.07 & 30 & 1 \\ 
-\hline 
+(190,200] & 2 & 0.07 & 30 & 1 \\
+\hline
 \sum & 30 & 1 \\
 \hline
 \end{array}
 \]
-\note{En este otro ejemplo, se han medido las estaturas de 30 universitarios. Ahora se trata de una variable
-cuantitativa continua, y como siempre ocurre con este tipo de variables, el número de valores disntintos que aparece en
-la muestra suele ser demasiado grande, por lo que se tiene a agruparlos en intervalos.
-
-En este caso se ha optado por construir 5 intervalos de amplitud 10 cm, empezando en 150 cm y terminando en 200 cm. 
-
-El cálculo de frecuencias absolutas es similar al caso anterior, salvo que ahora no se cuenta el número de estaturas
-que se repiten, sino el número de estaturas que caen en cada intervalo. Por ejemplo, la frecuencia
-absoluta del intervalo $(150,160]$ es 2 ya que en la muestra hay dos personas, una que mide 158 y otra que mide 154, que caerían en este intervalo.
-Una vez calculadas las frecuencias abolutas, el cálculo del resto de frecuencias es idéntico al caso de datos no
-agrupados.}
 \end{frame}
+
+
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Construcción de clases}
+% Cada intervalo de agrupación de datos se denomina \structure{\textbf{clase}} y el centro del intervalo se llama \structure{\textbf{marca de clase}}.
+% 
+% A la hora de agrupar los datos en clases hay que tener en cuenta lo siguiente:
+% \begin{itemize}
+% \item El número de intervalos no debe ser muy grande ni muy pequeño. Una regla
+% orientativa es tomar un número de intervalos próximo a la raíz cuadrada del
+% tamaño muestral $\sqrt{n}$.
+% \item Los intervalos no deben solaparse y deben cubrir todo el rango de valores.
+% Es indiferente si se abren por la izquierda y se cierran por la derecha o al revés.
+% \item El valor más pequeño debe caer dentro del primer intervalo y el más grande dentro del último.
+% \end{itemize}
+% \note{Cada intervalo de agrupación de datos se denomina clase y el centro del intervalo se llama
+% marca de clase.
+% Cuando se decide agrupar los datos en clases, hay que tener en cuenta lo siguiente:
+% \begin{itemize}
+% \item En primer lugar, el número de intervalos no debe ser muy grande ni muy pequeño. Si hay muchos intervalos, la
+% tabla será enorme y no sintetizará bien la información de la muestra, mientras que si tomamos muy pocos intervalos, su
+% amplitud será muy grande y se perderá gran parte de la información que contiene la muestra, ya que cuando un individuo
+% se cuenta dentro de un intervalo, pierde su valor particular y pasa a ser representado por la marca de clase. Una regla
+% orientativa es tomar un número de intervalos próximo a la raíz cuadrada del tamaño muestral $\sqrt{n}$.
+% \item En segundo lugar, los intervalos no deben solaparse, ya que de lo contrario se correría el riesgo de que algún
+% individuo cayese en dos intervalos distintos, por eso se suelen construir intervalos abiertos por la izquierda y
+% cerrados por la derecha o al revés, pero siempre siguiendo el mismo criterio. Y también deben cubrir todo el rango de
+% valores, ya que de lo contrario se correría el riesgo de que algún individuo no caería en ningún intervalo y quedaría
+% sin contarse.
+% \item Por último, el valor más pequeño debe caer dentro del primer intervalo y el más grande dentro del último.
+% \end{itemize}}
+% \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Construcción de clases}
-Cada intervalo de agrupación de datos se denomina \structure{\textbf{clase}} y el centro del intervalo se llama \structure{\textbf{marca de clase}}.
-
-A la hora de agrupar los datos en clases hay que tener en cuenta lo siguiente:
-\begin{itemize}
-\item El número de intervalos no debe ser muy grande ni muy pequeño. Una regla
-orientativa es tomar un número de intervalos próximo a la raíz cuadrada del
-tamaño muestral $\sqrt{n}$. 
-\item Los intervalos no deben solaparse y deben cubrir todo el rango de valores.
-Es indiferente si se abren por la izquierda y se cierran por la derecha o al revés.
-\item El valor más pequeño debe caer dentro del primer intervalo y el más grande dentro del último.
-\end{itemize}
-\note{Cada intervalo de agrupación de datos se denomina clase y el centro del intervalo se llama
-marca de clase. 
-Cuando se decide agrupar los datos en clases, hay que tener en cuenta lo siguiente:
-\begin{itemize}
-\item En primer lugar, el número de intervalos no debe ser muy grande ni muy pequeño. Si hay muchos intervalos, la
-tabla será enorme y no sintetizará bien la información de la muestra, mientras que si tomamos muy pocos intervalos, su
-amplitud será muy grande y se perderá gran parte de la información que contiene la muestra, ya que cuando un individuo
-se cuenta dentro de un intervalo, pierde su valor particular y pasa a ser representado por la marca de clase. Una regla
-orientativa es tomar un número de intervalos próximo a la raíz cuadrada del tamaño muestral $\sqrt{n}$.
-\item En segundo lugar, los intervalos no deben solaparse, ya que de lo contrario se correría el riesgo de que algún
-individuo cayese en dos intervalos distintos, por eso se suelen construir intervalos abiertos por la izquierda y
-cerrados por la derecha o al revés, pero siempre siguiendo el mismo criterio. Y también deben cubrir todo el rango de
-valores, ya que de lo contrario se correría el riesgo de que algún individuo no caería en ningún intervalo y quedaría
-sin contarse.
-\item Por último, el valor más pequeño debe caer dentro del primer intervalo y el más grande dentro del último.
-\end{itemize}}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Tabla de frecuencias}
-\framesubtitle{Ejemplo con un atributo}
-Los grupos sanguíneos de una muestra de 30 personas son:
+\frametitle{Frequency table}
+\framesubtitle{Example with qualitative variable}
+The blood type of 30 people are:
 \begin{center}
 A, B, B, A, AB, 0, 0, A, B, B, A, A, A, A, AB,\\
-A, A, A, B, 0, B, B, B, A, A, A, 0, A, AB, 0. 
+A, A, A, B, 0, B, B, B, A, A, A, 0, A, AB, 0.
 \end{center}
-La tabla de frecuencias asociada a esta muestra es
+The frequency table of the blood type is 
 \[
 \setlength\arraycolsep{3mm}
 \setlength\arrayrulewidth{0.5pt}
@@ -329,21 +226,17 @@ La tabla de frecuencias asociada a esta muestra es
 \mbox{A} & 14 & 0.47 \\
 \mbox{B} & 8 & 0.27 \\
 \mbox{AB} & 3 & 0.10 \\
-\hline 
+\hline
 \sum & 30 & 1 \\
 \hline
 \end{array}
 \]
 \begin{center}
-\emph{¿Por qué en este caso no se construyen las columnas de frecuencias acumuladas?}
+\emph{Why there are not cumulative frequencies?}
 \end{center}
-\note{En este otro ejemplo, se ha medido el grupo sanguíneo de un grupo de 30 personas. Ahora se trata de un atributo
-nominal, de manera que como no hay orden entre sus valores, puden ordenarse de cualquier manera en la tabla de
-frecuencias, pero el cálculo de frecuencias se realiza como en casos anteriores, con la particularidad de que en este
-caso no tiene sentido calcular las frecuencias acumuladas. ¿Te imaginas por qué?}
 \end{frame}
 
-
+% 
 % \subsection{Representaciones gráficas}
 % 
 % %---------------------------------------------------------------------slide----

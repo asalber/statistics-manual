@@ -1,0 +1,34 @@
+% Author: Alfredo Sánchez Alberca (email:asalber@ceu.es)
+% Types of statistical variables
+\tikzset{every node/.style = {align=center, inner sep=2pt, text centered}}
+\begin{tikzpicture}[-, >=stealth', level distance = 1.5cm,
+	level 1/.style={sibling distance = 6cm},
+	level 2/.style={sibling distance = 3cm},
+	level 3/.style={font=\small}
+] 
+\node {Statistical variables}
+	child{node{Qualitative}
+		child{node{Nominal}
+			child{node{Hair colour\\ Sex\\ Marital status\\ $\vdots$}}
+		}     
+       	child{node{Ordinal}
+			child{node{Study level\\ Course grade\\ size of clothing\\ $\vdots$}}
+		}           
+    }
+	child{node{Quantitative}
+		child{node{Discrete}
+			child{node{Number of childrens\\ Number of cars\\ Number of subjects\\ $\vdots$}}
+		}     
+        child{node{Continuous}
+			child{node{Height\\ weight\\ age\\ $\vdots$}}
+%           	child{node{\parbox[top][1cm][t]{2cm}{Interval}}}
+%            child{node{\parbox[top][1cm][t]{2cm}{Ratio}}}
+        }               
+    }
+; 
+
+\node [rectangle, minimum height=2cm, minimum width=\textwidth, fill=color1!30, rounded corners, opacity=0.5] at
+(0,-4.5);
+\node [text=color1] at (0,-5.3) {Examples}
+
+\end{tikzpicture}

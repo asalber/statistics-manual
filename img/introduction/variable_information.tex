@@ -1,12 +1,13 @@
 % Author: Alfredo Sánchez Alberca (email:asalber@ceu.es)
 % Plot with the level of information of each variable type
 \begin{tikzpicture}[scale=0.5]
-\draw[stealth-stealth, thin, redceu, line width=12pt] (-0.5,4) -- (18.5,4);
+\tikzstyle{node} = [align=center, text=color1];
+\draw[stealth-stealth, thin, color1!90, line width=12pt] (-0.5,4) -- (18.5,4);
 \node at (1.5,4) {\color{white}-- Info};
 \node at (16.5,4) {\color{white} + Info};
-\node[align=center] at (1,2.5) {Nominal};
-\node[align=center] at (5,2.5) {Ordinal};
-\node[align=center] at (9,2.5) {Discrete};
-\node[align=center] at (13,2.5) {Interval};
-\node[align=center] at (17,2.5) {Ratio};
+\node[node] at (1,2.5) {Nominal};
+\node[node] at (5,2.5) {Ordinal};
+\node[node] at (9,2.5) {Discrete};
+\node[node] at (13,2.5) {Interval};
+\node[node] at (17,2.5) {Ratio};
 \end{tikzpicture}
