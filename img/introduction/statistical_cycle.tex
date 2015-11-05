@@ -1,22 +1,22 @@
 % Author: Alfredo Sánchez Alberca (email:asalber@ceu.es)
 % Plot with the phases of the statistical cycle
-\begin{tikzpicture}
-\node[align=center, inner sep=10pt] (population) at (1,1) {\includegraphics[scale=0.5]{img/introduction/population}\\
-Population}; 
+\begin{tikzpicture}[every label/.style={text=color1}]
+\tikzstyle{arrow} = [-latex, color2, line width=12pt];
+\tikzstyle{node} = [align=center, inner sep=10pt];
+\node[node, label=-90:Population] (population) at (1,1)
+{\includegraphics[scale=0.5]{img/introduction/population}}; 
 \pause
-\node[align=center, inner sep=10pt] (sample) at
-(1,6){\includegraphics[scale=0.5]{img/introduction/sample}\\ Sample}; 
-\draw[-stealth, color1!90, line width=12pt] (population) -- (sample) node[midway,rotate=90,white]
-{Sampling\quad\phantom{0}};
+\node[node,label=90:Sample] (sample) at
+(1,6){\includegraphics[scale=0.5]{img/introduction/sample}}; 
+\draw[arrow] (population) -- (sample) node[midway,rotate=90,white] {Sampling\quad\phantom{0}};
 \pause
-\node[align=center,  inner sep=10pt] (statistics) at (8,6) {\Large $\bar x$ \quad $s^2$\\\Large \quad $p$ \quad
-$g_1$\\[5pt] summary\\ measures}; 
-\draw[-stealth, color1!90, line width=12pt] let \p1=(sample.east), \p2=(1,0) in (\x1+\x2,\y1) -- (statistics)
+\node[node,label=90:Summary measures] (statistics) at (8,6) {\Large $\bar x$ \quad $s^2$\\\Large \quad $p$ \quad
+$g_1$}; 
+\draw[arrow] let \p1=(sample.east), \p2=(1,0) in (\x1+\x2,\y1) -- (statistics)
 node[midway,white] {Descriptive\quad\phantom{0}}; 
 \pause
-\node[align=center, inner sep=10pt] (model) at (8,1) {\includegraphics[scale=0.5]{img/introduction/model}\\ Model };
-\draw[-stealth, color1!90, line width=12pt] (statistics) -- (model) node[midway,rotate=-90,white]
-{Inferential\quad\phantom{0}};
+\node[node,label=-90:Model] (model) at (8,1) {\includegraphics[scale=0.5]{img/introduction/model}};
+\draw[arrow] (statistics) -- (model) node[midway,rotate=-90,white] {Inferential\quad\phantom{0}};
 \pause
-\draw[-stealth, color1!90, line width=12pt] (model) -- (population) node[midway,white] {\quad Prediction};
+\draw[arrow] (model) -- (population) node[midway,white] {\quad Prediction};
 \end{tikzpicture}

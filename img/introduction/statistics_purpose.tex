@@ -1,17 +1,17 @@
 % Autor: Alfredo Sánchez Alberca (email:asalber@ceu.es)
 % Charts that shows the purpose of Statistics
-\begin{tikzpicture}[]
-%\draw [help lines] (0,0) grid (10,6);
-\tikzstyle{node} = [align=center, draw=color1, rectangle, minimum height=6mm, node distance=10em,
-fill=color1!90, rounded corners, text=white]; 
-\tikzstyle{arrow} = [-stealth, color2!80, line width=5pt];
+\begin{tikzpicture}[every label/.style={text=color1}]
+\tikzstyle{node} = [align=center, node distance=1cm, text=color1]; 
+\tikzstyle{arrow} = [-latex, color2, line width=10pt];
 
-%\draw [fill=color1, rounded corners] (2.5,5.2) rectangle (7.5,5.8);
-\node [node] (data) at (1,1) {Data};
-\node [node] (statistics) at (4,1) {Statistics\\ Analysis};
-\draw [arrow] (data) -- (statistics);
-\node [node] (information) at (7,1) {Information};
-\draw [arrow] (statistics) -- (information);
-\node [node] (decisions) at (10,1) {Decisions};
-\draw [arrow] (information) -- (decisions);
-\end{tikzpicture}
+\node (data) [label=-90:Data] at (0,1) {\includegraphics[height=1.5cm]{img/introduction/data.pdf}}; 
+\pause
+\node (information) [label=-90:Information] at (4,1) {\includegraphics[height=1.5cm]{img/introduction/information.png}};
+\draw[arrow] (data) -- (information) node[midway,white,font=\footnotesize] {STATISTICS\quad\phantom{0}};
+\pause
+\node (knowledge) [label=-90:Knowledge] at (8,1) {\includegraphics[height=1.5cm]{img/introduction/knowledge.png}};
+\draw [arrow] (information) -- (knowledge) node[midway,white,font=\footnotesize] {Interpretation\quad\phantom{0}};
+\pause
+\node (decisions) at (11,1) {\phantom{0}};
+\draw [arrow] (knowledge) -- (decisions) node[midway,white,font=\footnotesize] {Decisions\quad\phantom{0}};
+\end{tikzpicture} 
