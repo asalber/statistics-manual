@@ -70,17 +70,17 @@ Given a sample of $n$ values of a variable $X$, for every value $x_i$ of the var
 is defined 
 \begin{itemize}
 \item \structure{Absolute frequency $n_i$}: Is the number of times that value $x_i$ appears in the sample.
-\item \structure{Frecuencia relativa $f_i$}: Is the proportion of times that value $x_i$ appears in the sample.
+\item \structure{Relative frequency $f_i$}: Is the proportion of times that value $x_i$ appears in the sample.
 \[
 f_i = \frac{n_i}{n}
 \]
-\item \structure{Cumulative absolute frequency $N_i$}: Is the number of values less than or equal to $x_i$ in the
-sample.
+\item \structure{Cumulative absolute frequency $N_i$}: Is the number of values in the sample less than or equal to
+$x_i$.
 \[
 N_i = n_1 + \cdots + n_i
 \]
-\item \structure{Cumulative relative frequency $F_i$}: Is the proportion of values less than or equal to $x_i$ in the
-sample.
+\item \structure{Cumulative relative frequency $F_i$}: Is the proportion of values in the sample less than or equal to
+$x_i$.
 \[
 F_i = \frac{N_i}{n}
 \]
@@ -172,37 +172,20 @@ The frequency table for the height in this sample is
 \end{frame}
 
 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Construcción de clases}
-% Cada intervalo de agrupación de datos se denomina \structure{\textbf{clase}} y el centro del intervalo se llama \structure{\textbf{marca de clase}}.
-% 
-% A la hora de agrupar los datos en clases hay que tener en cuenta lo siguiente:
-% \begin{itemize}
-% \item El número de intervalos no debe ser muy grande ni muy pequeño. Una regla
-% orientativa es tomar un número de intervalos próximo a la raíz cuadrada del
-% tamaño muestral $\sqrt{n}$.
-% \item Los intervalos no deben solaparse y deben cubrir todo el rango de valores.
-% Es indiferente si se abren por la izquierda y se cierran por la derecha o al revés.
-% \item El valor más pequeño debe caer dentro del primer intervalo y el más grande dentro del último.
-% \end{itemize}
-% \note{Cada intervalo de agrupación de datos se denomina clase y el centro del intervalo se llama
-% marca de clase.
-% Cuando se decide agrupar los datos en clases, hay que tener en cuenta lo siguiente:
-% \begin{itemize}
-% \item En primer lugar, el número de intervalos no debe ser muy grande ni muy pequeño. Si hay muchos intervalos, la
-% tabla será enorme y no sintetizará bien la información de la muestra, mientras que si tomamos muy pocos intervalos, su
-% amplitud será muy grande y se perderá gran parte de la información que contiene la muestra, ya que cuando un individuo
-% se cuenta dentro de un intervalo, pierde su valor particular y pasa a ser representado por la marca de clase. Una regla
-% orientativa es tomar un número de intervalos próximo a la raíz cuadrada del tamaño muestral $\sqrt{n}$.
-% \item En segundo lugar, los intervalos no deben solaparse, ya que de lo contrario se correría el riesgo de que algún
-% individuo cayese en dos intervalos distintos, por eso se suelen construir intervalos abiertos por la izquierda y
-% cerrados por la derecha o al revés, pero siempre siguiendo el mismo criterio. Y también deben cubrir todo el rango de
-% valores, ya que de lo contrario se correría el riesgo de que algún individuo no caería en ningún intervalo y quedaría
-% sin contarse.
-% \item Por último, el valor más pequeño debe caer dentro del primer intervalo y el más grande dentro del último.
-% \end{itemize}}
-% \end{frame}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Classes construction}
+Intervals are known as \structure{\textbf{classes}} and the center of intervals as \structure{\textbf{class mark}}.
+
+When grouping data into intervals, the following rules must be taken into account: 
+\begin{itemize}
+\item The number of intervals should not be too big nor too small. 
+A usual rule of thumb is to take a number of intervals approximately $\sqrt{n}$ or $\log_2(n)$.
+\item The intervals must not overlap and must cover the entire range of values.
+It doesn't matter if intervals are left-open and right-closed or vice versa. 
+\item The minimum value must fall in the first interval and the maximum value in the last.
+\end{itemize}
+\end{frame}
 
 
 %---------------------------------------------------------------------slide----
@@ -233,66 +216,72 @@ The frequency table of the blood type is
 \]
 \begin{center}
 \emph{Why there are not cumulative frequencies?}
+\end{center} 
+\end{frame}
+
+
+\subsection{Frequency distribution graphs}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Frequency distribution graphs}
+Usually the frequency distribution is also displayed graphically.
+ 
+Depending on the type of variable and if data has been grouped or not, there are different types of charts:
+\begin{itemize}
+\item Bar chart
+\item Histogram
+\item Line chart or ogive. 
+\item Pie chart
+\end{itemize}
+
+\structure{Histograma}: Es similar a un diagrama de barras pero
+representando en el eje $X$ las clases en que se agrupan los valores de la variable y levantando las barras sobre todo el intervalo de manera que las barras están pegadas unas a otras.
+Se utiliza con variables discretas agrupadas y con variables continuas.
+\structure{Diagrama de sectores}: Consiste en un círculo dividido
+en sectores de área proporcional a la frecuencia de cada valor de la variable.
+Se utiliza sobre todo con atributos.
+
+En cada uno de los diagramas pueden representarse los distintos tipos de frecuencias, siempre que estas existan.
+
+\end{frame} 
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Bar chart}
+A bar chart consists in a set of bars, one for every value or category, plotted on a coordinate system. 
+
+Usually the values or categories of the variable are represented on the $x$-axis, and the frequencies on the $y$-axis. 
+For each value or category of the variable, a bar is draw to the height of its frequency.
+The width of the bar is not important but bars should be clearly separated among them. 
+
+Depending on the type of frequency represented in the $y$-axis we get different types of bar charts.
+ 
+Sometimes a polygon, known as \structure{\textbf{frequency polygon}}, is plotted joining the top of every bar.
+\end{frame}
+
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Absolute frequency bar chart}
+\framesubtitle{Non-grouped data}
+\begin{center}
+\scalebox{0.5}{\input{img/descriptive/abs_freq_bar_chart}} 
 \end{center}
 \end{frame}
 
-% 
-% \subsection{Representaciones gráficas}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Representaciones gráficas}
-% También es habitual representar la distribución muestral de frecuencias de forma gráfica.
-% Dependiendo del tipo de variable y de si se han agrupado o no los datos, se utilizan distintos tipos de gráficos:
-% \begin{itemize}
-% \item \structure{Diagrama de barras}: Consiste en un diagrama sobre el plano
-% cartesiano en el que en el eje $X$ se representan los valores de la variable y en el eje $Y$ las frecuencias. Sobre cada valor de la variable se levanta una barra de altura la correspondiente frecuencia. 
-% Se utiliza con variables discretas no agrupadas.
-% \item \structure{Histograma}: Es similar a un diagrama de barras pero
-% representando en el eje $X$ las clases en que se agrupan los valores de la variable y levantando las barras sobre todo el intervalo de manera que las barras están pegadas unas a otras. 
-% Se utiliza con variables discretas agrupadas y con variables continuas. 
-% \item \structure{Diagrama de sectores}: Consiste en un círculo dividido
-% en sectores de área proporcional a la frecuencia de cada valor de la variable.
-% Se utiliza sobre todo con atributos.  
-% \end{itemize}
-% En cada uno de los diagramas pueden representarse los distintos tipos de frecuencias, siempre que estas existan.
-% \note{Habitualmente las frecuencias también suelen representarse de manera gráfica. Dependiendo del tipo de variable y
-% de si se han agrupado o no los datos, se utilizan distintos tipos de gráficos, entre los que cabe destacar los
-% diagramas de barras, los histogramas y los diagramas de sectores. Veamos un ejemplo de cada uno de ellos.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Diagrama de barras de frecuencias absolutas}
-% \framesubtitle{Datos sin agrupar}
-% \begin{center}
-% \scalebox{0.75}{\input{img/descriptive/diagrama_barras_frecuencia_absoluta}}
-% \end{center}
-% \note{El diagrama de barras se utiliza con variables cuantitativas y datos sin agrupar y consiste en un sistema de ejes
-% cartesianos en el que se representan los valores de la variable en el eje de abscisas y las frecuencias
-% correspondientes en el eje de ordenadas, de manera que sobre cada valor se levanta una barra de altura la
-% correspondiente frecuencia. La frecuencia representada puede ser cualquiera de las cuatro vistas por lo que hay cuatro
-% tipos de diagramas de barras. 
-% 
-% En este ejemplo tenemos el diagrama de barras de frecuencias absolutas correspondiente a la muestra de 25 matrimonios
-% en los que se midió el número de hijos. Como puede observarse la barra que hay sobre el 0 tiene altura 2 por que la
-% frecuencia absoluta del 0 es 2, la barra que hay sobre el 1 tiene altura 6 porque el 1 tiene frecuencia 6, etc.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Polígono de frecuencias absolutas}
-% \framesubtitle{Datos sin agrupar}
-% \begin{center}
-% \scalebox{0.75}{\input{img/descriptive/poligono_frecuencia_absoluta}}
-% \end{center}
-% \note{A veces, sobre el diagrama de barras se suele representar un polígono conocido como polígono de frecuencias, y
-% que en el caso de las frecuencias absolutas se construye uniendo los puntos más altos de las barras mediante segmentos.
-% }
-% \end{frame}
-% 
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Absolute frequency line chart or polygon}
+\framesubtitle{Non-grouped data}
+\begin{center}
+\scalebox{0.5}{\input{img/descriptive/abs_freq_bar_chart_polygon}} 
+\end{center}
+\end{frame}
+
 % 
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
