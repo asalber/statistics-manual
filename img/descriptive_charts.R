@@ -6,171 +6,80 @@ options(tikzDefaultEngine = "pdftex")
 # Bar chart
 data <- read.table("data/children_cars_data.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 tab <- table(data$hijos)
-#Diagrama de barras de frecuencias absolutas de hijos
-tikz(file="img/descriptive/abs_freq_bar_chart.tex", width=5, height=5)
+# Absolute frequency bar chart of number of children
+tikz(file="img/descriptive/abs_freq_bar_chart_polygon.tex", width=7, height=5)
 par(cex.lab=1.2)
-barplot(tab,space=0.5, main="Number of children absolute frequency distribution", xlab="Number of children", ylab="Absolute frequency $n_i$", col="coral")
-lines(c(1,2.5,4,5.5,7),tab,col="royalblue1")
+barplot(tab,space=0.5, main="Absolute frequency distribution of number of children", xlab="Number of children", ylab="Absolute frequency $n_i$", col="coral")
+lines(c(1,2.5,4,5.5,7),tab,col="royalblue1",lwd=3)
 dev.off()
 
-#Diagrama de barras de frecuencias absolutas acumuladas de hijos
-x11()
-t <- c(2,8,22,24,25)
-b <- barplot(t, type="n")
+# Cumulative absolute frequency bar chart of number of children
+tikz(file="img/descriptive/cum_abs_freq_bar_chart_polygon.tex", width=7, height=5)
+tabcum <- cumsum(tab)
 par(cex.lab=1.2)
-abline(h= (0:26)*2 , col ="gray" , lty =3) 
-barplot(t, add=TRUE, names.arg=c("0","1","2","3","4"), main="Diagrama de barras de frecuencias absolutas acumuladas", xlab="Número de hijos", ylab=expression(paste("Frecuencia absoluta acumulada ", italic(N[i]))), col="coral")
-dev.copy2eps(file="img/descriptiva/diagrama_barras_frecuencia_acumulada.eps", width=5, height=5, pointsize=10)
+barplot(tabcum, space=0.5, main="Cumulative absolute frequency distribution of number of children", xlab="Number of children", ylab="Cumulative absolute frequency $N_i$", col="coral")
+lines(c(0,1,1,2.5,2.5,4,4,5.5,5.5,7,7,8.5),c(0,0,2,2,8,8,22,22,24,24,25,25),col="royalblue", lwd=3)
 dev.off()
 
-xfig(file="img/descriptiva/diagrama_barras_frecuencia_acumulada.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-t <- c(2,8,22,24,25)
-b <- barplot(t, type="n")
+data <- read.table("data/height_weight_data.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+library(agricolae)
+# Absolute frequency histogram of height
+tikz(file="img/descriptive/abs_freq_histogram_polygon.tex", width=7, height=5)
 par(cex.lab=1.2)
-abline(h= (0:26)*2 , col ="gray" , lty =3) 
-barplot(t, add=TRUE, names.arg=c("0","1","2","3","4"), main="Diagrama de barras de frecuencias absolutas acumuladas", xlab="Número de hijos", ylab=expression(paste("Frecuencia absoluta acumulada ", italic(N[i]))), col="coral")
+(h <- hist(data$height, ylim=c(0,12), main="Absolute frequency distribution of Height", xlab="Height (cm)", ylab="Absolute frequency $n_i$", col="coral"))
+polygon.freq(h,frequency=1,col="royalblue",lwd=3)
 dev.off()
 
-
-#Polígono de frecuencias absolutas acumuladas de hijos
-x11()
+# Cumulative absolute frequency histogram of height
+tikz(file="img/descriptive/cum_abs_freq_histogram_polygon.tex", width=7, height=5)
 par(cex.lab=1.2)
-plot(c(-1,0,0,1,1,2,2,3,3,4,4,5),c(0,0,2,2,8,8,22,22,24,24,25,25), axes=FALSE, xlim=c(-0.2,4.2), type="n", xlab="Número de hijos", ylab=expression(paste("Frecuencia absoluta acumulada ", italic(N[i]))))
-axis(1)
-axis(2)
-abline(h= (0:12)*2 , col ="gray" , lty =3) 
-lines(c(-1,0,0,1,1,2,2,3,3,4,4,5),c(0,0,2,2,8,8,22,22,24,24,25,25),col="royalblue", lwd=2)
-dev.copy2eps(file="img/descriptiva/poligono_frecuencia_acumulada.eps", width=5, height=5, pointsize=10)
-dev.off()
-
-xfig(file="img/descriptiva/poligono_frecuencia_acumulada.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-par(cex.lab=1.2)
-plot(c(-1,0,0,1,1,2,2,3,3,4,4,5),c(0,0,2,2,8,8,22,22,24,24,25,25), axes=FALSE, xlim=c(-0.2,4.2), type="n", xlab="Número de hijos", ylab=expression(paste("Frecuencia absoluta acumulada ", italic(N[i]))))
-axis(1)
-axis(2)
-abline(h= (0:12)*2 , col ="gray" , lty =3) 
-lines(c(-1,0,0,1,1,2,2,3,3,4,4,5),c(0,0,2,2,8,8,22,22,24,24,25,25),col="royalblue", lwd=2)
-dev.off()
-
-
-data <- read.table("datos/datos estaturas pesos sexo.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-
-#Histograma de frecuencias absolutas de estaturas
-x11()
-par(cex.lab=1.2)
-hist(data$estatura, ylim=c(0,12), main="Histograma de frecuencias absolutas", xlab="Estatura", ylab=expression(paste("Frecuencia absoluta ", italic(n[i]))), col="coral")
-dev.copy2eps(file="img/descriptiva/histograma_frecuencia_absoluta.eps", width=5, height=5, pointsize=10)
-dev.off()
-
-xfig(file="img/descriptiva/histograma_frecuencia_absoluta.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-par(cex.lab=1.2)
-hist(data$estatura, ylim=c(0,12), main="Histograma de frecuencias absolutas", xlab="Estatura", ylab=expression(paste("Frecuencia absoluta ", italic(n[i]))), col="coral")
-dev.off()
-
-#Polígono de frecuencias absolutas de estaturas
-x11()
-par(cex.lab=1.2)
-h <- hist(data$estatura, plot=FALSE) 
-amplitud <- h$mids[2] - h$mids[1]
-xx <- c( h$mids[1]-amplitud, h$mids, tail(h$mids,1)+amplitud ) 
-yy <- c(0, h$counts, 0)
-hist(data$estatura, xlim=range(xx), ylim=c(0,12), main="Polígono de frecuencias absolutas", xlab="Estatura", ylab=expression(paste("Frecuencia absoluta ", italic(n[i]))), col="coral")
-lines(xx, yy, lwd=2, col = "royalblue") 
-dev.copy2eps(file="img/descriptiva/poligono_frecuencia_absoluta_agrupado.eps", width=5, height=5, pointsize=10)
-dev.off()
-
-xfig(file="img/descriptiva/poligono_frecuencia_absoluta_agrupado.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-par(cex.lab=1.2)
-h <- hist(data$estatura, plot=FALSE) 
-amplitud <- h$mids[2] - h$mids[1]
-xx <- c( h$mids[1]-amplitud, h$mids, tail(h$mids,1)+amplitud ) 
-yy <- c(0, h$counts, 0)
-hist(data$estatura, xlim=range(xx), ylim=c(0,12), main="Polígono de frecuencias absolutas", xlab="Estatura", ylab=expression(paste("Frecuencia absoluta ", italic(n[i]))), col="coral")
-lines(xx, yy, lwd=2, col = "royalblue") 
-dev.off()
-
-#Histograma de frecuencias acumuladas de estaturas
-x11()
-par(cex.lab=1.2)
-h <- hist(data$estatura, plot=FALSE)
+h <- hist(data$height, plot=FALSE)
 h$counts <- cumsum(h$counts)
-plot(h, main="Histograma de frecuencias absolutas acumuladas", xlab="Estatura", ylab=expression(paste("Frecuencia absoluta acumulada ", italic(N[i]))), col="coral")
-dev.copy2eps(file="img/descriptiva/histograma_frecuencia_acumulada.eps", width=5, height=5, pointsize=10)
-dev.off() 
-
-xfig(file="img/descriptiva/histograma_frecuencia_acumulada.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-par(cex.lab=1.2)
-h <- hist(data$estatura, plot=FALSE)
-h$counts <- cumsum(h$counts)
-plot(h, main="Histograma de frecuencias absolutas acumuladas", xlab="Estatura", ylab=expression(paste("Frecuencia absoluta acumulada ", italic(N[i]))), col="coral")
-dev.off() 
-
-
-#Polígono de frecuencias acumuladas de estaturas
-x11()
-par(cex.lab=1.2)
-h <- hist(data$estatura, plot=FALSE) 
-h$counts <- cumsum(h$counts)
+plot(h, main="Cumulative absolute frequency distribution of Height", xlab="Height (cm)", ylab="Cumulative absolute frequency $N_i$", col="coral")
 yy <- c(0, h$counts)
-plot(h, main="Polígono de frecuencias absolutas acumuladas", xlab="Estatura", ylab=expression(paste("Frecuencia absoluta acumulada ", italic(N[i]))), col="coral")
-lines(h$breaks, yy, lwd=2, col = "royalblue") 
-dev.copy2eps(file="img/descriptiva/poligono_frecuencia_acumulada_agrupado.eps", width=5, height=5, pointsize=10)
+lines(h$breaks, yy, lwd=3, col = "royalblue") 
 dev.off()
 
-xfig(file="img/descriptiva/poligono_frecuencia_acumulada_agrupado.fig", onefile=TRUE, width=5, height=5, pointsize=10)
+# Cumulative relative frequency histogram of height
+tikz(file="img/descriptive/cum_rel_freq_histogram_polygon.tex", width=7, height=5)
 par(cex.lab=1.2)
-h <- hist(data$estatura, plot=FALSE) 
-h$counts <- cumsum(h$counts)
-yy <- c(0, h$counts)
-plot(h, main="Polígono de frecuencias absolutas acumuladas", xlab="Estatura", ylab=expression(paste("Frecuencia absoluta acumulada ", italic(N[i]))), col="coral")
-lines(h$breaks, yy, lwd=2, col = "royalblue") 
+h <- hist(data$height, plot=FALSE)
+h$counts <- cumsum(h[["counts"]])/sum(h[["counts"]])
+plot(h, main="Cumulative relative requency distribution of Height", xlab="Height (cm)", ylab="Cumulative relative frequency $F_i$", col="coral")
+yy <- c(0, h[["counts"]])
+lines(h$breaks, yy, lwd=3, col = "royalblue") 
 dev.off()
 
-#Histograma hombres y mujeres
-x11()
+
+# Histogram by sex
+tikz(file="img/descriptive/factor_histogram.tex", width=5, height=5)
 options(digits=1)
 par(cex.lab=1.2)
-out <- histbackback(split(data$estatura, data$sexo), xlim=c(-10,10), main = 'Histograma de estaturas por sexo', xlab=c("Hombres", "Mujeres"), ylab="Estatura")
-abline(v= (-8:8)*2 , col ="gray" , lty =3) 
-barplot(-out$left, col="coral" , horiz=TRUE, space=0, add=TRUE, axes=FALSE) 
-barplot(out$right, col="royalblue1", horiz=TRUE, space=0, add=TRUE, axes=FALSE) 
-dev.copy2eps(file="img/descriptiva/histograma_estatura_sexo.eps", width=5, height=5, pointsize=10)
-dev.off()
-
-xfig(file="img/descriptiva/histograma_estatura_sexo.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-options(digits=1)
-par(cex.lab=1.2)
-out <- histbackback(split(data$estatura, data$sexo), xlim=c(-10,10), main = 'Histograma de estaturas por sexo', xlab=c("Hombres", "Mujeres"), ylab="Estatura")
+out <- histbackback(split(data$height, data$sex), xlim=c(-10,10), main = 'Frequency distribution hitogram of Height by Sex', xlab=c("male", "female"), ylab="Height")
 abline(v= (-8:8)*2 , col ="gray" , lty =3) 
 barplot(-out$left, col="coral" , horiz=TRUE, space=0, add=TRUE, axes=FALSE) 
 barplot(out$right, col="royalblue1", horiz=TRUE, space=0, add=TRUE, axes=FALSE) 
 dev.off()
 
-#Diagramas de cajas de hombres y mujeres
-x11()
+# Box and whiskers plot by sex
+tikz(file="img/descriptive/factor_box_plot.tex", width=5, height=5)
 options(digits=2)
 par(cex.lab=1.2)
-boxplot(estatura~sexo, main="Diagrama de caja y bigotes de estaturas por sexo", ylab="Estatura", xlab="Sexo", ylim=c(150,200), labels=c("hombre","mujer"), col=c("coral","royalblue1"), data=data)
-dev.copy2eps(file="img/descriptiva/diagrama_cajas_estatura_sexo.eps", width=5, height=5, pointsize=10)
+boxplot(height~sex, main="Frequency distribution box plot of Height by Sex", ylab="Height", xlab="Sex", ylim=c(150,200), labels=c("Men","Women"), col=c("coral","royalblue1"), data=data)
 dev.off()
 
-xfig(file="img/descriptiva/diagrama_cajas_estatura_sexo.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-options(digits=2)
-par(cex.lab=1.2)
-boxplot(estatura~sexo, main="Diagrama de caja y bigotes de estaturas por sexo", ylab="Estatura", xlab="Sexo", ylim=c(150,200), col=c("coral","royalblue1"), data=data)
-dev.off()
+
 
 #Diagrama de sectores
-data <- read.table("datos/datos grupos sanguineos.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-x11()
-par(cex.lab=1.2, mai=c(0,0,0.5,0))
-pie(table(data$grupo.sanguineo.hijo), main="Distribución del grupo sanguíneo", labels=c("grupo 0 16%", "grupo A 47%", "grupo AB 10%", "grupo B 27%"), col=c("lightgreen","coral", "royalblue", "brown"))
-dev.copy2eps(file="img/descriptiva/diagrama_sectores_grupo_sanguineo.eps", width=5, height=5, pointsize=10)
-dev.off()
-
-xfig(file="img/descriptiva/diagrama_sectores_grupo_sanguineo.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-par(cex.lab=1.2, mai=c(0,0,0.5,0))
-pie(table(data$grupo.sanguineo.hijo), main="Distribución del grupo sanguíneo", labels=c("grupo 0 16%", "grupo A 47%", "grupo AB 10%", "grupo B 27%"), col=c("lightgreen","coral", "royalblue", "brown"))
+data <- read.table("data/blood_types_data.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+tikz(file="img/descriptive/rel_freq_pie_chart.tex", width=7, height=5)
+par(cex.lab=1.2, mai=c(0,0,.5,0))
+tab <- table(data[["grupo.sanguineo.hijo"]])
+labels <- labels(tab)[[1]]
+pctg <- round(tab/sum(tab)*100,2)
+labels <- paste(labels, pctg) # add percents to labels 
+labels <- paste(labels,"\\%",sep="") # ad % to labels 
+pie(tab, main="Relative frequency distribution of blood types", labels=labels, col=c("lightgreen", "coral", "royalblue", "brown"))
 dev.off()
 
 #Diagrama de caja y bigotes pesos recien nacidos
