@@ -1,0 +1,44 @@
+% Author: Alfredo Sánchez Alberca (email:asalber@ceu.es)
+% Plot with the phases of the statistical cycle
+\begin{tikzpicture}[every label/.style={text=color1}]
+\node at (5,7) {\color{color1}Quartiles};
+\draw (0,6) -- (10,6);
+\draw[snake=ticks,segment length=2.5cm] (0,6) -- (10,6);
+\node at (0,5.5) {Min};
+\node at (10,5.5) {Max};
+\foreach \i in {1,...,3} {\node at (2.5*\i,5.5) {$Q_\i$};}
+\foreach \i in {1,...,4} {\node at (2.5*\i-1.25,6.5) {$25\%$};}
+\node at (5.7,5.5) {$=Me$};
+\pause
+\node at (5,4) {\color{color1}Deciles};
+\draw (0,3) -- (10,3);
+\draw[snake=ticks,segment length=1cm] (0,3) -- (10,3);
+\node at (0,2.5) {Min};
+\node at (10,2.5) {Max};
+\foreach \i in {1,...,9} {\node at (\i,2.5) {$D_\i$};}
+\foreach \i in {1,...,10} {\node at (\i-.5,3.5) {$10\%$};}
+\pause
+\node at (5,1) {\color{color1}Percentiles};
+\draw (0,0) -- (10,0);
+\draw[snake=ticks,segment length=0.1cm] (0,0) -- (10.1,0);
+\node at (-0.5,-0.6) {Min};
+\draw [->] (-0.3,-0.4) -- (-0.1,-0.2);
+\node at (10.5,-0.6) {Max};
+\draw [->] (10.3,-0.4) -- (10.1,-0.2);
+\node at (0.1,-0.6) {$P_1$};
+\draw [->] (0.1,-0.4) -- (0.1,-0.2);
+\node at (2.5,-0.6) {$P_{25}$};
+\draw [->] (2.5,-0.4) -- (2.5,-0.2);
+\node at (4,-0.6) {$P_{40}$};
+\draw [->] (4,-0.4) -- (4,-0.2);
+\node at (5,-0.6) {$P_{50}$};
+\draw [->] (5,-0.4) -- (5,-0.2);
+\node at (7.5,-0.6) {$P_{75}$};
+\draw [->] (7.5,-0.4) -- (7.5,-0.2);
+\node at (9.9,-0.6) {$P_{99}$};
+\draw [->] (9.9,-0.4) -- (9.9,-0.2);
+\node at (0.05,0.6) {$1\%$};
+\draw [->] (0.05,0.4) -- (0.05,0.2);
+\node at (9.95,0.6) {$1\%$};
+\draw [->] (9.95,0.4) -- (9.95,0.2);
+\end{tikzpicture}

@@ -2,7 +2,7 @@
 % ASPECT RATIO FOR YOUTUBE VIDEO
 %\documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,dvips,red,xcolor=table]{beamer}
 % ASPECT RATIO FOR PROJECTOR
-% \documentclass[mathserif,profesionalfont,10pt,red,xcolor=table]{beamer}
+%\documentclass[mathserif,profesionalfont,10pt,red,xcolor=table]{beamer}
 % ARTICLE VERSION 
 \documentclass[10pt,a4paper,titlepage]{article} 
 \usepackage[hyperref]{beamerarticle}
@@ -35,15 +35,14 @@
 \setbeamertemplate{navigation symbols}{}
 
 % LIST ITEMS
-\setbeamertemplate{itemize items}[default]
+%\setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
 \setbeamerfont{itemize/enumerate subbody}{size=\normalsize} %to set the body size of second nested level
 \setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize} %to set the body size of third nested level
-\setbeamertemplate{itemize item}{\smallsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to set
-% the symbol size of first level items
-\setbeamertemplate{itemize subitem}{\smallsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to set
+\setbeamertemplate{itemize item}{\small\raise0.5pt\hbox{$\blacktriangleright$}} 
+\setbeamertemplate{itemize subitem}{\small\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to set
 % the symbol size of second level items
-\setbeamertemplate{itemize subsubitem}{\smallsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to
+\setbeamertemplate{itemize subsubitem}{\small\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to
 % set the symbol size of third level itemsç
 \setbeamertemplate{itemize/enumerate body begin}{\setlength{\leftmargini}{.45cm}} %to set the first level item indent
 \setbeamertemplate{itemize/enumerate subbody begin}{\setlength{\leftmarginii}{.45cm}} %to set the second level item
@@ -75,7 +74,7 @@
 \usepackage{multirow}
 \usepackage{textcomp}
 \usepackage{tikz}
-\usetikzlibrary{arrows,calc,shapes.arrows}
+\usetikzlibrary{arrows,calc,shapes,shapes.arrows,positioning,snakes,decorations.pathreplacing}
 %\usepackage[usenames,dvipsnames]{pstricks}
 %\usepackage{pst-all,pst-math,pst-plot,pst-infixplot,pst-xkey,pstricks-add}
 \usepackage{epsfig}

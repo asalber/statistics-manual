@@ -5,7 +5,7 @@ require(Hmisc)
 options(tikzDefaultEngine = "pdftex")
 # Bar chart
 data <- read.table("data/children_cars_data.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-tab <- table(data$hijos)
+tab <- table(data$children)
 # Absolute frequency bar chart of number of children
 tikz(file="img/descriptive/abs_freq_bar_chart_polygon.tex", width=7, height=5)
 par(cex.lab=1.2)
@@ -50,7 +50,6 @@ yy <- c(0, h[["counts"]])
 lines(h$breaks, yy, lwd=3, col = "royalblue") 
 dev.off()
 
-
 # Histogram by sex
 tikz(file="img/descriptive/factor_histogram.tex", width=5, height=5)
 options(digits=1)
@@ -68,13 +67,11 @@ par(cex.lab=1.2)
 boxplot(height~sex, main="Frequency distribution box plot of Height by Sex", ylab="Height", xlab="Sex", ylim=c(150,200), labels=c("Men","Women"), col=c("coral","royalblue1"), data=data)
 dev.off()
 
-
-
-#Diagrama de sectores
+# Pie chart
 data <- read.table("data/blood_types_data.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 tikz(file="img/descriptive/rel_freq_pie_chart.tex", width=7, height=5)
 par(cex.lab=1.2, mai=c(0,0,.5,0))
-tab <- table(data[["grupo.sanguineo.hijo"]])
+tab <- table(data[["blood.type.child"]])
 labels <- labels(tab)[[1]]
 pctg <- round(tab/sum(tab)*100,2)
 labels <- paste(labels, pctg) # add percents to labels 
@@ -82,44 +79,25 @@ labels <- paste(labels,"\\%",sep="") # ad % to labels
 pie(tab, main="Relative frequency distribution of blood types", labels=labels, col=c("lightgreen", "coral", "royalblue", "brown"))
 dev.off()
 
-#Diagrama de caja y bigotes pesos recien nacidos
-data <- read.table("datos/peso_recien_nacidos.csv", header=TRUE, sep=" ", na.strings="NA", dec=".", strip.white=TRUE)
-x11()
+# Box plot newborn
+data <- read.table("data/newborn_weights.csv", header=TRUE, sep=" ", na.strings="NA", dec=".", strip.white=TRUE)
+tikz(file="img/descriptive/boxplot.tex", width=7, height=5)
 par(cex.lab=1.2)
-boxplot(data$peso, horizontal=TRUE, col="coral", pch=16, main="Diagrama de caja y bigotes del peso de recien nacidos", xlab="Peso (Kg)")
-text(2.9,0.75,expression(italic(C[1])))
-text(3.1,0.75,expression(italic(C[2])))
-text(3.4,0.75,expression(italic(C[3])))
-text(2,1.06,"Dato\n atípico")
-dev.copy2eps(file="img/descriptiva/diagrama_caja.eps", width=5, height=5, pointsize=10)
+boxplot(data$weight, horizontal=TRUE, col="coral", pch=16, main="Box plot of newborn weights", xlab="Weight (Kg)")
+text(2.9,0.75,expression(italic(Q[1])))
+text(3.1,0.75,expression(italic(Q[2])))
+text(3.4,0.75,expression(italic(Q[3])))
+text(1.95,0.95,"Min")
+text(4.5,0.95,"Max")
+text(1.95,1.06,"Outlier",col="red")
+text(4.5,1.06,"Outlier",col="red")
 dev.off()
 
-xfig(file="img/descriptiva/diagrama_caja.fig", onefile=TRUE, width=5, height=5, pointsize=10)
+# Box plot children
+data <- read.table("data/children_cars_data.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+tikz(file="img/descriptive/boxplot_children.tex", width=7, height=5)
 par(cex.lab=1.2)
-boxplot(data$peso, horizontal=TRUE, col="coral", pch=16, main="Diagrama de caja y bigotes del peso de recien nacidos", xlab="Peso (Kg)")
-text(2.9,0.75,expression(italic(C[1])))
-text(3.1,0.75,expression(italic(C[2])))
-text(3.4,0.75,expression(italic(C[3])))
-text(2,1.06,"Dato\n atípico")
-dev.off()
-
-#Diagrama de caja y bigotes estaturas
-data <- read.table("datos/datos hijos coches.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-x11()
-par(cex.lab=1.2)
-boxplot(data$hijos, horizontal=TRUE, col="coral", pch=16, main="Diagrama de caja y bigotes del número de hijos", xlab="Número de hijos")
-text(1,0.75,expression(italic(C[1])))
-text(2,0.75,expression(italic(C[3])))
-text(4,1.06,"Dato\n atípico")
-dev.copy2eps(file="img/descriptiva/diagrama_caja_hijos.eps", width=5, height=5, pointsize=10)
-dev.off()
-
-xfig(file="img/descriptiva/diagrama_caja_hijos.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-par(cex.lab=1.2)
-boxplot(data$hijos, horizontal=TRUE, col="coral", pch=16, main="Diagrama de caja y bigotes del número de hijos", xlab="Número de hijos")
-text(1,0.75,expression(italic(C[1])))
-text(2,0.75,expression(italic(C[3])))
-text(4,1.06,"Dato\n atípico")
+boxplot(data$children, horizontal=TRUE, col="coral", pch=16, main="Box plot of number of children", xlab="Number of children")
 dev.off()
 
 # Histograma simétrico

@@ -421,24 +421,26 @@ With big samples outliers have less importance and can be left in the sample.
 With small samples we have several options:
 
 \begin{itemize}
-\item Remove the outlier if is an error. 
-\item Replace the outlier by the lower or higher value in the distribution that is not an outlier if is not an error
+\item Remove the outlier if it's an error. 
+\item Replace the outlier by the lower or higher value in the distribution that is not an outlier if it's not an error
 and the outlier doesn't fit the theoretical distribution. 
-\item Leave the outlier if it is not an error, and change the theoretical model to fit it to outliers.  
+\item Leave the outlier if it's not an error, and change the theoretical model to fit it to outliers.  
 \end{itemize}
 \end{frame}
+ 
 
 
-
-\subsection{Estadísticos muestrales}
+\subsection{Sample statistics}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Sample statistics}
 The frequency table and charts summarize and give an overview of the distribution of values of the studied variable in
-the sample, but it's difficult to describe some aspects of the distribution from it. 
+the sample, but it's difficult to describe some aspects of the distribution from it, as for example, which are the most
+representative values of the distribution, how is the spread of data, which data could be considered outliers, how is
+the symmetry of the distribution. 
 
-To describe some aspects of the sample distribution more specific numerical measures, called
+To describe those aspects of the sample distribution more specific numerical measures, called
 \structure{\textbf{sample statistics}}, are used.
 
 According to the aspect of the distribution that they study, there are different types of statistics:
@@ -451,13 +453,12 @@ equal parts.
 \end{frame}
 
 
-\subsection{Central tendency statistics}
+\subsection{Location statistics}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Location statistics}
 There are two groups: 
-
 
 \begin{description}
 \item [Central location measures:] They measure the values where data are concentrated, and that usually are in the
@@ -478,299 +479,218 @@ The most important are:
 \end{itemize}
 \end{description}
 \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Media aritmética}
-% \begin{definicion}[Media aritmética muestral $\bar{x}$]
-% La \emph{media aritmética muestral} de una variable $X$ es la suma de los valores observados en la muestra dividida por el tamaño muestral
-% \[
-% \bar{x} = \frac{\sum x_i}{n}
-% \]
-% \end{definicion}
-% A partir de la tabla de frecuencias puede calcularse como:
-% \[
-% \bar{x} &= \frac{\sum x_in_i}{n} = \sum x_i f_i
-% \]
-% En la mayoría de los casos, la media aritmética es la medida que mejor representa a la muestra. 
-% \begin{center}
-% \alert{\emph{¡Ojo! No puede calcularse para atributos.}}
-% \end{center}
-% 
-% \note{La media aritmética es, sin duda, el estadístico de tendencia central más conocido.
-% Se define como la suma de los valores observados en la muestra dividida por el tamaño muestral.
-% 
-% Si en lugar de la muestra tenemos la tabla de frecuencias, para calcular la media aritmética hay que sumar los
-% productos de cada valor por su frecuencia absoluta y dividir la suma entre el tamaño de la muestra, o bien directamente
-% sumando los productos de cada valor por su frecuencia relativa.
-% 
-% Algo que hay que advertir, es que, aunque la media aritmética es la medida de tendencia central más usada, no puede
-% calcularse para atributos, ya que las categorías no son números que pueden operarse artiméticamente.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la media aritmética}
-% \framesubtitle{Ejemplo con datos no agrupados}
-% En el ejemplo anterior del número de hijos tenemos 
-% \begin{align*}
-% \bar{x} &= \frac{1+2+4+2+2+2+3+2+1+1+0+2+2}{25}+\\
-% &+\frac{0+2+2+1+2+2+3+1+2+2+1+2}{25} = \frac{44}{25} = 1.76 \mbox{ hijos}.
-% \end{align*}
-% o bien, desde la tabla de frecuencias
-% \begin{center}
-% \setlength\arraycolsep{3mm}
-% \setlength\arrayrulewidth{0.5pt}
-% \begin{array}{rrrrr}
-% \hline
-% \multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{f_i} & \multicolumn{1}{c}{x_in_i} & \multicolumn{1}{c}{x_if_i}\\
-% \hline
-% 0 & 2 & 0.08 & 0 & 0\\
-% 1 & 6 & 0.24 & 6 & 0.24\\
-% 2 & 14 & 0.56 & 28 & 1.12\\
-% 3 & 2  & 0.08 & 6 & 0.24\\
-% 4 & 1 & 0.04 & 4 & 0.16 \\ 
-% \hline 
-% \sum & 25 & 1 & 44 & 1.76 \\
-% \hline
-% \end{array}
-% \end{center}
-% \[
-% \bar{x} = \frac{\sum x_in_i}{n} = \frac{44}{25}= 1.76 \qquad \bar{x}=\sum{x_if_i} = 1.76.
-% \]
-% Es decir, el número de hijos que mejor representa a la muestra es $1.76$ hijos.
-% \note{En el ejemplo del número de hijos en una muestra de 25 matrimonios, para calcular la media a partir de la
-% muestra, basta con sumar los hijos de cada matrimonio, 1 + 2 + 3, y así hasta el último, lo que da 44 hijos y dividirlo
-% por el número de matrimonios, 25, con lo que se obtiene 1.76 hijos de media.
-% 
-% Si en lugar de la muestra tenemos la tabla de frecuencias, entonces conviene construir una nueva columna donde se vayan
-% calculando los productos de cada valor por su frecuencia absoluta, es decir, 0 * 2 = 0 + 1 * 6 = 6, etc., luego sumar
-% todos estos productos, lo que de nuevo nos da 44 hijos y finalmente dividir la suma por el tamaño de la muestra que es
-% 25, obteniendo de nuevo 1.76 hijos. La otra opción es construir otra columna donde se vayan calculando los productos de
-% cada valor por su frecuencia relativa, es decir, 0*0.08=0 + 1*0.24 = 0.24, etc. y finalmente sumar estos productos para
-% obtener, una vez más, 1.76 hijos de media.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la media aritmética}
-% \framesubtitle{Ejemplo con datos agrupados}
-% En el ejemplo anterior de las estaturas se tiene
-% \[
-% \bar{x} &= \frac{179+173+\cdots+187}{30} = 175.07 \mbox{ cm}.
-% \]
-% o bien, desde la tabla de frecuencias utilizando las marcas de clase:
-% \begin{center}
-% \setlength\arraycolsep{3mm}
-% \setlength\arrayrulewidth{0.5pt}
-% \begin{array}{rrrrrr}
-% \hline
-% \multicolumn{1}{c}{X} & \multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{f_i} & \multicolumn{1}{c}{x_in_i} & \multicolumn{1}{c}{x_if_i}\\
-% \hline
-% (150,160] & 155 & 2 & 0.07 & 310 & 10.33\\
-% (160,170] & 165 & 8 & 0.27 & 1320 & 44.00\\
-% (170,180] & 175 & 11 & 0.36 & 1925 & 64.17\\
-% (180,190] & 185 & 7 & 0.23 & 1295 & 43.17\\
-% (190,200] & 195 & 2 & 0.07 & 390 & 13 \\ 
-% \hline  
-% \sum &  & 30 & 1 & 5240 & 174.67 \\
-% \hline
-% \end{array}
-% \end{center}
-% \[
-% \bar{x} = \frac{\sum x_in_i}{n} = \frac{5240}{30}= 174.67 \qquad \bar{x}=\sum{x_if_i} = 174.67.
-% \]
-% Al agrupar datos el cálculo de estadísticos desde la tabla puede diferir ligeramente del valor real obtenido directamente desde la muestra, ya que no se trabaja con los datos reales sino con los representantes de las clases.
-% \note{Cuando se trabaja con datos agrupados, el cálculo de la media aritmética a partir de la tabla de frecuencias,
-% cambia ligeramente, ya que ahora en lugar de valores se tienen intervalos. Lo se hace es tomar como representante de
-% cada clase el valor central, es decir, la marca de clase, y hacer los cálculos con ella. Por
-% ejemplo, el primer intervalo que va de 150 cm a 160 cm, su marca de clase es el centro que vale 155 cm, y entonces se
-% multiplica este valor por su frecuencia absoluta, que vale 2, dando 310 cm. Esto se repite para todos los valores, al
-% igual que antes, luego se suman los productos, obteniendo 5240 cm, y se divide por el tamaño de la muestra que era 30,
-% lo que da 174.67 cm de estatura media. 
-% 
-% También podríamos haber hecho el cálculo con las frecuencias relativas.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Media ponderada}
-% En algunos casos, los valores de la muestra no tienen la misma importancia. En este caso la media aritmética no es una
-% buena medida de representatividad ya que en ella todos los valores de la muestra tienen el mismo peso. En este caso es
-% mucho mejor utilizar otra medida de tendencia central conocida como media ponderada.
-% 
-% 
-% \begin{definicion}[Media ponderada muestral $\bar{x}_p$]
-% Dada una muestra de $n$ valores en la que cada valor $x_i$ tiene asociado un peso $p_i$, la \emph{media ponderada
-% muestral} de la variable $X$ es la suma de los productos de cada valor observado en la muestra por su peso, dividida
-% por la suma de todos los pesos
-% \[
-% \bar{x}_p = \frac{\sum x_ip_i}{\sum p_i}
-% \]
-% \end{definicion}
-% A partir de la tabla de frecuencias puede calcularse como:
-% \[
-% \bar{x}_p &= \frac{\sum x_ip_in_i}{\sum p_i}
-% \]
-% 
-% \note{En ocasiones, no todos los valores de la muestra tienen la misma importancia. En este caso la media aritmética
-% no es una buena medida de representatividad ya que en ella todos los valores tienen el mismo peso. En este caso es
-% mucho mejor utilizar otra medida de tendencia central conocida como media ponderada.
-% 
-% La media ponderada para una muestra de tamaño $n$ en la que cada valor $x_i$ tiene asociado un peso $p_i$ se define
-% como la suma de los productos de cada valor por su peso, dividida por la suma de todos los pesos. 
-% 
-% En el caso de estar trabajando desde la tabla de frecuencias, los productos de los valores por los pesos deben
-% multiplicarse también por la frecuencia absoluta de cada valor.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la media ponderada}
-% Supongase que un alumno quiere calcular la nota media de las asignaturas de un curso. 
-% \begin{center}
-% \begin{tabular}{lcc}
-% \hline
-% Asignatura & Créditos & Nota\\
-% \hline
-% Matemáticas & 6 & 5 \\
-% Lengua & 4 & 3 \\
-% Química & 8 & 6 \\
-% \hline 
-% \end{tabular}
-% \end{center}
-% La media aritmética vale
-% \[
-% \bar{x} = \frac{\sum x_i}{n} = \frac{5+3+6}{3}= 4.67 \text{ puntos},
-% \]
-% Sin embargo, esta nota no representa bien el rendimiento académico del alumno ya que en
-% ella han tenido igual peso todas las asignaturas, cuando la química debería tener más peso que la lengua al tener más
-% créditos.
-% 
-% Es más lógico calcular la media ponderada, tomando como pesos los créditos de cada asignatura:
-% \[
-% \bar{x}_p = \frac{\sum x_ip_i}{\sum p_i} = \frac{5\cdot 6+3\cdot 4+6\cdot 8}{6+4+8}= \frac{90}{18} = 5 \text{ puntos}.
-% \]
-% 
-% \note{Veamos un ejemplo. Supongamos que para evaluar el rendimiento académico de un alumno durante un curso queremos
-% calcular la nota media del curso a partir de las notas de todas las asignaturas. Las asignaturas cursadas han sido
-% matemáticas, de 6 créditos, que equivale a 60 horas de clase, donde ha sacado un 5, lengua, de 4 créditos, donde ha
-% sacado un 3 y química, de 8 créditos, y donde ha sacado un 6. 
-% 
-% Si se calcula la media aritmética, se obtiene una nota media de $4.67$ puntos, lo que supondría un suspenso. 
-% 
-% Ahora bien, esta nota no refleja bien el rendimiento del alumno ya que todas las notas no tienen el mismo peso. Por
-% ejemplo la química tiene el doble de créditos que la lengua, y por tanto, debería tener el doble de peso. 
-% En consecuencia, es mucho más acertado calcular la media ponderada tomando como pesos los créditos de las asignaturas.
-% Para calcularla multiplicamos la nota de cada asignatura por sus créditos, $5\cdot 6+3\cdot 4+6\cdot 8$, que vale 90 y
-% lo dividimos por la suma de los créditos, $6+4+8$, que vale 18, lo de da una nota media de 5.
-% 
-% Esta nota representa mucho mejor el rendimiento del alumno, y además ahora estaría aprobado.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Mediana}
-% \begin{definicion}[Mediana muestral $Me$]
-% La \emph{mediana muestral} de una variable $X$ es el valor de la variable que, una vez ordenados los valores de la
-% muestra de menor a mayor, deja el mismo número de valores por debajo y por encima de él.
-% \end{definicion}
-% 
-% La mediana cumple $N_{Me}= n/2$ y  $F_{Me}= 0.5$.
-% 
-% El cálculo de la mediana se realiza de forma distinta según se hayan agrupado los datos o no.
-% 
-% \begin{center}
-% \alert{\emph{¡Ojo! No puede calcularse para atributos nominales.}}
-% \end{center}
-% 
-% \note{Otro estadístico de tendencia central bastante utilizado es la mediana, que se define como el valor que ocupa el
-% centro de la distribución, una vez ordenados los datos de menor a mayor.
-% 
-% Como está en el centro de la distribución, la mitad de los valores quedarán por debajo de ella y la otra mitad por
-% encima, y por tanto se cumple que la mediana tiene frecuencia absoluta acumulada n/2 o, lo que es lo mismo, frecuencia
-% relativa acumulada $0.5$.
-% 
-% La mediana resuelve en parte el problema de la media con los atributos, ya que puede calcularse para atributos
-% ordinales donde las categorías pueden ordenarse, pero no se puede calcular para atributos nominales.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la mediana con datos no agrupados}
-% Con datos no agrupados pueden darse varios casos:
-% \begin{itemize}
-% \item Tamaño muestral impar: La mediana es el valor que ocupa la posición $\frac{n+1}{2}$.
-% \item Tamaño muestral par: La mediana es la media de los valores que ocupan las posiciones $\frac{n}{2}$ y $\frac{n}{2}+1$.
-% \end{itemize}
-% \begin{center}
-% \includegraphics[scale=0.4]{img/descriptive/mediana}
-% \end{center}
-% \note{Una vez ordenados los valores de la muestra de menor a mayor, el cálculo de la mediana con datos no agrupados,
-% depende de si el tamaño de la muestra es par o impar. Si es impar, entonces habrá un único valor central que ocupará la posición $\frac{n+1}{2}$ y dicho valor será la mediana.
-% Mientras que si el tamaño muestral es par, entonces habrá dos valores centrales, que ocuparan las posiciones
-% $\frac{n}{2}$ y $\frac{n}{2}+1$. Si estos valores son iguales, la mediana será ese valor, mientras que si son
-% distintos, la mediana estará entre los valores que ocupan estas posiciones y si puede se calculará su media aritmética.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la mediana}
-% \framesubtitle{Ejemplo con datos no agrupados}
-% En el ejemplo anterior del número de hijos, el tamaño muestral es 25, de manera que al ser impar se deben ordenar los
-% datos de menor a mayor y buscar el que ocupa la posición $\frac{25+1}{2} = 13$.
-% \[
-% 0,0,1,1,1,1,1,1,2,2,2,2,\fbox{2},2,2,2,2,2,2,2,2,2,3,3,4
-% \]
-% y la mediana es 2 hijos.
-% 
-% Si se trabaja con la tabla de frecuencias, se debe buscar el primer valor cuya frecuencia absoluta acumulada iguala o
-% supera a 13, que es la posición que le corresponde a la mediana, o bien el primer valor cuya frecuencia relativa
-% acumulada iguala o supera a $0.5$:
-% \[
-% \setlength\arraycolsep{3mm}
-% \setlength\arrayrulewidth{0.5pt}
-% \begin{array}{rrrrr}
-% \hline
-% x_i & n_i & f_i & N_i & F_i\\
-% \hline
-% 0 & 2 & 0.08 & 2 & 0.08\\
-% 1 & 6 & 0.24 & 8 & 0.32\\
-% \rowcolor{coral} \fbox{2} & 14 & 0.56 & 22 & 0.88\\
-% 3 & 2  & 0.08 & 24 & 0.96\\
-% 4 & 1 & 0.04 & 25 & 1 \\ 
-% \hline 
-% \sum & 25 & 1 \\
-% \hline
-% \end{array}
-% \]
-% 
-% \note{Volviendo al ejemplo del número de hijos en una muestra de 25 matrimonios, para calcular la mediana, primero se
-% ordenan los datos de menor a mayor, y después se busca el valor centra, que en este caso, al ser un tamaño impar, es
-% único y ocupa la posición $\frac{25+1}{2}$ que vale 13. Contamos 1,2, hasta la 13 y observalos que el valor que aparece
-% es un 2. Luego la mediana es 2 hijos.
-% 
-% Para calcular la mediana a partir de la tabla de frecuencias, hay que buscar de nuevo el individuo que ocupa la
-% posición 13, y para ello se busca en la tabla el valor que tiene una frecuencia absoluta acumulada igual o mayor que 13.
-% En la tabla se puede observar que la primera frecuencia absoluta acumulada que iguala o supera al 13 es 22 y
-% corresponde al valor 2 que es la mediana.
-% }
-% \end{frame}
-% 
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Arithmetic mean}
+\begin{definition}[Sample arithmetic mean $\bar{x}$]
+The \emph{sample arithmetic mean} of a variable $X$ is the sum of observed values in the sample divided by the sample
+size
+\[
+\bar{x} = \frac{\sum x_i}{n}
+\]
+\end{definition}
+From the frequency table can be calculated with the formula
+\[
+\bar{x} = \frac{\sum x_in_i}{n} = \sum x_i f_i
+\]
+
+In most cases the arithmetic mean is the value that best represent the observed values in the sample. 
+\begin{center}
+\alert{\emph{Watch out! It can not be calculated with qualitative variables.}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Arithmetic mean calculation}
+\framesubtitle{Example with non-grouped data}
+Using the data of the sample with the number of children of families, the arithmetic mean is 
+\begin{align*}
+\bar{x} &= \frac{1+2+4+2+2+2+3+2+1+1+0+2+2}{25}+\\
+&+\frac{0+2+2+1+2+2+3+1+2+2+1+2}{25} = \frac{44}{25} = 1.76 \mbox{ hijos}.
+\end{align*}
+or using the frequency table
+\[
+\setlength\arraycolsep{3mm}
+\setlength\arrayrulewidth{0.5pt}
+\begin{array}{rrrrr}
+\hline
+\multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{f_i} & \multicolumn{1}{c}{x_in_i} & \multicolumn{1}{c}{x_if_i}\\
+\hline
+0 & 2 & 0.08 & 0 & 0\\
+1 & 6 & 0.24 & 6 & 0.24\\
+2 & 14 & 0.56 & 28 & 1.12\\
+3 & 2  & 0.08 & 6 & 0.24\\
+4 & 1 & 0.04 & 4 & 0.16 \\
+\hline
+\sum & 25 & 1 & 44 & 1.76 \\
+\hline
+\end{array}
+\]
+\[
+\bar{x} = \frac{\sum x_in_i}{n} = \frac{44}{25}= 1.76 \qquad \bar{x}=\sum{x_if_i} = 1.76.
+\]
+That means that the value that best represent the number of children in the families of the sample is $1.76$ children.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Arithmetic mean calculation}
+\framesubtitle{Example with grouped data}
+Using the data of the sample of student heights, the arithmetic mean is 
+\[
+\bar{x} = \frac{179+173+\cdots+187}{30} = 175.07 \mbox{ cm}.
+\]
+or using the frequency table with the class marks 
+\[
+\setlength\arraycolsep{3mm}
+\setlength\arrayrulewidth{0.5pt}
+\begin{array}{rrrrrr}
+\hline
+\multicolumn{1}{c}{X} & \multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{f_i} & \multicolumn{1}{c}{x_in_i} & \multicolumn{1}{c}{x_if_i}\\
+\hline
+(150,160] & 155 & 2 & 0.07 & 310 & 10.33\\
+(160,170] & 165 & 8 & 0.27 & 1320 & 44.00\\
+(170,180] & 175 & 11 & 0.36 & 1925 & 64.17\\
+(180,190] & 185 & 7 & 0.23 & 1295 & 43.17\\
+(190,200] & 195 & 2 & 0.07 & 390 & 13 \\
+\hline
+\sum &  & 30 & 1 & 5240 & 174.67 \\
+\hline
+\end{array}
+\]
+\[
+\bar{x} = \frac{\sum x_in_i}{n} = \frac{5240}{30}= 174.67 \qquad \bar{x}=\sum{x_if_i} = 174.67.
+\]
+
+Observe that when the mean is calculated from the table the result differs a little from the real value, cause the
+values used in the calculations are the class marks instead of the actual values.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Weighted mean}
+In some cases the values of the sample have different importance. 
+In that case the importance or \emph{weight} of each value of the sample must be taken into account when calculating
+the mean. 
+
+\begin{definition}[Sample weighted mean $\bar{x}_p$]
+Given a sample of values $x_1,\ldots,x_n$ where every value $x_i$ has a weight $p_i$, the \emph{weighted
+mean} of variable $X$ is the sum of the product of each value by its weight, divided by sum of weights
+\[
+\bar{x}_p = \frac{\sum x_ip_i}{\sum p_i}
+\]
+\end{definition}
+
+From the frequency table can be calculated with the formula
+\[
+\bar{x}_p = \frac{\sum x_ip_in_i}{\sum p_i}
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Weighted mean calculation}
+Assume that a student wants to calculate a representative measure o its performance in a course. 
+The grade and the credits of every subjects are 
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Subject & Credits & Grade\\
+\hline
+Maths & 6 & 5 \\
+Economics & 4 & 3 \\
+Chemistry & 8 & 6 \\
+\hline
+\end{tabular}
+\end{center}
+The arithmetic mean is 
+\[
+\bar{x} = \frac{\sum x_i}{n} = \frac{5+3+6}{3}= 4.67 \text{ points},
+\]
+However, this measure does not represent well the performance of the student, as not all the subjects have the same
+importance and require the same effort to pass. 
+Subjects with more credits require more work and must have more weight in the calculation of the mean. 
+
+In this case is better to use the weighted mean, using the credits as the
+weights of grades, as a representative measure of the student effort
+\[
+\bar{x}_p = \frac{\sum x_ip_i}{\sum p_i} = \frac{5\cdot 6+3\cdot 4+6\cdot 8}{6+4+8}= \frac{90}{18} = 5 \text{ points}.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Median}
+\begin{definition}[Sample median $Me$]
+The \emph{sample median} of a variable $X$ is the value that is in the middle of the ordered sample. 
+\end{definition}
+
+The median divides the sample distribution in into two equal parts, that is, there are the same number of values above
+and below the median.
+It has cumulative frequencies $N_{Me}= n/2$ y  $F_{Me}= 0.5$.
+
+\begin{center}
+\alert{\emph{Watch out! It can not be calculated for nominal variables.}}
+\end{center}
+
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Median calculation}
+\framesubtitle{Non-grouped data}
+With non-grouped data, there are two possibilities:
+\begin{itemize}
+\item Odd sample size: The median is the value in the position $\frac{n+1}{2}$.
+\item Even sample size: The median is the average of values in positions $\frac{n}{2}$ and $\frac{n}{2}+1$.
+\end{itemize}
+\begin{center}
+\scalebox{0.4}{\input{img/descriptive/median}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Median calculation}
+\framesubtitle{Example with non-grouped data}
+Using the data of the sample with the number of children of families, the sample size is 25, that is odd, and the median
+is the value in the position $\frac{25+1}{2} = 13$ of the sorted sample. 
+\[
+0,0,1,1,1,1,1,1,2,2,2,2,\fbox{2},2,2,2,2,2,2,2,2,2,3,3,4
+\]
+and the median is 2 children.
+
+With the frequency table, the median is the lowest value with a cumulative absolute frequency greater than or equal to
+$13$, or with a cumulative relative frequency greater than or equal to $0.5$.
+\[
+\setlength\arraycolsep{3mm}
+\setlength\arrayrulewidth{0.5pt}
+\begin{array}{rrrrr}
+\hline
+x_i & n_i & f_i & N_i & F_i\\
+\hline
+0 & 2 & 0.08 & 2 & 0.08\\
+1 & 6 & 0.24 & 8 & 0.32\\
+\rowcolor{coral} \color{color1}2 & 14 & 0.56 & 22 & 0.88\\
+3 & 2  & 0.08 & 24 & 0.96\\
+4 & 1 & 0.04 & 25 & 1 \\
+\hline
+\sum & 25 & 1 \\
+\hline
+\end{array}
+\]
+\end{frame}
+
 % 
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
@@ -861,534 +781,334 @@ The most important are:
 % interpolación.}
 % \end{frame}
 % 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Moda}
-% \begin{definicion}[Moda muestral $Mo$]
-% La \emph{moda muestral} de una variable $X$ es el valor de la variable más frecuente en la muestra.
-% \end{definicion}
-% Con datos agrupados se toma como clase modal la clase con mayor frecuencia en la muestra.
-% 
-% En ocasiones puede haber más de una moda.
-% \begin{center}
-% \includegraphics[scale=0.5]{img/descriptive/moda}
-% \end{center}
-% \note{El último estadístico de tendencia central que veremos se llama moda, y viene a suplir las carencias de la media
-% y mediana, que no podían calcularse para atributos nominales.
-% 
-% La moda se define como el valor más frecuente en la muestra, y puede ocurrir que en algunas distribuciones haya más de
-% una moda.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la moda}
-% En el ejemplo del número de hijos puede verse fácilmente en la tabla de frecuencias que la moda es $Mo = 2$ hijos. 
-% \begin{center}
-% \setlength\arraycolsep{3mm}
-% \setlength\arrayrulewidth{0.5pt}
-% \begin{array}{rr}
-% \hline
-% \multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} \\
-% \hline
-% 0 & 2 \\
-% 1 & 6 \\
-% \rowcolor{coral} \fbox{2} & 14 \\
-% 3 & 2  \\
-% 4 & 1 \\ 
-% \hline 
-% \end{array}
-% \end{center}
-% Y en el ejemplo de las estaturas también puede verse en la tabla de frecuencias que la clase modal es $Mo=(170,180]$.
-% \begin{center}
-% \setlength\arraycolsep{3mm}
-% \setlength\arrayrulewidth{0.5pt}
-% \begin{array}{rr}
-% \hline
-% \multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} \\
-% \hline
-% (150,160] & 2 \\
-% (160,170] & 8 \\
-% \rowcolor{coral} \fbox{(170,180]} & 11 \\
-% (180,190] & 7 \\
-% (190,200] & 2 \\ 
-% \hline 
-% \end{array}
-% \end{center}
-% \note{La moda es el estadístico más sencillo de calcular pues sólo hay que fijarse en la columna de frecuencias
-% absolutas de la tabla de frecuencias, buscar la mayor y ver a qué valor le corresponde.
-% 
-% En el ejemplo del número de hijos, la mayor frecuencia es 14, que le corresponde al 2, de manera que la moda es 2 hijos.
-% 
-% En el ejemplo de las estaturas, la mayor frecuencia es 11, que le corresponde al intervalo $(170,180]$ que es el
-% intervalo modal.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{¿Qué estadístico de tendencia central usar?}
-% En general, siempre que puedan calcularse conviene tomarlas en el siguiente orden:
-% \begin{enumerate}
-% \item Media. La media utiliza más información que el resto ya que para calcularla se tiene en cuenta la magnitud de los datos.
-% \item Mediana. La mediana utiliza menos información que la media, pero más que la moda, ya que para calcularla se tiene
-% en cuenta el orden de los datos.
-% \item Moda. La moda es la que menos información utiliza ya que para calcularla sólo se tienen en cuenta las frecuencias absolutas.
-% \end{enumerate}
-% Pero, ¡ojo! la media también es muy sensible a los datos atípicos, así que, tampoco debemos perder de vista la mediana.
-% 
-% Por ejemplo, consideremos la siguiente muestra del número de hijos de 7 matrimonios:
-% \begin{center}
-% 0, 0, 1, 1, 2, 2, 15
-% 
-% $\bar{x}=3$ hijos \quad y \quad $Me=1$ hijos
-% 
-% \emph{¿Qué representante de la muestra tomarías?}
-% \end{center}
-% 
-% \note{Hemos visto tres estadístico de tendencia central, de manera que surge la pregunta de cuál usar en el caso de que
-% puedan calcularse los tres. 
-% 
-% En principio, siempre que pueda calcularse se tomará la media, pues es la medida que más información utiliza de la
-% muestra al tener en cuenta la magnitud de los datos. Si no puede calcularse la media, se utilizará la mediana, que
-% aunque no tiene en cuenta la magnitud de los valores, al menos si tiene en cuenta el orden entre ellos. Y finalmente,
-% si no se pueden calcular ninguna de las dos, se tomará la moda que únicamente tiene en cuenta las frecuencias de los
-% valores.
-% 
-% Una excepción a esta regla es cuando en la muestra haya datos atípicos, ya que la media es muy sensible a datos
-% atípicos, mientras que la mediana no lo es apenas. Si nos fijamos en esta pequeña muestra con el número de hijos de 7
-% matrimonios, con un matrimonio que es claramente atípico por tener 15 hijos, podemos ver que la media vale 3 hijos,
-% mientras que sin el dato atípico valdría 1 hijo. Es decir, la media se ve muy alterada por el dato atípico. Si embargo
-% la mediana vale 1 hijo tanto con el dato atípico como sin el. En estas circunstancias es mejor utilizar la mediana como
-% medida de representatividad.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cuantiles}
-% Son valores de la variable que dividen la distribución, supuesta ordenada de menor a mayor, en partes que contienen el mismo número de datos.
-% 
-% Los más utilizados son:
-% \begin{description}
-% \item[Cuartiles:] Dividen la distribución en 4 partes iguales.\\
-% Hay tres cuartiles: $C_1$ (25\% acumulado) , $C_2$ (50\% acumulado), $C_3$ (75\% acumulado). 
-% \item[Deciles:] Dividen la distribución en 10 partes iguales.\\
-% Hay 9 deciles: $D_1$ (10\% acumulado) ,\ldots, $D_9$ (90\% acumulado).
-% \item[Percentiles:] Dividen la distribución en 100 partes iguales.\\
-% Hay 99 percentiles: $P_1$ (1\% acumulado),\ldots, $P_{99}$ (99\% acumulado).
-% \end{description}
-% 
-% \note{Una vez vistas las medidas de tendencia central, pasamos al resto de medidas de posición que son los cuantiles y
-% que dividen la muestra en partes iguales. Existen distintos tipos:
-% \begin{description}
-% \item[Cuartiles:] Dividen la distribución en 4 partes iguales.\\
-% Hay tres cuartiles: $C_1$ (25\% acumulado) , $C_2$ (50\% acumulado), $C_3$ (75\% acumulado). \\
-% Obsérvese que la mediana coincide con el segundo cuartil.
-% \item[Deciles:] Dividen la distribución en 10 partes iguales.\\
-% Hay 9 deciles: $D_1$ (10\% acumulado) ,\ldots, $D_9$ (90\% acumulado).
-% \item[Percentiles:] Dividen la distribución en 100 partes iguales.\\
-% Hay 99 percentiles: $P_1$ (1\% acumulado),\ldots, $P_{99}$ (99\% acumulado).
-% \end{description}
-% 
-% Obsérvese la correspondencia que hay entre algunos cuantiles, como por ejemplo el primer cuartil que se corresponde con
-% el pertencil 25 o el tercer cuartil que se corresponde con el percentil 75. 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de los cuantiles}
-% Los cuantiles se calculan de forma similar a la mediana. Por ejemplo, en el caso de los cuartiles se buscan los valores que tienen frecuencias absolutas acumuladas $n/4$ (primer cuartil), $n/2$ (segundo cuartil) y $3n/4$ (tercer cuartil) y si se trata de datos agrupados se interpola sobre el polígono de frecuencias acumuladas.
-% \begin{center}
-% \begin{center}
-% \scalebox{0.7}{
-% \begin{pspicture}(0,-3.65375)(13,4)
-% \rput(1.9442188,-2.38625){\psaxes[linewidth=0.04,labels=none,ticksize=0.0958cm,dx=10.0cm,dy=6.0cm,Dx=10,Dy=5](0,0)(0,0)(10.01,6.01)}
-% \rput[c](7,-3.47625){$X$}
-% \rput{-270.0}(1.4,0.5359375){\rput(0.1621875,0.72375){Frecuencia Absoluta Acumulada $N_i$}}
-% \psline[linewidth=0.04,linecolor=blue](1.9642187,-2.38625)(3.9642189,-1.98625)(5.9642186,-0.38625)(7.9642186,1.81375)(9.964219,3.21375)(11.964219,3.61375)
-% \psline[linewidth=0.04,linecolor=orange,linestyle=dashed,dash=0.16cm 0.16cm](1.9642187,0.61375)(6.9,0.61375)(6.9,-2.38625)
-% \psline[linewidth=0.04,linecolor=orange,linestyle=dashed,dash=0.16cm 0.16cm](1.9642187,2.11375)(8.3,2.11375)(8.3,-2.38625)
-% \psline[linewidth=0.04,linecolor=orange,linestyle=dashed,dash=0.16cm 0.16cm](1.9642187,-0.88625)(5.3,-0.88625)(5.3,-2.38625)
-% \rput[r](1.6,2.12){$\dfrac{3n}{4}$}
-% \rput[r](1.6,0.62){$\dfrac{n}{2}$}
-% \rput[r](1.6,-0.88){$\dfrac{n}{4}$}
-% \rput[r](1.6,3.6){$n$}
-% \rput[c](5.3,-2.8){$C_1$}
-% \rput[c](6.9,-2.8){$C_2$}
-% \rput[c](8.3,-2.8){$C_3$}
-% \end{pspicture}}
-% \end{center}
-% \end{center}
-% \note{Los cuantiles se calculan, al igual que la mediana, interpolando sobre el polígono de frecuencias absolutas
-% acumuladas. Por ejemplo, para los cuartiles, proyectando la frecuencia absloluta acumulada del primer cuartil, que es
-% $n/4$, se obtiene el primer cuartil, proyectando $n/2$ se obtiene el segundo cuartil, y proyectando $3n/4$ se obtiene
-% el primer cuartil, y lo mismo para los otros cuantiles.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de los cuantiles}
-% \framesubtitle{Ejemplo con datos no agrupados}
-% En el ejemplo anterior del número de hijos se tenían la siguientes frecuencias relativas acumuladas
-% \begin{center}
-% \setlength\arraycolsep{3mm}
-% \setlength\arrayrulewidth{0.5pt}
-% \begin{array}{rr}
-% \hline
-% \multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{F_i} \\
-% \hline
-% 0 & 0.08\\
-% 1 & 0.32\\
-% 2 & 0.88\\
-% 3 & 0.96\\
-% 4 & 1\\ 
-% \hline
-% \end{array}
-% \end{center}
-% \begin{align*}
-% F_{C_1}=0.25 &\Rightarrow C_1 = 1 \text{ hijos},\\
-% F_{C_2}=0.5 &\Rightarrow C_2 = 2 \text{ hijos},\\
-% F_{C_3}=0.75 &\Rightarrow C_3 = 2 \text{ hijos},\\
-% F_{D_3}=0.3 &\Rightarrow D_3 = 1 \text{ hijos},\\
-% F_{P_{92}}=0.92 &\Rightarrow P_{92} = 3 \text{ hijos}.\\
-% \end{align*}
-% \note{Los cuantiles se calculan de forma similara a la mediana a partir de las frecuencias acumuladas correspondientes a cada uno de ellos.
-% 
-% En el ejemplo del número de hijos donde se tenían las frecuencias relativas acumuladas que aparecen en esta tabla, para calcular el primer
-% cuartil se parte de su frecuencia relativa acumulada que es $0.25$ ya que hasta el primer cuartil se tienen acumulados el 25\% de los
-% individuos y se busca en la tabla el primer valor cuya frecuencia relativa acumulada es igual o superior a $0.25$, que en este caso es 1
-% hijo, ya que su frecuencia relativa acumulada es $0.32$ que supera a $0.25$ mientras que la frecuencia relativa acumulada del 0 no llega a
-% $0.25$. Del mismo modo, el cuartil segundo, cuya frecuencia relativa acumulada es $0.5$, es 2 hijos y el tercer cuartil, con frecuencia
-% relativa acumulada $0.75$ también es 2 hijos.
-% 
-% Para el decil tercero, su frecuencia relativa acumulada es $0.3$, y procediendo como para los cuartiles, se observa que el primer valor con
-% frecuencia relativa acumulada igual o superior a $0.3$ es 1 hijo.
-% 
-% Finalmente, para el percentil 92, su frecuencia relativa acumulada es $0.92$ y el primer valor con frecuencia relativa acumulada igual o
-% superior a este valor es 3 hijos.}
-% \end{frame}
-% 
-% 
-% \subsection{Estadísticos de dispersión}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Estadísticos de dispersión}
-% Recogen información respecto a la heterogeneidad de la variable y a la concentración de sus valores en torno a algún valor central.
-% 
-% 
-% Para las variables cuantitativas, las más empleadas son:
-% \begin{itemize}
-% \item Recorrido.
-% \item Rango Intercuartílico.
-% \item Varianza.
-% \item Desviación Típica.
-% \item Coeficiente de Variación.
-% \end{itemize}
-% \note{Uno de los aspectos más importantes de una muestra es la variabilidad de los datos, que también se conoce como
-% dispersión de la muestra. Veremos hasta 5 estadísticos para describir la dispersión:
-% \begin{itemize}
-% \item Recorrido.
-% \item Rango Intercuartílico.
-% \item Varianza.
-% \item Desviación Típica.
-% \item Coeficiente de Variación.
-% \end{itemize}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Recorrido}
-% \begin{definicion}[Recorrido muestral $Re$]
-% El \emph{recorrido muestral} de una variable $X$ se define como la diferencia entre el máximo y el mínimo de los valores en la muestra.
-% \[Re = \max_{x_i} -\min_{x_i}\]
-% \end{definicion}
-% El recorrido da una idea de la máxima variación que hay entre los datos muestrales. No obstante, es muy sensible a datos atípicos ya que suelen aparecer justo en los extremos de la distribución, por lo que no se suele utilizar mucho.
-% 
-% \begin{center}
-% \scalebox{1} % Change this value to rescale the drawing.
-% {
-% \begin{pspicture}(-1,-1)(9,1)
-% \psline[linewidth=0.04cm]{|-|}(0,0)(8,0)
-% \rput[t](0,-0.2){$\min$}
-% \rput[t](8,-0.2){$\max$}
-% \psline[linecolor=orange]{<->}(0,0.5)(8,0.5)
-% \rput[b](4,0.7){$Re$}
-% \end{pspicture}}
-% \end{center}
-% \note{El recorrido es el estadístico de dispersión más natural ya que consiste en medir la distancia que va del mayor
-% al menor de los valores y se calcula restándolos. 
-% 
-% Cuanto mayor sea el recorrido, mayor dispersión habrá en la muestra.
-% 
-% El principal problema que presenta el recorrido es que es muy sensible a los datos atípicos, ya que estos precisamente
-% aparecen en los extremos de la distribución. }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Rango intercuartílico}
-% Para evitar el problema de los datos atípicos en el recorrido, se puede utilizar el primer y tercer cuartil en lugar del mínimo y el máximo.
-% \begin{definicion}[Rango intercuartílico muestral $RI$]
-% El \emph{rango intercuartílico muestral} de una variable $X$ se define como la diferencia entre el tercer y el primer
-% cuartil de la muestra. \[RI = C_3 -C_1\]
-% \end{definicion}
-% El rango intercuartílico da una idea de la variación que hay en el 50\% de los datos centrales. 
-% 
-% \begin{center}
-% \scalebox{1} % Change this value to rescale the drawing.
-% {
-% \begin{pspicture}(-1,-1)(9,1)
-% \psline[linewidth=0.04cm]{|-|}(0,0)(8,0)
-% \rput[t](0,-0.2){$\min$}
-% \rput[t](8,-0.2){$\max$}
-% \psline[linewidth=0.04cm]{|-|}(2,0)(4,0)
-% \psline[linewidth=0.04cm]{|-|}(0,0)(6,0)
-% \rput[t](2,-0.2){$C_1$}
-% \rput[t](4,-0.2){$C_2$}
-% \rput[t](6,-0.2){$C_3$}
-% \rput[b]](1,0.1){$25\%$}
-% \rput[b]](3,0.1){$25\%$}
-% \rput[b]](5,0.1){$25\%$}
-% \rput[b]](7,0.1){$25\%$}
-% \psline[linecolor=orange]{<->}(2,0.5)(6,0.5)
-% \rput[b](4,0.7){$RI$}
-% \end{pspicture}}
-% \end{center}
-% \note{Para evitar el problema que tiene el Recorrido con los datos atípicos, se suele utilizar el Rango
-% Intercuartílico, que utiliza la misma idea del Recorrido pero midiendo la distancia que va del tercer al primer
-% cuartil. 
-% 
-% Si recordamos, los cuartiles dividen la distribución en 4 partes iguales, de manera que entre el primer y el tercer
-% cuartil estan el 50\% de los datos centrales de la distribución, y quedarían exlucidos el 25\% de valores menores y el
-% 25\% de valores mayores, donde posiblemente estarían los datos atípicos. 
-% 
-% Por tanto el Rango Intercuartílico mide la dispersión central de la muestra, de manera que cuanto mayor sea, más
-% dispersión central tendrá la muestra, aunque siempre hay que tener en cuenta las unidades de la variable al
-% interpretarlo. }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Diagrama de caja y bigotes}
-% La dispersión de una variable suele representarse gráficamente mediante un \structure{\textbf{diagrama de caja y bigotes}}, que consiste en una caja sobre un eje $X$ donde el borde inferior de la caja es el primer cuartil, y el borde superior el tercer cuartil, y por tanto, la anchura de la caja es el rango intercuartílico.
-% En ocasiones también se representa el segundo cuartil con una línea que divide la caja. 
-% 
-% También se utiliza para detectar los valores atípicos mediante unos segmentos (bigotes) que salen de los extremos de la caja y que marcan el intervalo de normalidad de los datos.
-% \note{La dispersión de la muestra se representa a menudo mediante un diagrama de caja y bigotes, que como su propio
-% nombre indica, consiste en una caja sobre un eje $X$ donde el borde inferior de la caja es el primer cuartil, y el
-% borde superior el tercer cuartil, y por tanto, la anchura de la caja, por tanto, es el rango intercuartílico. 
-% En ocasiones también se representa el segundo cuartil con una línea que divide la caja.
-% 
-% También se utiliza para detectar los valores atípicos de la muestra mediante unos segmentos llamados bigotes que
-% salen de los extremos de la caja y que marcan el intervalo de normalidad de los datos.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Diagrama de caja y bigotes}
-% \framesubtitle{Ejemplo con pesos de recién nacidos}
-% \begin{center}
-% \scalebox{0.75}{\input{img/descriptive/diagrama_caja}}
-% \end{center}
-% \note{Aquí podemos ver un ejemplo de un diagrama de caja y bigotes para una muestra de pesos de recién nacidos. 
-% El borde inferior de la caja corresponde al primer cuartil, que es aproximadamente $2.8$ Kg, el borde superior
-% corresponde al tercer cuartil, que vale aproximadamente $3.4$ Kg, de manera que el ancho de la caja es el rango
-% intercuartílico, y vale aproximadamente $0.6$ Kg, lo que indica una dispersión central baja, teniendo en cuenta que
-% los pesos de los recién nacidos se suelen mover en unas unidades que van de 1 a 4 Kg, más o menos.
-% 
-% De la caja salen dos sementos, que son los bigotes, el inferior llega aproximadamente hasta $2.3$ Kg y el superior
-% hasta $4$ Kg, delimitando el intervalo de normalidad de los datos, de manera que cualquier niño que pese menos de $2.3$
-% Kg o más de $4$ Kg será un individuo atípico. De hecho en esta muestra aparecen dos pesos atípicos que aparecen
-% marcados por puntos, uno que corresponde a un niño con 2 Kg de peso, y otro que corresponde a otro niño con 4.5 Kg de
-% peso.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Construcción del diagrama de caja y bigotes}
-% \begin{enumerate}
-% \item Calcular los cuartiles.
-% \item Dibujar una caja de manera que el extremo inferior caiga sobre el primer cuartil y el extremo superior sobre el tercer cuartil.
-% \item Dividir la caja con una línea que caiga sobre el segundo cuartil. 
-% \item Para los bigotes inicialmente se determina la posición de los puntos denominados \emph{vallas} $v_1$ y $v_2$ restando y sumando respectivamente a primer y tercer cuartil $1.5$ veces el rango intercuartílico $RI$:
-% \begin{align*}
-% v_1&=C_1-1.5RI\\
-% v_2&=C_3+1.5RI
-% \end{align*}
-% A partir de las vallas se buscan los valores $b_1$, que es el mínimo valor de la muestra mayor o igual que  $v_1$,
-% y $b_2$, que es máximo valor de la muestra menor o igual que $v_2$. Para el bigote inferior se dibuja un segmento
-% desde el borde inferior de la caja hasta $b_1$ y para el superior se dibuja un segmento desde el borde superior de la caja hasta $b_2$.
-% \item Finalmente, si en la muestra hay algún dato por debajo de $v_1$ o por encima de $v_2$ se dibuja un punto sobre dicho valor. 
-% \end{enumerate}
-% \note{Para construcir el diagrama de cajas, hay que seguir los siguientes pasos:
-% \begin{enumerate}
-% \item Calcular los cuartiles.
-% \item Dibujar una caja de manera que el extremo inferior caiga sobre el primer cuartil y el extremo superior sobre el tercer cuartil.
-% \item Dividir la caja con una línea que caiga sobre el segundo cuartil. 
-% \item Para los bigotes inicialmente se determina la posición de los puntos denominados \emph{vallas} $v_1$ y $v_2$ restando y sumando respectivamente a primer y tercer cuartil $1.5$ veces el rango intercuartílico $RI$:
-% \begin{align*}
-% v_1&=C_1-1.5RI\\
-% v_2&=C_3+1.5RI
-% \end{align*}
-% A partir de las vallas se buscan los valores $b_1$, que es mínimo valor de la muestra mayor o igual que $v_1$,
-% y $b_2$ es máximo valor de la muestra menor o igual que $v_2$. Para el bigote inferior se dibuja un segmento
-% desde el borde inferior de la caja hasta $b_1$ y para el superior se dibuja un segmento desde el borde superior de la caja hasta $b_2$.
-% \item Finalmente, si en la muestra hay algún dato por debajo de $v_1$ o por encima de $v_2$ se dibuja un punto sobre dicho valor. 
-% \end{enumerate}}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Construcción del diagrama de caja y bigotes}
-% \framesubtitle{Ejemplo del número de hijos}
-% \begin{enumerate}
-% \uncover<2->{\item Calcular los cuartiles: $C_1=1$ hijos} \uncover<3->{y $C_3=2$ hijos.}
-% \uncover<4->{\item Dibujar la caja.}
-% \uncover<5->{\item Calcular las vallas: $v_1=1-1.5*1=-0.5$ y $v_2=2+1.5*1=3.5$.}
-% \uncover<6->{\item Dibujar los bigotes: $b_1=0$ hijos} \uncover<7->{y $b_1=3$ hijos.} 
-% \uncover<8->{\item Dibujar los datos atípicos: 4 hijos.} 
-% \end{enumerate}
-% \begin{center}
-% \scalebox{0.65}{\input{img/descriptive/diagrama_caja_hijos}}
-% \end{center}
-% \note{Veamos cómo construir el diagrama de caja y bigotes para el ejemplo del número de hijos:
-% \begin{enumerate}
-% \item Primero se calcula el primer cuartil que era 1 hijo y se dibuja el borde inferior de la caja. Después se calcula el tercer cuartil
-% que era 3 hijos y se dibuja el borde superior de la caja.
-% \item Una vez dibujados el borde inferior y superior de la caja se acaba de dibujar esta. 
-% \item También se suele dibujar el cuartil segundo mediante una linea que divide la caja, pero en este ejemplo, al coincidir el cuartil
-% segundo con el tercero, no se dibuja. 
-% \item A continuación se calcula el rango intercuartílico que era 2-1=1 hijo y con el se calcula la valla inferior $v_1$ restandole al primer
-% cuartil $1.5$ veces el rango intercuartílico, lo que nos da $-0.5$ hijos, y la valla superior $v_2$ sumandole al tercer cuartil $1.5$ veces
-% el rango intercuartílico, lo que nos da $3.5$ hijos.
-% \item Luego se calculan los extremos de los bigotes. El extremo del bigote inferior es $0$ hijos, ya que es el mínimo valor de la muestra
-% por encima de la valla inferior que valía $-0.5$, y el bigote superiror es $3$ hijos, ya que es el máximo valor de la muestra por debajo de
-% la valla superior que valía $3.5$ hijos. 
-% \item Finalmente se dibujan los datos atípicos. Por debajo de la valla inferior no hay ningún valor en la muestra, pero por encima de la
-% valla superior si hay una familia con 4 hijos, que se trata, por tanto, de una familia atípica y si se dibuja un punto en diagrama sobre
-% dicho valor. 
-% \end{enumerate}}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Desviaciones respecto de la media}
-% Otra forma de medir la variabilidad de una variable es estudiar la concentración de los valores en torno a algún estadístico de tendencia central como por ejemplo la media. 
-% 
-% Para ello se suele medir la distancia de cada valor a la media. A ese valor se le llama
-% \structure{\textbf{desviación respecto de la media.}}
-% \begin{center}
-% \scalebox{1} % Change this value to rescale the drawing.
-% {
-% \begin{pspicture}(-1,-0.5)(7,1.5)
-% \psline(0,0)(6,0)
-% \psdots(1,0)(5,0)
-% \psdot[linecolor=orange](3,0)
-% \rput[t](3,-0.2){$\bar{x}$}
-% \rput[t](1,-0.2){$x_i$}
-% \rput[t](5,-0.2){$x_j$}
-% \psline[linecolor=orange]{<->}(1,0.5)(3,0.5)
-% \rput[b](2,0.7){$x_i-\bar{x}$}
-% \rput[b](2,1.2){\scriptsize Desviación $-$}
-% \psline[linecolor=orange]{<->}(3,0.5)(5,0.5)
-% \rput[b](4,0.7){$x_j-\bar{x}$}
-% \rput[b](4,1.2){\scriptsize Desviación $+$}
-% \end{pspicture}}
-% \end{center}
-% 
-% Si las desviaciones son grandes la media no será tan representativa como cuando la desviaciones sean pequeñas.
-% \begin{center}
-% \scalebox{1} % Change this value to rescale the drawing.
-% {
-% \begin{pspicture}(-1,-0.5)(7,1.6)
-% \psline(0,1.6)(6,1.6)
-% \psdots(0.1,1.6)(0.2,1.6)(0.4,1.6)(0.5,1.6)(0.8,1.6)(5,1.6)(5.3,1.6)(5.4,1.6)(5.7,1.6)(5.8,1.6)
-% \psdot[linecolor=orange](3,1.6)
-% \rput[t](3,1.4){$\bar{x}$}
-% \rput[l](-2.5,1.6){\footnotesize Más dispersión}
-% \rput[l](6.3,1.6){\footnotesize $\bar x$ menos representativa}
-% \psline(0,0.2)(6,0.2)
-% \psdots(1.5,0.2)(2,0.2)(2.2,0.2)(2.5,0.2)(2.8,0.2)(3.3,0.2)(3.5,0.2)(3.9,0.2)(4.1,0.2)(4.4,0.2)
-% \psdot[linecolor=orange](3,0.2)
-% \rput[t](3,0){$\bar{x}$}
-% \rput[l](-2.5,0.2){\footnotesize Menos dispersión}
-% \rput[l](6.3,0.2){\footnotesize $\bar x$ más representativa}
-% \end{pspicture}}
-% 
-% \emph{¿En qué muestra es más representativa la media?}
-% \end{center}
-% 
-% \note{Otra forma de medir la variabilidad de una variable es estudiar la concentración de los valores en torno a algún estadístico de
-% tendencia central, como por ejemplo la media.  
-% 
-% Para ello se suele medir la distancia que hay de cada valor a la media, que se conoce como desviación respecto a la media. Cuando el valor
-% sea mayor que la media su desviación será positiva, y cuando sea menor que la media su desviación será negativa. 
-% 
-% Resulta evidente que si las desviaciones son grandes, entonces los datos estarán bastante alejados de la media y por tanto la media no será
-% tan representativa de la muestra como cuando los valores estén concentrados en torno a la media y sus desviaciones sean pequeñas.
-% 
-% Aquí tenemos dos casos en los que la dispersión con respecto a la media es mayor en el primer caso es mayor que en el segundo, de manera que
-% la media será más representativa en el último caso que en el primero.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Varianza y desviación típica}
-% \begin{definicion}[Varianza $s^2$]
-% La \emph{varianza muestral} de una variable $X$ se define como el promedio del cuadrado de las desviaciones de los
-% valores de la muestra respecto de la media muestral.
-% \[
-% s^2 = \frac{\sum (x_i-\bar x)^2n_i}{n} = \sum (x_i-\bar x)^2f_i
-% \]
-% \end{definicion}
-% También puede calcularse de manera más sencilla mediante la fórmula
-% \[
-% s^2 = \frac{\sum x_i^2n_i}{n} -\bar x^2= \sum x_i^2f_i-\bar x^2
-% \]
-% La varianza tiene las unidades de la variable al cuadrado, por lo que para facilitar su interpretación se suele utilizar su raíz cuadrada:
-% \begin{definicion}[Desviación típica $s$]
-% La \emph{desviación típica muestral} de una variable $X$ se define como la raíz cuadrada positiva de su varianza muestral.
-% \[
-% s = +\sqrt{s^2}
-% \]
-% \end{definicion}
-% 
-% \note{A partir de las desviaciones con respecto a la media surge un estadístico conocido como varianza, que se representa como $s^2$ y que
-% se calcula sumando las desviaciones de los valores a la media elevadas al cuadrado y dividiendo la suma por el tamaño de la muestra. El
-% hecho de considerar los cuadrados es para sumar siempre magnitudes positivas, ya que de lo contrario las desviaciones positivas se
-% compensarían con las negativas. Además, siempre que se trabaje desde la tabla, hay que multiplicar cada desviación al cuadrado por su
-% correspondiente frecuencia absoluta.
-% 
-% Si se desarrolla el cuadrado de cada desviación y se simplifica, se llega a otra expresión equivalente para calcular la varianza que
-% consiste en sumar los cuadrados de los valores multiplicados por su frecuencia absoluta, dividir la suma por el tamaño de la muestra y al
-% resultado restarle la media al cuadrado. Esta fórmula es un poco más sencilla de calcular y será la que utilizaremos casi siempre.
-% 
-% Como la varianza se calcula a partir de las desviaciones, cuando estas sean grandes, la varianza será grande, lo que indicará gran
-% dispersión y cuando estas sean pequeñas la varianza también será pequeña indicando poca dispersión. El único inconveniente es que la
-% varianza tiene unidades al cuadrado, lo cual dificulta su interpretación.
-% 
-% Para evitar este problema se suele tomar la raíz cuadrada de la varianza que se conoce como desviación típica y que también sirve para
-% medir la dispersión de los datos con respecto a la media, pero ahora con la ventaja de tener las mismas unidades que la variable.}
-% \end{frame}
-% 
-% 
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Mode}
+\begin{definition}[Sample Mode $Mo$]
+The \emph{sample mode} of a variable $X$ is the most frequent value in the sample.
+\end{definition}
+
+With grouped data the \emph{modal class} is the class with the highest frequency. 
+
+It can be calculated for all types of variables (qualitative and quantitative). 
+
+Some distributions can have more than one mode
+\begin{center}
+\scalebox{0.4}{\input{img/descriptive/mode}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Mode calculation}
+Using the data of the sample with the number of children of families, the value with the highest frequency is $2$, that
+is the mode $Mo = 2$ children.
+\[
+\setlength\arraycolsep{3mm}
+\setlength\arrayrulewidth{0.5pt}
+\begin{array}{rr}
+\hline
+\multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} \\
+\hline
+0 & 2 \\
+1 & 6 \\
+\rowcolor{coral}\color{color1} 2 & 14 \\
+3 & 2  \\
+4 & 1 \\
+\hline
+\end{array}
+\]
+
+Using the data of the sample of student heights, the class with the highest frequency is $(170,180]$ that is the modal
+class $Mo=(170,180]$.
+\[
+\setlength\arraycolsep{3mm}
+\setlength\arrayrulewidth{0.5pt}
+\begin{array}{rr}
+\hline
+\multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} \\
+\hline
+(150,160] & 2 \\
+(160,170] & 8 \\
+\rowcolor{coral} \color{color1}(170,180] & 11 \\
+(180,190] & 7 \\
+(190,200] & 2 \\
+\hline
+\end{array}
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Which central tendency statistic should I use?}
+In general, when all the central tendency statistics can be calculated, is advisable to use them as representative
+values in the following order:
+\begin{enumerate}
+\item Mean. Mean takes more information from the sample than the others, as it takes into account the magnitude
+of data.
+\item Median. Median takes less information than mean but more than mode, as it takes into account the order
+of data.
+\item Mode. Mode is the measure that fewer information takes from the sample, as it only takes into account the
+absolute frequency of values.
+\end{enumerate}
+
+But, \emph{be careful with outliers}, as the mean can be distorted by them.
+In that case is better to use the median as the value most representative.
+
+For example, if a sample of number of children of 7 families is
+\begin{center}
+0, 0, 1, 1, 2, 2, 15
+
+$\bar{x}=3$ children \quad and \quad $Me=1$ children
+
+\emph{Which measure represent better the number of children in the sample?}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Non-central location measures}
+The non-central location measures or \emph{quantiles} divide the sample distribution in equal parts.
+
+The most used are:
+\begin{description}
+\item[Quartiles:] Divide the distribution into 4 equal parts. 
+There are 3 quartiles: $C_1$ (25\% acumulated) , $C_2$ (50\% acumulated), $C_3$ (75\% acumulated).
+\item[Deciles:] Divide the distribution into 10 equal parts.\\
+There are 9 deciles: $D_1$ (10\% acumulated) ,\ldots, $D_9$ (90\% acumulated).
+\item[Percentiles:] Divide the distribution into en 100 equal parts.\\
+There are 99 percentiles: $P_1$ (1\% acumulated),\ldots, $P_{99}$ (99\% acumulated).
+\end{description}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Quantiles}
+\begin{center}
+\scalebox{0.8}{\input{img/descriptive/quantiles}}
+\end{center}
+\onslide<4->{
+Observe that there is a correspondence between quartiles, deciles and percentiles. 
+For example, first quartile coincide with percentile 25, and fourth decile coincides with the percentile 40.}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Quantiles calculation}
+Quantiles are calculated in a similar way to the median. 
+The only difference lies in the cumulative relative frequency that correspond to every quantile.  
+\begin{center}
+\scalebox{0.6}{\input{img/descriptive/quantiles_calculation}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Quantile calculation}
+\framesubtitle{Example with non-grouped data}
+Using the data of the sample with the number of children of families, the cumulative relative frequencies were
+\[
+\setlength\arraycolsep{3mm}
+\setlength\arrayrulewidth{0.5pt}
+\begin{array}{rr}
+\hline
+\multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{F_i} \\
+\hline
+0 & 0.08\\
+1 & 0.32\\
+2 & 0.88\\
+3 & 0.96\\
+4 & 1\\
+\hline
+\end{array}
+\]
+
+\begin{align*}
+F_{C_1}=0.25 &\Rightarrow C_1 = 1 \text{ children},\\
+F_{C_2}=0.5 &\Rightarrow C_2 = 2 \text{ children},\\
+F_{C_3}=0.75 &\Rightarrow C_3 = 2 \text{ children},\\
+F_{D_4}=0.4 &\Rightarrow D_3 = 2 \text{ children},\\
+F_{P_{92}}=0.92 &\Rightarrow P_{92} = 3 \text{ children}.\\
+\end{align*}
+\end{frame}
+
+
+\subsection{Dispersion statistics}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Dispersion statistics}
+\emph{Dispersion} or \emph{spread} refers to the variability of data. 
+So, dispersion statistics measure how the data values are scattered in general, or with respect to a central location
+measure. 
+
+For quantitative variables, the most important are:
+\begin{itemize}
+\item Range
+\item Interquartile range
+\item Variance
+\item Standard deviation
+\item Coefficient of variation
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Range and interquartile range}
+\begin{definition}[Sample range]
+The \emph{sample range} of a variable $X$ is the difference between the the maximum and the minimum value in the sample.
+\[\text{Range} = \max_{x_i} -\min_{x_i}\]
+\end{definition}
+
+The range measure the largest variation among the sample data. 
+However, it's very sensitive to outliers, as they appear at the ends of the distribution, and for that reason is
+rarely used. 
+\begin{center}
+\scalebox{0.8}{\input{img/descriptive/range}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Range and interquartile range}
+The following measure avoid the problem of outliers and is much more used.
+
+\begin{definition}[Sample interquartile range]
+The \emph{sample interquartile range} of a variable $X$ is the difference between the third and the first
+sample quartiles.
+\[\text{IQR} = Q_3 -Q_1\]
+\end{definition}
+\begin{center}
+\scalebox{0.8}{\input{img/descriptive/interquartile_range}}
+\end{center}
+
+The interquartile range measures the spread of the 50\% central data.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Box plot}
+The dispersion of a variable in a sample can be graphically represented with a \structure{\textbf{box plot}}, that
+represent five descriptive statistics (minimum, quartiles and maximum) known as the \emph{five-numbers}.
+It consist in a box, drawn from the lower to the upper quartile, that represent the interquartile range, and two
+segments, known as the lower and the upper \emph{whiskers}.  
+Usually the box is split in two with the median. 
+
+This chart is very helpful as it serves to many purposes:  
+\begin{itemize}
+\item It serves to measure the spread of data as it represent the range and the interquartile range. 
+\item It serves to detect outliers, that are the values outside the interval defined by the whiskers.
+\item It serves to measure the symmetry of distribution, comparing the length of the boxes and whiskers above and below
+the median. 
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Box plot}
+\framesubtitle{Example with newborn weights}
+\begin{center}
+\scalebox{0.6}{\input{img/descriptive/boxplot}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Box plot construction}
+To create a box plot follow the steps below
+\begin{enumerate}
+\item Calculate the quartiles. 
+\item Draw a box from the lower to the upper quartile. 
+\item Split the box with the median or second quartile. 
+\item For the whiskers calculate first two values called \emph{fences} $f_1$ y $f_2$. The lower fence is the
+lower quartile minus one and a half the interquartile range, and the upper fence is the upper quartile plus one and a
+half the interquartile range:
+\begin{align*}
+f_1&=Q_1-1.5\,\text{IQR}\\
+f_2&=Q_3+1.5\,\text{IQR}
+\end{align*}
+The fences define the interval where data are considered normal.
+Any value outside that interval is considered an outlier. \\ 
+For the lower whisker draw a segment from the lower quartile to the lower value in the sample grater than or
+equal to $f_1$, and for the upper whisker draw a segment from the upper quartile to the highest value in the sample lower than
+or equal to $f_2$.
+\item Finally, if there are some outlier, draw a dot in every outlier. 
+\end{enumerate}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Box plot construction}
+\framesubtitle{Example of number of children}
+\begin{enumerate}
+\uncover<2->{\item Calculate the quartiles: $Q_1=1$ children} \uncover<3->{and $Q_2=Q_3=2$ children}
+\uncover<4->{\item Draw the box.}
+\uncover<5->{\item Calculate the fences $f_1=1-1.5*1=-0.5$ and $f_2=2+1.5*1=3.5$.}
+\uncover<6->{\item Draw the whiskers: $w_1=0$ children} \uncover<7->{and $w_2=3$ children.}
+\uncover<8->{\item Draw the outliers: 4 children.}
+\end{enumerate}
+\begin{center}
+\scalebox{0.45}{\input{img/descriptive/boxplot_children}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Deviations from the mean}
+Another way of measuring spread of data is with respect to a central tendency measure, as for example the mean. 
+
+In that case, it's measured the distance from every value in the sample to the mean, that is called
+\structure{\textbf{deviation from the mean.}}
+
+\begin{center}
+\scalebox{1}{\input{img/descriptive/deviations}}
+\end{center}
+
+If deviations are big, the mean would be less representative as when they are small.
+%\begin{center} 
+%\emph{Which mean is more representative?}
+%\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Variance and standard deviation}
+\begin{definition}[Sample variance $s^2$]
+The \emph{sample variance} of a variable $X$ is the average of squared deviations from the mean. 
+\[
+s^2 = \frac{\sum (x_i-\bar x)^2n_i}{n} = \sum (x_i-\bar x)^2f_i
+\]
+\end{definition}
+It can also be calculated with the formula
+\[
+s^2 = \frac{\sum x_i^2n_i}{n} -\bar x^2= \sum x_i^2f_i-\bar x^2
+\]
+The variance has the units of the variable squared, and to ease their interpretation it's common to calculate its square
+root.
+
+\begin{definition}[Sample standard deviation $s$]
+The \emph{sample standard deviation} of a variable $X$ is the square root of the variance.
+\[
+s = +\sqrt{s^2}
+\]
+\end{definition}
+\end{frame}
+
+
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
 % \frametitle{Interpretación de la varianza y la desviación típica}
@@ -1406,49 +1126,40 @@ The most important are:
 % \end{frame}
 % 
 % 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la varianza y la desviación típica}
-% \framesubtitle{Ejemplo con datos no agrupados}
-% Para el número de hijos se puede calcular la varianza a partir de la tabla de frecuencias añadiendo una columna con los
-% cuadrados de los valores:
-% \begin{center}
-% \setlength\arraycolsep{3mm}
-% \setlength\arrayrulewidth{0.5pt}
-% \begin{array}{rrr}
-% \hline
-% \multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{x_i^2n_i} \\
-% \hline
-% 0 & 2 & 0 \\
-% 1 & 6 & 6 \\
-% 2 & 14 & 56\\
-% 3 & 2  & 18\\
-% 4 & 1 & 16 \\ 
-% \hline 
-% \sum & 25 & 96 \\
-% \hline
-% \end{array}
-% \end{center}
-% \[
-% s^2 = \frac{\sum x_i^2n_i}{n}-\bar x^2 = \frac{96}{25}-1.76^2= 0.7424 \mbox{ hijos}^2.
-% \]
-% Y la desviación típica es $s=\sqrt{0.7424} = 0.8616$ hijos.
-% 
-% Comparado este valor con el recorrido, que va de 0 a 4 hijos se observa que no es demasiado grande por lo que se puede concluir que no hay
-% mucha dispersión y en consecuencia la media de $1.76$ hijos representa bien a los matrimonios de la muestra.
-% 
-% \note{En el ejemplo del número de hijos, para calcular al varianza conviene añadir una nueva columna a la tabla donde se calculen los
-% productos de los cuadrados de los valores por sus frecuencias absolutas: 0 evado al cuadrado y por su frecuencia absoluta que es 2, da 0, 1
-% elevado al cuadrado y por su frecuencia absoluta que es 6, que da 6, y así sucesivamente. Después hay que sumar los valores de esta
-% columna y dividirlos por el tamaño de la muestra que era 25. Finalmente al cociente se le resta el valor de la media que era $1.76$
-% elevada al cuadrado, lo que nos da 0.7424 hijos al cuadrado.
-% 
-% Si sacamos la raíz cuadrada se obtiene una desviación típica de 0.8616 hijos, que no es un valor grande comparado con el recorrido de la
-% variable que va de 0 a 4 hijos, por lo que se puede concluir que la muestra no tiene mucha dispersión y por tanto la media de
-% $1.76$ hijos representa muy bien a los matrimonios de la muestra.}
-% \end{frame}
-% 
-% 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Variance and standard deviation calculation}
+\framesubtitle{Example with non-grouped data}
+Using the data of the sample with the number of children of families, and adding a new column to the frequency table
+with the squared values, 
+\[
+\setlength\arraycolsep{3mm}
+\setlength\arrayrulewidth{0.5pt}
+\begin{array}{rrr}
+\hline
+\multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{x_i^2n_i} \\
+\hline
+0 & 2 & 0 \\
+1 & 6 & 6 \\
+2 & 14 & 56\\
+3 & 2  & 18\\
+4 & 1 & 16 \\
+\hline
+\sum & 25 & 96 \\
+\hline
+\end{array}
+\]
+\[
+s^2 = \frac{\sum x_i^2n_i}{n}-\bar x^2 = \frac{96}{25}-1.76^2= 0.7424 \mbox{ children}^2.
+\]
+and the standard deviation is $s=\sqrt{0.7424} = 0.8616$ children.
+
+Compared to the range, that is 4 children, the standard deviation is not very large, so we can conclude
+that the dispersion of the distribution is small and consequently the mean, $\bar x=1.76$ children, represents quite
+well the number of children of families of the sample. 
+\end{frame}
+
+
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
 % \frametitle{Cálculo de la varianza y la desviación típica}
@@ -1497,12 +1208,12 @@ The most important are:
 % Tanto la varianza como la desviación típica tienen unidades y eso dificulta a veces su interpretación y su comparación.
 % 
 % Afortunadamente es fácil definir a partir de ellas una medida de dispersión adimensional que es más fácil de interpretar.
-% \begin{definicion}[Coeficiente de variación muestral $cv$]
+% \begin{definition}[Coeficiente de variación muestral $cv$]
 % El \emph{coeficiente de variación muestral} de una variable $X$ se define como el cociente entre su desviación típica muestral y el valor absoluto de su media muestral.
 % \[
 % cv = \frac{s}{|\bar x|}
 % \]
-% \end{definicion}
+% \end{definition}
 % El coeficiente de variación muestral mide la dispersión relativa de los valores de la muestra en torno a la media muestral.
 %  
 % Como no tiene unidades, es muy sencillo de interpretar: Cuanto mayor sea, mayor será la dispersión y menos
@@ -1573,11 +1284,11 @@ The most important are:
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
 % \frametitle{Coeficiente de asimetría}
-% \begin{definicion}[Coeficiente de asimetría muestral $g_1$]
+% \begin{definition}[Coeficiente de asimetría muestral $g_1$]
 % El \emph{coeficiente de asimetría muestral} de una variable $X$ se define como el promedio de las desviaciones de los
 % valores de la muestra respecto de la media muestral, elevadas al cubo, dividido por la desviación típica al cubo. \[g_1
 % = \frac{\sum (x_i-\bar x)^3 n_i/n}{s^3} = \frac{\sum (x_i-\bar x)^3 f_i}{s^3}\]
-% \end{definicion}
+% \end{definition}
 % El coeficiente de asimetría muestral mide el grado de simetría de los valores de la muestra con respecto a la media muestral, de manera que:
 % \begin{itemize}
 % \item $g_1=0$ indica que hay el mismo número de valores a la derecha y a la izquierda de la media (simétrica).
@@ -1690,11 +1401,11 @@ The most important are:
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
 % \frametitle{Coeficiente de apuntamiento o curtosis}
-% \begin{definicion}[Coeficiente de apuntamiento muestral $g_2$]
+% \begin{definition}[Coeficiente de apuntamiento muestral $g_2$]
 % El \emph{coeficiente de apuntamiento muestral} de una variable $X$ se define como el promedio de las desviaciones de
 % los valores de la muestra respecto de la media muestral, elevadas a la cuarta, dividido por la desviación típica a la
 % cuarta y al resultado se le resta 3. \[g_2 = \frac{\sum (x_i-\bar x)^4 n_i/n}{s^4}-3 = \frac{\sum (x_i-\bar x)^4 f_i}{s^4}-3\]
-% \end{definicion}
+% \end{definition}
 % El coeficiente de apuntamiento muestral mide el grado de apuntamiento de los valores de la muestra con respecto a una distribución normal de referencia, de manera que:
 % \begin{itemize}
 % \item $g_2=0$ indica que la distribución tienen un apuntamiento normal (\emph{mesocúrtica}).
@@ -1897,12 +1608,12 @@ The most important are:
 % \begin{frame}
 % \frametitle{Transformación de tipificación y puntuaciones típicas}
 % Una de las transformaciones lineales más habituales es la \emph{tipificación}:
-% \begin{definicion}[Variable tipificada]
+% \begin{definition}[Variable tipificada]
 % La \emph{variable tipificada} de una variable estadística $X$ es la variable que resulta de restarle su media y dividir por su desviación típica.
 % \[
 % Z=\frac{X-\bar x}{s_{x}}
 % \]
-% \end{definicion}
+% \end{definition}
 % 
 % La tipificación es muy útil para eliminar la dependencia de una variable respecto de las unidades de medida empleadas.
 % 

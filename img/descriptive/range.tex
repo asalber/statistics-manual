@@ -1,0 +1,10 @@
+% Author: Alfredo Sánchez Alberca (email:asalber@ceu.es)
+% Plot with the range
+\begin{tikzpicture}[every label/.style={text=color1}]
+\draw (0,1) -- (10,1);
+\draw[snake=ticks,segment length=10cm] (0,1) -- (10.1,1);
+\node at (0,0.5) {Min};
+\node at (10,0.5) {Max};
+\draw [decorate,decoration={brace,amplitude=10pt},yshift=4pt] (0,1.2) -- (10,1.2) node
+[black,midway,yshift=0.6cm] {Range};
+\end{tikzpicture}
