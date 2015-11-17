@@ -510,7 +510,7 @@ In most cases the arithmetic mean is the value that best represent the observed 
 Using the data of the sample with the number of children of families, the arithmetic mean is 
 \begin{align*}
 \bar{x} &= \frac{1+2+4+2+2+2+3+2+1+1+0+2+2}{25}+\\
-&+\frac{0+2+2+1+2+2+3+1+2+2+1+2}{25} = \frac{44}{25} = 1.76 \mbox{ hijos}.
+&+\frac{0+2+2+1+2+2+3+1+2+2+1+2}{25} = \frac{44}{25} = 1.76 \mbox{ children}.
 \end{align*}
 or using the frequency table
 \[
@@ -1077,7 +1077,7 @@ In that case, it's measured the distance from every value in the sample to the m
 \scalebox{1}{\input{img/descriptive/deviations}}
 \end{center}
 
-If deviations are big, the mean would be less representative as when they are small.
+If deviations are big, the mean is less representative than when they are small.
 %\begin{center} 
 %\emph{Which mean is more representative?}
 %\end{center}
@@ -1109,23 +1109,30 @@ s = +\sqrt{s^2}
 \end{frame}
 
 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Interpretación de la varianza y la desviación típica}
-% Tanto la varianza como la desviación típica sirven para cuantificar la dispersión de los datos en torno a la media. 
-% %Si la dispersión es grande la media será menos representativa de la muestra que si la dispersión es pequeña.
-% \begin{center}
-% \includegraphics[scale=0.4]{img/descriptive/interpretacion_varianza}
-% 
-% %\emph{¿En qué caso es más representativa la media?}
-% \end{center}
-% 
-% \note{Tanto la varianza como la desviación típica sirven para cuantificar la dispersión de los datos en torno a la media. Si la dispersion
-% con respecto a la media es pequeña, los individuos se parecerán bastante a la media y esta será más representativa que cuando los
-% individuos no se parezcana ella y la dispersión con respecto a la media sea mayor.}
-% \end{frame}
-% 
-% 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Variance and standard deviation interpretation}
+Both variance and standard deviation measures the spread of data around the mean. 
+When the variance or the standard deviation are small, the sample data are concentrated around the mean, and the mean is
+a good representative measure. 
+In contrast, when variance or the standard deviation are high, the sample data are far from the mean, and the mean
+doesn't represent so good. 
+\begin{center}
+\begin{tabular}{lcl}
+\emph{Standard deviation small} & $\Rightarrow$ & \emph{Mean is representative}\\
+\emph{Standard deviation big} & $\Rightarrow$ & \emph{Mean is unrepresentative}\\
+\end{tabular}
+\end{center}
+
+\structure{\textbf{Example}} The following samples contains the grades of 2 students in 2 subjects 
+\begin{center}
+\scalebox{1}{\input{img/descriptive/std_deviation_interpretation}}
+
+\uncover<2->{\emph{Which mean is more representative?}}
+\end{center}
+\end{frame}
+
+
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Variance and standard deviation calculation}
@@ -1160,126 +1167,102 @@ well the number of children of families of the sample.
 \end{frame}
 
 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la varianza y la desviación típica}
-% \framesubtitle{Ejemplo con datos agrupados}
-% En el ejemplo de las estaturas, al ser datos agrupados, el cálculo se realiza igual que antes pero tomando como valores de la variable las
-% marcas de clase. 
-% \begin{center}
-% \setlength\arraycolsep{3mm}
-% \setlength\arrayrulewidth{0.5pt}
-% \begin{array}{rrrr}
-% \hline
-% \multicolumn{1}{c}{X} & \multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{x_i^2n_i} \\
-% \hline
-% (150,160] & 155 & 2 & 48050\\
-% (160,170] & 165 & 8 & 217800\\
-% (170,180] & 175 & 11 & 336875\\
-% (180,190] & 185 & 7 & 239575\\
-% (190,200] & 195 & 2 & 76050\\ 
-% \hline 
-% \sum &  & 30 & 918350 \\
-% \hline
-% \end{array}
-% \end{center}
-% \[
-% s^2 = \frac{\sum x_i^2n_i}{n}-\bar x^2 = \frac{918350}{30}-174.67^2= 102.06 \mbox{ cm}^2.
-% \]
-% Y la desviación típica es $s=\sqrt{102.06} = 10.1$ cm.
-% 
-% Este valor es bastante pequeño, comparado con el recorrido de la variable, que va de 150 a 200 cm, por lo que la variable tiene poca
-% dispersión y en consecuencia su media es muy representativa.
-% 
-% \note{En el ejemplo de las estaturas, como se habían agrupado los datos, como valores se tomarán las
-% marcas de clases, es decir, 155 elevado al cuadrado y por su frecuencia absoluta que es 2, lo que nos da 48050, y así sucesivamente. Después
-% hay que sumar los valores de esta columna y dividirlos por el tamaño de la muestra que era 30. Finalmente al cociente se le resta el valor
-% de la media que era $174.67$ elevada al cuadrado, lo que nos da 102.06 cm al cuadrado.
-% 
-% Si sacamos la raíz cuadrada se obtiene una desviación típica de 10.1 cm, que es un valor pequeño comparado con el recorrido de la variable
-% que va de 150 a 200 cm, por lo que se puede concluir que la muestra tiene poca dispersión y por tanto la media representa muy bien al resto
-% de individuos de la muestra.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Coeficiente de variación}
-% Tanto la varianza como la desviación típica tienen unidades y eso dificulta a veces su interpretación y su comparación.
-% 
-% Afortunadamente es fácil definir a partir de ellas una medida de dispersión adimensional que es más fácil de interpretar.
-% \begin{definition}[Coeficiente de variación muestral $cv$]
-% El \emph{coeficiente de variación muestral} de una variable $X$ se define como el cociente entre su desviación típica muestral y el valor absoluto de su media muestral.
-% \[
-% cv = \frac{s}{|\bar x|}
-% \]
-% \end{definition}
-% El coeficiente de variación muestral mide la dispersión relativa de los valores de la muestra en torno a la media muestral.
-%  
-% Como no tiene unidades, es muy sencillo de interpretar: Cuanto mayor sea, mayor será la dispersión y menos
-% representativa será la media.
-% 
-% También se utiliza para comparar la dispersión entre muestras distintas incluso si las variables tienen unidades diferentes.
-% \begin{center}
-% \alert{\emph{¡Ojo! No tiene sentido cuando la media muestral vale 0 o valores próximos.}}
-% \end{center}
-% 
-% \note{Tanto la varianza como la desviación típica tienen unidades lo que dificulta a veces su interpretación.
-% 
-% Afortunadamente es fácil definir a partir de ellas una medida de dispersión adimensional que es más fácil de interpretar.
-% 
-% El coeficiente de variación muestral, que se representa mediante cv, se defiene como el cociente entre la desviación típica y el valor
-% absoluto de la media.
-% 
-% Como tanto la desviación típica como la media tienen las unidades de la variable, al hacer su cociente las unidades desaparecen y se obtiene
-% una medida adimensional que resulta más sencilla de interpretar. 
-% 
-% Al estar dividido por el valor absoluto de la media, el coeficiente de variación mide la dispersión relativa de los valores de la muestra
-% en torno a la media muestral, y como en el numerador está la desviación típica, cuanto mayor sea esta, mayor será el coeficiente de
-% variación y por tanto mayor será la dispersión relativa de la variable en torno a la media.
-% 
-% Una de las principales utilidades del coeficiente de variación es que, precisamente por no tener unidades, permite la comparación de la
-% dispersión de muestras distintas, incluso si son de variables con distintas unidades. 
-% 
-% El único problema de este estadístico es que no vale cuando la media muestral vale 0 o próxima a 0, ya que al estar en el denominador,
-% obtendríamos valores muy grandes.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Coeficiente de variación}
-% \framesubtitle{Ejemplo}
-% En el caso del número de hijos, como $\bar x=1.76$ hijos y $s=0.8616$ hijos, se tiene que el coefiente de variación vale
-% \[
-% cv = \frac{s}{|\bar x|} = \frac{0.8616}{|1.76|} = 0.49.
-% \]
-% En el caso de las estaturas, como $\bar x=174.67$ cm y $s=10.1$ cm, se tiene que el coeficiente de variación vale 
-% \[
-% cv = \frac{s}{|\bar x|} = \frac{10.1}{|174.67|} = 0.06.
-% \]
-% Como se puede observar la dispersión relativa en la muestra de estaturas es mucho menor que en la del número de hijos, por lo que la media
-% de las estaturas será más representativa que la media del número de hijos. 
-% \end{frame}
-% 
-% 
-% \subsection{Estadísticos de forma}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Estadísticos de forma}
-% Son medidas que tratan de caracterizar aspectos de la forma de la distribución de una muestra.
-% 
-% Los aspectos más relevantes son:
-% \begin{description}
-% \item[Simetría:] Miden la simetría de la distribución de frecuencias en torno a la media.\\
-% El estadístico más utilizado es el \emph{Coeficiente de Asimetría de Fisher}.
-% \item[Apuntamiento:] Miden el apuntamiento de la distribución de frecuencias.\\
-% El estadístico más utilizado es el \emph{Coeficiente de Apuntamiento o Curtosis}.
-% \end{description}
-% \note{Los estadísticos de forma se encargan de describir, como su propio nombre indica, la forma que tiene la distribución de valores en la
-% muestra, en particular se estudian dos aspectos que son la asímetría y el apuntamiento.}
-% \end{frame}
-% 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Variance and standard deviation calculation}
+\framesubtitle{Example with grouped data}
+Using the data of the sample with the heights of students and grouping heights in classes, the calculation is the same
+but using the class marks. 
+
+\[
+\setlength\arraycolsep{3mm}
+\setlength\arrayrulewidth{0.5pt}
+\begin{array}{rrrr}
+\hline
+\multicolumn{1}{c}{X} & \multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{x_i^2n_i} \\
+\hline
+(150,160] & 155 & 2 & 48050\\
+(160,170] & 165 & 8 & 217800\\
+(170,180] & 175 & 11 & 336875\\
+(180,190] & 185 & 7 & 239575\\
+(190,200] & 195 & 2 & 76050\\
+\hline
+\sum &  & 30 & 918350 \\
+\hline
+\end{array}
+\]
+\[
+s^2 = \frac{\sum x_i^2n_i}{n}-\bar x^2 = \frac{918350}{30}-174.67^2= 102.06 \mbox{ cm}^2.
+\]
+and the standard deviation is $s=\sqrt{102.06} = 10.1$ cm.
+
+This value is quite small compared to the range of the variable, that goes from 150 to 200 cm, therefore the
+distribution of heights has little dispersion and the mean is very representative.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Coefficient of variation}
+Both, variance and standard deviation, have units and that makes difficult to interpret them, specially when comparing
+distributions of variables with different units.
+
+For that reason it's also common to use the following dispersion measure that has no units.  
+\begin{definition}[Sample coefficient of variation $cv$]
+The \emph{sample coefficient of variation} of a variable $X$ is the quotien between the sample standard deviation and se
+absolute value of the sample mean.
+\[
+cv = \frac{s}{|\bar x|}
+\]
+\end{definition}
+The coefficient of variation measures the relative dispersion of data around the sample mean.  
+
+As it has no units, it's easier to interpret: The higher the it is the higher the relative dispersion with respect to
+the mean and less representative is the mean.
+
+The coefficient of variation it's very helpful to compare dispersion in distributions of different variables, even if
+variables have different units.
+\begin{center}
+\alert{\emph{Watch out! It makes no sense when the mean is 0 or close to 0.}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Coefficient of variation}
+\framesubtitle{Example}
+In the sample of the number of children, where the mean was $\bar x=1.76$ and the standard deviation was $s=0.8616$
+children, the coefficient of variation is
+\[
+cv = \frac{s}{|\bar x|} = \frac{0.8616}{|1.76|} = 0.49.
+\]
+In the sample of heights, where the mean was $\bar x=174.67$ cm and the standard deviation was $s=10.1$ cm, the
+coefficient of variation is
+\[
+cv = \frac{s}{|\bar x|} = \frac{10.1}{|174.67|} = 0.06.
+\]
+
+This means that the relative dispersion in the heights distribution is lower than in the number of children
+distribution, and consequently the mean of height is most representative than the mean of number of children.
+\end{frame}
+
+
+\subsection{Shape statistics}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Shape statistics}
+They are measures that describe the shape of the distribution. 
+
+In particular, the most important aspects are:
+\begin{description}
+\item[Symmetry:] It measures the symmetry of the distribution with respect to the mean. \\
+The statistics most used is the \emph{coefficient of skewness}.
+\item[Kurtosis:] It measures the length of tails or the peakness of distribution. \\
+The statistics most used is the \emph{coefficient of kurtosis}.
+\end{description}
+\end{frame}
+
 % 
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
@@ -1604,147 +1587,96 @@ well the number of children of families of the sample.
 % \end{frame}
 % 
 % 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Transformación de tipificación y puntuaciones típicas}
-% Una de las transformaciones lineales más habituales es la \emph{tipificación}:
-% \begin{definition}[Variable tipificada]
-% La \emph{variable tipificada} de una variable estadística $X$ es la variable que resulta de restarle su media y dividir por su desviación típica.
-% \[
-% Z=\frac{X-\bar x}{s_{x}}
-% \]
-% \end{definition}
-% 
-% La tipificación es muy útil para eliminar la dependencia de una variable respecto de las unidades de medida empleadas.
-% 
-% Los valores tipificados se conocen como \structure{\textbf{puntuaciones típicas}} y miden el número de desviaciones típicas que dista de la media cada observación, lo cual es útil para comparar variables con distintas unidades. 
-% 
-% Otra propiedad de la variable tipificada es que tiene media 0 y desviación típica 1:
-% \[
-% \bar z = 0 \qquad s_{z} = 1
-% \]
-% 
-% \note{Entre las transformaciones lineales hay una de especial importancia, y se conoce como transformación de tipificación. La tipificación
-% consiste en dividir las desviaciones de los valores a la media por la desviación típica. 
-% 
-% Como las desviaciones a la media tienen las unidades de la variable y la desviación típica también, al hacer el cociente se cancelan las
-% unidades y los valores de la variable tipificada no tienen unidades, por lo que esta transformación es útil para eliminar la dependencia de
-% la variable de las unidades de medida empleadas.
-% 
-% Los valores tipificados se conocen como \structure{\textbf{puntuaciones típicas}} y miden el número de desviaciones típicas que dista de la
-% media cada observación, lo cual es útil para comparar variables con distintas unidades.
-% 
-% Otra propiedad que se deduce de las propiedades de las trasnformaciones lineales vistas antes es que la media de una variable tipificada
-% siempre vale 0 y su desviación típica 1.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Transformación de tipificación y puntuaciones típicas}
-% \framesubtitle{Ejemplo}
-% Las notas de 5 alumnos en dos asignaturas $X$ e $Y$ son:
-% \[
-% \begin{array}{rccccccccc}
-% \mbox{Alumno:} & 1 & 2 & 3 & 4 & 5\\ \cline{1-6}
-% X: & 2 & 5 & 4 & \alert{8} & 6 & \qquad & \bar x = 5 & \quad s_x = 2\\
-% Y: & 1 & 9 & \alert{8} & 5 & 2 & \qquad & \bar y = 5 & \quad s_y = 3.16\\
-% \end{array}
-% \]
-% \begin{center}
-% \emph{¿Han tenido el mismo rendimiento los alumnos que han sacado un 8?}
-% \end{center}
-% Podría parecer que ambos alumnos han tenido el mismo rendimiento puesto que tienen la misma nota, pero si queremos ver el rendimiento relativo al resto del grupo, tendríamos que tener en cuenta la dispersión de cada muestra y medir sus puntuaciones típicas:
-% \[
-% \begin{array}{cccccc}
-% X: & -1.5 & 0 & -0.5 & \alert{1.5} & 0.5 \\
-% Y: & -1.26 & 1.26 & \alert{0.95} & 0 & -0.95\\
-% \end{array}
-% \]
-% Es decir, el alumno que tiene un 8 en $X$ está $1.5$ veces la desviación típica por encima de la media de su grupo, mientras que el alumno que tiene un 8 en $Y$ sólo está $0.95$ desviaciones típicas por encima de su media.
-% Así pues, el primer alumno tuvo un rendimiento superior al segundo. 
-% 
-% \note{Para ver la utilidad de la transformación de tipificación, supongamos que tenemos un grupo de 5 alumnos en los que se ha medido la
-% nota en dos asignaturas $X$ e $Y$. Si calculamos la media y la desviación típica en cada asignatura, se tiene que la nota media en $X$ es
-% 5 con una desviación típica de $2$ y que la nota media de $Y$ es también 5 con una desviación típica de $3.16$, es decir, hay más dispersión
-% en las notas de $Y$ que en las de $X$.
-% 
-% Podríamos preguntarnos si sacar un 8 en la asignatura $X$ tiene el mismo mérito que sacar un $8$ en la asignatura $Y$, o dicho de otro modo,
-% el alumno que ha sacado un 8 en la asignatura $X$, ¿ha tenido el mismo rendimiento que el que ha sacado un 8 en la $Y$?
-% 
-% Podría parecer que ambos alumnos han tenido el mismo rendimiento puesto que tienen la misma nota, pero si queremos ver el rendimiento
-% relativo al resto del grupo, tendríamos que tener en cuenta la dispersión de cada muestra y medir sus puntuaciones típicas, que son 
-% \[
-% \begin{array}{cccccc}
-% X: & -1.5 & 0 & -0.5 & \alert{1.5} & 0.5 \\
-% Y: & -1.26 & 1.26 & \alert{0.95} & 0 & -0.95\\
-% \end{array}
-% \]
-% Es decir, el alumno que tiene un 8 en $X$ está $1.5$ veces la desviación típica por encima de la media de su grupo, mientras que el alumno
-% que tiene un 8 en $Y$ sólo está $0.95$ desviaciones típicas por encima de su media. Así pues, el primer alumno tuvo un rendimiento superior
-% al segundo y tiene más mérito sacar un $8$ en la asignatura $X$ que en la $Y$.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Transformación de tipificación y puntuaciones típicas}
-% \framesubtitle{Ejemplo}
-% Siguiendo con el ejemplo anterior
-% \begin{center}
-% \emph{¿Cuál es el mejor alumno?}
-% \end{center}
-% Si simplemente se suman las puntuaciones de cada asignatura se tiene:
-% \[
-% \begin{array}{rccccc}
-% \mbox{Alumno:} & 1 & 2 & 3 & 4 & 5\\ \hline
-% X: & 2 & 5 & 4 & 8 & 6 \\
-% Y: & 1 & 9 & 8 & 5 & 2 \\ \hline
-% \sum & 3 & \alert{14} & 12 & 13 & 8 
-% \end{array}
-% \]
-% El mejor alumno sería el segundo.
-% 
-% Pero si se considera el rendimiento relativo tomando las puntuaciones típicas se tiene:
-% \[
-% \begin{array}{rccccc}
-% \mbox{Alumno:} & 1 & 2 & 3 & 4 & 5\\ \hline
-% X: & -1.5 & 0 & -0.5 & 1.5 & 0.5 \\
-% Y: & -1.26 & 1.26 & 0.95 & 0 & -0.95\\ \hline
-% \sum & -2.76 & 1.26 & 0.45 & \alert{1.5} & -0.45
-% \end{array}
-% \]
-% Y el mejor alumno sería el cuarto. 
-% 
-% \note{Siguiendo con el ejemplo anterior, también podríamos habernos preguntado ¿cuál es el mejor alumno?  
-% Si simplemente sumamos las puntuaciones de cada asignatura tenemos:
-% \[
-% \begin{array}{rccccc}
-% \mbox{Alumno:} & 1 & 2 & 3 & 4 & 5\\ \hline
-% X: & 2 & 5 & 4 & 8 & 6 \\
-% Y: & 1 & 9 & 8 & 5 & 2 \\ \hline
-% \sum & 3 & \alert{14} & 12 & 13 & 8 
-% \end{array}
-% \]
-% El mejor alumno sería el segundo.
-% 
-% Pero es mucho más razonable cosiderar el rendimiento relativo tomando las puntuaciones típicas y entonces se tiene que la suma de las
-% puntuaciones típicas es:
-% \[
-% \begin{array}{rccccc}
-% \mbox{Alumno:} & 1 & 2 & 3 & 4 & 5\\ \hline
-% X: & -1.5 & 0 & -0.5 & 1.5 & 0.5 \\
-% Y: & -1.26 & 1.26 & 0.95 & 0 & -0.95\\ \hline
-% \sum & -2.76 & 1.26 & 0.45 & \alert{1.5} & -0.45
-% \end{array}
-% \]
-% Con lo que realmente el mejor alumno es el cuarto. 
-% }
-% \end{frame}
-% 
-% 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Standardization and standard scores}
+One of the most common linear transformations is the \emph{standardization}.
+\begin{definition}[Standardized variable and standard scores]
+The \emph{standardized variable} of a variable $X$ is the variable that result of subtracting the mean from $X$ and
+dividing by the standard deviation 
+\[
+Z=\frac{X-\bar x}{s_{x}}.
+\]
+For each value $x_i$ of the sample, the \emph{standard score} is the value that results of applying the standardization
+transformation
+\[
+z_i=\frac{x_i-\bar x}{s_{x}}.
+\]
+\end{definition}
+
+The standard score is the number of standard deviations a value is above or below the mean, and it's useful to avoid
+the dependency of the variable from its measurement units.
+
+The standardized variable always have mean 0 and standard deviation 1.  
+\[
+\bar z = 0 \qquad s_{z} = 1
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Standardization and standard scores}
+\framesubtitle{Example}
+The grades of 5 students in 2 subjects are
+\[
+\begin{array}{rccccccccc}
+\mbox{Student:} & 1 & 2 & 3 & 4 & 5\\ \cline{1-6}
+X: & 2 & 5 & 4 & \alert{8} & 6 & \qquad & \bar x = 5 & \quad s_x = 2\\
+Y: & 1 & 9 & \alert{8} & 5 & 2 & \qquad & \bar y = 5 & \quad s_y = 3.16\\
+\end{array}
+\]
+\begin{center}
+\emph{Did the students with an 8 have the same performance in every subject?}
+\end{center}
+It might seem that both students had the same performance in every subject because they have the same
+degree, but in order to get the performance of every student relative to the group of students, the dispersion
+of grades in every subject must be considered.
+For that reason is better to use the standard score as a measure of relative performance. 
+\[
+\begin{array}{cccccc}
+X: & -1.5 & 0 & -0.5 & \alert{1.5} & 0.5 \\
+Y: & -1.26 & 1.26 & \alert{0.95} & 0 & -0.95\\
+\end{array}
+\]
+That is, the student with an 8 in $X$ is $1.5$ times the standard deviation below the mean of $X$, while the student
+with an 8 in $Y$ is only $0.95$ times the standard deviation below the mean of $Y$. 
+Therefore, the first student had a higher performance in $X$ than the second in $Y$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Standardization and standard scores}
+\framesubtitle{Example}
+Following with the previous example and considering both subjects,
+\begin{center}
+\emph{which is the best student?}
+\end{center}
+If we only consider the sum of grades
+\[
+\begin{array}{rccccc}
+\mbox{Student:} & 1 & 2 & 3 & 4 & 5\\ \hline
+X: & 2 & 5 & 4 & 8 & 6 \\
+Y: & 1 & 9 & 8 & 5 & 2 \\ \hline
+\sum & 3 & \alert{14} & 12 & 13 & 8
+\end{array}
+\]
+the best student is the second one. 
+
+But if the relative performance is considered, taking the standard scores 
+\[
+\begin{array}{rccccc}
+\mbox{Student:} & 1 & 2 & 3 & 4 & 5\\ \hline
+X: & -1.5 & 0 & -0.5 & 1.5 & 0.5 \\
+Y: & -1.26 & 1.26 & 0.95 & 0 & -0.95\\ \hline
+\sum & -2.76 & 1.26 & 0.45 & \alert{1.5} & -0.45
+\end{array}
+\]
+the best student is the fourth one. 
+\end{frame}
+
+
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
 % \frametitle{Transformaciones no lineales}
