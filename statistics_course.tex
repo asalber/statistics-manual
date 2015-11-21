@@ -1,12 +1,13 @@
 % Author: Alfredo Sánchez Alberca (asalber@gmail.com)
 % ASPECT RATIO FOR YOUTUBE VIDEO
-%\documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,dvips,red,xcolor=table]{beamer}
+%\documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
 % ASPECT RATIO FOR PROJECTOR
-%\documentclass[mathserif,profesionalfont,10pt,red,xcolor=table]{beamer}
+%\documentclass[mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
 % ARTICLE VERSION
 \pdfminorversion=4 % for solving some problems with png graphics in acrobat reader
-\documentclass[10pt,a4paper,titlepage]{article} 
+\documentclass[10pt,a4paper,titlepage]{article}
 \usepackage[hyperref]{beamerarticle}
+\usepackage{colortbl}
 
 \usepackage{pxfonts} 
 %\usepackage{lucidaso}  
@@ -75,27 +76,26 @@
 \usepackage{multirow}
 \usepackage{textcomp}
 \usepackage{tikz}
-\usetikzlibrary{arrows,calc,shapes,shapes.arrows,positioning,snakes,decorations.pathreplacing}
-%\usepackage[usenames,dvipsnames]{pstricks}
-%\usepackage{pst-all,pst-math,pst-plot,pst-infixplot,pst-xkey,pstricks-add}
-\usepackage{epsfig}
+\usetikzlibrary{external,arrows,calc,shapes,shapes.arrows,positioning,snakes,decorations.pathreplacing}
+%\tikzexternalize[prefix=img/]
+% \tikzset{external/system call={pdflatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname
+% "\image" "\texsource"}}
+% \tikzset{external/force remake=true}  
+%\usepackage{epsfig}
 \usepackage{graphicx}
-\usepackage[colorlinks=true]{hyperref}
-\hypersetup{pdfauthor={Alfredo S\'anchez Alberca (asalber@ceu.es)}, pdftitle={Elementary Statistics Course}}
 \usepackage{breakurl}
-
-
-\usepackage{wrapfig}
-\newcommand{\videobox}{\begin{wrapfigure}[5]{r}{0.15\textwidth}
- \vspace{-18.5pt}
-\fbox{\textcolor{white}{\rule{80px}{60px}}}
-\end{wrapfigure}}
 
 % Organización de varias diapositvas por página
 %\usepackage{pgfpages} 
 %\pgfpagesuselayout{4 on 1}[a4paper,landscape, border shrink=5mm]
 \usepackage[english]{babel}
 
+\pdfinfo{
+   /Author (Alfredo Sanchez Alberca)
+   /Title  (Elementary Statistics Manual) 
+   /Subject (Statistics)
+   /Keywords (Statistics; Data analysis; Descriptive Statistics; Inferential Statistics)
+}
 
 % COLORS
 \definecolor{color1}{RGB}{174,49,54}
@@ -130,7 +130,7 @@
 \renewcommand{\headrulewidth}{0pt}
 %\renewcommand{\floatpagefraction}{.8}
 %\renewcommand{\textfraction}{.1} 
-}
+} 
 
 % SECTION COLOR FOR ARTICLE
 \mode<article>{
@@ -143,12 +143,19 @@
 %\definecolor{gris}{gray}{0.2}
 %\color{gris}
 
+% PDF settings
+\hypersetup{colorlinks=true}
+
 %=====================================================================BODY=====
 
 %---------------------------------------------------------------------cover----
-\mode<article>{\title{\Huge \ssfamily \color{color1} Elementary Statistics Course}}
+\mode<article>{\title{\textcolor{color1}{\Huge Elementary Statistics Course}}}
 \mode<presentation>{\title{Elementary Statistics Course}}
-\author[]{Alfredo Sánchez Alberca (\texttt{\url{asalber@ceu.es}})} 
+\mode<presentation>{
+\author{\texorpdfstring{Alfredo Sánchez Alberca \\ \href{mailto:asalber@ceu.es}{asalber@ceu.es}}{Alfredo
+Sánchez Alberca}} 
+}
+\mode<article>{\author{Alfredo Sánchez Alberca \\ \href{mailto:asalber@ceu.es}{asalber@ceu.es}}}
 \mode<presentation>{\institute[USP CEU]{\includegraphics[scale=0.2]{img/logo_uspceu}}}
 \date{\mode<article>{\includegraphics[scale=0.2]{img/logo_uspceu}\\[1cm] }
 %Curso 2012-2013\\ 
@@ -175,7 +182,7 @@ depth 3pt \smallskip}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\mode<presentation>{\frametitle{Contenidos}}
+\mode<presentation>{\frametitle{Contents}}
 \tableofcontents[hideallsubsections]
 \end{frame}
 
