@@ -2,12 +2,13 @@
 % Plot with the level of information of each variable type
 \begin{tikzpicture}[scale=0.5]
 \tikzstyle{node} = [align=center, text=color1];
-\draw[stealth-stealth, thin, color1!90, line width=12pt] (-0.5,4) -- (18.5,4);
-\node at (1.5,4) {\color{white}-- Info};
-\node at (16.5,4) {\color{white} + Info};
-\node[node] at (1,2.5) {Nominal};
-\node[node] at (5,2.5) {Ordinal};
-\node[node] at (9,2.5) {Discrete};
-\node[node] at (13,2.5) {Interval};
-\node[node] at (17,2.5) {Ratio};
+\useasboundingbox (-0.5,-0.5) rectangle (18.5,2.7);
+\draw[stealth-stealth, thin, color1!90, line width=12pt] (-0.5,1.5) -- (18.5,1.5);
+\node at (1.5,1.5) {\color{white}-- Info};
+\node at (16.5,1.5) {\color{white} + Info};
+\node[node] at (1,0) {Nominal};
+\node[node] at (5,0) {Ordinal};
+\node[node] at (9,0) {Discrete};
+\node[node] at (13,0) {Interval};
+\node[node] at (17,0) {Ratio};
 \end{tikzpicture}

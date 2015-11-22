@@ -3,7 +3,7 @@
 %\documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
 % ASPECT RATIO FOR PROJECTOR
 %\documentclass[mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
-% ARTICLE VERSION
+% ARTICLE VERSION 
 \pdfminorversion=4 % for solving some problems with png graphics in acrobat reader
 \documentclass[10pt,a4paper,titlepage]{article}
 \usepackage[hyperref]{beamerarticle}
@@ -77,11 +77,23 @@
 \usepackage{textcomp}
 \usepackage{tikz}
 \usetikzlibrary{external,arrows,calc,shapes,shapes.arrows,positioning,snakes,decorations.pathreplacing}
-%\tikzexternalize[prefix=img/]
-% \tikzset{external/system call={pdflatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname
-% "\image" "\texsource"}}
-% \tikzset{external/force remake=true}  
-%\usepackage{epsfig}
+\mode<article>{
+\tikzexternalize[prefix=img/pdf/]
+\tikzset{
+    % Defines a custom style which generates BOTH, .pdf and .png export
+    png export/.style={
+        external/system call/.add={}%
+        {; convert -density 300 -transparent white "\image.pdf" "\image.png"}
+    }
+}
+\tikzset{
+	svg export/.style={
+        external/system call/.add={}%
+        {; pdf2svg "\image.pdf" "\image.svg"}
+    }
+}
+\tikzset{svg export}
+}
 \usepackage{graphicx}
 \usepackage{breakurl}
 
@@ -152,15 +164,15 @@
 \mode<article>{\title{\textcolor{color1}{\Huge Elementary Statistics Course}}}
 \mode<presentation>{\title{Elementary Statistics Course}}
 \mode<presentation>{
-\author{\texorpdfstring{Alfredo Sánchez Alberca \\ \href{mailto:asalber@ceu.es}{asalber@ceu.es}}{Alfredo
-Sánchez Alberca}} 
-}
+\author{\texorpdfstring{Alfredo Sánchez Alberca \\ \href{mailto:asalber@ceu.es}{asalber@ceu.es}}{Alfredo Sánchez
+Alberca}} }
 \mode<article>{\author{Alfredo Sánchez Alberca \\ \href{mailto:asalber@ceu.es}{asalber@ceu.es}}}
 \mode<presentation>{\institute[USP CEU]{\includegraphics[scale=0.2]{img/logo_uspceu}}}
 \date{\mode<article>{\includegraphics[scale=0.2]{img/logo_uspceu}\\[1cm] }
 %Curso 2012-2013\\ 
 \textcopyleft Copyleft}
 
+%\includeonly{}
 \begin{document}
 \mode<article>{\thispagestyle{empty}\maketitle}
 
