@@ -78,12 +78,12 @@
 \usepackage{tikz}
 \usetikzlibrary{external,arrows,calc,shapes,shapes.arrows,positioning,snakes,decorations.pathreplacing}
 \mode<article>{
-\tikzexternalize[prefix=img/pdf/]
 \tikzset{
-    % Defines a custom style which generates BOTH, .pdf and .png export
     png export/.style={
-        external/system call/.add={}%
-        {; convert -density 300 -transparent white "\image.pdf" "\image.png"}
+        external/system call={
+            pdflatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource";
+            convert -density 300 -transparent white "\image.pdf" "\image.png"
+        }
     }
 }
 \tikzset{
@@ -92,6 +92,8 @@
         {; pdf2svg "\image.pdf" "\image.svg"}
     }
 }
+\tikzexternalize[prefix=img/exported/]
+\tikzset{png export}
 \tikzset{svg export}
 }
 \usepackage{graphicx}
@@ -199,5 +201,5 @@ depth 3pt \smallskip}
 \end{frame}
 
 \include{introduction}
-\include{descriptive}
+\include{descriptive} 
 \end{document}

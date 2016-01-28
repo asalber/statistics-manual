@@ -131,16 +131,32 @@ expensive.
 \end{frame}
 
 
-%---------------------------------------------------------------------slide----
+
+% ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Sample size determination}
 \framesubtitle{Small sample of pixels of a picture}
-\begin{center}
-What picture is it?
+\mode<article>{\textbf{Example}. To understand what a sufficient sample size means we can use a picture example.
+A digital photography consist in a lot of small points called pixels disposed in an big array layout with rows and
+columns (the more rows and columns, the more resolution has the picture).
+Here the picture is the population and every pixel is and individual.
+Every pixel has a colour and it's the variability of colours what forms the picture motif.
 
+\begin{center}
+\emph{How many pixels must we take in a sample in order to find out the motif of a picture?}
+\end{center}
+
+The answer depends on the variability of colours in the picture.
+If all the pixels in the picture are of the same colour, only one pixel is required to know the motif.
+But, if there is a lot of variability in the colours, a large sample size will be required.
+
+The image below contains a small sample of the pixels of a picture.
+}
+Could you find out the motif of the picture? 
+\begin{center}
 \includegraphics[scale=0.45]{img/introduction/sample_windmill1.pdf}
 
-\emph{With a small sample size it's difficult to find the image content out!}
+\emph{With a small sample size it’s difficult to find out the picture motif!!}
 \end{center}
 \end{frame}
 
@@ -149,12 +165,12 @@ What picture is it?
 \begin{frame}
 \frametitle{Sample size determination}
 \framesubtitle{Large sample of pixels of a picture}
+\mode<article>{The image below contains a larger sample of pixels.}
+Could you find out the motif of the picture now?
 \begin{center}
-What picture is it?
-
 \includegraphics[scale=0.45]{img/introduction/sample_windmill2.pdf}
 
-\emph{With a large sample is easier to find the image content out!}
+\emph{With a large sample is easier to find out the picture motif!}
 \end{center}
 \end{frame}
 
@@ -163,12 +179,11 @@ What picture is it?
 \begin{frame}
 \frametitle{Sample size determination}
 \framesubtitle{Whole population of pixels of a picture}
-\begin{center}
 And here is the whole population.
-
+\begin{center}
 \includegraphics[scale=0.45]{img/introduction/sample_windmill3.pdf}
 
-\emph{It's not required to know all the pixels of a picture to find their content out!}
+\emph{It’s not required to know all the pixels of a picture to find out its motif!}
 \end{center}
 \end{frame}
 
@@ -287,9 +302,9 @@ According to the nature of their values and their scale, they can be:
 \item \structure{Qualitative variables:} They measure non-numeric qualities. 
 They can be:
 \begin{itemize}
-\item \structure{Nominal:} There is no natural order between the categories.\\
+\item \structure{Nominal:} There is no natural order between its categories.\\
 Example: The eyes or hair colour. 
-\item \structure{Ordinal:} There is a natural order between the categories. \\
+\item \structure{Ordinal:} There is a natural order between its categories. \\
 Example: The education level.
 \end{itemize}
 \item \structure{Quantitative variables:} They measure numeric quantities. 

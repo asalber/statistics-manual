@@ -1,5 +1,7 @@
 setwd("/media/alf/datos/drive/CEU/docencia/materiales/estadistica/presentaciones/statistics_course")
 library(tikzDevice)
+library(plyr)
+library(plotly)
 require(Hmisc)
 
 options(tikzDefaultEngine = "pdftex")
@@ -13,6 +15,20 @@ barplot(tab,space=0.5, main="Absolute frequency distribution of number of childr
 lines(c(1,2.5,4,5.5,7),tab,col="royalblue1",lwd=3)
 dev.off()
 
+freq<-count(data,'children')
+p<-plot_ly(x=freq[["children"]],y=freq[["freq"]],type="bar")
+p<-add_trace(p,y=freq[["freq"]],type="scatter")
+layout(p,title="Absolute frequency distribution of number of children", xaxis=list(title="Number of children"), yaxis=list(title="Absolute frequency"), autosize=FALSE, width=600, height=400, bargap=0.5, showlegend=FALSE)
+
+# Relative frequency bar chart and polygon
+relfreq<-freq[["freq"]]/sum(freq[["freq"]])
+p<-plot_ly(x=freq[["children"]],y=relfreq,type="bar",name="bar")
+p<-add_trace(p,y=relfreq,type="scatter",name="polygon")
+layout(p,title="Relative frequency distribution of number of children", xaxis=list(title="Number of children"), yaxis=list(title="Relative frequency"), autosize=FALSE, width=600, height=400, bargap=0.5, showlegend=FALSE)
+
+
+#plotly_POST(p, filename = "descriptive/absolute-barchart")
+
 # Cumulative absolute frequency bar chart of number of children
 tikz(file="img/descriptive/cum_abs_freq_bar_chart_polygon.tex", width=7, height=5)
 tabcum <- cumsum(tab)
@@ -20,6 +36,18 @@ par(cex.lab=1.2)
 barplot(tabcum, space=0.5, main="Cumulative absolute frequency distribution of number of children", xlab="Number of children", ylab="Cumulative absolute frequency $N_i$", col="coral")
 lines(c(0,1,1,2.5,2.5,4,4,5.5,5.5,7,7,8.5),c(0,0,2,2,8,8,22,22,24,24,25,25),col="royalblue", lwd=3)
 dev.off()
+
+cumfreq<-cumsum(freq[["freq"]])
+p<-plot_ly(x=freq[["children"]],y=cumfreq,type="bar")
+p<-layout(p,title="Cumulative absolute frequency distribution of number of children", xaxis=list(title="Number of children"), yaxis=list(title="Cumulative absolute frequency"), autosize=FALSE, width=600, height=400, bargap=0.5)
+#plotly_POST(p, filename = "descriptive/cumulative-relative-barchart")
+
+# Cumulative relative frequency bar chart and polygon
+cumrelfreq<-c(0,cumfreq/sum(freq[["freq"]]))
+p<-plot_ly(x=c(0,freq[["children"]]),y=cumrelfreq,type="bar",name="bar")
+p<-add_trace(p,y=cumrelfreq,type="scatter",name="polygon",line = list(shape = "hv"))
+p<-layout(p,title="Cumulative relative frequency distribution of number of children", xaxis=list(title="Number of children"), yaxis=list(title="Cumulative relative frequency"), autosize=FALSE, width=600, height=400, bargap=0.5, showlegend=FALSE)
+#plotly_POST(p, filename = "descriptive/cumulative-relative-barchart")
 
 data <- read.table("data/height_weight_data.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 library(agricolae)
@@ -29,6 +57,15 @@ par(cex.lab=1.2)
 (h <- hist(data$height, ylim=c(0,12), main="Absolute frequency distribution of Height", xlab="Height (cm)", ylab="Absolute frequency $n_i$", col="coral"))
 polygon.freq(h,frequency=1,col="royalblue",lwd=3)
 dev.off()
+
+p<-plot_ly(x=data[["height"]],type="histogram", marker=list(line=list(width=1)))
+layout(p,title="Absolute frequency distribution of heights", xaxis=list(title="Height"), yaxis=list(title="Absolute frequency"), autosize=FALSE, width=600, height=400)
+
+# Relative frequency histogram of height with polygon
+p<-plot_ly(x=data[["height"]],type="histogram", marker=list(line=list(width=1)),histnorm="probability",name="bar")
+p<-add_trace(p,x=c(155,165,175,185,195),y=c(0.0667,0.2667,0.3667,0.2333,0.0667),type="scatter",name="polygon")
+layout(p,title="Relative frequency distribution of heights", xaxis=list(title="Height"), yaxis=list(title="Relative frequency"), autosize=FALSE, width=600, height=400, showlegend=FALSE)
+
 
 # Cumulative absolute frequency histogram of height
 tikz(file="img/descriptive/cum_abs_freq_histogram_polygon.tex", width=7, height=5)
@@ -49,6 +86,13 @@ plot(h, main="Cumulative relative requency distribution of Height", xlab="Height
 yy <- c(0, h[["counts"]])
 lines(h$breaks, yy, lwd=3, col = "royalblue") 
 dev.off()
+
+h <- hist(data$height, plot=FALSE)
+h$counts <- cumsum(h[["counts"]])/sum(h[["counts"]])
+p<-plot_ly(x=h[["mids"]], y=h[["counts"]],type="bar", marker=list(line=list(width=1)),name="bar")
+p<-add_trace(p,x=h[["breaks"]],y=c(0,h[["counts"]]),type="scatter",name="ogive")
+layout(p,title="Cumulative relative frequency distribution of heights", xaxis=list(title="Height"), yaxis=list(title="Cumulative relative frequency"), autosize=FALSE, width=600, height=400, bargap=0, showlegend=FALSE)
+
 
 # Histogram by sex
 tikz(file="img/descriptive/factor_histogram.tex", width=5, height=5)
@@ -78,6 +122,12 @@ labels <- paste(labels, pctg) # add percents to labels
 labels <- paste(labels,"\\%",sep="") # ad % to labels 
 pie(tab, main="Relative frequency distribution of blood types", labels=labels, col=c("lightgreen", "coral", "royalblue", "brown"))
 dev.off()
+
+freq<-count(data,'blood.type.child')
+p<-plot_ly(labels=freq[["blood.type.child"]],values=freq[["freq"]], type="pie")
+layout(p,title="Relative frequency distribution of blood types", autosize=FALSE, width=600, height=400)
+
+
 
 # Box plot newborn
 data <- read.table("data/newborn_weights.csv", header=TRUE, sep=" ", na.strings="NA", dec=".", strip.white=TRUE)

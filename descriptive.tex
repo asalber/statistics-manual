@@ -179,7 +179,7 @@ The frequency table for the height in this sample is
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Classes construction}
-Intervals are known as \structure{\textbf{classes}} and the center of intervals as \structure{\textbf{class mark}}.
+Intervals are known as \structure{\textbf{classes}} and the center of intervals as \structure{\textbf{class marks}}.
 
 When grouping data into intervals, the following rules must be taken into account: 
 \begin{itemize}
@@ -235,7 +235,7 @@ Depending on the type of variable and if data has been grouped or not, there are
 \begin{itemize}
 \item Bar chart
 \item Histogram
-\item Line chart or ogive. 
+\item Line chart
 \item Pie chart
 \end{itemize}
 \end{frame} 
@@ -253,7 +253,8 @@ The width of the bar is not important but bars should be clearly separated among
 
 Depending on the type of frequency represented in the $y$-axis we get different types of bar charts.
  
-Sometimes a polygon, known as \structure{\textbf{frequency polygon}}, is plotted joining the top of every bar.
+Sometimes a polygon, known as \structure{\textbf{frequency polygon}}, is plotted joining the top of every bar with
+straight lines.
 \end{frame}
 
 
@@ -339,7 +340,7 @@ Sometimes a polygon, known as \structure{\textbf{frequency polygon}}, is plotted
 \end{center} 
 \end{frame}
 
-
+\mode<presentation>{
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Cumulative absolute frequency histogram}
@@ -360,7 +361,7 @@ Sometimes a polygon, known as \structure{\textbf{frequency polygon}}, is plotted
 \scalebox{0.6}{\input{img/descriptive/cum_abs_freq_histogram_polygon}} 
 \end{center} 
 \end{frame}
-
+}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -373,6 +374,7 @@ Sometimes a polygon, known as \structure{\textbf{frequency polygon}}, is plotted
 \end{frame}
 
 
+\mode<article>{The cumulative frequency polygon (for absolute or relative frequencies) is known as \textbf{ogive}.}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Cumulative relative frequency line chart or ogive}
@@ -382,6 +384,8 @@ Sometimes a polygon, known as \structure{\textbf{frequency polygon}}, is plotted
 \scalebox{0.6}{\input{img/descriptive/cum_rel_freq_histogram_polygon}} 
 \end{center} 
 \end{frame}
+\mode<article>{Observe that in the ogive we join the top right corner of bars with straight lines, instead of the top
+center, cause we don't reach the accumulated frequency of the class until the end of the interval.}
  
 
 %---------------------------------------------------------------------slide----
@@ -393,8 +397,8 @@ value or category.
 
 Pie charts can represent absolute or relative frequencies, but not cumulative frequencies, and are used with nominal
 qualitative variables.
-For ordinal qualitative or quantitative variables is better to use bar charts or histograms, cause it's easy to perceive
-differences in one dimension (lenght of bars) than in two dimensions (areas of sectors).
+For ordinal qualitative or quantitative variables is better to use bar charts or histograms, cause it's easier to
+perceive differences in one dimension (length of bars) than in two dimensions (areas of sectors).
 \end{frame}
 
 
@@ -544,7 +548,8 @@ or using the frequency table
 \end{array}
 \]
 \[
-\bar{x} = \frac{\sum x_in_i}{n} = \frac{44}{25}= 1.76 \qquad \bar{x}=\sum{x_if_i} = 1.76.
+\bar{x} = \frac{\sum x_in_i}{n} = \frac{44}{25}= 1.76\mbox{ children} \qquad \bar{x}=\sum{x_if_i} = 1.76 \mbox{
+childre}.
 \]
 That means that the value that best represent the number of children in the families of the sample is $1.76$ children.
 \end{frame}
@@ -558,7 +563,7 @@ Using the data of the sample of student heights, the arithmetic mean is
 \[
 \bar{x} = \frac{179+173+\cdots+187}{30} = 175.07 \mbox{ cm}.
 \]
-or using the frequency table with the class marks 
+or using the frequency table and taking the class marks as $x_i$,
 \[
 \setlength\arraycolsep{3mm}
 \setlength\arrayrulewidth{0.5pt}
@@ -577,7 +582,7 @@ or using the frequency table with the class marks
 \end{array}
 \]
 \[
-\bar{x} = \frac{\sum x_in_i}{n} = \frac{5240}{30}= 174.67 \qquad \bar{x}=\sum{x_if_i} = 174.67.
+\bar{x} = \frac{\sum x_in_i}{n} = \frac{5240}{30}= 174.67 \mbox{ cm}\qquad \bar{x}=\sum{x_if_i} = 174.67 \mbox{ cm}.
 \]
 
 Observe that when the mean is calculated from the table the result differs a little from the real value, cause the
@@ -646,9 +651,8 @@ weights of grades, as a representative measure of the student effort
 The \emph{sample median} of a variable $X$ is the value that is in the middle of the ordered sample. 
 \end{definition}
 
-The median divides the sample distribution in into two equal parts, that is, there are the same number of values above
-and below the median.
-It has cumulative frequencies $N_{Me}= n/2$ y  $F_{Me}= 0.5$.
+The median divides the sample distribution into two equal parts, that is, there are the same number of values above and
+below the median. Therefore, it has cumulative frequencies $N_{Me}= n/2$ y  $F_{Me}= 0.5$.
 
 \begin{center}
 \alert{\emph{Watch out! It can not be calculated for nominal variables.}}
@@ -843,7 +847,7 @@ class $Mo=(170,180]$.
 \setlength\arrayrulewidth{0.5pt}
 \begin{array}{rr}
 \hline
-\multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} \\
+\multicolumn{1}{c}{X} & \multicolumn{1}{c}{n_i} \\
 \hline
 (150,160] & 2 \\
 (160,170] & 8 \\
@@ -892,11 +896,11 @@ The non-central location measures or \emph{quantiles} divide the sample distribu
 The most used are:
 \begin{description}
 \item[Quartiles:] Divide the distribution into 4 equal parts. 
-There are 3 quartiles: $C_1$ (25\% acumulated) , $C_2$ (50\% acumulated), $C_3$ (75\% acumulated).
+There are 3 quartiles: $C_1$ (25\% accumulated) , $C_2$ (50\% accumulated), $C_3$ (75\% accumulated).
 \item[Deciles:] Divide the distribution into 10 equal parts.\\
-There are 9 deciles: $D_1$ (10\% acumulated) ,\ldots, $D_9$ (90\% acumulated).
+There are 9 deciles: $D_1$ (10\% accumulated) ,\ldots, $D_9$ (90\% accumulated).
 \item[Percentiles:] Divide the distribution into en 100 equal parts.\\
-There are 99 percentiles: $P_1$ (1\% acumulated),\ldots, $P_{99}$ (99\% acumulated).
+There are 99 percentiles: $P_1$ (1\% accumulated),\ldots, $P_{99}$ (99\% accumulated).
 \end{description}
 \end{frame}
 
@@ -1167,20 +1171,20 @@ with the squared values,
 \setlength\arrayrulewidth{0.5pt}
 \begin{array}{rrr}
 \hline
-\multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{n_i} & \multicolumn{1}{c}{x_i^2n_i} \\
+\multicolumn{1}{c}{x_i} & \multicolumn{1}{c}{f_i} & \multicolumn{1}{c}{x_i^2f_i} \\
 \hline
-0 & 2 & 0 \\
-1 & 6 & 6 \\
-2 & 14 & 56\\
-3 & 2  & 18\\
-4 & 1 & 16 \\
+0 & 0.08 & 0.00 \\
+1 & 0.24 & 0.24 \\
+2 & 0.56 & 2.24\\
+3 & 0.08  & 0.72\\
+4 & 0.04 & 0.64 \\
 \hline
-\sum & 25 & 96 \\
+\sum &  &  3.84\\ 
 \hline
 \end{array}
 \]
 \[
-s^2 = \frac{\sum x_i^2n_i}{n}-\bar x^2 = \frac{96}{25}-1.76^2= 0.7424 \mbox{ children}^2.
+s^2 = \sum x_i^2f_i-\bar x^2 = 3.84-1.76^2= 0.7424 \mbox{ children}^2,
 \]
 and the standard deviation is $s=\sqrt{0.7424} = 0.8616$ children.
 
@@ -1215,7 +1219,7 @@ but using the class marks.
 \end{array}
 \]
 \[
-s^2 = \frac{\sum x_i^2n_i}{n}-\bar x^2 = \frac{918350}{30}-174.67^2= 102.06 \mbox{ cm}^2.
+s^2 = \frac{\sum x_i^2n_i}{n}-\bar x^2 = \frac{918350}{30}-174.67^2= 102.06 \mbox{ cm}^2,
 \]
 and the standard deviation is $s=\sqrt{102.06} = 10.1$ cm.
 
@@ -1232,7 +1236,7 @@ distributions of variables with different units.
 
 For that reason it's also common to use the following dispersion measure that has no units.  
 \begin{definition}[Sample coefficient of variation $cv$]
-The \emph{sample coefficient of variation} of a variable $X$ is the quotien between the sample standard deviation and se
+The \emph{sample coefficient of variation} of a variable $X$ is the quotient between the sample standard deviation and se
 absolute value of the sample mean.
 \[
 cv = \frac{s}{|\bar x|}
@@ -1561,7 +1565,7 @@ Y: & 1 & 9 & \alert{8} & 5 & 2 & \qquad & \bar y = 5 & \quad s_y = 3.16\\
 \end{array}
 \]
 \begin{center}
-\emph{Did the students with an 8 have the same performance in every subject?}
+\emph{Did the fourth student get the same performance in subject $X$ than the third student in subject $Y$?}
 \end{center}
 It might seem that both students had the same performance in every subject because they have the same
 degree, but in order to get the performance of every student relative to the group of students, the dispersion

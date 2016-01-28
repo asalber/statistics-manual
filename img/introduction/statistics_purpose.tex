@@ -6,12 +6,15 @@
 
 \node (data) [label=-90:Data] at (0,1) {\includegraphics[height=1.5cm]{img/introduction/data.pdf}}; 
 \pause
-\node (information) [label=-90:Information] at (4,1) {\includegraphics[height=1.5cm]{img/introduction/information.png}};
-\draw[arrow] (data) -- (information) node[midway,white,font=\footnotesize] {STATISTICS\quad\phantom{0}};
+\node (information) [label=-90:Information] at (4.5,1)
+{\includegraphics[height=1.5cm]{img/introduction/information.png}}; 
+\node at (2,1) [fill=color2,single arrow,shape border rotate=0,text=white, minimum width=1.1cm]{
+\ STATISTICS\ \phantom{}};
 \pause
-\node (knowledge) [label=-90:Knowledge] at (8,1) {\includegraphics[height=1.5cm]{img/introduction/knowledge.png}};
-\draw [arrow] (information) -- (knowledge) node[midway,white,font=\footnotesize] {Interpretation\quad\phantom{0}};
+\node (knowledge) [label=-90:Knowledge] at (9.5,1) {\includegraphics[height=1.5cm]{img/introduction/knowledge.png}};
+\node at (7,1) [fill=color2,single arrow,shape border rotate=0,text=white, minimum width=1.1cm]{
+Interpretation\phantom{}};
 \pause
-\node (decisions) at (11,1) {\phantom{0}};
-\draw [arrow] (knowledge) -- (decisions) node[midway,white,font=\footnotesize] {Decisions\quad\phantom{0}};
+\node at (11.5,1) [fill=color2,single arrow,shape border rotate=0,text=white, minimum width=1.1cm]{
+\ Decisions\ \phantom{}};
 \end{tikzpicture} 

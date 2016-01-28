@@ -6,11 +6,11 @@
 
 \node (population) [label=90:Population] at (0,5) {\includegraphics[height=2cm]{img/introduction/population.pdf}}; 
 \node (sample) [label=-90:Sample] at (0,0) {\includegraphics[height=2cm]{img/introduction/sample.png}};
-\draw[arrow] let \p1=(population.south), \p2=(sample.north) in (\x1-10,\y1) -- (\x2-10,\y2)
-node[midway,rotate=-90,white] {Deduction};
+\node at (-0.5,2.6) [fill=color2,single arrow,shape border rotate=270,text=white, minimum width=1.2cm]{
+\rotatebox{90}{Deduction}\phantom{}};
 \node[node] at (-2,2.5) {From general\\ to particular};
 \pause
-\draw[arrow] let \p1=(sample.north), \p2=(population.south) in (\x1+10,\y1) -- (\x2+10,\y2) 
-node[midway,rotate=90,white] {Induction};
-\node[node] at (2,2.5) {From particular\\ to general};
+\node at (0.5,2.4) [fill=color2,single arrow,shape border rotate=90,text=white, minimum width=1.2cm]{
+\rotatebox{-90}{Induction}\phantom{}};
+\node[node] at (2.1,2.5) {From particular\\ to general};
 \end{tikzpicture} 
