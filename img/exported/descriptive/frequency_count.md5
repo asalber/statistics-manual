@@ -1,1 +1,1 @@
-\def \tikzexternallastkey {8E69C6C0A60A65249CEDE6ABEEAF7046}%
+\begingroup \toks 0={macro:->[every label/.style={text=color1}] \node at (0,8) {\includegraphics [height=4cm]{img/descriptive/ordered_sample.png}}; \pause \node at (0,0) {\includegraphics [height=4cm]{img/descriptive/sample_frequencies.png}}; \node at (0,4) [fill=color1,single arrow,shape border rotate=270,minimum height=3cm,text=white, minimum width=4cm, align=center]{\huge Frequency\\ \huge count}; }\xdef \tikzexternallastkey {\the \toks 0 }\endgroup %

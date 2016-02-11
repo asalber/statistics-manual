@@ -6,6 +6,10 @@
 	level 2/.style={sibling distance = 3cm},
 	level 3/.style={font=\small}
 ] 
+
+\node [rectangle, minimum height=2cm, minimum width=\textwidth, fill=color2!30, rounded corners, opacity=0.5] at
+(0,-4.5) {\phantom{0}}; 
+
 \node {Statistical variables}
 	child{node{Qualitative}
 		child{node{Nominal}
@@ -26,9 +30,6 @@
         }               
     }
 ; 
-
-\node [rectangle, minimum height=2cm, minimum width=\textwidth, fill=color1!30, rounded corners, opacity=0.5] at
-(0,-4.5) {\phantom{0}}; 
 
 \node [text=color1] at (0,-5.3) {Examples};
 \end{tikzpicture}

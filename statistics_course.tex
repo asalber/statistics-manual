@@ -2,86 +2,78 @@
 % ASPECT RATIO FOR YOUTUBE VIDEO
 %\documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
 % ASPECT RATIO FOR PROJECTOR
-%\documentclass[mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
+% \documentclass[profesionalfont,10pt,svgnames,xcolor=table]{beamer}
+
+% BEAMER THEME
+% \usetheme[progressbar=frametitle,background=light,titleformat=smallcaps,block=fill]{metropolis}
+
 % ARTICLE VERSION 
-\pdfminorversion=4 % for solving some problems with png graphics in acrobat reader
+% \pdfminorversion=4 % for solving some problems with png graphics in acrobat reader
 \documentclass[10pt,a4paper,titlepage]{article}
 \usepackage[hyperref]{beamerarticle}
-\usepackage{colortbl}
 
-\usepackage{pxfonts} 
-%\usepackage{lucidaso}  
-%\usepackage{eulervm}
-%\usepackage{mathpazo}
-%\renewcommand{\rmdefault}{ibh}
+% LANGUAGE
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+% FONT
+\mode<article>{
+\usepackage{fontspec}
+\usepackage[sc]{mathpazo}
+\setromanfont[Ligatures=TeX]{TeX Gyre Pagella}
+\usepackage{unicode-math}
+%\setromanfont[Mapping=tex-text]{Linux Libertine}
+%\setsansfont[Mapping=tex-text]{Myriad Pro}
+%\setmonofont[Mapping=tex-text]{Courier New}
+}
+% IMPROVE FONT IN PDF
+\mode<article>{\usepackage{microtype}} 
+
+% MARGINS
 \setbeamersize{text margin left=.5cm, text margin right=.5cm}
 
-%\usetheme[width=0pt,height=20pt,hideallsubsections]{PaloAlto}
-%\useoutertheme[width=0pt,height=30pt,hideallsubsections]{sidebar}
-\useoutertheme{default}
-\useinnertheme[shadow]{rounded}
-%\useoutertheme{shadow}
-%\usecolortheme[named=red]{structure}
-%\useinnertheme[shadow]{rounded}
-%\usecolortheme{sidebartab}
-%\usecolortheme[overlystylish]{albatross}
-%\usecolortheme{crane}
-%\usecolortheme{lily}
-\usecolortheme{whale}
-\usecolortheme{rose}
-%\setbeamercovered{transparent} 
+% MARGINS FOR ARTICLE
+\mode<article>{\usepackage{fullpage}}
+\mode<article>{\usepackage[headsep=1cm, top=3cm, bottom=3cm, left=2.54cm, right=2.54cm]{geometry}}
 
-%\beamertemplateshadingbackground{blue!10}{yellow!10} 
+% COLORS
+\definecolor{color1}{RGB}{5,161,230}
+\definecolor{color2}{RGB}{238,50,36}
+\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
+\definecolor{blueceu}{RGB}{5,161,230} % Blue color of CEU logo
+\definecolor{greenceu}{RGB}{185,209,16} % Green color of CEU logo
+\definecolor{redceu}{RGB}{238,50,36} % Red color of CEU logo
+\definecolor{grayceu}{RGB}{111,107,83} % Gray color of CEU logo
+\definecolor{coral}{rgb}{1,0.5,0.31} % Orange color for graphics
+\definecolor{royalblue1}{rgb}{0.28,0.46,1} % Blue color for graphics
+\definecolor{mygreen}{rgb}{0,0.8,0} % Green color for graphics
+\definecolor{chaptergrey}{RGB}{5,161,230} % Blue color of CEU logo
 
-% REMOVE NAVIGATIONS SYMBOLS
-\setbeamertemplate{navigation symbols}{}
-
-% LIST ITEMS
-%\setbeamertemplate{itemize items}[default]
-\setbeamertemplate{enumerate items}[default]
-\setbeamerfont{itemize/enumerate subbody}{size=\normalsize} %to set the body size of second nested level
-\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize} %to set the body size of third nested level
-\setbeamertemplate{itemize item}{\small\raise0.5pt\hbox{$\blacktriangleright$}} 
-\setbeamertemplate{itemize subitem}{\small\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to set
-% the symbol size of second level items
-\setbeamertemplate{itemize subsubitem}{\small\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to
-% set the symbol size of third level itemsç
-\setbeamertemplate{itemize/enumerate body begin}{\setlength{\leftmargini}{.45cm}} %to set the first level item indent
-\setbeamertemplate{itemize/enumerate subbody begin}{\setlength{\leftmarginii}{.45cm}} %to set the second level item
-% indent
-\setbeamertemplate{itemize/enumerate subsubbody begin}{\setlength{\leftmarginiii}{.45cm}} %to set the third level item
-% indent
-
-
-
+% TABLE OF CONTENT style
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}[subsections numbered]
 
-% HANDOUTS 
-% \setbeameroption{show notes}
-% \setbeamertemplate{note page}[plain]
-% \setbeamerfont{note page}{size=\scriptsize}
-
-% FOOT
-\setbeamertemplate{footline}[split]
-% \vbox{%
-% \tinycolouredline{structure}{\color{white}\textbf{Curso B\'asico de Estad\'istica \hfill%
-% \insertshortinstitute\hfill
-% \insertframenumber{} / \inserttotalframenumber
-% }}%
-% }}
-
-\usepackage[utf8x]{inputenc}
+% TABLES
 \usepackage{array}
 \usepackage{multirow}
-\usepackage{textcomp}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\newcommand{\tcrule}{\arrayrulecolor{color1!50!white}\toprule}
+\newcommand{\mcrule}{\arrayrulecolor{color1!50!white}\midrule}
+\newcommand{\bcrule}{\arrayrulecolor{color1!50!white}\bottomrule}
+
+% GRAPHICS
+\usepackage{pgfplots}
 \usepackage{tikz}
 \usetikzlibrary{external,arrows,calc,shapes,shapes.arrows,positioning,snakes,decorations.pathreplacing}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+% Graphics export
 \mode<article>{
 \tikzset{
     png export/.style={
         external/system call={
-            pdflatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource";
+            xelatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource";
             convert -density 300 -transparent white "\image.pdf" "\image.png"
         }
     }
@@ -96,33 +88,21 @@
 \tikzset{png export}
 \tikzset{svg export}
 }
+
 \usepackage{graphicx}
-\usepackage{breakurl}
 
-% Organización de varias diapositvas por página
-%\usepackage{pgfpages} 
-%\pgfpagesuselayout{4 on 1}[a4paper,landscape, border shrink=5mm]
-\usepackage[english]{babel}
+% CREATIVE COMMON ICONS
+\usepackage[scale=2]{ccicons}
 
-\pdfinfo{
-   /Author (Alfredo Sanchez Alberca)
-   /Title  (Elementary Statistics Manual) 
-   /Subject (Statistics)
-   /Keywords (Statistics; Data analysis; Descriptive Statistics; Inferential Statistics)
+% LOGO POSITION
+\setbeamertemplate{title graphic}{
+ \vbox to 0pt {
+ 	\vspace*{0.9\textheight}
+ 	\inserttitlegraphic
+ }
 }
 
-% COLORS
-\definecolor{color1}{RGB}{174,49,54}
-\definecolor{color2}{RGB}{61,139,163}
-\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
-\definecolor{blueceu}{RGB}{5,161,230} % Blue color of CEU logo
-\definecolor{greenceu}{RGB}{185,209,16} % Green color of CEU logo
-\definecolor{redceu}{RGB}{137,28,36} % Red color of CEU logo
-\definecolor{grayceu}{RGB}{111,107,83} % Gray color of CEU logo
-\definecolor{coral}{rgb}{1,0.5,0.31} % Orange color for graphics
-\definecolor{royalblue1}{rgb}{0.28,0.46,1} % Blue color for graphics
-\definecolor{mygreen}{rgb}{0,0.8,0} % Green color for graphics
-\definecolor{chaptergrey}{RGB}{5,161,230} % Blue color of CEU logo
+
 
 % SPACE BETWEEN PARAGRAFS
 \setlength{\parskip}{0.5em}
@@ -130,11 +110,14 @@
 % THEORMEM ENVIRONMENTS
 %\theoremstyle{definition}
 %\newtheorem{definition}[theorem]{Definition}
-%\newtheorem{theorem}[theorem]{Theorem}
 
-% MARGINS FOR ARTICLE
-\mode<article>{\usepackage{fullpage}}
-\mode<article>{\usepackage[headsep=1cm, top=3cm, bottom=3cm, left=2.54cm, right=2.54cm]{geometry}}
+% BLOCKS COLORS
+\setbeamercolor{block title}{
+	use=normal text,
+	fg=normal text.fg,
+	bg=alerted text.fg!50
+}
+
 
 % HEADINGS AND FOOTERS FOR ARTICLE
 \mode<article>{
@@ -146,60 +129,69 @@
 %\renewcommand{\textfraction}{.1} 
 } 
 
+% FRAME TITLE CONFIGURATION
+% \defbeamertemplate{frametitle}{myframe}{
+% 	\nointerlineskip
+% 	\begin{beamercolorbox}[wd=\paperwidth,sep=1ex]{frametitle}
+% 		\insertframetitle
+% 	\end{beamercolorbox}
+% } 
+% \setbeamertemplate{frametitle}[myframe] 
+
 % SECTION COLOR FOR ARTICLE
 \mode<article>{
 \usepackage{titlesec}
-\titleformat{\section}{\color{royalblue1}\normalfont\Large\bfseries}{\color{royalblue1}\thesection}{1em}{}
-\titleformat{\subsection}{\color{royalblue1}\normalfont\large\bfseries}{\color{royalblue1}\thesubsection}{1em}{}
+\titleformat{\section}{\color{color1}\normalfont\Large\bfseries}{\color{color1}\thesection}{1em}{}
+\titleformat{\subsection}{\color{color1}\normalfont\large\bfseries}{\color{color1}\thesubsection}{1em}{}
 }
 
-% SET COLOR TEXT
-%\definecolor{gris}{gray}{0.2}
-%\color{gris}
+% COMMAND FOR HIGHLIGHTING
+\newcommand{\highlight}[1]{\textcolor{orange}{\textbf{#1}}}
 
 % PDF settings
 \hypersetup{colorlinks=true}
 
+
 %=====================================================================BODY=====
 
 %---------------------------------------------------------------------cover----
-\mode<article>{\title{\textcolor{color1}{\Huge Elementary Statistics Course}}}
-\mode<presentation>{\title{Elementary Statistics Course}}
+\mode<article>{
+\title{\textcolor{color1}{\Huge Elementary Statistics Course}}
+\author{Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})}
+\date{Feb 2016\\[1cm]
+Department of Applied Math and Statistics\\ CEU San Pablo\\[1cm]
+\includegraphics[height=2cm]{img/logo_uspceu}
+}
+}
 \mode<presentation>{
-\author{\texorpdfstring{Alfredo Sánchez Alberca \\ \href{mailto:asalber@ceu.es}{asalber@ceu.es}}{Alfredo Sánchez
-Alberca}} }
-\mode<article>{\author{Alfredo Sánchez Alberca \\ \href{mailto:asalber@ceu.es}{asalber@ceu.es}}}
-\mode<presentation>{\institute[USP CEU]{\includegraphics[scale=0.2]{img/logo_uspceu}}}
-\date{\mode<article>{\includegraphics[scale=0.2]{img/logo_uspceu}\\[1cm] }
-%Curso 2012-2013\\ 
-\textcopyleft Copyleft}
+\title{Elementary Statistics Course}
+\author{Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})}
+\institute{Department of Applied Math and Statistics\\ CEU San Pablo}
+\date{Feb 2016}
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{img/logo_uspceu}}
+}
 
-%\includeonly{}
+
+
 \begin{document}
 \mode<article>{\thispagestyle{empty}\maketitle}
+\mode<presentation>{\maketitle}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\titlepage  
-\end{frame} 
- 
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\mode<presentation>{\frametitle{License \includegraphics[scale=0.06]{img/cc-logo}}}
-\mode<article>{\null \vfill \noindent \textbf{\Large License} \includegraphics[scale=0.06]{img/cc-logo} \medskip \hrule
-depth 3pt \smallskip}
-\input{license}
-\mode<article>{\smallskip \hrule depth 3pt}
-\end{frame} 
+\input{preamble/license}
+\end{frame}
 
-\mode<article>{\newpage}
+\mode<article>{\clearpage}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \mode<presentation>{\frametitle{Contents}}
+\setbeamertemplate{section in toc}[sections numbered]
 \tableofcontents[hideallsubsections]
 \end{frame}
 
-\include{introduction}
-\include{descriptive} 
+\include{chapters/introduction}
+\include{chapters/descriptive} 
+
 \end{document}

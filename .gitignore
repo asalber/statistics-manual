@@ -22,3 +22,5 @@
 *.out
 *.synctex.gz
 /statistics_course.pdf
+/statistics_course.nav
+/statistics_course.snm

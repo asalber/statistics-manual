@@ -1,8 +1,11 @@
-setwd("/media/alf/datos/drive/CEU/docencia/materiales/estadistica/presentaciones/statistics_course")
+setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_course")
 library(tikzDevice)
 library(plyr)
 library(plotly)
 require(Hmisc)
+
+
+
 
 options(tikzDefaultEngine = "pdftex")
 # Bar chart
@@ -98,7 +101,7 @@ layout(p,title="Cumulative relative frequency distribution of heights", xaxis=li
 tikz(file="img/descriptive/factor_histogram.tex", width=5, height=5)
 options(digits=1)
 par(cex.lab=1.2)
-out <- histbackback(split(data$height, data$sex), xlim=c(-10,10), main = 'Frequency distribution histogram of Height by Sex', xlab=c("male", "female"), ylab="Height")
+out <- histbackback(split(data$height, data$sex), xlim=c(-10,10), main = 'Frequency distribution histogram of Height by Gender', xlab=c("male", "female"), ylab="Height")
 abline(v= (-8:8)*2 , col ="gray" , lty =3) 
 barplot(-out$left, col="coral" , horiz=TRUE, space=0, add=TRUE, axes=FALSE) 
 barplot(out$right, col="royalblue1", horiz=TRUE, space=0, add=TRUE, axes=FALSE) 
@@ -108,7 +111,7 @@ dev.off()
 tikz(file="img/descriptive/factor_box_plot.tex", width=5, height=5)
 options(digits=2)
 par(cex.lab=1.2)
-boxplot(height~sex, main="Frequency distribution box plot of Height by Sex", ylab="Height", xlab="Sex", ylim=c(150,200), labels=c("Men","Women"), col=c("coral","royalblue1"), data=data)
+boxplot(height~sex, main="Frequency distribution box plot of Height by Gender", ylab="Height", xlab="Gender", ylim=c(150,200), labels=c("Male","Female"), col=c("coral","royalblue1"), data=data)
 dev.off()
 
 # Pie chart
