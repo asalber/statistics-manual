@@ -856,7 +856,7 @@ The non-central location measures or \emph{quantiles} divide the sample distribu
 The most used are:
 \begin{description}
 \item[Quartiles:] Divide the distribution into 4 equal parts. 
-There are 3 quartiles: $C_1$ (25\% accumulated) , $C_2$ (50\% accumulated), $C_3$ (75\% accumulated).
+There are 3 quartiles: $Q_1$ (25\% accumulated) , $Q_2$ (50\% accumulated), $Q_3$ (75\% accumulated).
 \item[Deciles:] Divide the distribution into 10 equal parts.\\
 There are 9 deciles: $D_1$ (10\% accumulated) ,\ldots, $D_9$ (90\% accumulated).
 \item[Percentiles:] Divide the distribution into en 100 equal parts.\\
@@ -912,9 +912,9 @@ Using the data of the sample with the number of children of families, the cumula
 \]
 
 \begin{align*}
-F_{C_1}=0.25 &\Rightarrow C_1 = 1 \text{ children},\\
-F_{C_2}=0.5 &\Rightarrow C_2 = 2 \text{ children},\\
-F_{C_3}=0.75 &\Rightarrow C_3 = 2 \text{ children},\\
+F_{Q_1}=0.25 &\Rightarrow C_1 = 1 \text{ children},\\
+F_{Q_2}=0.5 &\Rightarrow C_2 = 2 \text{ children},\\
+F_{Q_3}=0.75 &\Rightarrow C_3 = 2 \text{ children},\\
 F_{D_4}=0.4 &\Rightarrow D_3 = 2 \text{ children},\\
 F_{P_{92}}=0.92 &\Rightarrow P_{92} = 3 \text{ children}.\\
 \end{align*}
@@ -1015,9 +1015,7 @@ To create a box plot follow the steps below
 \item Calculate the quartiles. 
 \item Draw a box from the lower to the upper quartile. 
 \item Split the box with the median or second quartile. 
-\item For the whiskers calculate first two values called \emph{fences} $f_1$ y $f_2$. The lower fence is the
-lower quartile minus one and a half the interquartile range, and the upper fence is the upper quartile plus one and a
-half the interquartile range:
+\item For the whiskers calculate first two values called \emph{fences}
 \begin{align*}
 f_1&=Q_1-1.5\,\text{IQR}\\
 f_2&=Q_3+1.5\,\text{IQR}

@@ -5,248 +5,37 @@
 \headcommand {\beamer@framepages {2}{2}}
 \headcommand {\slideentry {0}{0}{3}{3/3}{}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\sectionentry {1}{Intoduction to Statistics}{4}{Intoduction to Statistics}{0}}
+\headcommand {\sectionentry {1}{Regresión y Correlación}{4}{Regresión y Correlación}{0}}
 \headcommand {\beamer@sectionpages {1}{3}}
 \headcommand {\beamer@subsectionpages {1}{3}}
 \headcommand {\slideentry {1}{0}{1}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
 \headcommand {\slideentry {1}{0}{2}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{6}{Statistics as a scientific tool}}\headcommand {\beamer@subsectionpages {4}{5}}
-\headcommand {\slideentry {1}{1}{1}{6/11}{Statistics as a scientific tool}{0}}
-\headcommand {\beamer@framepages {6}{11}}
-\headcommand {\slideentry {1}{1}{2}{12/12}{Statistics as a scientific tool}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{6}{Joint frequency distribution}}\headcommand {\beamer@subsectionpages {4}{5}}
+\headcommand {\slideentry {1}{1}{1}{6/6}{Joint frequency distribution}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {1}{1}{2}{7/7}{Joint frequency distribution}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {1}{1}{3}{8/8}{Joint frequency distribution}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {1}{1}{4}{9/9}{Joint frequency distribution}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\slideentry {1}{1}{5}{10/10}{Joint frequency distribution}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {1}{1}{6}{11/11}{Joint frequency distribution}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {1}{1}{7}{12/12}{Joint frequency distribution}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\beamer@subsectionentry {0}{1}{2}{13}{Population and sample}}\headcommand {\beamer@subsectionpages {6}{12}}
-\headcommand {\slideentry {1}{2}{1}{13/13}{Population and sample}{0}}
+\headcommand {\slideentry {1}{1}{8}{13/13}{Joint frequency distribution}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {1}{2}{2}{14/14}{Population and sample}{0}}
+\headcommand {\slideentry {1}{1}{9}{14/14}{Joint frequency distribution}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {1}{2}{3}{15/15}{Population and sample}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{15}{Covariance}}\headcommand {\beamer@subsectionpages {6}{14}}
+\headcommand {\slideentry {1}{2}{1}{15/15}{Covariance}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {1}{2}{4}{16/16}{Population and sample}{0}}
-\headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {1}{2}{5}{17/17}{Population and sample}{0}}
-\headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {1}{2}{6}{18/18}{Population and sample}{0}}
-\headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {1}{2}{7}{19/19}{Population and sample}{0}}
-\headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {1}{2}{8}{20/21}{Population and sample}{0}}
-\headcommand {\beamer@framepages {20}{21}}
-\headcommand {\slideentry {1}{2}{9}{22/22}{Population and sample}{0}}
-\headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{23}{Sampling}}\headcommand {\beamer@subsectionpages {13}{22}}
-\headcommand {\slideentry {1}{3}{1}{23/23}{Sampling}{0}}
-\headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {1}{3}{2}{24/24}{Sampling}{0}}
-\headcommand {\beamer@framepages {24}{24}}
-\headcommand {\slideentry {1}{3}{3}{25/25}{Sampling}{0}}
-\headcommand {\beamer@framepages {25}{25}}
-\headcommand {\beamer@subsectionentry {0}{1}{4}{26}{Statistical variables}}\headcommand {\beamer@subsectionpages {23}{25}}
-\headcommand {\slideentry {1}{4}{1}{26/26}{Statistical variables}{0}}
-\headcommand {\beamer@framepages {26}{26}}
-\headcommand {\slideentry {1}{4}{2}{27/27}{Statistical variables}{0}}
-\headcommand {\beamer@framepages {27}{27}}
-\headcommand {\slideentry {1}{4}{3}{28/28}{Statistical variables}{0}}
-\headcommand {\beamer@framepages {28}{28}}
-\headcommand {\slideentry {1}{4}{4}{29/29}{Statistical variables}{0}}
-\headcommand {\beamer@framepages {29}{29}}
-\headcommand {\slideentry {1}{4}{5}{30/30}{Statistical variables}{0}}
-\headcommand {\beamer@framepages {30}{30}}
-\headcommand {\slideentry {1}{4}{6}{31/31}{Statistical variables}{0}}
-\headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {1}{4}{7}{32/32}{Statistical variables}{0}}
-\headcommand {\beamer@framepages {32}{32}}
-\headcommand {\beamer@subsectionentry {0}{1}{5}{33}{Phases of a statistical study}}\headcommand {\beamer@subsectionpages {26}{32}}
-\headcommand {\slideentry {1}{5}{1}{33/33}{Phases of a statistical study}{0}}
-\headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {1}{5}{2}{34/38}{Phases of a statistical study}{0}}
-\headcommand {\beamer@framepages {34}{38}}
-\headcommand {\sectionentry {2}{Frequency distributions: Tabulation and charts}{39}{Frequency distributions: Tabulation and charts}{0}}
-\headcommand {\beamer@sectionpages {4}{38}}
-\headcommand {\beamer@subsectionpages {33}{38}}
-\headcommand {\slideentry {2}{0}{1}{39/39}{}{0}}
-\headcommand {\beamer@framepages {39}{39}}
-\headcommand {\slideentry {2}{0}{2}{40/40}{}{0}}
-\headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {2}{0}{3}{41/41}{}{0}}
-\headcommand {\beamer@framepages {41}{41}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{42}{Frequency distribution}}\headcommand {\beamer@subsectionpages {39}{41}}
-\headcommand {\slideentry {2}{1}{1}{42/42}{Frequency distribution}{0}}
-\headcommand {\beamer@framepages {42}{42}}
-\headcommand {\slideentry {2}{1}{2}{43/44}{Frequency distribution}{0}}
-\headcommand {\beamer@framepages {43}{44}}
-\headcommand {\slideentry {2}{1}{3}{45/46}{Frequency distribution}{0}}
-\headcommand {\beamer@framepages {45}{46}}
-\headcommand {\slideentry {2}{1}{4}{47/47}{Frequency distribution}{0}}
-\headcommand {\beamer@framepages {47}{47}}
-\headcommand {\slideentry {2}{1}{5}{48/48}{Frequency distribution}{0}}
-\headcommand {\beamer@framepages {48}{48}}
-\headcommand {\slideentry {2}{1}{6}{49/49}{Frequency distribution}{0}}
-\headcommand {\beamer@framepages {49}{49}}
-\headcommand {\slideentry {2}{1}{7}{50/50}{Frequency distribution}{0}}
-\headcommand {\beamer@framepages {50}{50}}
-\headcommand {\slideentry {2}{1}{8}{51/51}{Frequency distribution}{0}}
-\headcommand {\beamer@framepages {51}{51}}
-\headcommand {\slideentry {2}{1}{9}{52/52}{Frequency distribution}{0}}
-\headcommand {\beamer@framepages {52}{52}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{53}{Frequency distribution graphs}}\headcommand {\beamer@subsectionpages {42}{52}}
-\headcommand {\slideentry {2}{2}{1}{53/53}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {53}{53}}
-\headcommand {\slideentry {2}{2}{2}{54/54}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {54}{54}}
-\headcommand {\slideentry {2}{2}{3}{55/55}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {55}{55}}
-\headcommand {\slideentry {2}{2}{4}{56/56}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {56}{56}}
-\headcommand {\slideentry {2}{2}{5}{57/57}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {57}{57}}
-\headcommand {\slideentry {2}{2}{6}{58/58}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {58}{58}}
-\headcommand {\slideentry {2}{2}{7}{59/59}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {59}{59}}
-\headcommand {\slideentry {2}{2}{8}{60/60}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {60}{60}}
-\headcommand {\slideentry {2}{2}{9}{61/61}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {61}{61}}
-\headcommand {\slideentry {2}{2}{10}{62/62}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {62}{62}}
-\headcommand {\slideentry {2}{2}{11}{63/63}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {63}{63}}
-\headcommand {\slideentry {2}{2}{12}{64/64}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {64}{64}}
-\headcommand {\slideentry {2}{2}{13}{65/65}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {65}{65}}
-\headcommand {\slideentry {2}{2}{14}{66/66}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {66}{66}}
-\headcommand {\slideentry {2}{2}{15}{67/67}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {67}{67}}
-\headcommand {\slideentry {2}{2}{16}{68/68}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {68}{68}}
-\headcommand {\slideentry {2}{2}{17}{69/69}{Frequency distribution graphs}{0}}
-\headcommand {\beamer@framepages {69}{69}}
-\headcommand {\sectionentry {3}{Sample statistics}{70}{Sample statistics}{0}}
-\headcommand {\beamer@sectionpages {39}{69}}
-\headcommand {\beamer@subsectionpages {53}{69}}
-\headcommand {\slideentry {3}{0}{1}{70/70}{}{0}}
-\headcommand {\beamer@framepages {70}{70}}
-\headcommand {\slideentry {3}{0}{2}{71/71}{}{0}}
-\headcommand {\beamer@framepages {71}{71}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{72}{Location statistics}}\headcommand {\beamer@subsectionpages {70}{71}}
-\headcommand {\slideentry {3}{1}{1}{72/72}{Location statistics}{0}}
-\headcommand {\beamer@framepages {72}{72}}
-\headcommand {\slideentry {3}{1}{2}{73/73}{Location statistics}{0}}
-\headcommand {\beamer@framepages {73}{73}}
-\headcommand {\slideentry {3}{1}{3}{74/74}{Location statistics}{0}}
-\headcommand {\beamer@framepages {74}{74}}
-\headcommand {\slideentry {3}{1}{4}{75/75}{Location statistics}{0}}
-\headcommand {\beamer@framepages {75}{75}}
-\headcommand {\slideentry {3}{1}{5}{76/76}{Location statistics}{0}}
-\headcommand {\beamer@framepages {76}{76}}
-\headcommand {\slideentry {3}{1}{6}{77/77}{Location statistics}{0}}
-\headcommand {\beamer@framepages {77}{77}}
-\headcommand {\slideentry {3}{1}{7}{78/78}{Location statistics}{0}}
-\headcommand {\beamer@framepages {78}{78}}
-\headcommand {\slideentry {3}{1}{8}{79/84}{Location statistics}{0}}
-\headcommand {\beamer@framepages {79}{84}}
-\headcommand {\slideentry {3}{1}{9}{85/85}{Location statistics}{0}}
-\headcommand {\beamer@framepages {85}{85}}
-\headcommand {\slideentry {3}{1}{10}{86/90}{Location statistics}{0}}
-\headcommand {\beamer@framepages {86}{90}}
-\headcommand {\slideentry {3}{1}{11}{91/93}{Location statistics}{0}}
-\headcommand {\beamer@framepages {91}{93}}
-\headcommand {\slideentry {3}{1}{12}{94/98}{Location statistics}{0}}
-\headcommand {\beamer@framepages {94}{98}}
-\headcommand {\slideentry {3}{1}{13}{99/102}{Location statistics}{0}}
-\headcommand {\beamer@framepages {99}{102}}
-\headcommand {\slideentry {3}{1}{14}{103/103}{Location statistics}{0}}
-\headcommand {\beamer@framepages {103}{103}}
-\headcommand {\slideentry {3}{1}{15}{104/104}{Location statistics}{0}}
-\headcommand {\beamer@framepages {104}{104}}
-\headcommand {\slideentry {3}{1}{16}{105/105}{Location statistics}{0}}
-\headcommand {\beamer@framepages {105}{105}}
-\headcommand {\slideentry {3}{1}{17}{106/109}{Location statistics}{0}}
-\headcommand {\beamer@framepages {106}{109}}
-\headcommand {\slideentry {3}{1}{18}{110/115}{Location statistics}{0}}
-\headcommand {\beamer@framepages {110}{115}}
-\headcommand {\slideentry {3}{1}{19}{116/116}{Location statistics}{0}}
-\headcommand {\beamer@framepages {116}{116}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{117}{Dispersion statistics}}\headcommand {\beamer@subsectionpages {72}{116}}
-\headcommand {\slideentry {3}{2}{1}{117/117}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {117}{117}}
-\headcommand {\slideentry {3}{2}{2}{118/118}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {118}{118}}
-\headcommand {\slideentry {3}{2}{3}{119/119}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {119}{119}}
-\headcommand {\slideentry {3}{2}{4}{120/120}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {120}{120}}
-\headcommand {\slideentry {3}{2}{5}{121/121}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {121}{121}}
-\headcommand {\slideentry {3}{2}{6}{122/122}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {122}{122}}
-\headcommand {\slideentry {3}{2}{7}{123/131}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {123}{131}}
-\headcommand {\slideentry {3}{2}{8}{132/132}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {132}{132}}
-\headcommand {\slideentry {3}{2}{9}{133/133}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {133}{133}}
-\headcommand {\slideentry {3}{2}{10}{134/135}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {134}{135}}
-\headcommand {\slideentry {3}{2}{11}{136/136}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {136}{136}}
-\headcommand {\slideentry {3}{2}{12}{137/137}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {137}{137}}
-\headcommand {\slideentry {3}{2}{13}{138/138}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {138}{138}}
-\headcommand {\slideentry {3}{2}{14}{139/139}{Dispersion statistics}{0}}
-\headcommand {\beamer@framepages {139}{139}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{140}{Shape statistics}}\headcommand {\beamer@subsectionpages {117}{139}}
-\headcommand {\slideentry {3}{3}{1}{140/140}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {140}{140}}
-\headcommand {\slideentry {3}{3}{2}{141/141}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {141}{141}}
-\headcommand {\slideentry {3}{3}{3}{142/142}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {142}{142}}
-\headcommand {\slideentry {3}{3}{4}{143/143}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {143}{143}}
-\headcommand {\slideentry {3}{3}{5}{144/144}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {144}{144}}
-\headcommand {\slideentry {3}{3}{6}{145/145}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {145}{145}}
-\headcommand {\slideentry {3}{3}{7}{146/146}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {146}{146}}
-\headcommand {\slideentry {3}{3}{8}{147/147}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {147}{147}}
-\headcommand {\slideentry {3}{3}{9}{148/148}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {148}{148}}
-\headcommand {\slideentry {3}{3}{10}{149/149}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {149}{149}}
-\headcommand {\slideentry {3}{3}{11}{150/150}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {150}{150}}
-\headcommand {\slideentry {3}{3}{12}{151/151}{Shape statistics}{0}}
-\headcommand {\beamer@framepages {151}{151}}
-\headcommand {\beamer@subsectionentry {0}{3}{4}{152}{Variable transformations}}\headcommand {\beamer@subsectionpages {140}{151}}
-\headcommand {\slideentry {3}{4}{1}{152/152}{Variable transformations}{0}}
-\headcommand {\beamer@framepages {152}{152}}
-\headcommand {\slideentry {3}{4}{2}{153/153}{Variable transformations}{0}}
-\headcommand {\beamer@framepages {153}{153}}
-\headcommand {\slideentry {3}{4}{3}{154/154}{Variable transformations}{0}}
-\headcommand {\beamer@framepages {154}{154}}
-\headcommand {\slideentry {3}{4}{4}{155/155}{Variable transformations}{0}}
-\headcommand {\beamer@framepages {155}{155}}
-\headcommand {\slideentry {3}{4}{5}{156/156}{Variable transformations}{0}}
-\headcommand {\beamer@framepages {156}{156}}
-\headcommand {\slideentry {3}{4}{6}{157/157}{Variable transformations}{0}}
-\headcommand {\beamer@framepages {157}{157}}
-\headcommand {\slideentry {3}{4}{7}{158/158}{Variable transformations}{0}}
-\headcommand {\beamer@framepages {158}{158}}
-\headcommand {\slideentry {3}{4}{8}{159/159}{Variable transformations}{0}}
-\headcommand {\beamer@framepages {159}{159}}
-\headcommand {\slideentry {3}{4}{9}{160/160}{Variable transformations}{0}}
-\headcommand {\beamer@framepages {160}{160}}
-\headcommand {\beamer@partpages {1}{160}}
-\headcommand {\beamer@subsectionpages {152}{160}}
-\headcommand {\beamer@sectionpages {70}{160}}
-\headcommand {\beamer@documentpages {160}}
-\headcommand {\def \inserttotalframenumber {109}}
+\headcommand {\beamer@partpages {1}{15}}
+\headcommand {\beamer@subsectionpages {15}{15}}
+\headcommand {\beamer@sectionpages {4}{15}}
+\headcommand {\beamer@documentpages {15}}
+\headcommand {\def \inserttotalframenumber {15}}

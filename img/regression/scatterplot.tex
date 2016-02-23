@@ -1,0 +1,21 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\pgfplotsset{
+    standard/.style={
+        axis x line=bottom,
+        axis y line=left,
+        %enlarge x limits=-0.15,
+        %enlarge y limits=-0.15,
+        every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+        every axis y label/.style={at={(current axis.above origin)},anchor=east},
+    }
+}
+
+\begin{tikzpicture}
+\begin{axis}[standard,ymin=0,ymax=5,axis
+equal,xlabel={$X$},ylabel={$Y$},xtick={4},xticklabels={$x_i$},ytick={3},yticklabels={$y_j$}]
+\addplot[color=color1,mark=*,domain=0:7] coordinates {(4,3)}; \coordinate (A) at (axis cs:4,3); \node[anchor=south west] at (A) {$(x_i,y_j)$};
+\draw[dashed,color=gray] (axis cs:0,3) -- (A) -- (axis cs:4,0);
+\end{axis}
+
+\end{tikzpicture}

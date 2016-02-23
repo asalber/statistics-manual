@@ -1,0 +1,1719 @@
+\section{Regresión y Correlación}
+
+\mode<presentation>{
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Regression and Correlation}
+\tableofcontents[sectionstyle=show/hide,hideothersubsections]
+\end{frame}
+}
+
+
+\subsection{Joint frequency distribution}
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Relations among variables}
+In the last chapter we saw how to describe the distribution of a single variable in a sample. 
+However, in most cases, studies require to describe several variables that are often related.
+For instance, a nutritional study should consider all the variables that could be related to the weight, as height, age,
+gender, smoking, diet, physic exercise, etc.
+
+To understand a phenomenon that involve several variables is not enough to study every variable by its own. 
+We have to study all the variables together to describe how they interact and the type of relation among them. 
+
+Usually in a \emph{dependency study} there is a \highlight{dependent variable} $Y$ that it is supposed to be influenced
+by a set of variables $X_1,\ldots,X_n$ known as \highlight{independent variables}. 
+The simpler case is a \emph{simple dependency study} when there is only one independent variable, that is the case
+covered in this chapter. 
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Joint frequencies}
+To study the relation between two variables $X$ and $Y$, we have to study the joint distribution of the
+\highlight{two-dimensional variable} $(X,Y)$, whose values are pairs $(x_i,y_j)$ where the first element is a value of
+$X$ and the second a value of $Y$.
+
+\begin{definition}[Joint sample frequencies]
+Given a sample of $n$ values and a two-dimensional variable $(X,Y)$, for every value of the variable $(x_i,y_j)$
+is defined
+\begin{itemize}
+\item \highlight{Absolute frequency $n_{ij}$}: Is the number of times that the pair $(x_i,y_j)$ appears in the sample.
+\item \highlight{Relative frequency $f_{ij}$}: Is the proportion of times that the pair $(x_i,y_j)$ appears in the
+sample.
+\[
+f_{ij}=\frac{n_{ij}}{n}
+\]
+\end{itemize}
+\end{definition}
+
+\begin{center}
+\alert{\emph{Watch out! For two-dimensional variables it make no sense cumulative frequencies.}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Joint frequency distribution}
+The values of the two-dimensional variable with their frequencies is known as \highlight{joint frequency distribution},
+and is represented in a \hightlight{joint frequency table}.
+
+\[
+\begin{array}{|c|ccccc|}
+\hline
+X\backslash Y & y_1 & \cdots & y_j & \cdots & y_q\\
+\hline
+x_1 & n_{11} & \cdots & n_{1j} & \cdots & n_{1q}\\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+x_i & n_{i1} & \cdots & n_{ij} & \cdots & n_{iq}\\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+x_p & n_{p1} & \cdots & n_{pj} & \cdots & n_{pq}\\
+\hline
+\end{array}
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Joint frequency distribution}
+\framesubtitle{Example with grouped data}
+The height (in cm) and weight (in kg) of a sample of 30 students is:
+\begin{center}
+(179,85), (173,65), (181,71), (170,65), (158,51), (174,66),\\
+(172,62), (166,60), (194,90), (185,75), (162,55), (187,78),\\
+(198,109), (177,61), (178,70), (165,58), (154,50), (183,93),\\
+(166,51), (171,65), (175,70), (182,60), (167,59), (169,62),\\
+(172,70), (186,71), (172,54), (176,68),(168,67), (187,80).
+\end{center}
+
+The joint frequency table is 
+\[
+\begin{array}{|c||c|c|c|c|c|c|}
+\hline
+  X/Y & [50,60) & [60,70) & [70,80) & [80,90) & [90,100) & [100,110) \\
+  \hline\hline
+  (150,160] & 2 & 0 & 0 & 0 & 0 & 0 \\
+  \hline
+  (160,170] & 4 & 4 & 0 & 0 & 0 & 0 \\
+  \hline
+  (170,180] & 1 & 6 & 3 & 1 & 0 & 0 \\
+  \hline
+  (180,190] & 0 & 1 & 4 & 1 & 1 & 0 \\
+  \hline
+  (190,200] & 0 & 0 & 0 & 0 & 1 & 1 \\
+  \hline
+\end{array}
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Scatter plot}
+The joint frequency distribution can be represented graphically with a \highlight{scatter plot}, where data is displayed
+as a collections of points on a $XY$ coordinate system.
+
+Usually the independent variable is represented in the $X$ axis and the dependent variable in the $Y$ axis.
+For every data pair $(x_i,y_j)$ in the sample a dot is drawn on the plane with those coordinates.  
+\begin{center}
+\tikzsetnextfilename{regression/scatterplot}
+\resizebox*{!}{0.45\textheight}{\input{img/regression/scatterplot}}
+\end{center}
+
+The result is a set of points that usually is known as a \emph{point cloud}.
+
+%A scatter plot only represent the observed values in the sample but not their frequencies.
+%To represent frequencies there are othe types of charts like \emph{buble charts} or \emph{three-dimensional
+% histograms}.
+
+%\begin{center}
+%\alert{\emph{¡Watch out! It make no sense for qualitative variables.}}
+%\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Scatter plot}
+\framesubtitle{Example with heights and weights}
+\begin{center}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/height_weight_scatterplot}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Scatter plot interpretation}
+The shape of the point cloud in a scatter plot gives information about the type of relation between the variables.
+
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ccc}
+\input{img/regression/no_relation_scatterplot} &
+\input{img/regression/linear_scatterplot} &
+\input{img/regression/cuadratic_scatterplot} \\
+\input{img/regression/exponential_scatterplot} &
+\input{img/regression/logarithmic_scatterplot} &
+\input{img/regression/inverse_scatterplot}
+\end{tabular}
+}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Marginal frequency distributions}
+The frequency distributions of each variable of the two-dimensional variable are known as \highlight{marginal frequency
+distributions}.
+
+We can get the marginal frequency distributions from the joint frequency table summing frequencies by rows and columns. 
+
+\begin{center}
+\[
+\begin{array}{|c|ccccc|>{\columncolor{color1!50}}c|}
+\hline
+X\backslash Y & y_1 & \cdots & y_j & \cdots & y_q & n_x\\
+\hline
+x_1 & n_{11} & \cdots & n_{1j} & \cdots & n_{1q} & n_{x_1}\\
+\vdots & \vdots & \vdots & \tikz[baseline=-0.5ex]{\node at (0,0) [fill=color2!50,single arrow,shape border
+rotate=270, single arrow head extend=1mm]{$+$\phantom{}}; } & \vdots &
+\vdots & \vdots \\
+x_i & n_{i1} & \tikz[baseline=-0.5ex]{\node at (0,0) [fill=color1!50,single arrow,shape border rotate=0,
+single arrow head extend=1mm]{$+$\phantom{}}; }  & n_{ij} & \tikz[baseline=-0.5ex]{\node
+at (0,0) [fill=color1!50,single arrow,shape border rotate=0, single
+arrow head extend=1mm]{$+$\phantom{}}; } & n_{iq} & n_{x_i}\\
+\vdots & \vdots & \vdots & \tikz[baseline=-0.5ex]{\node at (0,0) [fill=color2!50,single arrow,shape border
+rotate=270, single arrow head extend=1mm]{$+$\phantom{}}; } & \vdots & \vdots & \vdots\\
+x_p & n_{p1} & \cdots & n_{pj} & \cdots & n_{pq} & n_{x_p} \\
+\hline
+\rowcolor{color2!50}
+n_y & n_{y_1} & \cdots & n_{y_j} & \cdots & n_{y_q} & \cellcolor{white} n\\
+\hline
+\end{array}
+\]
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Marginal frequency distributions}
+\framesubtitle{Example with heights and weights}
+The marginal frequency distributions for the previous sample of heights and weights are
+\[
+\begin{array}{|c||c|c|c|c|c|c|>{\columncolor{color1!50}}c|}
+\hline
+  X/Y & [50,60) & [60,70) & [70,80) & [80,90) & [90,100) & [100,110) & n_x\\
+  \hline\hline
+  (150,160] & 2 & 0 & 0 & 0 & 0 & 0 & 2\\
+  \hline
+  (160,170] & 4 & 4 & 0 & 0 & 0 & 0 & 8\\
+  \hline
+  (170,180] & 1 & 6 & 3 & 1 & 0 & 0 & 11 \\
+  \hline
+  (180,190] & 0 & 1 & 4 & 1 & 1 & 0 & 7 \\
+  \hline
+  (190,200] & 0 & 0 & 0 & 0 & 1 & 1 & 2\\
+  \hline
+  \rowcolor{color2!50}
+  n_y & 7 & 11 & 7 & 2 & 2 & 1 & \cellcolor{white} 30\\
+  \hline
+\end{array}
+\]
+and the corresponding statistics are 
+\[
+\begin{array}{lllll}
+\bar x = 174.67 \mbox{ cm} & \quad & s^2_x = 102.06 \mbox{ cm}^2 & \quad & s_x = 10.1 \mbox{ cm}\\
+\bar y = 69.67 \mbox{ Kg} & & s^2_y = 164.42 \mbox{ Kg}^2 & & s_y = 12.82 \mbox{ Kg}
+\end{array}
+\]
+\end{frame}
+
+
+\subsection{Covariance}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Deviations from the means}
+To study the relation between two variables, we have to analyze the joint variation of them. 
+
+\centering
+\resizebox{0.8\textwidth}{!}{\input{img/regression/deviations_to_means}}
+\end{frame}
+
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Estudio de las desviaciones respecto de las medias}
+% Si dividimos la nube de puntos del diagrama de dispersión en 4 cuadrantes centrados en el punto de medias $(\bar x, \bar y)$, el signo de las desviaciones será:
+% \begin{center}
+% \mode<presentation>{\rowcolors{1}{red!20}{red!10}}
+% \begin{tabular}{cccc}
+% Cuadrante & $(x_i-\bar x)$ & $(y_j-\bar y)$ & $(x_i-\bar x)(y_j-\bar y)$\\
+% \hline
+% 1 & $+$ & $+$ & \alert{$+$}\\
+% 2 & $-$ & $+$ & \alert{$-$}\\
+% 3 & $-$ & $-$ & \alert{$+$}\\
+% 4 & $+$ & $-$ & \alert{$-$}\\
+% \hline
+% \end{tabular}
+% 
+% \scalebox{0.5}{\input{img/regresion/cuadrantes_nube_puntos}}
+% \end{center}
+% 
+% \note{Si dividimos la nube de puntos del diagrama de dispersión en 4 cuadrantes centrados en el punto de medias $(\bar x, \bar y)$, el signo
+% dependiendo del cuadrante donde caiga cada punto de la muestra, tendremos desviaciones con distinto signo:
+% \begin{enumerate}
+% \item Los puntos que caigan en el primer cuadrante tendrán desviación en $X$ y en $Y$ positivas ya que $x_i$ estará por encima de $\bar x$ e
+% $y_j$ estará por encima de $\bar y$.
+% \item Los puntos que caigan en el segundo cuadrante tendrán desviación en $X$ negativa, porque estarán por debajo de $\bar x$, pero
+% desviación en $Y$ positiva puesto que estarán por encima de $\bar y$.
+% \item Los puntos que caigan en el tercer cuadrante tendrán desviación en $X$ y en $Y$ negativas, por que estarán por debajo de la $\bar x$ y
+% $\bar y$.
+% \item Y los puntos que caigan en el cuarto cuadrante tendrán desviación en $X$ positiva, ya que estarán por encima de $\bar x$ pero
+% desviación en $Y$ negativa ya que estarán por debajo de $\bar y$.
+% \end{enumerate} 
+% 
+% Para ver la variabilidad conjunta en ambas varibles, se puede tomar el producto de las desviaciones, que para los puntos del primer
+% cuadrante tendrá signo positivo ya que tanto las desviaciones en $X$ como las desviaciones en $Y$ son positivas. Para los puntos del segundo
+% cuadrante tendremos, menos por más, menos, para los del tercero menos por menos, más, y para los del cuarto más por menos, menos.
+% 
+% Así pues, en los puntos del primer y tercer cuadrantes, los productos de las desviaciones a las medias tendrán signo positivo, mientras que
+% en el segundo y cuarto cuadrantes tendrán signo negativo.}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Estudio de las desviaciones respecto de las medias}
+% \begin{columns}
+% \begin{column}{0.5\textwidth}
+% Si la relación entre las variables es \emph{lineal y creciente}, entonces la
+% mayor parte de los puntos estarán en los cuadrantes 1 y 3 y la suma de los productos de desviaciones será positiva.
+% \begin{center}
+% \scalebox{0.43}{\input{img/regresion/diagrama_dispersion_relacion_lineal_creciente}}
+% \end{center} 
+% \[
+% \sum(x_i-\bar x)(y_j-\bar y) = +
+% \]
+% \end{column}
+% \begin{column}{0.5\textwidth}
+% Si la relación entre las variables es \emph{lineal y decreciente}, entonces la
+% mayor parte de los puntos estarán en los cuadrantes 2 y 4 y la suma de los productos de desviaciones será negativa.
+% \begin{center}
+% \scalebox{0.43}{\input{img/regresion/diagrama_dispersion_relacion_lineal_decreciente}}
+% \end{center} 
+% \[
+% \sum(x_i-\bar x)(y_j-\bar y) = -
+% \]
+% \end{column}
+% \end{columns}
+% 
+% \note{Si la relación entre las variables es lineal y creciente, como refleja el primer diagrama de dispersión, entonces la mayor parte de
+% los puntos estarán en los cuadrantes 1 y 3, y por tanto habrá muchos más puntos cuyo producto de desviaciones sea positivo, que puntos
+% cuyo producto de desviaciones sea negativo, de manera que la suma de los productos de desviaciones de todos los puntos será positiva.
+% 
+% Por contra, cuando la relación entre las variables sea lineal y decreciente, como ocurre en el segundo diagrama, entonces la la mayor parte de
+% los puntos estarán en los cuadrantes 2 y 4, y por tanto habrá muchos más puntos cuyo producto de desviaciones sea negativo, que puntos
+% cuyo producto de desviaciones sea positivo, de manera que la suma de los productos de desviaciones de todos los puntos será negativa.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Covarianza}
+% Del estudio conjunto de las desviaciones respecto de la media surge el siguiente estadístico de relación lineal:
+% \begin{definicion}[Covarianza muestral]
+% La \emph{covarianza muestral} de una variable aleatoria bidimensional $(X,Y)$ se define como el promedio de los
+% productos de las respectivas desviaciones respecto de las medias de $X$ e $Y$.
+% \[
+% s_{xy}=\frac{\sum (x_i-\bar x)(y_j-\bar y)n_{ij}}{n}
+% \]
+% \end{definicion}
+% También puede calcularse de manera más sencilla mediante la fórmula
+% \[
+% s_{xy}=\frac{\sum x_iy_jn_{ij}}{n}-\bar x\bar y.
+% \]
+% La covarianza sirve para estudiar la relación lineal entre dos variables:
+% \begin{itemize}
+% \item Si $s_{xy}>0$ existe una relación lineal creciente entre las variables.
+% \item Si $s_{xy}<0$ existe una relación lineal decreciente entre las variables.
+% \item Si $s_{xy}=0$ no existe relación lineal entre las variables. 
+% \end{itemize} 
+% 
+% \note{Del razonamiento anterior surge un estadístico conocido como covarianza para estudiar la relación lineal entre variables.
+% 
+% La covarianza, que se representa $s_{xy}$ se define como la suma de los productos de las desviaciones a las respectivas medias,
+% multiplicadas por la frecuencia absoluta relativa de cada par y dividido por el tamaño de la muestra.
+% 
+% Si se desarrolla el producto de las desviaciones y se simplifica, se llega a una fórmula equivalente para el cálculo de la covarianza que
+% consiste en sumar los productos del valor de $X$ por el valor de $Y$ en cada individuo, por la frecuencia absoluta del par, dividido por el
+% tamaño de la muestra y restarle al cociente el producto de las medias de $X$ e $Y$. Esta fórmula es un poco más fácil de aplicar y por
+% tanto será la que utilizaremos a lo largo del tema.
+% 
+% A la hora de interpretar la covarianza como medida de relación lineal, lo más importante es su signo, ya que como vimos antes, si existe
+% relación lineal creciente entre las variables, la suma de los productos de las desviaciones será positiva y también lo será la
+% covarianza; si la relación es lineal decreciente, la suma de los productos de las desviaciones será negativa y también lo será la
+% covarianza; mientras que si no hay relación lineal, los puntos se distribuirán más o menos por igual en los cuatro cuadrantes y se
+% compensarán los productos de desviaciones positivos con los negativos, con lo que la covarianza valdrá aproximadamente 0.
+% 
+% Hay que tener en cuenta que la covarianza tiene unidades, que son el producto de las unidades de $X$ e $Y$, lo cual dificulta su
+% interpretación a la hora de valorar el grado de dependencia lineal entre las variables, aunque, como veremos más adelante, a partir de ella
+% es posible obtener una medida adimensional que si permitirá estudiar el grado de dependencia lineal.}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo de la covarianza}
+% \framesubtitle{Ejemplo con estaturas y pesos}
+% En el ejemplo de las estaturas y pesos, teniendo en cuenta que 
+% \[
+% \begin{array}{|c||c|c|c|c|c|c|c|}
+% \hline
+%   X/Y & [50,60) & [60,70) & [70,80) & [80,90) & [90,100) & [100,110) & n_x\\
+%   \hline\hline
+%   (150,160] & 2 & 0 & 0 & 0 & 0 & 0 & 2\\
+%   \hline
+%   (160,170] & 4 & 4 & 0 & 0 & 0 & 0 & 8\\
+%   \hline
+%   (170,180] & 1 & 6 & 3 & 1 & 0 & 0 & 11 \\
+%   \hline
+%   (180,190] & 0 & 1 & 4 & 1 & 1 & 0 & 7 \\
+%   \hline
+%   (190,200] & 0 & 0 & 0 & 0 & 1 & 1 & 2\\
+%   \hline
+%   n_y & 7 & 11 & 7 & 2 & 2 & 1 & 30\\
+%   \hline
+% \end{array}
+% \]
+% \[
+% \bar x = 174.67 \mbox{ cm} \qquad \bar y = 69.67 \mbox{ Kg} 
+% \]
+% la covarianza vale
+% \begin{align*}
+% s_{xy} &=\frac{\sum x_iy_jn_{ij}}{n}-\bar x\bar y =  \frac{155\cdot 55\cdot 2 + 165\cdot 55\cdot 4 + \cdots + 195\cdot 105\cdot 1}{30}-174.67\cdot 69.67 =\\
+% & = \frac{368200}{30}-12169.26 = 104.07 \mbox{ cm$\cdot$ Kg},
+% \end{align*}
+% lo que indica que existe una relación lineal creciente entre la estatura y el peso. 
+% 
+% \note{En el ejemplo de las estaturas y los pesos, para calcular la covarianza a partir de la tabla de frecuencias bidimensional, iremos
+% sumando el producto de la componente $X$ por la componente $Y$ por su frecuencia absoluta para cada posible par. Como en este caso, además,
+% los datos se habían agrupado en intervalos, a la hora de hacer estos productos tomaremos las marcas de cada clase, es decir, para el primer
+% par, correspondiente al intervalo $(150,160]$ de estatura y $[50,60)$ de peso, haremos el producto de 155 que es la marca de clase del
+% intervalo de la estatura, por 55 que es la marca de clase del intervalo del peso, por su frecuencia absoluta que es 2. A continuación vamos
+% calculando el resto de productos de igual modo. 155 por 65 y por su frecuencia que es 0, lo que nos da 0, etc. Una vez calculados los
+% productos se suman, lo que da 368200, esto se divide por el tamaño de la muestra que era 30 y al resultado del cociente se le resta el
+% producto de las medias que eran $174.67$ cm y $69.67$ kg, lo que nos da una covarianza de $104.07$ cm por kg.
+% 
+% Esto indica que existe una relación lineal creciente entre el peso y la estatura, es decir, que a mayor estatura le corresponde mayor peso
+% y a mayor peso le corresponde mayor estatura, aunque resulta complicado establecer si esa relación es fuerte o débil ya que no es fácil
+% interpretar las unidades de cm por kg.}
+% \end{frame}
+% 
+% 
+% \subsection{Regresión}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Regresión}
+% En muchos casos el objetivo de un estudio no es solo detectar una relación entre variables, sino explicarla mediante
+% alguna función matemática.
+% 
+% La \highlight{regresión}} es la parte de la estadística que trata de determinar la posible relación entre una variable numérica
+% dependiente $Y$, y otro conjunto de variables numéricas independientes, $X_1,X_2,\ldots,X_n$, de una misma población. Dicha relación se
+% refleja mediante un modelo funcional 
+% \[ y=f(x_1,\ldots,x_n). \]
+% 
+% El objetivo es determinar una ecuación mediante la que pueda estimarse el valor de la variable dependiente en función de los valores de las independientes.
+% 
+% El caso más sencillo se da cuando sólo hay una variable independiente $X$, entonces se habla de \emph{regresión
+% simple}. En este caso el modelo que explica la relación de $Y$ como función de $X$ es una función de una variable
+% $y=f(x)$ que se conoce como \highlight{función de regresión}}.
+% 
+% \note{En muchos casos el objetivo de un estudio no es solo detectar si existe cierta relación entre variables, sino explicarla mediante
+% alguna función matemática.
+% 
+% De esto se encarga la regresión que trata de buscar un modelo funcional que explique lo mejor posible la relación entre una variable
+% dependiente $Y$ y un conjunto de variables independientes $X_1,\ldots,X_n$. 
+% 
+% El caso más simple, y el que estudiaremos aquí, es cuando sólo hay una variable independiente $X$ y entonces el modelo es una función de una
+% sóla variable $y=f(x)$ que se conoce como función de regresión simple.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Modelos de regresión simple}
+% Dependiendo de la forma de función de regresión, existen muchos tipos de regresión simple. Los más habituales son los que aparecen en la
+% siguiente tabla:
+% \begin{center}
+% \mode<presentation>{\rowcolors{1}{red!20}{red!10}}
+% \begin{tabular}{|l|c|}
+% \hline
+%  Familia de curvas       &     Ecuación genérica      \\
+% \hline\hline
+%  Lineal                  &          $y=a+bx$          \\
+% \hline
+%  Parabólica              &       $y=a+bx+cx^2$        \\
+% \hline
+%  Polinómica de grado $n$ & $y=a_0+a_1x+\cdots+a_nx^n$ \\
+% \hline
+%  Potencial               &       $y=a\cdot x^b$       \\
+% \hline
+%  Exponencial             &     $y=a\cdot e^{bx}$      \\
+% \hline
+%  Logarítmica             &       $y=a+b\log x$        \\
+% \hline
+%  Inverso                 &       $y = a+\frac{b}{x}$  \\
+% \hline
+%  Curva S                 &      $y= e^{a+\frac{b}{x}}$ \\
+% \hline
+% \end{tabular}
+% \end{center}
+% 
+% La elección de un tipo u otro depende de la forma que tenga la nube de puntos del diagrama de dispersión. 
+% 
+% \note{Dependiendo de la forma de función de regresión, existen muchos tipos de regresión simple. Los más habituales son:
+% \begin{enumerate}
+% \item El modelo lineal, en el que la función de regresión es una recta.
+% \item El modelo parabólico, en el que la función de regresión es una parabola, es decir, un polinomio de grado 2.
+% \item El modelo polinómico de grado $n$, en el que la función de regresión es un polinomio de grado $n$.
+% \item El modelo potencial, en el que la función de regresión es una función potencial donde el exponente puede ser un númro no entero.
+% \item El modelo exponencia, en el que la función de regresión es una función exponencial, habitualmente de base $e$, la constante de Euler,
+% y donde la variable independiente aparece en el exponente.
+% \item El modelo logarítmico, en el que la función de regresión es una función logarítmica.
+% \item El modelo inverso, en el que en la función de regresión la variable independiente aparece dividiendo a una constante.
+% \item Y el modelo de curva S o sigmoidal, que es una combinación del modelo exponencial e inverso.
+% \end{enumerate}
+% 
+% A la hora de decidir qué modelo construir habrá que tener en cuenta la forma que tenga la nube de puntos del diagrama de dispersión.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Residuos o errores predictivos}
+% Una vez elegida la familia de curvas que mejor se adapta a la nube de puntos, se determina, dentro de dicha familia, la curva que mejor se
+% ajusta a la distribución.
+% 
+% El objetivo es encontrar la función de regresión que haga mínimas las distancias entre los valores de la variable dependiente observados en
+% la muestra, y los predichos por la función de regresión. Estas distancias se conocen como \emph{residuos} o \emph{errores predictivos}.
+% 
+% \begin{definicion}[Residuos o Errores predictivos]
+% Dado el modelo de regresión $y=f(x)$ para una variable bidimensional $(X,Y)$, el \emph{residuo} o \emph{error
+% predictivo} de un valor $(x_i,y_j)$ observado en la muestra, es la diferencia entre el valor observado de la variable dependiente $y_j$ y el predicho por la función de regresión para $x_i$:
+% \[
+% e_{ij} = y_j-f(x_i) .
+% \]
+% \end{definicion}
+% 
+% \note{Una vez elegida la familia de curvas que mejor se adapta a la nube de puntos, se determina, dentro de dicha familia, la curva que mejor se
+% ajusta a la distribución.
+% 
+% El objetivo es encontrar la función de regresión que haga mínimas las distancias entre los valores de la variable dependiente observados en
+% la muestra, y los predichos por la función de regresión. Estas distancias se conocen como \emph{residuos} o \emph{errores predictivos} en
+% $Y$ y se calculan para cada punto $(x_i,y_j)$ restando al valor observado en la variable dependiente $y_j$ lo que vale la función de regresión para
+% el valor observado en la variable dependiente $f(x_i)$..
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Residuos o errores predictivos en $Y$}
+% \begin{center}
+% \scalebox{0.8}{\input{img/regresion/residuos_y}}
+% \end{center}
+% \note{Es decir, en el caso de representar la variable dependiente en el eje $Y$ los residuos de cada punto serían las distancias verticales
+% desde el punto hasta la curva de la función de regresión.
+% 
+% Está claro que cuanto más pequeños sean los residuos, máx próxima estará la curva de regresión a los puntos de la nube de puntos y
+% mejor explicará la relación entre las variables. 
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Método de mínimos cuadrados}
+% Una forma posible de obtener la función de regresión es mediante el método de \emph{mínimos cuadrados} que consiste en calcular la función
+% que haga mínima la suma de los cuadrados de los residuos
+% \[
+% \sum e_{ij}^2.
+% \]
+% 
+% En el caso de un modelo de regresión lineal $f(x) = a + bx$, como la recta depende de dos parámetros (el término independiente $a$ y la
+% pendiente $b$), la suma también dependerá de estos parámetros
+% \[
+% \theta(a,b) = \sum e_{ij}^2 =\sum (y_j - f(x_i))^2 =\sum (y_j-a-bx_i)^2.
+% \]
+% 
+% Así pues, todo se reduce a buscar los valores $a$ y $b$ que hacen mínima esta suma. 
+% 
+% \note{Según este criterio, para buscar la curva de regresión mejor se ajuste a la nube de puntos se suele utilizar un método conocido como
+% método de los mínimos cuadrados, que consiste en calcular la curva que haga mínima la suma de los residuos al cuadrado. Se toman los
+% cuadrados porque como los residuos pueden ser positivos y negativos, al sumarlos sin más podrían compensarse. 
+% 
+% Por ejemplo, en el caso del ajuste de una recta de ecuación $f(x) = a + bx$, hay que determinar los dos parámetros $a$ y $b$ que definen la
+% recta. En este caso, los residuos de cada punto $e_{ij}=y_j-f(x_i)$ se convierten en $e_{ij}=y_j-a-bx_i$ ya que $f(x_i)$ es el valor de la
+% recta en $x_i$, y por tanto los residuos dependen de los parámetros de la recta $a$ y $b$. 
+% En consecuencia, el problema se reduce a calcular los valores de $a$ y $b$ que hagan mínima la suma de los residuos al cuadrado. Es decir,
+% se trata de un problema de minimización.}
+% \end{frame}
+% 
+% 
+% \subsection{Recta de regresión}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo de la recta de regresión}
+% \framesubtitle{Método de mínimos cuadrados}
+% Considerando la suma de los cuadrados de los residuos como una función de dos variables $\theta(a,b)$, se pueden calcular los valores de los
+% parámetros del modelo que hacen mínima esta suma derivando e igualando a 0 las derivadas:
+% \begin{align*}
+% \frac{\partial \theta(a,b)}{\partial a} &=  \frac{\partial \sum (y_j-a-bx_i)^2 }{\partial a} =0\\
+% \frac{\partial \theta(a,b)}{\partial b} &=  \frac{\partial \sum (y_j-a-bx_i)^2 }{\partial b} =0
+% \end{align*}
+% 
+% Tras resolver el sistema se obtienen los valores
+% \[
+% a= \bar y - \frac{s_{xy}}{s_x^2}\bar x \qquad b=\frac{s_{xy}}{s_x^2}
+% \]
+% Estos valores hacen mínimos los residuos en $Y$ y por tanto dan la recta de regresión.
+% 
+% \note{Aunque no insistiremos en los detalles matemáticos del cálculo de mínimos, hay que recordar que el cálculo del mínimo de una función
+% se hacía entre los puntos que anulaban su derivada. En nuestro caso, puesto que la suma de los residuos al cuadrado depende de dos
+% parámetros $a$ y $b$, habría que tomar las derivadas parciales con respecto a $a$ y $b$, igualarlas a cero y resolver el sistema de
+% ecuaciones que forman.
+% 
+% Tras resolver el sistema se obtiene que los valores de $a$ y $b$ que hacen mínima la suma de los residuos al cuadrado son $a= \bar y -
+% \frac{s_{xy}}{s_x^2}\bar x$ y $b=\frac{s_{xy}}{s_x^2}$.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Recta de regresión}
+% \begin{definicion}[Recta de regresión]
+% Dada una variable bidimensional $(X,Y)$, la \emph{recta de regresión} de $Y$ sobre $X$ es
+% \[
+% y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x).
+% \] 
+% \end{definicion}
+% 
+% La recta de regresión de $Y$ sobre $X$ es la recta que hace mínimos los errores predictivos en $Y$, y por tanto es la recta que hará mejores
+% predicciones de $Y$ para cualquier valor de $X$.
+% 
+% \note{Al sustituir estos valores en la ecuación genérica de la recta $f(x)=a+bx$, se obtiene la recta de ecuación $y = \bar y
+% +\frac{s_{xy}}{s_x^2}(x-\bar x)$ que se conoce como recta de regresión de $Y$ sobre $X$ y es la recta que mejor explica la relación lineal
+% entre $Y$ y $X$ ya que hace mínimos los residuos o errores predictivos en $Y$, y por tanto es la recta que hará mejores predicciones de $Y$
+% en función de $X$.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo de la recta de regresión}
+% \framesubtitle{Ejemplo con estaturas y pesos}
+% Siguiendo con el ejemplo de las estaturas ($X$) y los pesos ($Y$) con los siguientes estadísticos:
+% \[
+% \begin{array}{lllll}
+% \bar x = 174.67 \mbox{ cm} & \quad & s^2_x = 102.06 \mbox{ cm}^2 & \quad & s_x = 10.1 \mbox{ cm}\\
+% \bar y = 69.67 \mbox{ Kg} & & s^2_y = 164.42 \mbox{ Kg}^2 & & s_y = 12.82 \mbox{ Kg}\\
+% & & s_{xy} = 104.07 \mbox{ cm$\cdot$ Kg} & &
+% \end{array}
+% \]
+% Entonces, la recta de regresión del peso sobre la estatura es:
+% \[
+% y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x) = 69.67+\frac{104.07}{102.06}(x-174.67) = 1.02 x - 108.49.
+% \]
+% De igual modo, si en lugar de considerar el peso como variable dependiente, tomamos la estatura, entonces la recta de regresión de la estatura sobre el peso es:
+% \[
+% x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.67) = 0.63 y +130.78.
+% \]
+% 
+% \note{Siguiendo con el ejemplo de las estaturas y los pesos, si tomamos como variable independiente $X$ la estatura, y como variable
+% dependiente $Y$ los pesos, la recta de regresión del peso sobre la estarura tendrá como ecuación 
+% \[
+% y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x) = 69.67+\frac{104.07}{102.06}(x-174.67) = 1.02 x - 108.49.
+% \]
+% 
+% De igual modo, si en lugar de considerar el peso como variable dependiente, tomamos la estatura, entonces la recta de regresión de la estatura sobre el peso es:
+% \[
+% x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.67) = 0.63 y +130.78.
+% \]
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Rectas de regresión}
+% \framesubtitle{Ejemplo de estaturas y pesos}
+% \begin{center}
+% \scalebox{0.78}{\input{img/regresion/rectas_regresion}}
+% \end{center}
+% 
+% \note{Si dibujamos ambas rectas, la del peso sobre la estatura y la de la estatura sobre el peso, podemos comprobar que se trata de rectas
+% distintas, ya que la primera hace mínimos los residuos del peso, y por tanto es la que debe utilizarse para predecir el peso en función de
+% la estatura, mientras que la segunda es la que hace mínimos los residuos de la estatura, y por tanto debe utilizarse para predecir la
+% estatura en función del peso.
+% 
+% Además puede comprobarse que las rectas de regresión se cortan en el punto de medias, lo cual se deduce fácilmente de sus respectivas
+% ecuaciones.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Posición relativa de las rectas de regresión}
+% Las rectas de regresión siempre se cortan en el punto de medias $(\bar x,\bar y)$.
+% 
+% \begin{columns}
+% \begin{column}{0.48\textwidth}
+% Si entre las variables la relación lineal es perfecta, entonces ambas rectas coinciden ya que sus residuos son nulos.
+% \begin{center}
+% \scalebox{0.5}{\input{img/regresion/rectas_dependencia_lineal_perfecta}}
+% \end{center}
+% \end{column}
+% \begin{column}{0.48\textwidth}
+% Si no hay relación lineal, entonces las ecuaciones de las rectas son\\
+% \qquad \qquad $y = \bar y$, \qquad $x = \bar x,$\\
+% y se cortan perpendicularmente  
+% \begin{center}
+% \scalebox{0.5}{\input{img/regresion/rectas_independencia_lineal}}
+% \end{center}
+% \end{column}
+% \end{columns}
+% 
+% \note{La posición relativa de las rectas de regresión depende del grado de relación lineal entre las variables. 
+% 
+% Si la relación lineal entre las variables es perfecta, entonces los puntos de la nube de puntos estarán perfectamente alineados y la
+% recta de regresión de $Y$ sobre $X$ y de $X$ sobre $Y$ coincidirán en la recta que pasa por todos los puntos ya que para esta recta tanto
+% los residuos en $Y$ como los residuos en $X$ serán nulos.
+% 
+% Mientras que si no hay relación lineal entre las variables, entonces la covarianza será nula y la ecuación de las rectas será constante, $y
+% = \bar y$, para la recta de $Y$ sobre $X$, y $x = \bar x$ para la de $X$ sobre $Y$, de manera que las rectas se cortarán perpendicularmente en el punto
+% de medias.
+% 
+% Así pues, cuanto menor sea el ángulo con que se cortan las rectas, mayor será la dependencia lineal entre las variables.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Coeficiente de regresión}
+% \begin{definicion}[Coeficiente de regresión $b_{yx}$]
+% Dada una variable bidimensional $(X,Y)$, el \emph{coeficiente de regresión} de la recta de regresión de $Y$ sobre $X$ es su pendiente,
+% \[
+% b_{yx} = \frac{s_{xy}}{s_x^2} 
+% \]
+% \end{definicion}
+% 
+% El coeficiente de regresión siempre tiene el mismo signo que la covarianza y refleja el crecimiento de la recta de regresión, ya que da el
+% número de unidades que aumenta o disminuye la variable dependiente por cada unidad que aumenta la variable independiente, según la recta de
+% regresión.
+% 
+% En el ejemplo de las estaturas y los pesos, el coeficiente de regresión del peso sobre la estatura es $b_{yx}= 1.02$ Kg/cm, lo que indica
+% que, según la recta de regresión del peso sobre la estatura, por cada cm más de estatura, la persona pesará $1.02$ Kg más.
+% 
+% \note{En la ecuación de la recta de regresión de $Y$ sobre $X$, la parte más importante es la pendiente que se conoce como coeficiente de
+% regresión de $Y$ sobre $X$ y vale $b_{yx} = \frac{s_{xy}}{s_x^2}$.
+% 
+% El coeficiente de regresión siempre tiene el mismo signo que la covarianza y refleja el crecimiento de la recta de regresión, ya que da el
+% número de unidades que aumenta o disminuye la variable dependiente por cada unidad que aumenta la variable independiente, según la recta de
+% regresión.
+% 
+% En el ejemplo de las estaturas y los pesos, el coeficiente de regresión del peso sobre la estatura es $b_{yx}= 1.02$ Kg/cm, lo que indica
+% que, según la recta de regresión del peso sobre la estatura, por cada cm más de estatura, la persona pesará $1.02$ Kg más.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Predicciones con las rectas de regresión}
+% \framesubtitle{Ejemplo con estaturas y pesos}
+% Las rectas de regresión, y en general cualquier modelo de regresión, suele utilizarse con fines predictivos. 
+% 
+% \begin{center}
+% \alert{\emph{¡Ojo! Para predecir una variable, esta siempre debe considerarse como dependiente en el modelo de regresión que se utilice.}}
+% \end{center}
+% 
+% Así, en el ejemplo de las estaturas y los pesos, si se quiere predecir el peso de una persona que mide 180 cm, se debe utilizar la recta de
+% regresión del peso sobre la estatura:
+% \[
+% y = 1.02 \cdot 180 -108.49 = 75.11 \mbox{ Kg}.
+% \] 
+% Y si se quiere predecir la estatura de una persona que pesa 79 Kg, se debe utilizar la recta de regresión de la estatura sobre el peso:
+% \[
+% x = 0.63\cdot 79+ 130.78 = 180.55 \mbox{ cm}. 
+% \]
+% \begin{center}
+% \emph{Ahora bien, ¿qué fiabilidad tienen estas predicciones?}
+% \end{center}
+% 
+% \note{Las rectas de regresión, y en general cualquier modelo de regresión, suele utilizarse con fines predictivos. 
+% 
+% Como hemos visto, dependiendo de si se toma $X$ o $Y$ como la variable dependiente, tendremos modelos de regresión, el de $Y$ sobre $X$ y
+% el de $X$ sobre $Y$, pero a la hora de hacer predicciones de una variable, siempre debe utilizarse el modelo en el que dicha variable sea la
+% variable dependiente, ya que ese será el modelo que haga mínimos los errores predictivos en dicha variable.
+% 
+% Por ejemplo, en el caso de las estaturas y los pesos,  si se quiere predecir el peso de una persona que mide 180 cm, se debe utilizar la recta de
+% regresión del peso sobre la estatura. Sutituyendo en esta recta $X$ por 180 cm se obtiene una predicción del peso de $75.11$ kg.
+% 
+% Y si se quiere predecir la estatura de una persona que pesa 79 Kg, se debe utilizar la recta de regresión de la estatura sobre el peso.
+% Sustituyendo en esta otra recta $Y$ por 79 kg, se obtiene una predicción de la estatura de $180.55$ cm.
+% }
+% \end{frame}
+% 
+% 
+% \subsection{Correlación}
+% % ---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Correlación}
+% Una vez construido un modelo de regresión, para saber si se trata de un buen modelo predictivo, se tiene que analizar
+% el grado de dependencia entre las variables según el tipo de dependencia planteada en el modelo. De ello se encarga la
+% parte de la estadística conocida como \highlight{correlación}}.
+% 
+% Para cada tipo de modelo existe el correspondiente tipo de correlación.
+% 
+% La correlación se basa en el estudio de los residuos. Cuanto menores sean éstos, más se ajustará la curva de regresión a los puntos, y más
+% intensa será la correlación.
+% 
+% \note{Una vez construido un modelo de regresión, para saber si se trata de un buen modelo predictivo, se tiene que analizar
+% el grado de dependencia entre las variables según el tipo de dependencia planteada en el modelo. De ello se encarga la
+% parte de la estadística conocida como \highlight{correlación}}.
+% 
+% Para cada tipo de modelo existe el correspondiente tipo de correlación. Así por ejemplo, si se ha construido la recta de regresión
+% hablaremos de correlación lineal, si se ha construído un modelo parabólico hablaremos de correlación parabólica, y lo mismo para cualquier
+% tipo de modelo de regresión.
+% 
+% La correlación se basa de nuevo en el estudio de los residuos para el modelo de regresión construido. Cuanto menores sean éstos, más se
+% ajustará la curva de regresión a los puntos, mejor explicará dicho modelo la relación entre las variables.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Varianza residual muestral}
+% Una medida de la bondad del ajuste del modelo de regresión es la \emph{varianza residual}.
+% \begin{definicion}[Varianza residual $s_{ry}^2$]
+% Dado un modelo de regresión simple $y=f(x)$ de una variable bidimensional $(X,Y)$, su \emph{varianza residual muestral} es el promedio de los cuadrados de los residuos para los valores de la muestra,
+% \[
+% s_{ry}^2 = \frac{\sum e_{ij}^2n_{ij}}{n} = \frac{\sum (y_j - f(x_i))^2n_{ij}}{n}.
+% \]
+% \end{definicion}
+% Cuanto más alejados estén los puntos de la curva de regresión, mayor será la varianza residual y menor la dependencia.
+% 
+% \note{A partir de los residuos se puede calcular una primera medida de la bondad del ajuste del modelo de regresión de $Y$ sobre $X$,
+% conocida como varianza residual. La varianza residual se representa $s_{ry}$ y es la suma de los residuos al cuadrado, dividida por el
+% tamaño de la muestra.
+% 
+% Resulta evidente que cuanto más alejados estén los puntos del modelo de regresión, mayores serán los residuos y mayor será la varianza
+% residual, lo que indicará una menor dependencia del tipo que plantea el modelo de regresión.
+% 
+% Ahora bien, la varianza residual tiene el problema de que sus unidades son las unidades de la variable dependiente al cuadrado, y por tanto
+% resulta difícil de interpretar.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Descomposición de la variabilidad total: \\Variabilidad explicada y no explicada}
+% \begin{center}
+% \scalebox{0.8}{\input{img/regresion/descomposicion_variabilidad}}
+% \end{center}
+% 
+% \note{Para interpretar mejor la varianza residual, si dibujamos sobre el diagrama de dispersión, podemos comprobar que la variabilidad de
+% la variable dependiente depende de las desviaciones de sus valores a su media que en el gráfico aparece representada por esta línea
+% horizontal. La suma de estas desviaciones la cuadrado, divididas por el tamaño de la muestra nos daba precisamente la varianza de $Y$.
+% 
+% Si ahora dibujamos sobre el diagrama de dispersión el modelo de regresión de $Y$ sobre $X$, en este caso la recta de regresión, podemos
+% comprobar que la recta divide en dos la desviación de cada valor de $Y$ a su media. Una parte es precisamente el residuo en $Y$, ya que es
+% la distancia vertical del punto a la recta, y se dice que es la variablidad no explicada por el modelo de regresión, mientras que la otra
+% parte, la distancia vertical desde la recta a la media de $Y$ se dice que es la variabilidad explicada por el modelo de regresión.
+% 
+% Cuanto mayor sea la variabilidad explicada, menor será la no explicada, es decir menores serán los residuos y mejor explicará el modelo de
+% regresión la dependencia entre las variables. Cuando el ajuste sea perfecto, la variabilidad no explicada será nula y diremos que el modelo
+% de regresión de $Y$ sobre $X$ explica toda la variabilidad de $Y$, mientras que cuando no haya relación entre las variables del tipo que
+% plantee el modelo de regresión, entonces la variablidad explicada será nula y los residuos coincidirán con las desviaciones a la media de
+% $Y$, de manera que la varianza residual coincidirá con la varianza de $Y$.
+% }
+% \end{frame}
+% 
+% 
+% \subsection{Coeficientes de determinación y correlación}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Coeficiente de determinación}
+% A partir de la varianza residual se puede definir otro estadístico más sencillo de interpretar.
+% \begin{definicion}[Coeficiente de determinación muestral]
+% Dado un modelo de regresión simple $y=f(x)$ de una variable bidimensional $(X,Y)$, su \emph{coeficiente de determinación muestral} es
+% \[
+% r^2 = 1- \frac{s_{ry}^2}{s_y^2} 
+% \]
+% \end{definicion}
+% El coeficiente de determinación mide la proporción de variabilidad de la variable dependiente explicada por el modelo de regresión, y por
+% tanto, 
+% \[
+% \alert{0\leq r^2\leq 1}
+% \]
+% Cuanto mayor sea $r^2$, mejor explicará el modelo de regresión la relación entre las variables, en particular:
+% \begin{itemize}
+% \item Si $r^2 =0$ entonces no existe relación del tipo planteado por el modelo.
+% \item Si $r^2=1$ entonces la relación que plantea el modelo es perfecta.
+% \end{itemize}
+% 
+% \note{Como hemos visto, la varianza residual tiene el problema de que es difícil de interpretar porque tiene como unidades las de la
+% variable dependiente al cuadrado. Teniendo en cuenta, como hemos visto antes, que la varianza residual puede valer entre 0, cuando el
+% ajueste del modelo de regresión es perfecto, hasta como máximo la varianza de $Y$ cuando entre las variables no hay relación del tipo que
+% plantea el modelo de regresión, es posible calcular una nueva medida que no tenga unidades y sea más fácil de interpretar. Dicho
+% estadísticos se llama coeficiente de regresión, se representa por $r^2$ y se define como 1 menos el cociente de la varianza residual entre
+% la varianza de $Y$.
+% 
+% Como la varianza residual tiene las mismas unidades que la varianza de $Y$, al hacer el cociente las unidades se cancelarán por lo que el
+% coeficiente de determinación es adimensinal. 
+% 
+% Cuando el ajuste del modelo sea perfecto, la varianza residual valdrá 0 y el cociente también, de manera que el coeficiente de determinación
+% valdrá 1, mientras que en el otro extremo, cuano no haya relación entre las variables del tipo del modelo de regresión, la varianza residual
+% coincidirá con la varianza de $Y$ y el cociente valdrá 1, con lo que el coeficiente de determinación valdrá 0.
+% 
+% Así pues, el coeficiente de determinación siempre oscila entre 0 y 1 y será mayor cuanto mejor explique el modelo de regresión la relación
+% entre las variables. 
+% 
+% Si se multiplica por 100, el coeficiente de determinación nos dará el porcentaje de la variabilidad de la variable dependiente explicado
+% por el modelo de regresión.}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Coeficiente de determinación lineal}
+% En el caso de las rectas de regresión, la varianza residual vale
+% \begin{align*}
+% s_{ry}^2 & = \sum e_{ij}^2f_{ij} = \sum (y_j - f(x_i))^2f_{ij} = \sum \left(y_j - \bar y -\frac{s_{xy}}{s_x^2}(x_i-\bar x) \right)^2f_{ij}=\\
+% & = \sum \left((y_j - \bar y)^2 +\frac{s_{xy}^2}{s_x^4}(x_i-\bar x)^2 - 2\frac{s_{xy}}{s_x^2}(x_i-\bar x)(y_j -\bar y)\right)f_{ij} =\\ 
+% & = \sum (y_j - \bar y)^2f_{ij} +\frac{s_{xy}^2}{s_x^4}\sum (x_i-\bar x)^2f_{ij}- 2\frac{s_{xy}}{s_x^2}\sum (x_i-\bar x)(y_j -\bar y)f_{ij}=\\
+% & = s_y^2 + \frac{s_{xy}^2}{s_x^4}s_x^2 - 2 \frac{s_{xy}}{s_x^2}s_{xy} = s_y^2 - \frac{s_{xy}^2}{s_x^2}.
+% \end{align*}
+% y, por tanto, el coeficiente de determinación lineal vale
+% \begin{align*}
+% r^2 &= 1- \frac{s_{ry}^2}{s_y^2} = 1- \frac{s_y^2 - \frac{s_{xy}^2}{s_x^2}}{s_y^2} = 1 - 1 + \frac{s_{xy}^2}{s_x^2s_y^2} = \frac{s_{xy}^2}{s_x^2s_y^2}.
+% \end{align*}
+% 
+% \note{En el caso del ajuste de un modelo lineal, teniendo en cuenta la ecuación de la recta de regresión de $Y$ sobre $X$, los residuos
+% serán $y_j$ menos el valor de la recta de regresión para $x_i$, es decir $y_j - \bar y -\frac{s_{xy}}{s_x^2}(x_i-\bar x)$. Si en la fórmula
+% de la varianza residual desarrollamos el cuadrado de estos residuos, y simplificamos, llegamos a que la varianza residual para el modelo
+% lineal se puede calcular como la varianza de $Y$ menos la covarianza al cuadrado entre la varianza de $X$. Y si sustituimos en la fórmula
+% del coeficiente de determinación, obtenemos que el coeficiente de determinación lineal puede calcularse como la covarianza al cuadrado entre
+% el producto de las varianzas de $X$ e $Y$.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo del coeficiente de determinación lineal}
+% \framesubtitle{Ejemplo de estaturas y pesos}
+% En el ejemplo de las estaturas y pesos se tenía
+% \[
+% \begin{array}{lll}
+% \bar x = 174.67 \mbox{ cm} & \quad & s^2_x = 102.06 \mbox{ cm}^2\\
+% \bar y = 69.67 \mbox{ Kg} & & s^2_y = 164.42 \mbox{ Kg}^2\\
+% s_{xy} = 104.07 \mbox{ cm$\cdot$ Kg}
+% \end{array}
+% \]
+% De modo que el coeficiente de determinación lineal vale
+% \[
+% r^2 = \frac{s_{xy}^2}{s_x^2s_y^2} = \frac{(104.07 \mbox{ cm\cdot Kg})^2}{102.06 \mbox{ cm}^2 \cdot 164.42 \mbox{ Kg}^2} = 0.65.
+% \]
+% Esto indica que la recta de regresión del peso sobre la estatura explica el 65\% de la variabilidad del peso, y de igual modo, la recta de regresión de la estatura sobre el peso explica el  65\% de la variabilidad de la estatura.
+% \note{En el ejemplo de las estaturas y los pesos, como la covarianza valía $104.7$ cm por kg, la varianza de la estatura era $102.06$ kg$^2$
+% y la varianza del peso era $164.42$ kg$^2$, el coeficiente de determinación lineal valdrá 
+% \[
+% r^2 = \frac{(104.07 \mbox{ cm\cdot Kg})^2}{102.06 \mbox{ cm}^2 \cdot 164.42 \mbox{ Kg}^2} = 0.65,
+% \]
+% lo que indica que la recta de regresión del peso sobre la estatura explica el 65\% de la variabilidad del peso, y de igual modo, la recta de
+% regresión de la estatura sobre el peso explica el  65\% de la variabilidad de la estatura.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Coeficiente de correlación lineal}
+% \begin{definicion}[Coeficiente de correlación lineal]
+% Dada una variable bidimensional $(X,Y)$, el \emph{coeficiente de correlación lineal muestral} es
+% la raíz cuadrada de su coeficiente de determinación lineal, con signo el de la covarianza
+% \[
+% r = \sqrt{r^2} = \dfrac{s_{xy}}{s_xs_y} $. 
+% \]
+% \end{definicion}
+% Como $r^2$ toma valores entre 0 y 1, el coeficiente de correlación lineal tomará valores entre -1 y 1:
+% \[
+% \alert{-1\leq r\leq 1}
+% \]
+% El coeficiente de correlación lineal también mide el grado de dependencia lineal:
+% \begin{itemize}
+% \item Si $r =0$ entonces no existe relación lineal.
+% \item Si $r=1$ entonces existe una relación lineal creciente perfecta.
+% \item Si $r=-1$ entonces existe una relación lineal decrececiente perfecta.
+% \end{itemize}
+% 
+% \note{Otra media habitual del grado de relación lineal entre dos variables es el coeficiente de correlación lineal, es la raíz cuadrada del
+% coeficiente de determinación lineal y por tanto se calcula dividiendo la covarianza entre el producto de las desviaciones típicas de $X$ e
+% $Y$.
+% 
+% Como el coeficiente de determinación podía tomar valores entre 0 y 1, el coeficiente de correlación lineal tomará valores entre -1 y 1, de
+% manera que un cuando no haya relación lineal entre las variables valdrá 0, cuando haya una relación lineal creciente perfecta valdrá 1
+% y cuado haya una relación lineal decreciente perfecta valdrá -1. 
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Coeficiente de correlación lineal}
+% \framesubtitle{Ejemplo}
+% En el ejemplo de las estaturas y los pesos, el coeficiente de correlación lineal vale
+% \[
+% r = \frac{s_{xy}}{s_xs_y} = \frac{104.07 \mbox{ cm\cdot Kg}}{10.1 \mbox{ cm} \cdot 12.82 \mbox{ Kg}} = +0.8.
+% \]
+% lo que indica que la relación lineal entre el peso y la estatura es fuerte, y además creciente.
+% 
+% \note{
+% Por ejemplo, en el caso de las estaturas y los pesos, el coeficiente de correlación lineal vale 
+% \[
+% r = \frac{104.07 \mbox{ cm\cdot Kg}}{10.1 \mbox{ cm} \cdot 12.82 \mbox{ Kg}} = +0.8.
+% \]
+% lo que indica que la relación lineal entre el peso y la estatura es fuerte, y además creciente.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Fiabilidad de las predicciones de un modelo de regresión}
+% Aunque el coeficiente de determinación o el de correlación hablan de la bondad de un modelo de regresión, no es lo único que hay que
+% tener en cuenta a la hora de hacer predicciones.
+% 
+% La fiabilidad de las predicciones que hagamos con un modelo de regresión depende de varias cosas:
+% \begin{itemize}
+% \item El coeficiente de determinación: Cuanto mayor sea, menores serán los errores predictivos y mayor la fiabilidad de las predicciones.
+% \item La variabilidad de la población: Cuanto más variable es una población, más difícil es predecir y por tanto menos fiables serán las
+% predicciones.
+% \item El tamaño muestral: Cuanto mayor sea, más información tendremos y, en consecuencia, más fiables serán las predicciones. 
+% \end{itemize} 
+% 
+% Además, hay que tener en cuenta que un modelo de regresión es válido únicamente para el rango de valores observados en la muestra.
+% Fuera de ese rango no hay información del tipo de relación entre las variables, por lo que no deben hacerse predicciones para valores lejos
+% de los observados en la muestra.
+% 
+% \note{Aunque el coeficiente de determinación o el de correlación hablan de la bondad de un modelo de regresión, no es el único dato que hay que
+% tener en cuenta a la hora de hacer predicciones.
+% 
+% La fiabilidad de las predicciones que hagamos con un modelo de regresión depende de varios factores como son:
+% \begin{itemize}
+% \item El coeficiente de determinación: Cuanto mayor sea, menores serán los errores predictivos y mayor la fiabilidad de las predicciones.
+% \item La variabilidad de la población: Cuanto más variable es una población, más difícil es predecir y por tanto menos fiables serán las predicciones del modelo.
+% \item El tamaño muestral: Cuanto mayor sea, más información tendremos y, en consecuencia, más fiables serán las predicciones. 
+% \end{itemize} 
+% 
+% Además, hay que tener en cuenta que un modelo de regresión es válido únicamente para el rango de valores observados en la muestra.
+% Fuera de ese rango, al no disponer de información del tipo de relación entre las variables, no deben hacerse predicciones.
+% }
+% \end{frame}
+% 
+% 
+% \subsection{Regresión no lineal}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Regresión no lineal}
+% El ajuste de un modelo de regresión no lineal es similar al del modelo lineal y también puede realizarse mediante la técnica de mínimos
+% cuadrados.
+%  
+% No obstante, en determinados casos un ajuste no lineal puede convertirse en un ajuste lineal mediante una sencilla transformación de alguna
+% de las variables del modelo.
+% 
+% \note{Ya hemos visto cómo se construyen las rectas de regresión. Para la construcción de los modelos de regresión no lineales el
+% prodecidimiento es similar mediante el método de los mínimos cuadrados, aunque en determinados, transformando alguna de las variables del
+% modelo, es posible convertir el modelo no lineal en uno lineal que ya sabemos construir.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Transformación de modelos de regresión no lineales}
+% \begin{itemize}
+% \item \highlight{Modelo logarítmico}}: Un modelo logarítmico $y = a+b \log x$ se convierte en un modelo lineal haciendo el cambio
+% $t=\log x$:
+% \[y=a+b\log x = a+bt.\]
+% \item \highlight{Modelo exponencial}}: Un modelo exponencial $y = ae^{bx}$ se convierte en un modelo lineal haciendo el cambio $z = \log y$:
+% \[z = \log y = \log(ae^{bx}) =  \log a + \log e^{bx} = a^\prime +bx. \] 
+% \item \highlight{Modelo potencial}}: Un modelo potencial $y = ax^b$ se convierte en un modelo lineal haciendo los cambios
+% $t=\log x$ y $z=\log y$:
+% \[z = \log y = \log(ax^b) = \log a + b \log x = a^\prime+bt.\]
+% \item \highlight{Modelo inverso}}: Un modelo inverso $y = a+b/x$ se convierte en un modelo lineal haciendo el cambio $t=1/x$:
+% \[y = a + b(1/x) = a+bt.\]
+% \item \highlight{Modelo curva S}}: Un modelo curva S $y = e^{a+b/x}$ se convierte en un modelo lineal haciendo los cambios $t=1/x$
+% y $z=\log y$:
+% \[z = \log y = \log (e^{a+b/x}) = a+b(1/x) = a+bt.\]
+% \end{itemize}
+% 
+% \note{
+% \begin{itemize}
+% \item El modelo logarítmico, $y = a+b \log x$, que se transforma en un modelo lineal aplicando el logaritmo a la variable independiente
+% $t=\log x$.
+% \item El modelo exponencial, $y = ae^{bx}$, que se convierte en lineal aplicando el logaritmo a la variable dependiente $z=\log y$.
+% \item El modelo potencial $y = ax^b$ se convierte en un modelo lineal aplicando el logaritmo tanto a la variable independiente
+% $t=\log x$ como a la variable dependiente $z=\log y$.
+% \item El modelo inverso $y = a+b/x$ se convierte en un modelo lineal tomando el inverso de la variable independiente $t=1/x$.
+% \item El modelo curva S $y = e^{a+b/x}$ se convierte en un modelo lineal tomando el inverso de la variable independiente $t=1/x$ y el
+% logaritmo de la variable dependiente $z=\log y$.
+% \end{itemize}
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Ejemplo de ajuste de un modelo exponencial}
+% \framesubtitle{Evolución del número de bacterias de un cultivo}
+% El número de bacterias de un cultivo evoluciona con el tiempo según la siguiente tabla:
+% \begin{columns}
+% \begin{column}{0.3\textwidth}
+% \[
+% \begin{array}{c|c}
+% \mbox{Horas} & \mbox{Bacterias}\\
+% \hline
+% 0 &  25 \\
+% 1 & 28 \\
+% 2 &  47\\
+% 3 & 65 \\
+% 4 & 86\\
+% 5 & 121\\
+% 6 & 190\\
+% 7 & 290\\
+% 8 & 362
+% \end{array}
+% \]
+% \end{column}
+% \begin{column}{0.6\textwidth}
+% El diagrama de dispersión asociado es
+% \begin{center}
+% \scalebox{0.6}{\input{img/regresion/diagrama_dispersion_horas_bacterias}}
+% \end{center}
+% \end{column}
+% \end{columns}
+% 
+% \note{Veamos un ejemplo de construcción de un modelo exponencial. En esta muestra se presenta la evolución del número de bacterias en un
+% cultivo, en función del tiempo. 
+% 
+% Si dibujamos el diagrama de dispersión asociado podemos observar que hay una clara relación exponencial entre el número de bacterias y el
+% tiempo transcurrido.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Ejemplo de ajuste de un modelo exponencial}
+% \framesubtitle{Evolución del número de bacterias de un cultivo}
+% Si realizamos un ajuste lineal, obtenemos la siguiente recta de regresión
+% \begin{columns}
+% \begin{column}{0.3\textwidth}
+% \[
+% \begin{array}{c|c}
+% \mbox{Horas} & \mbox{Bacterias}\\
+% \hline
+% 0 &  25 \\
+% 1 & 28 \\
+% 2 &  47\\
+% 3 & 65 \\
+% 4 & 86\\
+% 5 & 121\\
+% 6 & 190\\
+% 7 & 290\\
+% 8 & 362
+% \end{array}
+% \]
+% \[
+% \mbox{Bacterias} = -30.18+41,27\,\mbox{Horas}
+% \]
+% \end{column}
+% \begin{column}{0.6\textwidth}
+% \begin{center}
+% \scalebox{0.6}{\input{img/regresion/regresion_lineal_horas_bacterias}}
+% \end{center}
+% \end{column}
+% \end{columns}
+% \begin{center}
+% \emph{¿Es un buen modelo?}
+% \end{center}
+% 
+% \note{Si se calcula la recta de regresión del número de bacterias sobre las horas transcurridas, se observa que no es un mal modelo ya que
+% su coefiente de determinación lineal vale $0.85$. Ahora bien, que sea un buen modelo, no quiere decir que sea el mejor.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Ejemplo de ajuste de un modelo exponencial}
+% \framesubtitle{Evolución del número de bacterias de un cultivo}
+% Aunque el modelo lineal no es malo, de acuerdo al diagrama de dispersión es más lógico construir un modelo exponencial o cuadrático.
+% 
+% 
+% Para construir el modelo exponencial $y = ae^{bx}$ hay que realizar la transformación $z=\log y$, es decir, aplicar el logaritmo a la
+% variable dependiente.
+% 
+% \begin{columns}
+% \begin{column}{0.45\textwidth}
+% \[
+% \begin{array}{c|c|c}
+% \mbox{Horas} & \mbox{Bacterias} & \mbox{Log Bacterias}\\
+% \hline
+% 0 &  25 & 3.22\\
+% 1 & 28 & 3.33\\
+% 2 &  47 & 3.85\\
+% 3 & 65  & 4.17\\
+% 4 & 86 & 4.45\\
+% 5 & 121 & 4.80\\
+% 6 & 190 & 5.25\\
+% 7 & 290 & 5.67\\
+% 8 & 362 & 5.89
+% \end{array}
+% \]
+% \end{column}
+% \begin{column}{0.55\textwidth}
+% \begin{center}
+% \scalebox{0.58}{\input{img/regresion/diagrama_dispersion_horas_logbacterias}}
+% \end{center}
+% \end{column}
+% \end{columns}
+% 
+% \note{Para construir el modelo de regresión exponencial hay que aplicar el logaritmo neperiano a la variable dependiente, que en este caso
+% es el número de bacterias. El logaritmo neperiano de 25 nos da 3.22, el de 28 nos da 3.33 y así sucesivamente, de manera que obtenemos una
+% nueva variable que es el logarítmo de las bacterias. 
+% 
+% Si representamos el diagrama de dispersion del logaritmo de las bacterias y las horas transcurridas, podemos comprobar cómo ahora la nube de
+% puntos tiene forma lineal, es decir, mediante la transformación logarítmica de la variable dependiente hemos convertido una relación
+% exponencial en una relación lineal.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Ejemplo de ajuste de un modelo exponencial}
+% \framesubtitle{Evolución del número de bacterias de un cultivo}
+% Ahora sólo queda calcular la recta de regresión del logaritmo de Bacterias sobre Horas
+% \begin{columns}
+% \begin{column}{0.45\textwidth}
+% \[
+% \mbox{Log Bacterias} = 3.107 + 0.352\, \mbox{Horas}.
+% \]
+% Y deshaciendo el cambio de variable, se obtiene el modelo exponencial
+% \[
+% \mbox{Bacterias} = e^{3.107+0.352\,\textrm{Horas}},
+% \]
+% que, a la vista del coeficiente de determinación, es mucho mejor modelo que el lineal.
+% \end{column}
+% \begin{column}{0.55\textwidth}
+% \begin{center}
+% \scalebox{0.6}{\input{img/regresion/regresion_exponencial_horas_bacterias}}
+% \end{center}
+% \end{column}
+% \end{columns}
+% 
+% \note{Si ahora calculamos la recta de regresión del logaritmo de las bacterias sobre las horas, se tiene $\mbox{Log Bacterias} = 3.107 +
+% 0.352\, \mbox{Horas}$, cuyo coeficiente de determinación lineal vale $0.99$, lo cual indica un ajuste casi perfecto de la recta. 
+% 
+% Finalmente, para obtener el modelo exponencial, basta con desacer la transformación logarítmica del número de bacterias, aplicando la
+% función exponencial, lo que nos da $\mbox{Bacterias} = e^{3.107+0.352\,\textrm{Horas}}$, y cuyo coeficiente de determinación exponencial
+% coincide con el de la recta anterior, de manera que se puede concluir que el modelo exponencial explica muyo mejor la relación entre el
+% número de bacterias y las horas que el modelo lineal. }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Interpretación de un coeficiente de determinación pequeño}
+% Tanto el coeficiente de determinación como el de correlación hacen referencia a un modelo concreto, de manera que un coeficiente $r^2=0$
+% significa que no existe relación entre las variables del tipo planteado por el modelo, pero \emph{eso no quiere decir que las variables sean
+% independientes}, ya que puede existir relación de otro tipo.
+% \begin{center}
+% \scalebox{0.55}{\input{img/regresion/recta_regresion_relacion_parabolica}}
+% \qquad
+% \scalebox{0.55}{\input{img/regresion/regresion_parabolica}}
+% \end{center}
+% 
+% \note{Hay que recordar que tanto el coeficiente de determinación hace referencia a un modelo concreto, de manera que
+% un coeficiente $r^2=0$ significa que no existe relación entre las variables del tipo planteado por el modelo, pero \emph{eso no quiere decir
+% que las variables sean independientes}, ya que puede existir relación de otro tipo.
+% 
+% En las gráficas puede apreciarse cómo al ajustar una recta sobre esta nube de puntos se obtiene un coeficiente de determinación
+% prácticamente nulo pero sin embargo hay una clara relación parabólica entre las variables, por lo que no podemos decir que las variables
+% son independientes, tan sólo que no tienen relación lineal.}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Datos atípicos en regresión}
+% En un estudio de regresión es posible que aparezca algún individuo que se aleja notablemente de la tendencia del resto de individuos en la
+% nube de puntos.
+% 
+% Aunque el individuo podría no ser un \emph{dato atípico} al considerar las variables de manera separada, sí lo sería al
+% considerarlas de manera conjunta.
+% 
+% \begin{center}
+% \scalebox{0.6}{\input{img/regresion/diagrama_dispersion_con_datos_atipicos}}
+% \end{center}
+% 
+% \note{Otro de los problemas que pueden plantearse en la construcción de un modelo de regresión es la presencia de datos atípicos. En un
+% estudio de regresión, los datos atípicos, a diferencia de lo que vimos en el tema anterior no son individuos que presentan un valor en
+% alguna de las variables muy distinto del resto, sino que son puntos que se alejan notablemente de la tendencia de la nube de puntos.
+% 
+% Como se aprecia en el gráfico, aunque un individuo podría no ser un \emph{dato atípico} al considerar las variables de manera separada, sí
+% lo sería al considerarlas de manera conjunta.}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Influencia de los datos atípicos en los modelos de regresión}
+% Los datos atípicos en regresión suelen provocar cambios drásticos en el ajuste de los modelos de regresión, y por tanto, habrá que tener
+% mucho cuidado con ellos.
+% 
+% \begin{center}
+% \scalebox{0.55}{\input{img/regresion/recta_regresion_con_datos_atipicos}}
+% \qquad
+% \scalebox{0.55}{\input{img/regresion/recta_regresion_sin_datos_atipicos}}
+% \end{center}
+% 
+% \note{Los datos atípicos en un estudio de regresión son un problema porque suelen provocar cambios drásticos en el modelo de regresión.
+% 
+% Como puede apreciarse en estos dos diagramas de dispersión, hay una clara tendencia lineal de la nube de puntos, pero en el primer caso hay
+% un dato atípico. Si se calcula la recta de regresión con el dato atípico, la recta resultante aparece bastante desviada de la tendencia de
+% la nube de puntos ya que el dato atípico está ejerciendo una gran influencia sobre ella. Como consecuencia el modelo resultante tiene
+% coeficiente de determinación $0.08$ y lo que indica que esta recta no explica bien la relación entre las variables. Sin embargo, cuando se
+% calcula la recta sin tener en cuenta el dato atípico, la recta resultante tiene un coeficiente de determinación de $0.98$ y explica casi a
+% la perfección la relación que hay entre las variables. 
+% 
+% Así pues, cuando haya datos atípicos en un estudio de regresión habrá que tener mucho cuidado con ellos y muchas ocasiones se eliminarán
+% para que no distorsionen el modelo de regresión.}
+% \end{frame}
+% 
+% 
+% \subsection{Medidas de relación entre atributos}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Relaciones entre atributos}
+% Los modelos de regresión vistos sólo pueden aplicarse cuando las variables estudiadas son cuantitativas.
+% 
+% Cuando se desea estudiar la relación entre atributos, tanto ordinales como nominales, es necesario recurrir a otro tipo
+% de medidas de relación o de asociación. En este tema veremos tres de ellas:
+% \begin{itemize}
+% \item Coeficiente de correlación de Spearman.
+% \item Coeficiente chi-cuadrado.
+% \item Coeficiente de contingencia.
+% \end{itemize}
+% 
+% \note{La regresión sólo tiene sentido cuando cuando las variables estudiadas son cuantitativas.
+% 
+% Cuando se desea estudiar la relación entre atributos, tanto ordinales como nominales, es necesario recurrir a otro tipo
+% de medidas de relación o de asociación. Veremos tres de las más importantes que son
+% \begin{itemize}
+% \item Coeficiente de correlación de Spearman.
+% \item Coeficiente chi-cuadrado.
+% \item Coeficiente de contingencia.
+% \end{itemize}
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Coeficiente de correlación de Spearman}
+% Cuando se tengan atributos ordinales es posible ordenar sus categorías y asignarles valores ordinales, de manera que se
+% puede calcular el coeficiente de correlación lineal entre estos valores ordinales. 
+% 
+% Esta medida de relación entre el orden que ocupan las categorías de dos atributos ordinales se conoce como coeficiente
+% ce correlación de Spearman, y puede demostrarse fácilmente que puede calcularse a partir de la siguiente fórmula
+% 
+% \begin{definicion}[Coeficiente de correlación de Spearman]
+% Dada una muestra de $n$ individuos en los que se han medido dos atributos ordinales $X$ e $Y$, el coeficiente de
+% correlación de Spearman se define como: 
+% \[
+% r_s = 1-\frac{6\sum d_i^2}{n(n^2-1)}
+% \]
+% donde $d_i$ es la diferencia entre el valor ordinal de $X$ y el valor ordinal de $Y$ del individuo $i$.
+% \end{definicion}
+% 
+% \note{Si queremos estudiar la relación entre dos atributos ordinales, como sus categorías pueden ordenarse, una posibilidad tomar sus
+% valores de orden, que serían numéricos, y calcular el coeficiente de correlación lineal entre los órdenes.
+% 
+% Esta medida se conoce como coeficiente de correlación de Spearman, que se representa como $r_s$ y también puede calcularse haciendo la suma
+% de los cuadrados de las diferencias entre los números de orden del valor de $X$ e $Y$ en cada indiviudo, multiplicada por 6, dividida por el
+% tamaño de la muestra multiplicado por el cuadrado del tamaño de la muestra menos 1 y restando el resultado del cociente a 1.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Interpretación del coeficiente de correlación de Spearman}
+% Como el coeficiente de correlación de Spearman es en el fondo el coeficiente de correlación lineal aplicado a los
+% órdenes, se tiene:
+% \[
+% -1\leq r_s\leq 1,
+% \]
+% de manera que:
+% \begin{itemize}
+% \item Si $r_s=0$ entonces no existe relación entre los atributos ordinales.
+% \item Si $r_s=1$ entonces los órdenes de los atributos coinciden y existe una relación directa perfercta.
+% \item Si $r_s=-1$ entonces los órdenes de los atributos están invertidos y existe una relación inversa perfecta.
+% \end{itemize}
+% En general, cuanto más cerca de $1$ o $-1$ esté $r_s$, mayor será la relación entre los atributos, y cuanto más cerca
+% de $0$, menor será la relación.
+% 
+% \note{Como el coeficiente de correlación de Spearman es en el fondo el coeficiente de correlación lineal aplicado a los
+% órdenes, su valor estará entre -1 y 1 y se interpreta de manera similar al coeficiente de correlación lineal, es decir,
+% \begin{itemize}
+% \item Si $r_s=0$ entonces no existe relación entre los atributos ordinales.
+% \item Si $r_s=1$ entonces los órdenes de los atributos coinciden y existe una relación directa perfercta.
+% \item Si $r_s=-1$ entonces los órdenes de los atributos están invertidos y existe una relación inversa perfecta.
+% \end{itemize}
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo del coeficiente de correlación de Spearman}
+% \framesubtitle{Ejemplo}
+% Una muestra de 5 alumnos realizaron dos tareas diferentes $X$ e $Y$, y se ordenaron de acuerdo a la destreza que
+% manifestaron en cada tarea:
+% \[
+% \begin{array}{lrrrr}
+% \hline
+% \text{Alumnos} & X & Y & d_i & d_i^2\\
+% \hline
+% \text{Alumno 1} & 2 & 3 & -1 & 1\\
+% \text{Alumno 2} & 5 & 4 & 1 & 1 \\
+% \text{Alumno 3} & 1 & 2 & -1 & 1\\
+% \text{Alumno 4} & 3 & 1 & 2 & 4\\
+% \text{Alumno 5} & 4 & 5 & -1 & 1\\
+% \hline
+% \sum &  &  & 0 & 8 \\
+% \hline
+% \end{array}
+% \]
+% El coeficiente de correlación de Spearman para esta muestra es 
+% \[
+% r_s = 1-\frac{6\sum d_i^2}{n(n^2-1)} = 1- \frac{6\cdot 8}{5(5^2-1)} = 0.6,
+% \]
+% lo que indica que existe bastante relación directa entre las destrezas manifestadas en ambas tareas.
+% 
+% \note{Para ilustrar el cálculo del coeficiente de correlación de Spearman, supongamos una muestra de 5 alumnos que realizaron dos tareas
+% diferentes $X$ e $Y$, y se ordenaron de acuerdo a la destreza que manifestaron en cada tarea.
+% 
+% El primer alumno fue el segundo con más destreza en la tarea $X$ y el tercero en la tarea $Y$ de manera que la diferencia entre los órdenes
+% en $X$ e $Y$ es $-1$ y su cuadrado vale 1. El segundo alumno fue el peor en la tarea $X$ y el penúltimo en la tarea $Y$ de manera que la
+% diferencia entre sus órdenes en $X$ e $Y$ vale también $-1$ y su cuadrado 1, etc.  
+% 
+% Una vez calculados los cuadrados de las diferencias entre los órdenes, se suman, se multiplican por 6 y se dividen por el cuadrado del
+% tamaño de la muestra, que vale 5,  por el cuadrado del tamaño de la muestra menos, que es $5^2-1$ y finalmente el resultado del cociente se
+% resta a 1. Esto nos da un coeficiente de correlación de Spearman de 0.6, lo cual indica que existe bastante relación directa entre las
+% destrezas manifestadas en ambas tareas.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo del coeficiente de correlación de Spearman}
+% \framesubtitle{Ejemplo con empates}
+% Cuando hay empates en el orden de las categorías se atribuye a cada valor empatado la media aritmética de los valores
+% ordinales que hubieran ocupado esos individuos en caso de no haber estado empatados.
+% 
+% Si en el ejemplo anterior los alumnos 4 y 5 se hubiesen comportado igual en la primera tarea y los alumnos 3 y 4 se
+% hubiesen comportado igual en la segunda tarea, entonces se tendría
+% \[
+% \begin{array}{lrrrr}
+% \hline
+% \text{Alumnos} & X & Y & d_i & d_i^2\\
+% \hline
+% \text{Alumno 1} & 2 & 3 & -1 & 1\\
+% \text{Alumno 2} & 5 & 4 & 1 & 1 \\
+% \text{Alumno 3} & 1 & 1.5 & -0.5 & 0.25\\
+% \text{Alumno 4} & 3.5 & 1.5 & 2 & 4\\
+% \text{Alumno 5} & 3.5 & 5 & -1.5 & 2.25\\
+% \hline
+% \sum &  &  & 0 & 8.5 \\
+% \hline
+% \end{array}
+% \]
+% El coeficiente de correlación de Spearman para esta muestra es 
+% \[
+% r_s = 1-\frac{6\sum d_i^2}{n(n^2-1)} = 1- \frac{6\cdot 8.5}{5(5^2-1)} = 0.58.
+% \]
+% 
+% \note{Cuando haya individuos con la misma categoría del atributo, entonces dichos individuos recibirán el mismo número de orden y de manera
+% que habrá empates en el orden. En tal caso se atribuye a cada valor empatado la media aritmética de los valores ordinales que hubieran
+% ocupado esos individuos en caso de no haber estado empatados.
+% 
+% Si en ejemplo anterior los alumnos 4 y 5 se hubiesen comportado igual en la primera tarea, entonces como ambos ocupan la posición 3 y 4
+% en la ordenación, se toma la media $3.5$ y se le asigna dicho valor a ambos. Del mismo modo, si los alumnos 3 y 4 se hubiesen comportado
+% igual en la segunda tarea, como el orden que ocupan es el primero y el segundo, entonces a ambos se le asigna la media $1.5$.
+% 
+% El resto de los cálculos para el coeficiente de Spearman se haría igual que en el caso en que no había empates.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Relación entre atributos nominales}
+% Cuando se quiere estudiar la relación entre atributos nominales no tiene sentido calcular el coeficiente de correlación
+% de Spearman ya que las categorías no pueden ordenarse.
+% 
+% Para estudiar la relación entre atributos nominales se utilizan medidas basadas en las frecuencias de la tabla de
+% frecuencias bidimensional, que para atributos se suele llamar \emph{tabla de contingencia}.
+% 
+% \highlight{Ejemplo}} En un estudio para ver si existe relación entre el sexo y el hábito de fumar se ha tomado
+% una muestra de 100 personas.
+% La tabla de contingencia resultante es
+% \[
+% \begin{array}{|l|rr|r|} 
+% \hline
+% \text{Sexo}\backslash\text{Fuma} & \text{Si} & \text{No} & n_i\\
+% \hline
+% \text{Mujer} & 12 & 28 & 40 \\
+% \text{Hombre} & 26 & 34 & 60 \\
+% \hline
+% n_j & 38 & 62 & 100\\
+% \hline
+% \end{array}
+% \]
+% Si el hábito de fumar fuese independiente del sexo, la proporción de fumadores en mujeres y hombres sería la misma.
+% 
+% \note{Cuando se quiere estudiar la relación entre atributos nominales no tiene sentido calcular el coeficiente de correlación
+% de Spearman ya que las categorías no pueden ordenarse. En este caso se utilizan medidas basadas en las frecuencias de la tabla de
+% frecuencias bidimensional, que para atributos se suele llamar \emph{tabla de contingencia}.
+% 
+% En este ejemplo tenemos una tabla de contingencia para los atributos sexo y hábito de fumar, ambos nominales. En la muestra hay 12 mujeres
+% fumadoras, 28 no fumadoras, 26 hombres fumadores y 34 no fumadores. En total tenemos una muestra de tamaño 100. 
+% 
+% La forma de estudiar la relación entre el sexo y el hábito de fumar es por medio de las frecuencias relativas de cada par de categorías.
+% Así, si el hábito de fumar fuese independiente del sexo, la proporción de fumadores en mujeres y hombres sería la misma, mientras que si
+% hubiese dependencia, serían significativamente diferentes.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Frecuencias teóricas o esperadas}
+% En general, dada una tabla de contingencia para dos atributos $X$ e $Y$, 
+% \[
+% \begin{array}{|c|ccccc|c|}
+% \hline
+% X\backslash Y & y_1 & \cdots & y_j & \cdots & y_q & n_x\\
+% \hline
+% x_1 & n_{11} & \cdots & n_{1j} & \cdots & n_{1q} & n_{x_1}\\
+% \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \vdots \\
+% x_i & n_{i1} & \cdots & n_{ij} & \cdots & n_{iq} & n_{x_i}\\
+% \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \vdots\\
+% x_p & n_{p1} & \cdots & n_{pj} & \cdots & n_{pq} & n_{x_p} \\
+% \hline
+% n_y & n_{y_1} & \cdots & n_{y_j} & \cdots & n_{y_q} & n\\
+% \hline
+% \end{array}
+% \]
+% si $X$ e $Y$ fuesen independientes, para cualquier valor $y_j$ se tendría
+% \[
+% \frac{n_{1j}}{n_{x_1}} = \frac{n_{2j}}{n_{x_2}} = \cdots = \frac{n_{pj}}{n_{x_p}} = \frac{n_{1j}+\cdots
+% +n_{pj}}{n_{x_1}+\cdots+n_{x_p}} = \frac{n_{y_j}}{n},
+% \]
+% de donde se deduce que
+% \[
+% n_{ij} = \frac{n_{x_i}n_{y_j}}{n}.
+% \]
+% 
+% A esta última expresión se le llama \emph{frecuencia teórica} o \emph{frecuencia esperada} del par $(x_i,y_j)$. 
+% 
+% \note{En general, dada una tabla de contingencia pra dos atributos $X$ e $Y$, si las variables fuesen independientes, entonces la proporción
+% de individuos que presentan el valor $y_j$ en la variable $Y$ entre los que presentan el valor $x_1$ en la variable $X$ sería la frecuencia
+% absoluta del par $(x_i,y_j)$ $n_{ij}$ divida entre la frecuencia absoluta de $x_1$ y esta frecuencia sería la misma que la proporción de
+% individuos con el valor $y_j$ en $Y$ entre los que presentan el valor $x_2$ en $X$, y en general, al ser independiente de $X$ sería la misma
+% para cualquier otra categoría de $X$, de manera que todas serían iguales a la proporción total de individuos en la muestra con valor $y_j$
+% en la variable $Y$, que se obtendría dividiendo la frecuencia absoluta de $y_j$ entre el tamaño de la muestra.
+% 
+% De esta igualdad se puede deducir que la frecuencia absoluta de cualquier par $(x_i,y_j)$ se podría calcular multiplicando las frecuencias
+% absolutas de $x_i$, $n_i$ y $y_j$ que es $n_j$ y dividendo por el tamaño de la muestra.
+% 
+% A estas frecuencias calculadas bajo la hipótesis de independencia, se les llama \emph{frecuencia teóricas} o \emph{frecuencia esperadas}.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Coeficiente chi-cuadrado $\chi^2$}
+% Es posible estudiar la relación entre dos atributos $X$ e $Y$ comparando las frecuencias reales con las esperadas:
+% \begin{definicion}[Coeficiente chi-cuadrado $\chi^2$]
+% Dada una muestra de tamaño $n$ en la que se han medido dos atributos $X$ e $Y$, se define el coeficiente $\chi^2$ como
+% \[
+% \chi^2 = \sum_{i=1}^p\sum_{j=1}^q \frac{\left(n_{ij}-\frac{n_{x_i}n_{y_j}}{n}\right)^2}{\frac{n_{x_i}n_{y_j}}{n}},
+% \]
+% donde $p$ es el número de categorías de $X$ y $q$ el número de categorías de $Y$.
+% \end{definicion}
+% 
+% Por ser suma de cuadrados, se cumple que 
+% \[
+% \chi^2 \geq 0,
+% \]
+% de manera que $\chi^2=0$ cuando los atributos son independientes, y crece a medida que aumenta la dependencia entre las variables.
+% 
+% \note{Una posible forma de estudiar la relación entre dos atributos nominales es comparar sus frecuencias absolutas reales con las esperadas
+% bajo la hipótesis de indepencia. Esto es precisamente lo que hace un estadístico conocido como coeficiente chi-cuadrado, que se denota con
+% la letra griega $\chi^2$ y se calcula sumando para cada par de la variable bidimensional los cuadrados de las diferencias entre las
+% frecuencias reales y las frecuencias esperadas, dividos por las propias frecuencias esperadas.
+% 
+% Como se trata de una suma de cuadrados, el coeficiente chi-cuadrado siempre es positivo. Cuando los atributos sean independientes, las
+% frecuencias reales coincidirán con las esperadas y todos los sumandos se anularán, de manera que el coeficiente chi-cuadrado valdrá cero. Y
+% en la medida que cada vez haya más dependencia, las diferencias entre las frecuencias reales y las esperadas serán cada vez mayores de forma
+% que el coeficiente chi-cuadrado será también mayor.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo del coeficiente chi-cuadrado $\chi^2$}
+% \framesubtitle{Ejemplo}
+% Siguiendo con el ejemplo anterior, a partir de la tabla de contingencia 
+% \[
+% \begin{array}{|l|rr|r|} 
+% \hline
+% \text{Sexo}\backslash\text{Fuma} & \text{Si} & \text{No} & n_i\\
+% \hline
+% \text{Mujer} & 12 & 28 & 40 \\
+% \text{Hombre} & 26 & 34 & 60 \\
+% \hline
+% n_j & 38 & 62 & 100\\
+% \hline
+% \end{array}
+% \]
+% se obtienen las siguientes frecuencias esperadas:
+% \[
+% \renewcommand{\arraystretch}{1.5}
+% \begin{array}{|l|rr|r|} 
+% \hline
+% \text{Sexo\Fuma} & \text{Si} & \text{No} & n_i\\
+% \hline
+% \text{Mujer} & \frac{40\cdot 38}{100}=15.2 & \frac{40\cdot 62}{100}=24.8 & 40 \\
+% \text{Hombre} & \frac{60\cdot 38}{100}=22.8 & \frac{60\cdot 62}{100}=37.2 & 60 \\
+% \hline
+% n_j & 38 & 62 & 100\\
+% \hline
+% \end{array}
+% \]
+% y el coeficiente $\chi^2$ vale
+% \[
+% \chi^2 = \frac{(12-15.2)^2}{15.2}+\frac{(28-24.8)^2}{24.8}+\frac{(26-22.8)^2}{22.8}+\frac{(34-37.2)^2}{37.2} = 1.81,
+% \]
+% lo que indica que no existe gran relación entre el sexo y el hábito de fumar.
+% 
+% \note{Siguiendo con el ejemplo del sexo y el hábito de fumar, a partir de la tabla de contingencia se calculan las frecuencias esperadas de
+% cada par. La frecuencia esperada de mujeres fumadoras es el número de mujeres 40, por el número de personas fumadoras 38, dividido por el
+% tamaño de la muestra 100, lo que da $15.2$. Etc. 
+% 
+% Una vez calculadas las frecuencias esperadas, para calcular el coeficiente chi-cuadrado vamos calculando los cuadrados de las diferencias
+% entre las frecuencias reales y las esperadas, es decir, para las mujeres fumadoras sería $(12-15.2)^2$ y esto se divide por la frecuencia
+% esperada $15.2$. Del mismo modo se calculan los sumandos para el resto de los pares y se realiza la suma, lo que nos da un coeficiente
+% chi-cuadrado de $1.81$, que al ser un valor próximo a 0 indica que no hay gran relación entre el sexo y el hábito de fumar.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Coeficiente de contingencia}
+% El coeficiente $\chi^2$ depende del tamaño muestral, ya que al multiplicar por una constante las frecuencias de todas
+% las casillas, su valor queda multiplicado por dicha constante, lo que podría llevarnos al equívoco de pensar que ha
+% aumentado la relación, incluso cuando las proporciones se mantienen.
+% En consecuencia el valor de $\chi^2$ no está acotado superiormente y resulta difícil de interpretar.
+% 
+% Para evitar estos problemas se suele utilizar el siguiente estadístico:
+% \begin{definicion}[Coeficiente de contingencia]
+% Dada una muestra de tamaño $n$ en la que se han medido dos atributos $X$ e $Y$, se define el \emph{coeficiente de
+% contingencia} como 
+% \[
+% C = \sqrt{\frac{\chi^2}{\chi^2+n}}
+% \]
+% \end{definicion}
+% 
+% \note{El principal problema del coeficiente chi-cuadrado es que depende del tamaño muestral ya que se calcula a partir de las frecuencias
+% absolutas, no de las relativas. De hecho, se puede comprobar que al multiplicar por una constante las frecuencias de todas
+% las casillas de la tabla de contingencia, su valor queda multiplicado por dicha constante, lo que podría llevarnos al equívoco de pensar que
+% ha aumentado la relación, incluso cuando las proporciones se mantienen. En consecuencia el valor de $\chi^2$ no está acotado superiormente y
+% resulta difícil de interpretar.
+% 
+% Para evitar estos problemas suele utilizarse otro estadístico conocido como coeficiente de contingencia, que se denota $C$, y se calcula a
+% partir del coeficiente chi-cuadrado haciendo la raíz del cociente entre el coeficiente-chi cuadrado entre el mismo coeficiente chi-cuadrado
+% mas el tamaño de la muestra.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Interpretación del coeficiente de contingencia}
+% De la definición anterior se deduce que 
+% \[
+% 0\leq C\leq 1,
+% \]
+% de manera que cuando $C=0$ las variables son independientes, y crece a medida que aumenta la relación.
+% 
+% Aunque $C$ nunca puede llegar a valer 1, se puede demostrar que para tablas de contingencia con $k$ filas y $k$
+% columnas, el valor máximo que puede alcanzar $C$ es $\sqrt{(k-1)/k}$.
+% 
+% \highlight{Ejemplo}} En el ejemplo anterior el coeficiente de contingencia vale
+% \[
+% C = \sqrt{\frac{1.81}{1.81+100}} = 0.13.
+% \]
+% Como se trata de una tabla de contingencia de $2\times 2$, el valor máximo que podría tomar el coeficiente de
+% contingencia es $\sqrt{(2-1)/2}=\sqrt{1/2}=0.707$, y como $0.13$ está bastante lejos de este valor, se puede concluir
+% que no existe demasiada relación entre el hábito de fumar y el sexo.
+% 
+% \note{De la definición del coeficiente de contingencia es fácil ver que, al ser el numerador siempre menor que el denominador, siempre
+% estará entre 0 y 1, de manera que el coeficiente de contingencia será nulo cuando las variables sean independientes, y estará más próximo a
+% 1 a medida que aumente la dependencia.
+% 
+% Aunque el coeficiente de contingencia nunca puede llegar a valer 1, se puede demostrar que para tablas de contingencia con $k$ filas y $k$
+% columnas, el valor máximo que puede alcanzar es $\sqrt{(k-1)/k}$, de modo que se puede comparar con este valor.
+% 
+% En el ejemplo del sexo y el hábito de fumar, como el coeficiente chi-cuadrado valía $1.81$, el coeficiente de contingencia vale la
+% raíz cuadrada de $1.81$ dividido entre $1.81$ más el tamaño de la muestra 100, lo que da $0.13$. Y como se trata de una tabla de
+% contingencia de $2\times 2$, el valor máximo que podría tomar el coeficiente de contingencia es $\sqrt{(2-1)/2}=\sqrt{1/2}=0.707$, y como
+% $0.13$ está bastante lejos de este valor, se puede concluir que no existe demasiada relación entre el hábito de fumar y el sexo.
+% }
+% \end{frame}
