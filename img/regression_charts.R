@@ -39,8 +39,8 @@ box()
 dev.off()
 
 
-# Cuadratic relation scatter plot
-tikz(file="img/regression/cuadratic_scatterplot.tex", width=7, height=5)
+# Quadratic relation scatter plot
+tikz(file="img/regression/quadratic_scatterplot.tex", width=7, height=5)
 par(mai=c(0.5,0.5,0.5,0.5), cex.lab=1.2, mgp=c(1,0,0))
 y=(x+rnorm(100,0,1))^2
 plot(x,y, col=color2, main="Cuadratic relation", xlab=expression(italic("X")), ylab=expression(italic("Y")), pch=16, axes=F)
@@ -75,62 +75,49 @@ dev.off()
 
 # Deviations to the means
 tikz(file="img/regression/deviations_to_means.tex", width=7, height=5)
-par(mai=c(0.5,0.5,0.2,0.2), cex.lab=1.2, mgp=c(2,0,0))
-plot(weight~height, col=color1, main="", xlab=expression(italic("X")), ylab=expression(italic("Y")), xlim=c(150,200), pch=16, data=data, axes=T)
+par(mar=c(2.8,2.8,0.2,0.2), cex.lab=1.2, mgp=c(2,0.7,0))
+plot(weight~height, col=color1, main="", xlab="$X$", ylab="$Y$", xlim=c(150,200), pch=16, data=data, axes=F)
 box()
+axis(1, at=c(174.67), labels=c("$x_i$"))
+axis(2, at=c(69.67), labels=c("$y_j$"),las=2)
 abline(h=69.67, lty=2,col="grey")
 abline(v=174.67, lty=2,col="grey")
 points(174.67,69.67, pch=16, col=color2)
-text(174.67,-0.2, expression(bar(italic(x))))
-text(172,72,"$(\\bar x, \\bar y)$")
-arrows(188,69.67,188,93, col="grey", code=3)
-arrows(174.67,93,188,93, col="grey", code=3)
-text(190,95,"$(x_i,y_j)$")
+text(173,72,"$(\\bar x, \\bar y)$",col=color2)
+text(196,92,"$(x_i,y_j)$")
+arrows(174.67,90,194,90, col="grey", code=3)
+text(185,92,"$x_i-\\bar x$")
+arrows(194,69.67,194,90, col="grey", code=3)
+text(196,80,"$y_j-\\bar y$")
 dev.off()
 
-#Relacion lineal creciente con cuadrantes
-x11()
+# Increasing linear relation with quadrants
+tikz(file="img/regression/increasing_linear_scatterplot.tex", width=7, height=5)
 x=runif(100)
 y=0.5*x+rnorm(100,0,0.05)
 mx=mean(x)
 my=mean(y)
 par(mai=c(0.5,0.5,0.5,0.5), cex.lab=1.2, mgp=c(1,0,0))
-plot(x,y, col=color2, main="Relación lineal creciente", xlab=expression(italic("X")), ylab=expression(italic("Y")), pch=16, axes=F)
-box()
-abline(h=my, lty=2,col="grey")
-abline(v=mx, lty=2,col="grey")
-dev.copy2eps(file="img/regresion/diagrama_dispersion_relacion_lineal_creciente.eps", width=5, height=5, pointsize=10)
-dev.off()
-
-xfig(file="img/regresion/diagrama_dispersion_relacion_lineal_creciente.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-par(mai=c(0.5,0.5,0.5,0.5), cex.lab=1.2, mgp=c(1,0,0))
-plot(x,y, col=color2, main="Relación lineal creciente", xlab=expression(italic("X")), ylab=expression(italic("Y")), pch=16, axes=F)
+plot(x,y, col=color1, main="Increasing linear relation", xlab="$X$", ylab="$Y$", pch=16, axes=F)
 box()
 abline(h=my, lty=2,col="grey")
 abline(v=mx, lty=2,col="grey")
 dev.off()
 
-#Relacion lineal decreciente con cuadrantes
-x11()
+# Decreasing linear relation with quadrants
+tikz(file="img/regression/decreasing_linear_scatterplot.tex", width=7, height=5)
 x=runif(100)
 y=-0.5*x+rnorm(100,0,0.05)
 mx=mean(x)
 my=mean(y)
 par(mai=c(0.5,0.5,0.5,0.5), cex.lab=1.2, mgp=c(1,0,0))
-plot(x,y, col=color2, main="Relación lineal decreciente", xlab=expression(italic("X")), ylab=expression(italic("Y")), pch=16, axes=F)
+plot(x,y, col=color1, main="Decreasing linear relation", xlab="$X$", ylab="$Y$", pch=16, axes=F)
 box()
 abline(h=my, lty=2,col="grey")
 abline(v=mx, lty=2,col="grey")
-dev.copy2eps(file="img/regresion/diagrama_dispersion_relacion_lineal_decreciente.eps", width=5, height=5, pointsize=10)
 dev.off()
 
-xfig(file="img/regresion/diagrama_dispersion_relacion_lineal_decreciente.fig", onefile=TRUE, width=5, height=5, pointsize=10)
-par(mai=c(0.5,0.5,0.5,0.5), cex.lab=1.2, mgp=c(1,0,0))
-plot(x,y, col=color2, main="Relación lineal decreciente", xlab=expression(italic("X")), ylab=expression(italic("Y")), pch=16, axes=F)
-box()
-abline(h=my, lty=2,col="grey")
-abline(v=mx, lty=2,col="grey")
-dev.off()
+
 
 #Residuos en Y
 x11()

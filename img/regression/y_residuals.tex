@@ -1,4 +1,4 @@
-% Created by tikzDevice version 0.10.1 on 2016-02-23 14:39:06
+% Created by tikzDevice version 0.10.1 on 2016-02-23 21:27:44
 % !TEX encoding = UTF-8 Unicode
 \begin{tikzpicture}[x=1pt,y=1pt]
 \definecolor{fillColor}{RGB}{255,255,255}
@@ -84,50 +84,52 @@
 	(503.49,358.95) --
 	( 33.60,358.95) --
 	( 33.60, 33.60);
-
-\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (265.67, 33.60) -- (265.67, 33.60);
-
-\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (265.67, 33.60) -- (265.67, 27.60);
-
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.00] at (265.67, 15.60) {$x_i$};
-
-\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 33.60,146.08) -- ( 33.60,146.08);
-
-\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 33.60,146.08) -- ( 27.60,146.08);
-
-\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  1.00] at ( 25.20,142.64) {$y_j$};
 \end{scope}
 \begin{scope}
 \path[clip] ( 33.60, 33.60) rectangle (503.49,358.95);
-\definecolor{drawColor}{RGB}{190,190,190}
+\definecolor{drawColor}{RGB}{0,0,0}
 
-\path[draw=drawColor,line width= 0.4pt,dash pattern=on 4pt off 4pt ,line join=round,line cap=round] ( 33.60,146.08) -- (503.49,146.08);
+\path[draw=drawColor,line width= 0.8pt,line join=round,line cap=round] ( 58.05,  0.00) -- (503.49,292.66);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (505.89,361.35);
+\definecolor{drawColor}{RGB}{0,0,0}
 
-\path[draw=drawColor,line width= 0.4pt,dash pattern=on 4pt off 4pt ,line join=round,line cap=round] (265.67, 33.60) -- (265.67,358.95);
-\definecolor{fillColor}{RGB}{238,50,36}
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (338.16, 33.60) -- (338.16, 33.60);
 
-\path[fill=fillColor] (265.67,146.08) circle (  2.25);
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (338.16, 33.60) -- (338.16, 27.60);
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.00] at (338.16, 15.60) {$x_i$};
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 33.60,184.04) -- ( 33.60,265.21);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 33.60,184.04) -- ( 27.60,184.04);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 33.60,265.21) -- ( 27.60,265.21);
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  1.00] at ( 25.20,180.59) {$f(x_i)$};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  1.00] at ( 25.20,261.76) {$y_j$};
+\end{scope}
+\begin{scope}
+\path[clip] ( 33.60, 33.60) rectangle (503.49,358.95);
 \definecolor{drawColor}{RGB}{238,50,36}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.00] at (251.14,155.48) {$(\bar x, \bar y)$};
-\definecolor{drawColor}{RGB}{0,0,0}
-
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.00] at (451.28,257.60) {$(x_i,y_j)$};
-\definecolor{drawColor}{RGB}{190,190,190}
-
 \path[{LaTeX[length=8]}-{LaTeX[length=8]},draw=drawColor,line width= 0.4pt,line join=round,line cap=round]
-(265.67,249.89) -- (433.88,249.89);
+(338.16,184.04) -- (338.16,265.21);
 
-\definecolor{drawColor}{RGB}{0,0,0}
-
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.00] at (355.56,257.60) {$x_i-\bar x$};
 \definecolor{drawColor}{RGB}{190,190,190}
 
-\path[{LaTeX[length=8]}-{LaTeX[length=8]},draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (433.88,146.08) --
-(433.88,249.89);
+\path[draw=drawColor,line width= 0.4pt,dash pattern=on 4pt off 4pt ,line join=round,line cap=round] (338.16,  0.00) -- (338.16,184.04);
 
+\path[draw=drawColor,line width= 0.4pt,dash pattern=on 4pt off 4pt ,line join=round,line cap=round] (  0.00,184.04) -- (338.16,184.04);
+
+\path[draw=drawColor,line width= 0.4pt,dash pattern=on 4pt off 4pt ,line join=round,line cap=round] (  0.00,265.21) -- (338.16,265.21);
+\definecolor{drawColor}{RGB}{238,50,36}
+
+\node[text=drawColor,anchor=west,inner sep=0pt, outer sep=0pt, scale=  1.50] at (346.86,221.86) {$e_{ij}=y_j-f(x_i)$};
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.00] at (451.28,196.33) {$y_j-\bar y$};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.00] at (355.56,272.92) {$(x_i,y_j)$};
 \end{scope}
 \end{tikzpicture}

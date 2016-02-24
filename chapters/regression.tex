@@ -156,7 +156,7 @@ The shape of the point cloud in a scatter plot gives information about the type 
 \begin{tabular}{ccc}
 \input{img/regression/no_relation_scatterplot} &
 \input{img/regression/linear_scatterplot} &
-\input{img/regression/cuadratic_scatterplot} \\
+\input{img/regression/quadratic_scatterplot} \\
 \input{img/regression/exponential_scatterplot} &
 \input{img/regression/logarithmic_scatterplot} &
 \input{img/regression/inverse_scatterplot}
@@ -246,434 +246,274 @@ To study the relation between two variables, we have to analyze the joint variat
 \resizebox{0.8\textwidth}{!}{\input{img/regression/deviations_to_means}}
 \end{frame}
 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Estudio de las desviaciones respecto de las medias}
-% Si dividimos la nube de puntos del diagrama de dispersión en 4 cuadrantes centrados en el punto de medias $(\bar x, \bar y)$, el signo de las desviaciones será:
-% \begin{center}
-% \mode<presentation>{\rowcolors{1}{red!20}{red!10}}
-% \begin{tabular}{cccc}
-% Cuadrante & $(x_i-\bar x)$ & $(y_j-\bar y)$ & $(x_i-\bar x)(y_j-\bar y)$\\
-% \hline
-% 1 & $+$ & $+$ & \alert{$+$}\\
-% 2 & $-$ & $+$ & \alert{$-$}\\
-% 3 & $-$ & $-$ & \alert{$+$}\\
-% 4 & $+$ & $-$ & \alert{$-$}\\
-% \hline
-% \end{tabular}
-% 
-% \scalebox{0.5}{\input{img/regresion/cuadrantes_nube_puntos}}
-% \end{center}
-% 
-% \note{Si dividimos la nube de puntos del diagrama de dispersión en 4 cuadrantes centrados en el punto de medias $(\bar x, \bar y)$, el signo
-% dependiendo del cuadrante donde caiga cada punto de la muestra, tendremos desviaciones con distinto signo:
-% \begin{enumerate}
-% \item Los puntos que caigan en el primer cuadrante tendrán desviación en $X$ y en $Y$ positivas ya que $x_i$ estará por encima de $\bar x$ e
-% $y_j$ estará por encima de $\bar y$.
-% \item Los puntos que caigan en el segundo cuadrante tendrán desviación en $X$ negativa, porque estarán por debajo de $\bar x$, pero
-% desviación en $Y$ positiva puesto que estarán por encima de $\bar y$.
-% \item Los puntos que caigan en el tercer cuadrante tendrán desviación en $X$ y en $Y$ negativas, por que estarán por debajo de la $\bar x$ y
-% $\bar y$.
-% \item Y los puntos que caigan en el cuarto cuadrante tendrán desviación en $X$ positiva, ya que estarán por encima de $\bar x$ pero
-% desviación en $Y$ negativa ya que estarán por debajo de $\bar y$.
-% \end{enumerate} 
-% 
-% Para ver la variabilidad conjunta en ambas varibles, se puede tomar el producto de las desviaciones, que para los puntos del primer
-% cuadrante tendrá signo positivo ya que tanto las desviaciones en $X$ como las desviaciones en $Y$ son positivas. Para los puntos del segundo
-% cuadrante tendremos, menos por más, menos, para los del tercero menos por menos, más, y para los del cuarto más por menos, menos.
-% 
-% Así pues, en los puntos del primer y tercer cuadrantes, los productos de las desviaciones a las medias tendrán signo positivo, mientras que
-% en el segundo y cuarto cuadrantes tendrán signo negativo.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Estudio de las desviaciones respecto de las medias}
-% \begin{columns}
-% \begin{column}{0.5\textwidth}
-% Si la relación entre las variables es \emph{lineal y creciente}, entonces la
-% mayor parte de los puntos estarán en los cuadrantes 1 y 3 y la suma de los productos de desviaciones será positiva.
-% \begin{center}
-% \scalebox{0.43}{\input{img/regresion/diagrama_dispersion_relacion_lineal_creciente}}
-% \end{center} 
-% \[
-% \sum(x_i-\bar x)(y_j-\bar y) = +
-% \]
-% \end{column}
-% \begin{column}{0.5\textwidth}
-% Si la relación entre las variables es \emph{lineal y decreciente}, entonces la
-% mayor parte de los puntos estarán en los cuadrantes 2 y 4 y la suma de los productos de desviaciones será negativa.
-% \begin{center}
-% \scalebox{0.43}{\input{img/regresion/diagrama_dispersion_relacion_lineal_decreciente}}
-% \end{center} 
-% \[
-% \sum(x_i-\bar x)(y_j-\bar y) = -
-% \]
-% \end{column}
-% \end{columns}
-% 
-% \note{Si la relación entre las variables es lineal y creciente, como refleja el primer diagrama de dispersión, entonces la mayor parte de
-% los puntos estarán en los cuadrantes 1 y 3, y por tanto habrá muchos más puntos cuyo producto de desviaciones sea positivo, que puntos
-% cuyo producto de desviaciones sea negativo, de manera que la suma de los productos de desviaciones de todos los puntos será positiva.
-% 
-% Por contra, cuando la relación entre las variables sea lineal y decreciente, como ocurre en el segundo diagrama, entonces la la mayor parte de
-% los puntos estarán en los cuadrantes 2 y 4, y por tanto habrá muchos más puntos cuyo producto de desviaciones sea negativo, que puntos
-% cuyo producto de desviaciones sea positivo, de manera que la suma de los productos de desviaciones de todos los puntos será negativa.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Covarianza}
-% Del estudio conjunto de las desviaciones respecto de la media surge el siguiente estadístico de relación lineal:
-% \begin{definicion}[Covarianza muestral]
-% La \emph{covarianza muestral} de una variable aleatoria bidimensional $(X,Y)$ se define como el promedio de los
-% productos de las respectivas desviaciones respecto de las medias de $X$ e $Y$.
-% \[
-% s_{xy}=\frac{\sum (x_i-\bar x)(y_j-\bar y)n_{ij}}{n}
-% \]
-% \end{definicion}
-% También puede calcularse de manera más sencilla mediante la fórmula
-% \[
-% s_{xy}=\frac{\sum x_iy_jn_{ij}}{n}-\bar x\bar y.
-% \]
-% La covarianza sirve para estudiar la relación lineal entre dos variables:
-% \begin{itemize}
-% \item Si $s_{xy}>0$ existe una relación lineal creciente entre las variables.
-% \item Si $s_{xy}<0$ existe una relación lineal decreciente entre las variables.
-% \item Si $s_{xy}=0$ no existe relación lineal entre las variables. 
-% \end{itemize} 
-% 
-% \note{Del razonamiento anterior surge un estadístico conocido como covarianza para estudiar la relación lineal entre variables.
-% 
-% La covarianza, que se representa $s_{xy}$ se define como la suma de los productos de las desviaciones a las respectivas medias,
-% multiplicadas por la frecuencia absoluta relativa de cada par y dividido por el tamaño de la muestra.
-% 
-% Si se desarrolla el producto de las desviaciones y se simplifica, se llega a una fórmula equivalente para el cálculo de la covarianza que
-% consiste en sumar los productos del valor de $X$ por el valor de $Y$ en cada individuo, por la frecuencia absoluta del par, dividido por el
-% tamaño de la muestra y restarle al cociente el producto de las medias de $X$ e $Y$. Esta fórmula es un poco más fácil de aplicar y por
-% tanto será la que utilizaremos a lo largo del tema.
-% 
-% A la hora de interpretar la covarianza como medida de relación lineal, lo más importante es su signo, ya que como vimos antes, si existe
-% relación lineal creciente entre las variables, la suma de los productos de las desviaciones será positiva y también lo será la
-% covarianza; si la relación es lineal decreciente, la suma de los productos de las desviaciones será negativa y también lo será la
-% covarianza; mientras que si no hay relación lineal, los puntos se distribuirán más o menos por igual en los cuatro cuadrantes y se
-% compensarán los productos de desviaciones positivos con los negativos, con lo que la covarianza valdrá aproximadamente 0.
-% 
-% Hay que tener en cuenta que la covarianza tiene unidades, que son el producto de las unidades de $X$ e $Y$, lo cual dificulta su
-% interpretación a la hora de valorar el grado de dependencia lineal entre las variables, aunque, como veremos más adelante, a partir de ella
-% es posible obtener una medida adimensional que si permitirá estudiar el grado de dependencia lineal.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la covarianza}
-% \framesubtitle{Ejemplo con estaturas y pesos}
-% En el ejemplo de las estaturas y pesos, teniendo en cuenta que 
-% \[
-% \begin{array}{|c||c|c|c|c|c|c|c|}
-% \hline
-%   X/Y & [50,60) & [60,70) & [70,80) & [80,90) & [90,100) & [100,110) & n_x\\
-%   \hline\hline
-%   (150,160] & 2 & 0 & 0 & 0 & 0 & 0 & 2\\
-%   \hline
-%   (160,170] & 4 & 4 & 0 & 0 & 0 & 0 & 8\\
-%   \hline
-%   (170,180] & 1 & 6 & 3 & 1 & 0 & 0 & 11 \\
-%   \hline
-%   (180,190] & 0 & 1 & 4 & 1 & 1 & 0 & 7 \\
-%   \hline
-%   (190,200] & 0 & 0 & 0 & 0 & 1 & 1 & 2\\
-%   \hline
-%   n_y & 7 & 11 & 7 & 2 & 2 & 1 & 30\\
-%   \hline
-% \end{array}
-% \]
-% \[
-% \bar x = 174.67 \mbox{ cm} \qquad \bar y = 69.67 \mbox{ Kg} 
-% \]
-% la covarianza vale
-% \begin{align*}
-% s_{xy} &=\frac{\sum x_iy_jn_{ij}}{n}-\bar x\bar y =  \frac{155\cdot 55\cdot 2 + 165\cdot 55\cdot 4 + \cdots + 195\cdot 105\cdot 1}{30}-174.67\cdot 69.67 =\\
-% & = \frac{368200}{30}-12169.26 = 104.07 \mbox{ cm$\cdot$ Kg},
-% \end{align*}
-% lo que indica que existe una relación lineal creciente entre la estatura y el peso. 
-% 
-% \note{En el ejemplo de las estaturas y los pesos, para calcular la covarianza a partir de la tabla de frecuencias bidimensional, iremos
-% sumando el producto de la componente $X$ por la componente $Y$ por su frecuencia absoluta para cada posible par. Como en este caso, además,
-% los datos se habían agrupado en intervalos, a la hora de hacer estos productos tomaremos las marcas de cada clase, es decir, para el primer
-% par, correspondiente al intervalo $(150,160]$ de estatura y $[50,60)$ de peso, haremos el producto de 155 que es la marca de clase del
-% intervalo de la estatura, por 55 que es la marca de clase del intervalo del peso, por su frecuencia absoluta que es 2. A continuación vamos
-% calculando el resto de productos de igual modo. 155 por 65 y por su frecuencia que es 0, lo que nos da 0, etc. Una vez calculados los
-% productos se suman, lo que da 368200, esto se divide por el tamaño de la muestra que era 30 y al resultado del cociente se le resta el
-% producto de las medias que eran $174.67$ cm y $69.67$ kg, lo que nos da una covarianza de $104.07$ cm por kg.
-% 
-% Esto indica que existe una relación lineal creciente entre el peso y la estatura, es decir, que a mayor estatura le corresponde mayor peso
-% y a mayor peso le corresponde mayor estatura, aunque resulta complicado establecer si esa relación es fuerte o débil ya que no es fácil
-% interpretar las unidades de cm por kg.}
-% \end{frame}
-% 
-% 
-% \subsection{Regresión}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Regresión}
-% En muchos casos el objetivo de un estudio no es solo detectar una relación entre variables, sino explicarla mediante
-% alguna función matemática.
-% 
-% La \highlight{regresión}} es la parte de la estadística que trata de determinar la posible relación entre una variable numérica
-% dependiente $Y$, y otro conjunto de variables numéricas independientes, $X_1,X_2,\ldots,X_n$, de una misma población. Dicha relación se
-% refleja mediante un modelo funcional 
-% \[ y=f(x_1,\ldots,x_n). \]
-% 
-% El objetivo es determinar una ecuación mediante la que pueda estimarse el valor de la variable dependiente en función de los valores de las independientes.
-% 
-% El caso más sencillo se da cuando sólo hay una variable independiente $X$, entonces se habla de \emph{regresión
-% simple}. En este caso el modelo que explica la relación de $Y$ como función de $X$ es una función de una variable
-% $y=f(x)$ que se conoce como \highlight{función de regresión}}.
-% 
-% \note{En muchos casos el objetivo de un estudio no es solo detectar si existe cierta relación entre variables, sino explicarla mediante
-% alguna función matemática.
-% 
-% De esto se encarga la regresión que trata de buscar un modelo funcional que explique lo mejor posible la relación entre una variable
-% dependiente $Y$ y un conjunto de variables independientes $X_1,\ldots,X_n$. 
-% 
-% El caso más simple, y el que estudiaremos aquí, es cuando sólo hay una variable independiente $X$ y entonces el modelo es una función de una
-% sóla variable $y=f(x)$ que se conoce como función de regresión simple.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Modelos de regresión simple}
-% Dependiendo de la forma de función de regresión, existen muchos tipos de regresión simple. Los más habituales son los que aparecen en la
-% siguiente tabla:
-% \begin{center}
-% \mode<presentation>{\rowcolors{1}{red!20}{red!10}}
-% \begin{tabular}{|l|c|}
-% \hline
-%  Familia de curvas       &     Ecuación genérica      \\
-% \hline\hline
-%  Lineal                  &          $y=a+bx$          \\
-% \hline
-%  Parabólica              &       $y=a+bx+cx^2$        \\
-% \hline
-%  Polinómica de grado $n$ & $y=a_0+a_1x+\cdots+a_nx^n$ \\
-% \hline
-%  Potencial               &       $y=a\cdot x^b$       \\
-% \hline
-%  Exponencial             &     $y=a\cdot e^{bx}$      \\
-% \hline
-%  Logarítmica             &       $y=a+b\log x$        \\
-% \hline
-%  Inverso                 &       $y = a+\frac{b}{x}$  \\
-% \hline
-%  Curva S                 &      $y= e^{a+\frac{b}{x}}$ \\
-% \hline
-% \end{tabular}
-% \end{center}
-% 
-% La elección de un tipo u otro depende de la forma que tenga la nube de puntos del diagrama de dispersión. 
-% 
-% \note{Dependiendo de la forma de función de regresión, existen muchos tipos de regresión simple. Los más habituales son:
-% \begin{enumerate}
-% \item El modelo lineal, en el que la función de regresión es una recta.
-% \item El modelo parabólico, en el que la función de regresión es una parabola, es decir, un polinomio de grado 2.
-% \item El modelo polinómico de grado $n$, en el que la función de regresión es un polinomio de grado $n$.
-% \item El modelo potencial, en el que la función de regresión es una función potencial donde el exponente puede ser un númro no entero.
-% \item El modelo exponencia, en el que la función de regresión es una función exponencial, habitualmente de base $e$, la constante de Euler,
-% y donde la variable independiente aparece en el exponente.
-% \item El modelo logarítmico, en el que la función de regresión es una función logarítmica.
-% \item El modelo inverso, en el que en la función de regresión la variable independiente aparece dividiendo a una constante.
-% \item Y el modelo de curva S o sigmoidal, que es una combinación del modelo exponencial e inverso.
-% \end{enumerate}
-% 
-% A la hora de decidir qué modelo construir habrá que tener en cuenta la forma que tenga la nube de puntos del diagrama de dispersión.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Residuos o errores predictivos}
-% Una vez elegida la familia de curvas que mejor se adapta a la nube de puntos, se determina, dentro de dicha familia, la curva que mejor se
-% ajusta a la distribución.
-% 
-% El objetivo es encontrar la función de regresión que haga mínimas las distancias entre los valores de la variable dependiente observados en
-% la muestra, y los predichos por la función de regresión. Estas distancias se conocen como \emph{residuos} o \emph{errores predictivos}.
-% 
-% \begin{definicion}[Residuos o Errores predictivos]
-% Dado el modelo de regresión $y=f(x)$ para una variable bidimensional $(X,Y)$, el \emph{residuo} o \emph{error
-% predictivo} de un valor $(x_i,y_j)$ observado en la muestra, es la diferencia entre el valor observado de la variable dependiente $y_j$ y el predicho por la función de regresión para $x_i$:
-% \[
-% e_{ij} = y_j-f(x_i) .
-% \]
-% \end{definicion}
-% 
-% \note{Una vez elegida la familia de curvas que mejor se adapta a la nube de puntos, se determina, dentro de dicha familia, la curva que mejor se
-% ajusta a la distribución.
-% 
-% El objetivo es encontrar la función de regresión que haga mínimas las distancias entre los valores de la variable dependiente observados en
-% la muestra, y los predichos por la función de regresión. Estas distancias se conocen como \emph{residuos} o \emph{errores predictivos} en
-% $Y$ y se calculan para cada punto $(x_i,y_j)$ restando al valor observado en la variable dependiente $y_j$ lo que vale la función de regresión para
-% el valor observado en la variable dependiente $f(x_i)$..
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Residuos o errores predictivos en $Y$}
-% \begin{center}
-% \scalebox{0.8}{\input{img/regresion/residuos_y}}
-% \end{center}
-% \note{Es decir, en el caso de representar la variable dependiente en el eje $Y$ los residuos de cada punto serían las distancias verticales
-% desde el punto hasta la curva de la función de regresión.
-% 
-% Está claro que cuanto más pequeños sean los residuos, máx próxima estará la curva de regresión a los puntos de la nube de puntos y
-% mejor explicará la relación entre las variables. 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Método de mínimos cuadrados}
-% Una forma posible de obtener la función de regresión es mediante el método de \emph{mínimos cuadrados} que consiste en calcular la función
-% que haga mínima la suma de los cuadrados de los residuos
-% \[
-% \sum e_{ij}^2.
-% \]
-% 
-% En el caso de un modelo de regresión lineal $f(x) = a + bx$, como la recta depende de dos parámetros (el término independiente $a$ y la
-% pendiente $b$), la suma también dependerá de estos parámetros
-% \[
-% \theta(a,b) = \sum e_{ij}^2 =\sum (y_j - f(x_i))^2 =\sum (y_j-a-bx_i)^2.
-% \]
-% 
-% Así pues, todo se reduce a buscar los valores $a$ y $b$ que hacen mínima esta suma. 
-% 
-% \note{Según este criterio, para buscar la curva de regresión mejor se ajuste a la nube de puntos se suele utilizar un método conocido como
-% método de los mínimos cuadrados, que consiste en calcular la curva que haga mínima la suma de los residuos al cuadrado. Se toman los
-% cuadrados porque como los residuos pueden ser positivos y negativos, al sumarlos sin más podrían compensarse. 
-% 
-% Por ejemplo, en el caso del ajuste de una recta de ecuación $f(x) = a + bx$, hay que determinar los dos parámetros $a$ y $b$ que definen la
-% recta. En este caso, los residuos de cada punto $e_{ij}=y_j-f(x_i)$ se convierten en $e_{ij}=y_j-a-bx_i$ ya que $f(x_i)$ es el valor de la
-% recta en $x_i$, y por tanto los residuos dependen de los parámetros de la recta $a$ y $b$. 
-% En consecuencia, el problema se reduce a calcular los valores de $a$ y $b$ que hagan mínima la suma de los residuos al cuadrado. Es decir,
-% se trata de un problema de minimización.}
-% \end{frame}
-% 
-% 
-% \subsection{Recta de regresión}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la recta de regresión}
-% \framesubtitle{Método de mínimos cuadrados}
-% Considerando la suma de los cuadrados de los residuos como una función de dos variables $\theta(a,b)$, se pueden calcular los valores de los
-% parámetros del modelo que hacen mínima esta suma derivando e igualando a 0 las derivadas:
-% \begin{align*}
-% \frac{\partial \theta(a,b)}{\partial a} &=  \frac{\partial \sum (y_j-a-bx_i)^2 }{\partial a} =0\\
-% \frac{\partial \theta(a,b)}{\partial b} &=  \frac{\partial \sum (y_j-a-bx_i)^2 }{\partial b} =0
-% \end{align*}
-% 
-% Tras resolver el sistema se obtienen los valores
-% \[
-% a= \bar y - \frac{s_{xy}}{s_x^2}\bar x \qquad b=\frac{s_{xy}}{s_x^2}
-% \]
-% Estos valores hacen mínimos los residuos en $Y$ y por tanto dan la recta de regresión.
-% 
-% \note{Aunque no insistiremos en los detalles matemáticos del cálculo de mínimos, hay que recordar que el cálculo del mínimo de una función
-% se hacía entre los puntos que anulaban su derivada. En nuestro caso, puesto que la suma de los residuos al cuadrado depende de dos
-% parámetros $a$ y $b$, habría que tomar las derivadas parciales con respecto a $a$ y $b$, igualarlas a cero y resolver el sistema de
-% ecuaciones que forman.
-% 
-% Tras resolver el sistema se obtiene que los valores de $a$ y $b$ que hacen mínima la suma de los residuos al cuadrado son $a= \bar y -
-% \frac{s_{xy}}{s_x^2}\bar x$ y $b=\frac{s_{xy}}{s_x^2}$.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Recta de regresión}
-% \begin{definicion}[Recta de regresión]
-% Dada una variable bidimensional $(X,Y)$, la \emph{recta de regresión} de $Y$ sobre $X$ es
-% \[
-% y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x).
-% \] 
-% \end{definicion}
-% 
-% La recta de regresión de $Y$ sobre $X$ es la recta que hace mínimos los errores predictivos en $Y$, y por tanto es la recta que hará mejores
-% predicciones de $Y$ para cualquier valor de $X$.
-% 
-% \note{Al sustituir estos valores en la ecuación genérica de la recta $f(x)=a+bx$, se obtiene la recta de ecuación $y = \bar y
-% +\frac{s_{xy}}{s_x^2}(x-\bar x)$ que se conoce como recta de regresión de $Y$ sobre $X$ y es la recta que mejor explica la relación lineal
-% entre $Y$ y $X$ ya que hace mínimos los residuos o errores predictivos en $Y$, y por tanto es la recta que hará mejores predicciones de $Y$
-% en función de $X$.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la recta de regresión}
-% \framesubtitle{Ejemplo con estaturas y pesos}
-% Siguiendo con el ejemplo de las estaturas ($X$) y los pesos ($Y$) con los siguientes estadísticos:
-% \[
-% \begin{array}{lllll}
-% \bar x = 174.67 \mbox{ cm} & \quad & s^2_x = 102.06 \mbox{ cm}^2 & \quad & s_x = 10.1 \mbox{ cm}\\
-% \bar y = 69.67 \mbox{ Kg} & & s^2_y = 164.42 \mbox{ Kg}^2 & & s_y = 12.82 \mbox{ Kg}\\
-% & & s_{xy} = 104.07 \mbox{ cm$\cdot$ Kg} & &
-% \end{array}
-% \]
-% Entonces, la recta de regresión del peso sobre la estatura es:
-% \[
-% y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x) = 69.67+\frac{104.07}{102.06}(x-174.67) = 1.02 x - 108.49.
-% \]
-% De igual modo, si en lugar de considerar el peso como variable dependiente, tomamos la estatura, entonces la recta de regresión de la estatura sobre el peso es:
-% \[
-% x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.67) = 0.63 y +130.78.
-% \]
-% 
-% \note{Siguiendo con el ejemplo de las estaturas y los pesos, si tomamos como variable independiente $X$ la estatura, y como variable
-% dependiente $Y$ los pesos, la recta de regresión del peso sobre la estarura tendrá como ecuación 
-% \[
-% y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x) = 69.67+\frac{104.07}{102.06}(x-174.67) = 1.02 x - 108.49.
-% \]
-% 
-% De igual modo, si en lugar de considerar el peso como variable dependiente, tomamos la estatura, entonces la recta de regresión de la estatura sobre el peso es:
-% \[
-% x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.67) = 0.63 y +130.78.
-% \]
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Rectas de regresión}
-% \framesubtitle{Ejemplo de estaturas y pesos}
-% \begin{center}
-% \scalebox{0.78}{\input{img/regresion/rectas_regresion}}
-% \end{center}
-% 
-% \note{Si dibujamos ambas rectas, la del peso sobre la estatura y la de la estatura sobre el peso, podemos comprobar que se trata de rectas
-% distintas, ya que la primera hace mínimos los residuos del peso, y por tanto es la que debe utilizarse para predecir el peso en función de
-% la estatura, mientras que la segunda es la que hace mínimos los residuos de la estatura, y por tanto debe utilizarse para predecir la
-% estatura en función del peso.
-% 
-% Además puede comprobarse que las rectas de regresión se cortan en el punto de medias, lo cual se deduce fácilmente de sus respectivas
-% ecuaciones.
-% }
-% \end{frame}
-% 
-% 
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Sign of deviations from the mean}
+Dividing the point cloud of the scatter plot in 4 quadrants centered in the mean point $(\bar x, \bar y)$, the sign of
+deviations from the mean is:
+\begin{center}
+\resizebox*{!}{0.5\textheight}{\input{img/regression/scatterplot_quadrants}}
+%\mode<presentation>{\rowcolors{1}{red!20}{red!10}}
+\begin{tabular}{cccc}
+Quadrant & $(x_i-\bar x)$ & $(y_j-\bar y)$ & $(x_i-\bar x)(y_j-\bar y)$\\
+\hline
+1 & $+$ & $+$ & \alert{$+$}\\
+2 & $-$ & $+$ & \alert{$-$}\\
+3 & $-$ & $-$ & \alert{$+$}\\
+4 & $+$ & $-$ & \alert{$-$}\\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Sign of the product of deviations from the mean}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+If there is an \emph{increasing linear} relationship between the variables, most of the points will fall in quadrants 1
+and 3, and the sum of the products of deviations from the mean will be positive.
+
+\centering
+\resizebox{0.9\textwidth}{!}{\input{img/regression/increasing_linear_scatterplot}}
+
+$\sum(x_i-\bar x)(y_j-\bar y) = +$
+\end{column}
+\begin{column}{0.5\textwidth}
+If there is an \emph{decreasing linear} relationship between the variables, most of the points will fall in quadrants 2
+and 4, and the sum of the products of deviations from the mean will be negative.
+
+\centering
+\resizebox{0.9\textwidth}{!}{\input{img/regression/decreasing_linear_scatterplot}}
+
+$\sum(x_i-\bar x)(y_j-\bar y) = -$
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Covariance}
+Using the products of deviations from the mean we get the statistic
+\begin{definition}[Sample covariance]
+The \emph{sample covariance} of a two-dimensional variable $(X,Y)$ is the average of the products of deviations from
+the respective means.
+\[
+s_{xy}=\frac{\sum (x_i-\bar x)(y_j-\bar y)n_{ij}}{n}
+\]
+\end{definition}
+It can also be calculated using the formula 
+\[
+s_{xy}=\frac{\sum x_iy_jn_{ij}}{n}-\bar x\bar y.
+\]
+
+The covariance measures the linear relation between two variables:
+\begin{itemize}
+\item If $s_{xy}>0$ there exists an increasing linear relation.
+\item If $s_{xy}<0$ there exists a decreasing linear relation.
+\item If $s_{xy}=0$ there is no linear relation.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Covariance calculation}
+\framesubtitle{Example with heights and weights}
+Using the joint frequency table of the sample of heights and weights
+\[
+\begin{array}{|c||c|c|c|c|c|c|c|}
+\hline
+  X/Y & [50,60) & [60,70) & [70,80) & [80,90) & [90,100) & [100,110) & n_x\\
+  \hline\hline
+  (150,160] & 2 & 0 & 0 & 0 & 0 & 0 & 2\\
+  \hline
+  (160,170] & 4 & 4 & 0 & 0 & 0 & 0 & 8\\
+  \hline
+  (170,180] & 1 & 6 & 3 & 1 & 0 & 0 & 11 \\
+  \hline
+  (180,190] & 0 & 1 & 4 & 1 & 1 & 0 & 7 \\
+  \hline
+  (190,200] & 0 & 0 & 0 & 0 & 1 & 1 & 2\\
+  \hline
+  n_y & 7 & 11 & 7 & 2 & 2 & 1 & 30\\
+  \hline
+\end{array}
+\]
+\[
+\bar x = 174.67 \mbox{ cm} \qquad \bar y = 69.67 \mbox{ Kg}
+\]
+the covariance is 
+\begin{align*}
+s_{xy} &=\frac{\sum x_iy_jn_{ij}}{n}-\bar x\bar y =  \frac{155\cdot 55\cdot 2 + 165\cdot 55\cdot 4 + \cdots + 195\cdot 105\cdot 1}{30}-174.67\cdot 69.67 =\\
+& = \frac{368200}{30}-12169.26 = 104.07 \mbox{ cm$\cdot$ Kg},
+\end{align*}
+This means that there is a increasing linear relation between the weight and the height.
+\end{frame}
+
+
+\subsection{Regression}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Regression}
+In most cases the goal of a dependency study is not only to detect a relation between two variables, but also to express
+that relation with a mathematical function, 
+\[y=f(x)\]
+in order to predict the dependent variable for every value of the independent one.   
+
+The part of Statistics in charge of constructing such a function is \highlight{regression}, and the function is kwnon
+as \highlight{regression function} or \highlight{regression model}.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Simple regression models}
+Depending on the type of function there are a lot of types of regression models
+The most common are shown in the table below.
+
+\begin{center}
+%\mode<presentation>{\rowcolors{1}{red!20}{red!10}}
+\begin{tabular}{lc}
+\toprule
+\textbf{Model} & \textbf{Equation}\\
+Linear & $y=a+bx$\\
+Quadratic & $y=a+bx+cx^2$\\
+Cubic & $y=a+bx+cx^2+dx^3$\\
+Potential & $y=a\cdot x^b$\\
+Exponential & $y=a\cdot e^{bx}$\\
+Logarithmic & $y=a+b\log x$\\
+Inverse & $y = a+\frac{b}{x}$\\
+Sigmoidal & $y= e^{a+\frac{b}{x}}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The model choice depends on the shape of the points cloud in the scatterplot.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Residuals or predictive errors}
+Once chosen the type of regression model, we have to determine which function of that family explains better the
+relation between the dependent and the independent variables, that is, the function that predict better the
+dependent variable. 
+
+That function is the function that minimize the distances from the observed values for $Y$ in the sample to the
+predicted values of the regression function.
+These distances are known as \emph{residuals} or \emph{predictive errors}.
+
+\begin{definition}[Residuals or predictive errors]
+Given a regression model $y=f(x)$ for a two-dimensional variable $(X,Y)$, the \emph{residual} or \emph{predictive error}
+for every pair $(x_i,y_j)$ of the sample is the difference between the observed value of the dependent variable $y_j$
+and the predicted value of the regression function for $x_i$,
+\[
+e_{ij} = y_j-f(x_i).
+\]
+\end{definition}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Residuals or predictive errors on $Y$}
+\centering
+\resizebox{0.9\textwidth}{!}{\input{img/regression/y_residuals}}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Least squares fit}
+A way to get the regression function is the \emph{least squares method}, that determine the function that minimize the
+squared residuals.
+\[
+\sum e_{ij}^2.
+\]
+
+For a linear model $f(x) = a + bx$, the sum depends on two parameters, the intercept $a$, and the slope $b$ of the
+straight line,
+\[
+\theta(a,b) = \sum e_{ij}^2 =\sum (y_j - f(x_i))^2 =\sum (y_j-a-bx_i)^2.
+\]
+
+This reduces the problem to determine the values of $a$ and $b$ that minimize this sum. 
+\end{frame}
+
+
+\subsection{Regression line}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Least squares fit of a linear model}
+To solve the minimization problem, we have to set to zero the partial derivatives with respect to $a$ and $b$.  
+\begin{align*}
+\frac{\partial \theta(a,b)}{\partial a} &=  \frac{\partial \sum (y_j-a-bx_i)^2 }{\partial a} =0\\
+\frac{\partial \theta(a,b)}{\partial b} &=  \frac{\partial \sum (y_j-a-bx_i)^2 }{\partial b} =0
+\end{align*}
+And solving the equation system, we get
+\[
+a= \bar y - \frac{s_{xy}}{s_x^2}\bar x \qquad b=\frac{s_{xy}}{s_x^2}
+\]
+
+This values minimize the residuals on $Y$ and give us the optimal linear model.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Regression line}
+\begin{definition}[Regression line]
+Given a sample of a two-dimensional variable $(X,Y)$, the \emph{regression line} of $Y$ on $X$ is
+\[
+y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x).
+\]
+\end{definition}
+
+The regression line of $Y$ on $X$ is the straight line that minimize the predictive errors on $Y$, therefore is the
+linear regression model that gives better predictions of $Y$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Regression line calculation}
+\framesubtitle{Example with heights and weights}
+Using the previous sample of heights ($X$) and weights ($Y$) with the following statistics
+\[
+\begin{array}{lllll}
+\bar x = 174.67 \mbox{ cm} & \quad & s^2_x = 102.06 \mbox{ cm}^2 & \quad & s_x = 10.1 \mbox{ cm}\\
+\bar y = 69.67 \mbox{ Kg} & & s^2_y = 164.42 \mbox{ Kg}^2 & & s_y = 12.82 \mbox{ Kg}\\
+& & s_{xy} = 104.07 \mbox{ cm$\cdot$ Kg} & &
+\end{array}
+\]
+the regression line of weight on height is  
+\[
+y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x) = 69.67+\frac{104.07}{102.06}(x-174.67) = 1.02 x - 108.49.
+\]
+And the regression line of height on weight is 
+\[
+x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.67) = 0.63 y +130.78.
+\]
+\begin{center}
+\emph{Observe that the regression lines are different!}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Regression lines}
+\framesubtitle{Example with heights and weights}
+\begin{center}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/regression_lines}}
+\end{center}
+\end{frame}
+
+
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
 % \frametitle{Posición relativa de las rectas de regresión}

@@ -1,0 +1,37 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\pgfplotsset{
+    standard/.style={
+        %axis x line=bottom,
+        %axis y line=left,
+        %enlarge x limits=-0.15,
+        %enlarge y limits=-0.15,
+        %every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+        %every axis y label/.style={at={(current axis.above origin)},anchor=east},
+    }
+}
+
+\begin{tikzpicture}
+\begin{axis}[standard,xmin=-3,xmax=3,ymin=-3,ymax=3,xlabel={$X$},ylabel={$Y$},xtick={0},xticklabels={$\bar
+x$},ytick={0},yticklabels={$\bar y$}] 
+\addplot[color=color1,mark=*,domain=-3:3] coordinates {(0,0)}; 
+\coordinate (O) at (axis cs:0,0); 
+\coordinate (A) at (axis cs:1.5,1.5); 
+\coordinate (B) at (axis cs:-1.5,1.5); 
+\coordinate (C) at (axis cs:-1.5,-1.5); 
+\coordinate (D) at (axis cs:1.5,-1.5); 
+\draw[dashed,color=gray] (axis cs:-3,0) -- (axis cs:3,0);
+\draw[dashed,color=gray] (axis cs:0,-3) -- (axis cs:0,3);
+\node at (axis cs:2.5,2.5) {\large 1};
+\node at (axis cs:-2.5,2.5) {\large 2};
+\node at (axis cs:-2.5,-2.5) {\large 3};
+\node at (axis cs:2.5,-2.5) {\large 4};
+\node[text=color2] at (A) {\Huge $+$};
+\node[text=color2] at (B) {\Huge $-$};
+\node[text=color2] at (C) {\Huge $+$};
+\node[text=color2] at (D) {\Huge $-$};
+
+\end{axis}
+
+
+\end{tikzpicture}
