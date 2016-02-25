@@ -139,7 +139,7 @@ The result is a set of points that usually is known as a \emph{point cloud}.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Scatter plot}
-\framesubtitle{Example with heights and weights}
+\framesubtitle{Example of heights and weights}
 \begin{center}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/height_weight_scatterplot}}
 \end{center}
@@ -204,7 +204,7 @@ n_y & n_{y_1} & \cdots & n_{y_j} & \cdots & n_{y_q} & \cellcolor{white} n\\
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Marginal frequency distributions}
-\framesubtitle{Example with heights and weights}
+\framesubtitle{Example of heights and weights}
 The marginal frequency distributions for the previous sample of heights and weights are
 \[
 \begin{array}{|c||c|c|c|c|c|c|>{\columncolor{color1!50}}c|}
@@ -226,7 +226,7 @@ The marginal frequency distributions for the previous sample of heights and weig
   \hline
 \end{array}
 \]
-and the corresponding statistics are 
+and the corresponding statistics are
 \[
 \begin{array}{lllll}
 \bar x = 174.67 \mbox{ cm} & \quad & s^2_x = 102.06 \mbox{ cm}^2 & \quad & s_x = 10.1 \mbox{ cm}\\
@@ -240,7 +240,7 @@ and the corresponding statistics are
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Deviations from the means}
-To study the relation between two variables, we have to analyze the joint variation of them. 
+To study the relation between two variables, we have to analyze the joint variation of them.
 
 \centering
 \resizebox{0.8\textwidth}{!}{\input{img/regression/deviations_to_means}}
@@ -271,7 +271,7 @@ Quadrant & $(x_i-\bar x)$ & $(y_j-\bar y)$ & $(x_i-\bar x)(y_j-\bar y)$\\
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Sign of the product of deviations from the mean}
-\begin{columns}
+\begin{columns}[t]
 \begin{column}{0.5\textwidth}
 If there is an \emph{increasing linear} relationship between the variables, most of the points will fall in quadrants 1
 and 3, and the sum of the products of deviations from the mean will be positive.
@@ -281,6 +281,7 @@ and 3, and the sum of the products of deviations from the mean will be positive.
 
 $\sum(x_i-\bar x)(y_j-\bar y) = +$
 \end{column}
+
 \begin{column}{0.5\textwidth}
 If there is an \emph{decreasing linear} relationship between the variables, most of the points will fall in quadrants 2
 and 4, and the sum of the products of deviations from the mean will be negative.
@@ -305,7 +306,7 @@ the respective means.
 s_{xy}=\frac{\sum (x_i-\bar x)(y_j-\bar y)n_{ij}}{n}
 \]
 \end{definition}
-It can also be calculated using the formula 
+It can also be calculated using the formula
 \[
 s_{xy}=\frac{\sum x_iy_jn_{ij}}{n}-\bar x\bar y.
 \]
@@ -322,7 +323,7 @@ The covariance measures the linear relation between two variables:
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Covariance calculation}
-\framesubtitle{Example with heights and weights}
+\framesubtitle{Example of heights and weights}
 Using the joint frequency table of the sample of heights and weights
 \[
 \begin{array}{|c||c|c|c|c|c|c|c|}
@@ -421,6 +422,8 @@ e_{ij} = y_j-f(x_i).
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Residuals or predictive errors on $Y$}
+\bigskip\bigskip
+
 \centering
 \resizebox{0.9\textwidth}{!}{\input{img/regression/y_residuals}}
 \end{frame}
@@ -428,7 +431,7 @@ e_{ij} = y_j-f(x_i).
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Least squares fit}
+\frametitle{Least squares fitting}
 A way to get the regression function is the \emph{least squares method}, that determine the function that minimize the
 squared residuals.
 \[
@@ -448,7 +451,7 @@ This reduces the problem to determine the values of $a$ and $b$ that minimize th
 \subsection{Regression line}
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Least squares fit of a linear model}
+\frametitle{Least squares fitting of a linear model}
 To solve the minimization problem, we have to set to zero the partial derivatives with respect to $a$ and $b$.  
 \begin{align*}
 \frac{\partial \theta(a,b)}{\partial a} &=  \frac{\partial \sum (y_j-a-bx_i)^2 }{\partial a} =0\\
@@ -481,7 +484,7 @@ linear regression model that gives better predictions of $Y$.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Regression line calculation}
-\framesubtitle{Example with heights and weights}
+\framesubtitle{Example of heights and weights}
 Using the previous sample of heights ($X$) and weights ($Y$) with the following statistics
 \[
 \begin{array}{lllll}
@@ -492,11 +495,11 @@ Using the previous sample of heights ($X$) and weights ($Y$) with the following 
 \]
 the regression line of weight on height is  
 \[
-y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x) = 69.67+\frac{104.07}{102.06}(x-174.67) = 1.02 x - 108.49.
+y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x) = 69.67+\frac{104.07}{102.06}(x-174.67) = -108.49 +1.02 x
 \]
 And the regression line of height on weight is 
 \[
-x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.67) = 0.63 y +130.78.
+x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.67) = 130.78 + 0.63 y
 \]
 \begin{center}
 \emph{Observe that the regression lines are different!}
@@ -507,510 +510,387 @@ x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.6
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Regression lines}
-\framesubtitle{Example with heights and weights}
+\framesubtitle{Example of heights and weights}
 \begin{center}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/regression_lines}}
 \end{center}
 \end{frame}
 
 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Posición relativa de las rectas de regresión}
-% Las rectas de regresión siempre se cortan en el punto de medias $(\bar x,\bar y)$.
-% 
-% \begin{columns}
-% \begin{column}{0.48\textwidth}
-% Si entre las variables la relación lineal es perfecta, entonces ambas rectas coinciden ya que sus residuos son nulos.
-% \begin{center}
-% \scalebox{0.5}{\input{img/regresion/rectas_dependencia_lineal_perfecta}}
-% \end{center}
-% \end{column}
-% \begin{column}{0.48\textwidth}
-% Si no hay relación lineal, entonces las ecuaciones de las rectas son\\
-% \qquad \qquad $y = \bar y$, \qquad $x = \bar x,$\\
-% y se cortan perpendicularmente  
-% \begin{center}
-% \scalebox{0.5}{\input{img/regresion/rectas_independencia_lineal}}
-% \end{center}
-% \end{column}
-% \end{columns}
-% 
-% \note{La posición relativa de las rectas de regresión depende del grado de relación lineal entre las variables. 
-% 
-% Si la relación lineal entre las variables es perfecta, entonces los puntos de la nube de puntos estarán perfectamente alineados y la
-% recta de regresión de $Y$ sobre $X$ y de $X$ sobre $Y$ coincidirán en la recta que pasa por todos los puntos ya que para esta recta tanto
-% los residuos en $Y$ como los residuos en $X$ serán nulos.
-% 
-% Mientras que si no hay relación lineal entre las variables, entonces la covarianza será nula y la ecuación de las rectas será constante, $y
-% = \bar y$, para la recta de $Y$ sobre $X$, y $x = \bar x$ para la de $X$ sobre $Y$, de manera que las rectas se cortarán perpendicularmente en el punto
-% de medias.
-% 
-% Así pues, cuanto menor sea el ángulo con que se cortan las rectas, mayor será la dependencia lineal entre las variables.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Coeficiente de regresión}
-% \begin{definicion}[Coeficiente de regresión $b_{yx}$]
-% Dada una variable bidimensional $(X,Y)$, el \emph{coeficiente de regresión} de la recta de regresión de $Y$ sobre $X$ es su pendiente,
-% \[
-% b_{yx} = \frac{s_{xy}}{s_x^2} 
-% \]
-% \end{definicion}
-% 
-% El coeficiente de regresión siempre tiene el mismo signo que la covarianza y refleja el crecimiento de la recta de regresión, ya que da el
-% número de unidades que aumenta o disminuye la variable dependiente por cada unidad que aumenta la variable independiente, según la recta de
-% regresión.
-% 
-% En el ejemplo de las estaturas y los pesos, el coeficiente de regresión del peso sobre la estatura es $b_{yx}= 1.02$ Kg/cm, lo que indica
-% que, según la recta de regresión del peso sobre la estatura, por cada cm más de estatura, la persona pesará $1.02$ Kg más.
-% 
-% \note{En la ecuación de la recta de regresión de $Y$ sobre $X$, la parte más importante es la pendiente que se conoce como coeficiente de
-% regresión de $Y$ sobre $X$ y vale $b_{yx} = \frac{s_{xy}}{s_x^2}$.
-% 
-% El coeficiente de regresión siempre tiene el mismo signo que la covarianza y refleja el crecimiento de la recta de regresión, ya que da el
-% número de unidades que aumenta o disminuye la variable dependiente por cada unidad que aumenta la variable independiente, según la recta de
-% regresión.
-% 
-% En el ejemplo de las estaturas y los pesos, el coeficiente de regresión del peso sobre la estatura es $b_{yx}= 1.02$ Kg/cm, lo que indica
-% que, según la recta de regresión del peso sobre la estatura, por cada cm más de estatura, la persona pesará $1.02$ Kg más.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Predicciones con las rectas de regresión}
-% \framesubtitle{Ejemplo con estaturas y pesos}
-% Las rectas de regresión, y en general cualquier modelo de regresión, suele utilizarse con fines predictivos. 
-% 
-% \begin{center}
-% \alert{\emph{¡Ojo! Para predecir una variable, esta siempre debe considerarse como dependiente en el modelo de regresión que se utilice.}}
-% \end{center}
-% 
-% Así, en el ejemplo de las estaturas y los pesos, si se quiere predecir el peso de una persona que mide 180 cm, se debe utilizar la recta de
-% regresión del peso sobre la estatura:
-% \[
-% y = 1.02 \cdot 180 -108.49 = 75.11 \mbox{ Kg}.
-% \] 
-% Y si se quiere predecir la estatura de una persona que pesa 79 Kg, se debe utilizar la recta de regresión de la estatura sobre el peso:
-% \[
-% x = 0.63\cdot 79+ 130.78 = 180.55 \mbox{ cm}. 
-% \]
-% \begin{center}
-% \emph{Ahora bien, ¿qué fiabilidad tienen estas predicciones?}
-% \end{center}
-% 
-% \note{Las rectas de regresión, y en general cualquier modelo de regresión, suele utilizarse con fines predictivos. 
-% 
-% Como hemos visto, dependiendo de si se toma $X$ o $Y$ como la variable dependiente, tendremos modelos de regresión, el de $Y$ sobre $X$ y
-% el de $X$ sobre $Y$, pero a la hora de hacer predicciones de una variable, siempre debe utilizarse el modelo en el que dicha variable sea la
-% variable dependiente, ya que ese será el modelo que haga mínimos los errores predictivos en dicha variable.
-% 
-% Por ejemplo, en el caso de las estaturas y los pesos,  si se quiere predecir el peso de una persona que mide 180 cm, se debe utilizar la recta de
-% regresión del peso sobre la estatura. Sutituyendo en esta recta $X$ por 180 cm se obtiene una predicción del peso de $75.11$ kg.
-% 
-% Y si se quiere predecir la estatura de una persona que pesa 79 Kg, se debe utilizar la recta de regresión de la estatura sobre el peso.
-% Sustituyendo en esta otra recta $Y$ por 79 kg, se obtiene una predicción de la estatura de $180.55$ cm.
-% }
-% \end{frame}
-% 
-% 
-% \subsection{Correlación}
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Correlación}
-% Una vez construido un modelo de regresión, para saber si se trata de un buen modelo predictivo, se tiene que analizar
-% el grado de dependencia entre las variables según el tipo de dependencia planteada en el modelo. De ello se encarga la
-% parte de la estadística conocida como \highlight{correlación}}.
-% 
-% Para cada tipo de modelo existe el correspondiente tipo de correlación.
-% 
-% La correlación se basa en el estudio de los residuos. Cuanto menores sean éstos, más se ajustará la curva de regresión a los puntos, y más
-% intensa será la correlación.
-% 
-% \note{Una vez construido un modelo de regresión, para saber si se trata de un buen modelo predictivo, se tiene que analizar
-% el grado de dependencia entre las variables según el tipo de dependencia planteada en el modelo. De ello se encarga la
-% parte de la estadística conocida como \highlight{correlación}}.
-% 
-% Para cada tipo de modelo existe el correspondiente tipo de correlación. Así por ejemplo, si se ha construido la recta de regresión
-% hablaremos de correlación lineal, si se ha construído un modelo parabólico hablaremos de correlación parabólica, y lo mismo para cualquier
-% tipo de modelo de regresión.
-% 
-% La correlación se basa de nuevo en el estudio de los residuos para el modelo de regresión construido. Cuanto menores sean éstos, más se
-% ajustará la curva de regresión a los puntos, mejor explicará dicho modelo la relación entre las variables.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Varianza residual muestral}
-% Una medida de la bondad del ajuste del modelo de regresión es la \emph{varianza residual}.
-% \begin{definicion}[Varianza residual $s_{ry}^2$]
-% Dado un modelo de regresión simple $y=f(x)$ de una variable bidimensional $(X,Y)$, su \emph{varianza residual muestral} es el promedio de los cuadrados de los residuos para los valores de la muestra,
-% \[
-% s_{ry}^2 = \frac{\sum e_{ij}^2n_{ij}}{n} = \frac{\sum (y_j - f(x_i))^2n_{ij}}{n}.
-% \]
-% \end{definicion}
-% Cuanto más alejados estén los puntos de la curva de regresión, mayor será la varianza residual y menor la dependencia.
-% 
-% \note{A partir de los residuos se puede calcular una primera medida de la bondad del ajuste del modelo de regresión de $Y$ sobre $X$,
-% conocida como varianza residual. La varianza residual se representa $s_{ry}$ y es la suma de los residuos al cuadrado, dividida por el
-% tamaño de la muestra.
-% 
-% Resulta evidente que cuanto más alejados estén los puntos del modelo de regresión, mayores serán los residuos y mayor será la varianza
-% residual, lo que indicará una menor dependencia del tipo que plantea el modelo de regresión.
-% 
-% Ahora bien, la varianza residual tiene el problema de que sus unidades son las unidades de la variable dependiente al cuadrado, y por tanto
-% resulta difícil de interpretar.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Descomposición de la variabilidad total: \\Variabilidad explicada y no explicada}
-% \begin{center}
-% \scalebox{0.8}{\input{img/regresion/descomposicion_variabilidad}}
-% \end{center}
-% 
-% \note{Para interpretar mejor la varianza residual, si dibujamos sobre el diagrama de dispersión, podemos comprobar que la variabilidad de
-% la variable dependiente depende de las desviaciones de sus valores a su media que en el gráfico aparece representada por esta línea
-% horizontal. La suma de estas desviaciones la cuadrado, divididas por el tamaño de la muestra nos daba precisamente la varianza de $Y$.
-% 
-% Si ahora dibujamos sobre el diagrama de dispersión el modelo de regresión de $Y$ sobre $X$, en este caso la recta de regresión, podemos
-% comprobar que la recta divide en dos la desviación de cada valor de $Y$ a su media. Una parte es precisamente el residuo en $Y$, ya que es
-% la distancia vertical del punto a la recta, y se dice que es la variablidad no explicada por el modelo de regresión, mientras que la otra
-% parte, la distancia vertical desde la recta a la media de $Y$ se dice que es la variabilidad explicada por el modelo de regresión.
-% 
-% Cuanto mayor sea la variabilidad explicada, menor será la no explicada, es decir menores serán los residuos y mejor explicará el modelo de
-% regresión la dependencia entre las variables. Cuando el ajuste sea perfecto, la variabilidad no explicada será nula y diremos que el modelo
-% de regresión de $Y$ sobre $X$ explica toda la variabilidad de $Y$, mientras que cuando no haya relación entre las variables del tipo que
-% plantee el modelo de regresión, entonces la variablidad explicada será nula y los residuos coincidirán con las desviaciones a la media de
-% $Y$, de manera que la varianza residual coincidirá con la varianza de $Y$.
-% }
-% \end{frame}
-% 
-% 
-% \subsection{Coeficientes de determinación y correlación}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Coeficiente de determinación}
-% A partir de la varianza residual se puede definir otro estadístico más sencillo de interpretar.
-% \begin{definicion}[Coeficiente de determinación muestral]
-% Dado un modelo de regresión simple $y=f(x)$ de una variable bidimensional $(X,Y)$, su \emph{coeficiente de determinación muestral} es
-% \[
-% r^2 = 1- \frac{s_{ry}^2}{s_y^2} 
-% \]
-% \end{definicion}
-% El coeficiente de determinación mide la proporción de variabilidad de la variable dependiente explicada por el modelo de regresión, y por
-% tanto, 
-% \[
-% \alert{0\leq r^2\leq 1}
-% \]
-% Cuanto mayor sea $r^2$, mejor explicará el modelo de regresión la relación entre las variables, en particular:
-% \begin{itemize}
-% \item Si $r^2 =0$ entonces no existe relación del tipo planteado por el modelo.
-% \item Si $r^2=1$ entonces la relación que plantea el modelo es perfecta.
-% \end{itemize}
-% 
-% \note{Como hemos visto, la varianza residual tiene el problema de que es difícil de interpretar porque tiene como unidades las de la
-% variable dependiente al cuadrado. Teniendo en cuenta, como hemos visto antes, que la varianza residual puede valer entre 0, cuando el
-% ajueste del modelo de regresión es perfecto, hasta como máximo la varianza de $Y$ cuando entre las variables no hay relación del tipo que
-% plantea el modelo de regresión, es posible calcular una nueva medida que no tenga unidades y sea más fácil de interpretar. Dicho
-% estadísticos se llama coeficiente de regresión, se representa por $r^2$ y se define como 1 menos el cociente de la varianza residual entre
-% la varianza de $Y$.
-% 
-% Como la varianza residual tiene las mismas unidades que la varianza de $Y$, al hacer el cociente las unidades se cancelarán por lo que el
-% coeficiente de determinación es adimensinal. 
-% 
-% Cuando el ajuste del modelo sea perfecto, la varianza residual valdrá 0 y el cociente también, de manera que el coeficiente de determinación
-% valdrá 1, mientras que en el otro extremo, cuano no haya relación entre las variables del tipo del modelo de regresión, la varianza residual
-% coincidirá con la varianza de $Y$ y el cociente valdrá 1, con lo que el coeficiente de determinación valdrá 0.
-% 
-% Así pues, el coeficiente de determinación siempre oscila entre 0 y 1 y será mayor cuanto mejor explique el modelo de regresión la relación
-% entre las variables. 
-% 
-% Si se multiplica por 100, el coeficiente de determinación nos dará el porcentaje de la variabilidad de la variable dependiente explicado
-% por el modelo de regresión.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Coeficiente de determinación lineal}
-% En el caso de las rectas de regresión, la varianza residual vale
-% \begin{align*}
-% s_{ry}^2 & = \sum e_{ij}^2f_{ij} = \sum (y_j - f(x_i))^2f_{ij} = \sum \left(y_j - \bar y -\frac{s_{xy}}{s_x^2}(x_i-\bar x) \right)^2f_{ij}=\\
-% & = \sum \left((y_j - \bar y)^2 +\frac{s_{xy}^2}{s_x^4}(x_i-\bar x)^2 - 2\frac{s_{xy}}{s_x^2}(x_i-\bar x)(y_j -\bar y)\right)f_{ij} =\\ 
-% & = \sum (y_j - \bar y)^2f_{ij} +\frac{s_{xy}^2}{s_x^4}\sum (x_i-\bar x)^2f_{ij}- 2\frac{s_{xy}}{s_x^2}\sum (x_i-\bar x)(y_j -\bar y)f_{ij}=\\
-% & = s_y^2 + \frac{s_{xy}^2}{s_x^4}s_x^2 - 2 \frac{s_{xy}}{s_x^2}s_{xy} = s_y^2 - \frac{s_{xy}^2}{s_x^2}.
-% \end{align*}
-% y, por tanto, el coeficiente de determinación lineal vale
-% \begin{align*}
-% r^2 &= 1- \frac{s_{ry}^2}{s_y^2} = 1- \frac{s_y^2 - \frac{s_{xy}^2}{s_x^2}}{s_y^2} = 1 - 1 + \frac{s_{xy}^2}{s_x^2s_y^2} = \frac{s_{xy}^2}{s_x^2s_y^2}.
-% \end{align*}
-% 
-% \note{En el caso del ajuste de un modelo lineal, teniendo en cuenta la ecuación de la recta de regresión de $Y$ sobre $X$, los residuos
-% serán $y_j$ menos el valor de la recta de regresión para $x_i$, es decir $y_j - \bar y -\frac{s_{xy}}{s_x^2}(x_i-\bar x)$. Si en la fórmula
-% de la varianza residual desarrollamos el cuadrado de estos residuos, y simplificamos, llegamos a que la varianza residual para el modelo
-% lineal se puede calcular como la varianza de $Y$ menos la covarianza al cuadrado entre la varianza de $X$. Y si sustituimos en la fórmula
-% del coeficiente de determinación, obtenemos que el coeficiente de determinación lineal puede calcularse como la covarianza al cuadrado entre
-% el producto de las varianzas de $X$ e $Y$.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo del coeficiente de determinación lineal}
-% \framesubtitle{Ejemplo de estaturas y pesos}
-% En el ejemplo de las estaturas y pesos se tenía
-% \[
-% \begin{array}{lll}
-% \bar x = 174.67 \mbox{ cm} & \quad & s^2_x = 102.06 \mbox{ cm}^2\\
-% \bar y = 69.67 \mbox{ Kg} & & s^2_y = 164.42 \mbox{ Kg}^2\\
-% s_{xy} = 104.07 \mbox{ cm$\cdot$ Kg}
-% \end{array}
-% \]
-% De modo que el coeficiente de determinación lineal vale
-% \[
-% r^2 = \frac{s_{xy}^2}{s_x^2s_y^2} = \frac{(104.07 \mbox{ cm\cdot Kg})^2}{102.06 \mbox{ cm}^2 \cdot 164.42 \mbox{ Kg}^2} = 0.65.
-% \]
-% Esto indica que la recta de regresión del peso sobre la estatura explica el 65\% de la variabilidad del peso, y de igual modo, la recta de regresión de la estatura sobre el peso explica el  65\% de la variabilidad de la estatura.
-% \note{En el ejemplo de las estaturas y los pesos, como la covarianza valía $104.7$ cm por kg, la varianza de la estatura era $102.06$ kg$^2$
-% y la varianza del peso era $164.42$ kg$^2$, el coeficiente de determinación lineal valdrá 
-% \[
-% r^2 = \frac{(104.07 \mbox{ cm\cdot Kg})^2}{102.06 \mbox{ cm}^2 \cdot 164.42 \mbox{ Kg}^2} = 0.65,
-% \]
-% lo que indica que la recta de regresión del peso sobre la estatura explica el 65\% de la variabilidad del peso, y de igual modo, la recta de
-% regresión de la estatura sobre el peso explica el  65\% de la variabilidad de la estatura.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Coeficiente de correlación lineal}
-% \begin{definicion}[Coeficiente de correlación lineal]
-% Dada una variable bidimensional $(X,Y)$, el \emph{coeficiente de correlación lineal muestral} es
-% la raíz cuadrada de su coeficiente de determinación lineal, con signo el de la covarianza
-% \[
-% r = \sqrt{r^2} = \dfrac{s_{xy}}{s_xs_y} $. 
-% \]
-% \end{definicion}
-% Como $r^2$ toma valores entre 0 y 1, el coeficiente de correlación lineal tomará valores entre -1 y 1:
-% \[
-% \alert{-1\leq r\leq 1}
-% \]
-% El coeficiente de correlación lineal también mide el grado de dependencia lineal:
-% \begin{itemize}
-% \item Si $r =0$ entonces no existe relación lineal.
-% \item Si $r=1$ entonces existe una relación lineal creciente perfecta.
-% \item Si $r=-1$ entonces existe una relación lineal decrececiente perfecta.
-% \end{itemize}
-% 
-% \note{Otra media habitual del grado de relación lineal entre dos variables es el coeficiente de correlación lineal, es la raíz cuadrada del
-% coeficiente de determinación lineal y por tanto se calcula dividiendo la covarianza entre el producto de las desviaciones típicas de $X$ e
-% $Y$.
-% 
-% Como el coeficiente de determinación podía tomar valores entre 0 y 1, el coeficiente de correlación lineal tomará valores entre -1 y 1, de
-% manera que un cuando no haya relación lineal entre las variables valdrá 0, cuando haya una relación lineal creciente perfecta valdrá 1
-% y cuado haya una relación lineal decreciente perfecta valdrá -1. 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Coeficiente de correlación lineal}
-% \framesubtitle{Ejemplo}
-% En el ejemplo de las estaturas y los pesos, el coeficiente de correlación lineal vale
-% \[
-% r = \frac{s_{xy}}{s_xs_y} = \frac{104.07 \mbox{ cm\cdot Kg}}{10.1 \mbox{ cm} \cdot 12.82 \mbox{ Kg}} = +0.8.
-% \]
-% lo que indica que la relación lineal entre el peso y la estatura es fuerte, y además creciente.
-% 
-% \note{
-% Por ejemplo, en el caso de las estaturas y los pesos, el coeficiente de correlación lineal vale 
-% \[
-% r = \frac{104.07 \mbox{ cm\cdot Kg}}{10.1 \mbox{ cm} \cdot 12.82 \mbox{ Kg}} = +0.8.
-% \]
-% lo que indica que la relación lineal entre el peso y la estatura es fuerte, y además creciente.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Fiabilidad de las predicciones de un modelo de regresión}
-% Aunque el coeficiente de determinación o el de correlación hablan de la bondad de un modelo de regresión, no es lo único que hay que
-% tener en cuenta a la hora de hacer predicciones.
-% 
-% La fiabilidad de las predicciones que hagamos con un modelo de regresión depende de varias cosas:
-% \begin{itemize}
-% \item El coeficiente de determinación: Cuanto mayor sea, menores serán los errores predictivos y mayor la fiabilidad de las predicciones.
-% \item La variabilidad de la población: Cuanto más variable es una población, más difícil es predecir y por tanto menos fiables serán las
-% predicciones.
-% \item El tamaño muestral: Cuanto mayor sea, más información tendremos y, en consecuencia, más fiables serán las predicciones. 
-% \end{itemize} 
-% 
-% Además, hay que tener en cuenta que un modelo de regresión es válido únicamente para el rango de valores observados en la muestra.
-% Fuera de ese rango no hay información del tipo de relación entre las variables, por lo que no deben hacerse predicciones para valores lejos
-% de los observados en la muestra.
-% 
-% \note{Aunque el coeficiente de determinación o el de correlación hablan de la bondad de un modelo de regresión, no es el único dato que hay que
-% tener en cuenta a la hora de hacer predicciones.
-% 
-% La fiabilidad de las predicciones que hagamos con un modelo de regresión depende de varios factores como son:
-% \begin{itemize}
-% \item El coeficiente de determinación: Cuanto mayor sea, menores serán los errores predictivos y mayor la fiabilidad de las predicciones.
-% \item La variabilidad de la población: Cuanto más variable es una población, más difícil es predecir y por tanto menos fiables serán las predicciones del modelo.
-% \item El tamaño muestral: Cuanto mayor sea, más información tendremos y, en consecuencia, más fiables serán las predicciones. 
-% \end{itemize} 
-% 
-% Además, hay que tener en cuenta que un modelo de regresión es válido únicamente para el rango de valores observados en la muestra.
-% Fuera de ese rango, al no disponer de información del tipo de relación entre las variables, no deben hacerse predicciones.
-% }
-% \end{frame}
-% 
-% 
-% \subsection{Regresión no lineal}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Regresión no lineal}
-% El ajuste de un modelo de regresión no lineal es similar al del modelo lineal y también puede realizarse mediante la técnica de mínimos
-% cuadrados.
-%  
-% No obstante, en determinados casos un ajuste no lineal puede convertirse en un ajuste lineal mediante una sencilla transformación de alguna
-% de las variables del modelo.
-% 
-% \note{Ya hemos visto cómo se construyen las rectas de regresión. Para la construcción de los modelos de regresión no lineales el
-% prodecidimiento es similar mediante el método de los mínimos cuadrados, aunque en determinados, transformando alguna de las variables del
-% modelo, es posible convertir el modelo no lineal en uno lineal que ya sabemos construir.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Transformación de modelos de regresión no lineales}
-% \begin{itemize}
-% \item \highlight{Modelo logarítmico}}: Un modelo logarítmico $y = a+b \log x$ se convierte en un modelo lineal haciendo el cambio
-% $t=\log x$:
-% \[y=a+b\log x = a+bt.\]
-% \item \highlight{Modelo exponencial}}: Un modelo exponencial $y = ae^{bx}$ se convierte en un modelo lineal haciendo el cambio $z = \log y$:
-% \[z = \log y = \log(ae^{bx}) =  \log a + \log e^{bx} = a^\prime +bx. \] 
-% \item \highlight{Modelo potencial}}: Un modelo potencial $y = ax^b$ se convierte en un modelo lineal haciendo los cambios
-% $t=\log x$ y $z=\log y$:
-% \[z = \log y = \log(ax^b) = \log a + b \log x = a^\prime+bt.\]
-% \item \highlight{Modelo inverso}}: Un modelo inverso $y = a+b/x$ se convierte en un modelo lineal haciendo el cambio $t=1/x$:
-% \[y = a + b(1/x) = a+bt.\]
-% \item \highlight{Modelo curva S}}: Un modelo curva S $y = e^{a+b/x}$ se convierte en un modelo lineal haciendo los cambios $t=1/x$
-% y $z=\log y$:
-% \[z = \log y = \log (e^{a+b/x}) = a+b(1/x) = a+bt.\]
-% \end{itemize}
-% 
-% \note{
-% \begin{itemize}
-% \item El modelo logarítmico, $y = a+b \log x$, que se transforma en un modelo lineal aplicando el logaritmo a la variable independiente
-% $t=\log x$.
-% \item El modelo exponencial, $y = ae^{bx}$, que se convierte en lineal aplicando el logaritmo a la variable dependiente $z=\log y$.
-% \item El modelo potencial $y = ax^b$ se convierte en un modelo lineal aplicando el logaritmo tanto a la variable independiente
-% $t=\log x$ como a la variable dependiente $z=\log y$.
-% \item El modelo inverso $y = a+b/x$ se convierte en un modelo lineal tomando el inverso de la variable independiente $t=1/x$.
-% \item El modelo curva S $y = e^{a+b/x}$ se convierte en un modelo lineal tomando el inverso de la variable independiente $t=1/x$ y el
-% logaritmo de la variable dependiente $z=\log y$.
-% \end{itemize}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Ejemplo de ajuste de un modelo exponencial}
-% \framesubtitle{Evolución del número de bacterias de un cultivo}
-% El número de bacterias de un cultivo evoluciona con el tiempo según la siguiente tabla:
-% \begin{columns}
-% \begin{column}{0.3\textwidth}
-% \[
-% \begin{array}{c|c}
-% \mbox{Horas} & \mbox{Bacterias}\\
-% \hline
-% 0 &  25 \\
-% 1 & 28 \\
-% 2 &  47\\
-% 3 & 65 \\
-% 4 & 86\\
-% 5 & 121\\
-% 6 & 190\\
-% 7 & 290\\
-% 8 & 362
-% \end{array}
-% \]
-% \end{column}
-% \begin{column}{0.6\textwidth}
-% El diagrama de dispersión asociado es
-% \begin{center}
-% \scalebox{0.6}{\input{img/regresion/diagrama_dispersion_horas_bacterias}}
-% \end{center}
-% \end{column}
-% \end{columns}
-% 
-% \note{Veamos un ejemplo de construcción de un modelo exponencial. En esta muestra se presenta la evolución del número de bacterias en un
-% cultivo, en función del tiempo. 
-% 
-% Si dibujamos el diagrama de dispersión asociado podemos observar que hay una clara relación exponencial entre el número de bacterias y el
-% tiempo transcurrido.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Ejemplo de ajuste de un modelo exponencial}
-% \framesubtitle{Evolución del número de bacterias de un cultivo}
-% Si realizamos un ajuste lineal, obtenemos la siguiente recta de regresión
-% \begin{columns}
-% \begin{column}{0.3\textwidth}
-% \[
-% \begin{array}{c|c}
-% \mbox{Horas} & \mbox{Bacterias}\\
-% \hline
-% 0 &  25 \\
-% 1 & 28 \\
-% 2 &  47\\
-% 3 & 65 \\
-% 4 & 86\\
-% 5 & 121\\
-% 6 & 190\\
-% 7 & 290\\
-% 8 & 362
-% \end{array}
-% \]
-% \[
-% \mbox{Bacterias} = -30.18+41,27\,\mbox{Horas}
-% \]
-% \end{column}
-% \begin{column}{0.6\textwidth}
-% \begin{center}
-% \scalebox{0.6}{\input{img/regresion/regresion_lineal_horas_bacterias}}
-% \end{center}
-% \end{column}
-% \end{columns}
-% \begin{center}
-% \emph{¿Es un buen modelo?}
-% \end{center}
-% 
-% \note{Si se calcula la recta de regresión del número de bacterias sobre las horas transcurridas, se observa que no es un mal modelo ya que
-% su coefiente de determinación lineal vale $0.85$. Ahora bien, que sea un buen modelo, no quiere decir que sea el mejor.
-% }
-% \end{frame}
-% 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Relative position of the regression lines}
+Usually, the regression line of $Y$ on $X$ and the regression line of $X$
+on $Y$ are not the same, but they always intersect in the mean point $(\bar x,\bar y)$.
+\medskip
+\begin{columns}[t]
+\begin{column}{0.48\textwidth}
+If there is a perfect linear relation between the variables, then both regression lines are the same, as that line
+makes both $X$-residuals and $Y$-residuals zero.
+\begin{center}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/perfect_linear_regression}}
+\end{center}
+\end{column}
+\begin{column}{0.48\textwidth}
+If there is no linear relation between the variables, then both regression lines are constant and equals to the
+respective means, 
+\begin{center}
+$y = \bar y$, \qquad $x = \bar x,$
+\end{center}
+So, they intersect perpendicularly.
+\begin{center}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/non_linear_regression}}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Regression coefficient}
+The most important parameter of a regression line is the slope. 
+
+\begin{definition}[Regression coefficient $b_{yx}$]
+Given a sample of a two-dimensional variable $(X,Y)$, the \emph{regression coefficient} of the regression line of $Y$ on
+$X$ is its slope,
+\[
+b_{yx} = \frac{s_{xy}}{s_x^2}
+\]
+\end{definition}
+
+The regression coefficient has always the same sign than the covariance. 
+
+It measures how the dependent variable changes in relation to the independent one according to the regression line. 
+In particular, it gives the number of units that the dependent variable increases or decreases for every unit that
+increases the independent variable. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Regression coefficient}
+\framesubtitle{Example of heights and weights}
+In the sample of heights and weights, the regression line of weight on height was 
+\[
+y=-108.49 +1.02 x.
+\]
+Thus, the regression coefficient of weight on height was
+\[
+b_{yx}= 1.02 \mbox{Kg/cm.}
+\]
+That means that, according to the regression line of weight on height, the weight will increase $1.02$ Kg for every cm
+that increases the height. 
+\begin{center}
+\input{img/regression/slope_interpretation}
+\end{center}
+\end{frame}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Regression predictions}
+\framesubtitle{Example of heights and weights}
+Usually the regression models are used to predict the dependent variable for some values of the independent variable.
+\begin{center}
+\alert{\emph{Watch out! To get the best predictions of a variable you have to use the regression line where that
+variable plays the dependent variable role.}}
+\end{center}
+
+Thus, in the sample of heights and weights, to predict the weight of a person with a height of 180 cm, we have to use
+the regression line of weight on height,
+\[
+y = -108.49 + 1.02 \cdot 180  = 75.11 \mbox{ Kg}.
+\]
+But to predict the height of a person with a weight of 79 Kg, we have to use the regression line of height on weight, 
+\[
+x = 130.78 + 0.63\cdot 79 = 180.55 \mbox{ cm}.
+\]
+\begin{center}
+\emph{However, how reliable are these predictions?}
+\end{center}
+\end{frame}
+
+
+\subsection{Correlation}
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Correlation}
+Once we have a regression model, in order to see if it is a good predictive model we have to assess the goodness of
+fit of the model and the strength of the of relation set by it. 
+The part of Statistics in charge of this is \highlight{correlation}.
+
+The correlation study the residuals of a regression model: the smaller the residuals, the greater the goodness of fit,
+and the stronger the relation set by the model. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Residual variance}
+To measure the goodness of fit of a regression model is common to use the \emph{residual variance}.
+\begin{definition}[Sample residual variance $s_{ry}^2$]
+Given a regression model $y=f(x)$ de of a two-dimensional variable $(X,Y)$, its \emph{sample residual variance} is the
+average of the squared residuals,
+\[
+s_{ry}^2 = \frac{\sum e_{ij}^2n_{ij}}{n} = \frac{\sum (y_j - f(x_i))^2n_{ij}}{n}.
+\]
+\end{definition}
+
+The greater the residuals, the greater the residual variance and the smaller the goodness of fit. 
+
+When the linear relation is perfect, the residuals are zero and the residual variance is zero. 
+Conversely, when there are no relation, the residuals coincide with deviations from the mean, and the residual
+variance is the same than the variance of the dependent variable.
+\[
+0\leq s_{ry}^2\leq s_y^2
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Explained and non-explained variation}
+\begin{center}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/variation_decomposition}}
+\end{center}
+\end{frame}
+
+
+\subsection{Correlation coefficients}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Coefficient of determination}
+From the residual variance is possible to define another correlation statistic easier to interpret.   
+\begin{definition}[Sample coefficient of determination $r^2$]
+Given a regression model  $y=f(x)$ of a two-dimensional variable $(X,Y)$, its \emph{coefficient of determination} is
+\[
+r^2 = 1- \frac{s_{ry}^2}{s_y^2}
+\]
+\end{definition}
+
+As the residual variance ranges from 0 to $s_y^2$, 
+\[
+\alert{0\leq r^2\leq 1}
+\]
+
+The greater $r^2$ is, the greater the goodness of fit of the regression model, and more reliable will be its
+predictions. 
+In particular, 
+\begin{itemize}
+\item If $r^2 =0$ then there is no relation as set by the regression model.
+\item If $r^2=1$ then the relation set by the model is perfect. 
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Linear coefficient of determination}
+When the regression model is linear, the residual variance is
+\begin{align*}
+s_{ry}^2 & = \sum e_{ij}^2f_{ij} = \sum (y_j - f(x_i))^2f_{ij} = \sum \left(y_j - \bar y -\frac{s_{xy}}{s_x^2}(x_i-\bar x) \right)^2f_{ij}=\\
+& = \sum \left((y_j - \bar y)^2 +\frac{s_{xy}^2}{s_x^4}(x_i-\bar x)^2 - 2\frac{s_{xy}}{s_x^2}(x_i-\bar x)(y_j -\bar y)\right)f_{ij} =\\
+& = \sum (y_j - \bar y)^2f_{ij} +\frac{s_{xy}^2}{s_x^4}\sum (x_i-\bar x)^2f_{ij}- 2\frac{s_{xy}}{s_x^2}\sum (x_i-\bar x)(y_j -\bar y)f_{ij}=\\
+& = s_y^2 + \frac{s_{xy}^2}{s_x^4}s_x^2 - 2 \frac{s_{xy}}{s_x^2}s_{xy} = s_y^2 - \frac{s_{xy}^2}{s_x^2}.
+\end{align*}
+and the coefficient of determination is  
+\begin{align*}
+r^2 &= 1- \frac{s_{ry}^2}{s_y^2} = 1- \frac{s_y^2 - \frac{s_{xy}^2}{s_x^2}}{s_y^2} = 1 - 1 + \frac{s_{xy}^2}{s_x^2s_y^2} = \frac{s_{xy}^2}{s_x^2s_y^2}.
+\end{align*}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Linear coefficient of determination calculation}
+\framesubtitle{Example of heights and weights}
+In the sample of heights and weights, we had
+\[
+\begin{array}{lll}
+\bar x = 174.67 \mbox{ cm} & \quad & s^2_x = 102.06 \mbox{ cm}^2\\
+\bar y = 69.67 \mbox{ Kg} & & s^2_y = 164.42 \mbox{ Kg}^2\\
+s_{xy} = 104.07 \mbox{ cm$\cdot$ Kg}
+\end{array}
+\]
+Thus, the linear coefficient of determination is 
+\[
+r^2 = \frac{s_{xy}^2}{s_x^2s_y^2} = \frac{(104.07 \mbox{ cm\cdot Kg})^2}{102.06 \mbox{ cm}^2 \cdot 164.42 \mbox{ Kg}^2} = 0.65.
+\]
+This means that the linear model of weight on height explains the 65\% of the variation of weight, and the linear
+model of height on weight also explains 65\% of the variation of height. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Correlation coefficient}
+% Another common statistics to measure the linear association between two variables is the \emph{correlation
+% coefficient}.
+\begin{definition}[Sample correlation coefficient]
+Given a sample of a two-dimensional variable $(X,Y)$, the \emph{sample correlation coefficient} is the square
+root of the linear coefficient of determination, with the sign of the covariance,
+\[
+r = \sqrt{r^2} = \dfrac{s_{xy}}{s_xs_y}.
+\]
+\end{definition}
+As $r^2$ ranges from 0 to 1, $r$  ranges from -1 to 1,
+\[
+\alert{-1\leq r\leq 1}
+\]
+The correlation coefficient measures the strength of the linear association but also its direction (increasing or
+decreasing):
+\begin{itemize}
+\item If $r=0$ then there is no linear relation.
+\item Si $r=1$ then there is a perfect increasing linear relation.
+\item Si $r=-1$ then there is a perfect decreasing linear relation.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Correlation coefficient}
+\framesubtitle{Example of heights and weights}
+In the sample of heights and weights, we had
+\[
+\begin{array}{lll}
+\bar x = 174.67 \mbox{ cm} & \quad & s^2_x = 102.06 \mbox{ cm}^2\\
+\bar y = 69.67 \mbox{ Kg} & & s^2_y = 164.42 \mbox{ Kg}^2\\
+s_{xy} = 104.07 \mbox{ cm$\cdot$ Kg}
+\end{array}
+\]
+Thus, the correlation coefficient is 
+\[
+r = \frac{s_{xy}}{s_xs_y} = \frac{104.07 \mbox{ cm\cdot Kg}}{10.1 \mbox{ cm} \cdot 12.82 \mbox{ Kg}} = +0.8.
+\]
+This means that there is a rather strong linear increasing relation between height and weight.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Reliability of regression predictions}
+The coefficient of determination explains the goodness of fit of a regression model, but there are other factors that
+influence the reliability of regression predictions:
+
+\begin{itemize}
+\item The coefficient of determination: The greater $r^2$, the greater the goodness of fit and the more reliable the predictions.
+\item The variability of the population distribution: The greater the variation, the more difficult to predict and the
+less reliable the predictions.
+\item The sample size: The greater the sample size, the more information we have and the more reliable the
+predictions. 
+\end{itemize}
+
+In addition, we have to take into account that a regression model is only valid for the range of values observed y the
+sample. 
+That means that, as we don't have any information outside that range, we must not do predictions for values far from
+that range.
+\end{frame}
+
+
+\subsection{Non-linear regression}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Non-linear regression}
+The fit of a non-linear regression can be also done by least square fitting method.
+
+However, in some cases the fitting of a non-linear model can be reduced to the fitting of a linear model applying a
+simple transformation to the variables of the model. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Transformations of non-linear regression models}
+\begin{itemize}
+\item \highlight{Logarithmic model}: A logarithmic model $y = a+b \log x$ can be transformed in a linear model with
+the change $t=\log x$:
+\[y=a+b\log x = a+bt.\]
+\item \highlight{Exponential model}: An exponential model $y = e^{a+bx}$ can be transformed in a linear model with the
+change $z = \log y$:
+\[z = \log y = \log(e^{a+bx}) =  a+bx. \]
+\item \highlight{Potential model}: A potential model $y = ax^b$ can be transformed in a linear model with the changes
+$t=\log x$ and $z=\log y$:
+\[z = \log y = \log(ax^b) = \log a + b \log x = a^\prime+bt.\]
+\item \highlight{Inverse model}: An inverse model $y = a+b/x$ can be transformed in a linear model with the change $t=1/x$:
+\[y = a + b(1/x) = a+bt.\]
+\item \highlight{Sigmoidal model}: A sigmoidal model $y = e^{a+b/x}$ can be transformed in a linear model with the
+changes $t=1/x$ and $z=\log y$:
+\[z = \log y = \log (e^{a+b/x}) = a+b(1/x) = a+bt.\]
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Fitting of an exponential regression model}
+\framesubtitle{Example of evolution of a bacterial culture}
+The number of bacteria in a culture evolves with time according to the table below.
+\begin{columns}
+\begin{column}{0.3\textwidth}
+\[
+\begin{array}{c|c}
+\mbox{Hours} & \mbox{Bacteria}\\
+\hline
+0 &  25 \\
+1 & 28 \\
+2 &  47\\
+3 & 65 \\
+4 & 86\\
+5 & 121\\
+6 & 190\\
+7 & 290\\
+8 & 362
+\end{array}
+\]
+\end{column}
+\begin{column}{0.6\textwidth}
+The scatter plot of the sample is showed below.
+\begin{center}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/bacteria_evolution}}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Fitting of an exponential regression model}
+\framesubtitle{Example of evolution of a bacterial culture}
+Fitting a linear model we get
+\begin{columns}
+\begin{column}{0.3\textwidth}
+\[
+\begin{array}{c|c}
+\mbox{Hours} & \mbox{Bacteria}\\
+\hline
+0 &  25 \\
+1 & 28 \\
+2 &  47\\
+3 & 65 \\
+4 & 86\\
+5 & 121\\
+6 & 190\\
+7 & 290\\
+8 & 362
+\end{array}
+\]
+\[
+\mbox{Bacteria} = -30.18+41,27\,\mbox{Hours}
+\]
+\end{column}
+\begin{column}{0.6\textwidth}
+\begin{center}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/linear_regression_bacteria}}
+\end{center}
+\end{column}
+\end{columns}
+\begin{center}
+\emph{Is a good model?}
+\end{center}
+\end{frame}
+
 % 
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
