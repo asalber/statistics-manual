@@ -60,7 +60,6 @@ f_{ij}=\frac{n_{ij}}{n}
 \frametitle{Joint frequency distribution}
 The values of the two-dimensional variable with their frequencies is known as \highlight{joint frequency distribution},
 and is represented in a \hightlight{joint frequency table}.
-
 \[
 \begin{array}{|c|ccccc|}
 \hline
@@ -141,6 +140,7 @@ The result is a set of points that usually is known as a \emph{point cloud}.
 \frametitle{Scatter plot}
 \framesubtitle{Example of heights and weights}
 \begin{center}
+\tikzsetnextfilename{regression/height_weight_scatterplot}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/height_weight_scatterplot}}
 \end{center}
 \end{frame}
@@ -243,6 +243,7 @@ and the corresponding statistics are
 To study the relation between two variables, we have to analyze the joint variation of them.
 
 \centering
+\tikzsetnextfilename{regression/deviations_to_means}
 \resizebox{0.8\textwidth}{!}{\input{img/regression/deviations_to_means}}
 \end{frame}
 
@@ -253,6 +254,7 @@ To study the relation between two variables, we have to analyze the joint variat
 Dividing the point cloud of the scatter plot in 4 quadrants centered in the mean point $(\bar x, \bar y)$, the sign of
 deviations from the mean is:
 \begin{center}
+\tikzsetnextfilename{regression/scatterplot_quadrants}
 \resizebox*{!}{0.5\textheight}{\input{img/regression/scatterplot_quadrants}}
 %\mode<presentation>{\rowcolors{1}{red!20}{red!10}}
 \begin{tabular}{cccc}
@@ -277,6 +279,7 @@ If there is an \emph{increasing linear} relationship between the variables, most
 and 3, and the sum of the products of deviations from the mean will be positive.
 
 \centering
+\tikzsetnextfilename{regression/increasing_linear_scatterplot}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/increasing_linear_scatterplot}}
 
 $\sum(x_i-\bar x)(y_j-\bar y) = +$
@@ -287,6 +290,7 @@ If there is an \emph{decreasing linear} relationship between the variables, most
 and 4, and the sum of the products of deviations from the mean will be negative.
 
 \centering
+\tikzsetnextfilename{regression/decreasing_linear_scatterplot}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/decreasing_linear_scatterplot}}
 
 $\sum(x_i-\bar x)(y_j-\bar y) = -$
@@ -385,7 +389,7 @@ Linear & $y=a+bx$\\
 Quadratic & $y=a+bx+cx^2$\\
 Cubic & $y=a+bx+cx^2+dx^3$\\
 Potential & $y=a\cdot x^b$\\
-Exponential & $y=a\cdot e^{bx}$\\
+Exponential & $y=e^{a+bx}$\\
 Logarithmic & $y=a+b\log x$\\
 Inverse & $y = a+\frac{b}{x}$\\
 Sigmoidal & $y= e^{a+\frac{b}{x}}$\\
@@ -425,6 +429,7 @@ e_{ij} = y_j-f(x_i).
 \bigskip\bigskip
 
 \centering
+\tikzsetnextfilename{regression/y_residuals}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/y_residuals}}
 \end{frame}
 
@@ -512,6 +517,7 @@ x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.6
 \frametitle{Regression lines}
 \framesubtitle{Example of heights and weights}
 \begin{center}
+\tikzsetnextfilename{regression/regression_lines}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/regression_lines}}
 \end{center}
 \end{frame}
@@ -528,6 +534,7 @@ on $Y$ are not the same, but they always intersect in the mean point $(\bar x,\b
 If there is a perfect linear relation between the variables, then both regression lines are the same, as that line
 makes both $X$-residuals and $Y$-residuals zero.
 \begin{center}
+\tikzsetnextfilename{regression/perfect_linear_regression}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/perfect_linear_regression}}
 \end{center}
 \end{column}
@@ -539,6 +546,7 @@ $y = \bar y$, \qquad $x = \bar x,$
 \end{center}
 So, they intersect perpendicularly.
 \begin{center}
+\tikzsetnextfilename{regression/non_linear_regression}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/non_linear_regression}}
 \end{center}
 \end{column}
@@ -582,6 +590,7 @@ b_{yx}= 1.02 \mbox{Kg/cm.}
 That means that, according to the regression line of weight on height, the weight will increase $1.02$ Kg for every cm
 that increases the height. 
 \begin{center}
+\tikzsetnextfilename{regression/slope_interpretation}
 \input{img/regression/slope_interpretation}
 \end{center}
 \end{frame}
@@ -651,6 +660,7 @@ variance is the same than the variance of the dependent variable.
 \begin{frame}
 \frametitle{Explained and non-explained variation}
 \begin{center}
+\tikzsetnextfilename{regression/variation_decomposition}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/variation_decomposition}}
 \end{center}
 \end{frame}
@@ -769,6 +779,16 @@ This means that there is a rather strong linear increasing relation between heig
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
+\frametitle{Different correlations}
+\begin{center}
+\tikzsetnextfilename{regression/different_correlations}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/different_correlations}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
 \frametitle{Reliability of regression predictions}
 The coefficient of determination explains the goodness of fit of a regression model, but there are other factors that
 influence the reliability of regression predictions:
@@ -803,6 +823,7 @@ simple transformation to the variables of the model.
 \begin{frame}
 \frametitle{Transformations of non-linear regression models}
 \begin{itemize}
+\small
 \item \highlight{Logarithmic model}: A logarithmic model $y = a+b \log x$ can be transformed in a linear model with
 the change $t=\log x$:
 \[y=a+b\log x = a+bt.\]
@@ -823,7 +844,7 @@ changes $t=1/x$ and $z=\log y$:
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Fitting of an exponential regression model}
+\frametitle{Exponential relation}
 \framesubtitle{Example of evolution of a bacterial culture}
 The number of bacteria in a culture evolves with time according to the table below.
 \begin{columns}
@@ -847,6 +868,7 @@ The number of bacteria in a culture evolves with time according to the table bel
 \begin{column}{0.6\textwidth}
 The scatter plot of the sample is showed below.
 \begin{center}
+\tikzsetnextfilename{regression/bacteria_evolution}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/bacteria_evolution}}
 \end{center}
 \end{column}
@@ -856,7 +878,7 @@ The scatter plot of the sample is showed below.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Fitting of an exponential regression model}
+\frametitle{Exponential relation}
 \framesubtitle{Example of evolution of a bacterial culture}
 Fitting a linear model we get
 \begin{columns}
@@ -877,11 +899,12 @@ Fitting a linear model we get
 \end{array}
 \]
 \[
-\mbox{Bacteria} = -30.18+41,27\,\mbox{Hours}
+\mbox{Bacteria} = -30.18+41,27\,\mbox{Hours, with } r^2=0.85. 
 \]
 \end{column}
 \begin{column}{0.6\textwidth}
 \begin{center}
+\tikzsetnextfilename{regression/linear_regression_bacteria}
 \resizebox{0.9\textwidth}{!}{\input{img/regression/linear_regression_bacteria}}
 \end{center}
 \end{column}
@@ -891,156 +914,116 @@ Fitting a linear model we get
 \end{center}
 \end{frame}
 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Ejemplo de ajuste de un modelo exponencial}
-% \framesubtitle{Evolución del número de bacterias de un cultivo}
-% Aunque el modelo lineal no es malo, de acuerdo al diagrama de dispersión es más lógico construir un modelo exponencial o cuadrático.
-% 
-% 
-% Para construir el modelo exponencial $y = ae^{bx}$ hay que realizar la transformación $z=\log y$, es decir, aplicar el logaritmo a la
-% variable dependiente.
-% 
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \[
-% \begin{array}{c|c|c}
-% \mbox{Horas} & \mbox{Bacterias} & \mbox{Log Bacterias}\\
-% \hline
-% 0 &  25 & 3.22\\
-% 1 & 28 & 3.33\\
-% 2 &  47 & 3.85\\
-% 3 & 65  & 4.17\\
-% 4 & 86 & 4.45\\
-% 5 & 121 & 4.80\\
-% 6 & 190 & 5.25\\
-% 7 & 290 & 5.67\\
-% 8 & 362 & 5.89
-% \end{array}
-% \]
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \begin{center}
-% \scalebox{0.58}{\input{img/regresion/diagrama_dispersion_horas_logbacterias}}
-% \end{center}
-% \end{column}
-% \end{columns}
-% 
-% \note{Para construir el modelo de regresión exponencial hay que aplicar el logaritmo neperiano a la variable dependiente, que en este caso
-% es el número de bacterias. El logaritmo neperiano de 25 nos da 3.22, el de 28 nos da 3.33 y así sucesivamente, de manera que obtenemos una
-% nueva variable que es el logarítmo de las bacterias. 
-% 
-% Si representamos el diagrama de dispersion del logaritmo de las bacterias y las horas transcurridas, podemos comprobar cómo ahora la nube de
-% puntos tiene forma lineal, es decir, mediante la transformación logarítmica de la variable dependiente hemos convertido una relación
-% exponencial en una relación lineal.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Ejemplo de ajuste de un modelo exponencial}
-% \framesubtitle{Evolución del número de bacterias de un cultivo}
-% Ahora sólo queda calcular la recta de regresión del logaritmo de Bacterias sobre Horas
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \[
-% \mbox{Log Bacterias} = 3.107 + 0.352\, \mbox{Horas}.
-% \]
-% Y deshaciendo el cambio de variable, se obtiene el modelo exponencial
-% \[
-% \mbox{Bacterias} = e^{3.107+0.352\,\textrm{Horas}},
-% \]
-% que, a la vista del coeficiente de determinación, es mucho mejor modelo que el lineal.
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \begin{center}
-% \scalebox{0.6}{\input{img/regresion/regresion_exponencial_horas_bacterias}}
-% \end{center}
-% \end{column}
-% \end{columns}
-% 
-% \note{Si ahora calculamos la recta de regresión del logaritmo de las bacterias sobre las horas, se tiene $\mbox{Log Bacterias} = 3.107 +
-% 0.352\, \mbox{Horas}$, cuyo coeficiente de determinación lineal vale $0.99$, lo cual indica un ajuste casi perfecto de la recta. 
-% 
-% Finalmente, para obtener el modelo exponencial, basta con desacer la transformación logarítmica del número de bacterias, aplicando la
-% función exponencial, lo que nos da $\mbox{Bacterias} = e^{3.107+0.352\,\textrm{Horas}}$, y cuyo coeficiente de determinación exponencial
-% coincide con el de la recta anterior, de manera que se puede concluir que el modelo exponencial explica muyo mejor la relación entre el
-% número de bacterias y las horas que el modelo lineal. }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Interpretación de un coeficiente de determinación pequeño}
-% Tanto el coeficiente de determinación como el de correlación hacen referencia a un modelo concreto, de manera que un coeficiente $r^2=0$
-% significa que no existe relación entre las variables del tipo planteado por el modelo, pero \emph{eso no quiere decir que las variables sean
-% independientes}, ya que puede existir relación de otro tipo.
-% \begin{center}
-% \scalebox{0.55}{\input{img/regresion/recta_regresion_relacion_parabolica}}
-% \qquad
-% \scalebox{0.55}{\input{img/regresion/regresion_parabolica}}
-% \end{center}
-% 
-% \note{Hay que recordar que tanto el coeficiente de determinación hace referencia a un modelo concreto, de manera que
-% un coeficiente $r^2=0$ significa que no existe relación entre las variables del tipo planteado por el modelo, pero \emph{eso no quiere decir
-% que las variables sean independientes}, ya que puede existir relación de otro tipo.
-% 
-% En las gráficas puede apreciarse cómo al ajustar una recta sobre esta nube de puntos se obtiene un coeficiente de determinación
-% prácticamente nulo pero sin embargo hay una clara relación parabólica entre las variables, por lo que no podemos decir que las variables
-% son independientes, tan sólo que no tienen relación lineal.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Datos atípicos en regresión}
-% En un estudio de regresión es posible que aparezca algún individuo que se aleja notablemente de la tendencia del resto de individuos en la
-% nube de puntos.
-% 
-% Aunque el individuo podría no ser un \emph{dato atípico} al considerar las variables de manera separada, sí lo sería al
-% considerarlas de manera conjunta.
-% 
-% \begin{center}
-% \scalebox{0.6}{\input{img/regresion/diagrama_dispersion_con_datos_atipicos}}
-% \end{center}
-% 
-% \note{Otro de los problemas que pueden plantearse en la construcción de un modelo de regresión es la presencia de datos atípicos. En un
-% estudio de regresión, los datos atípicos, a diferencia de lo que vimos en el tema anterior no son individuos que presentan un valor en
-% alguna de las variables muy distinto del resto, sino que son puntos que se alejan notablemente de la tendencia de la nube de puntos.
-% 
-% Como se aprecia en el gráfico, aunque un individuo podría no ser un \emph{dato atípico} al considerar las variables de manera separada, sí
-% lo sería al considerarlas de manera conjunta.}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Influencia de los datos atípicos en los modelos de regresión}
-% Los datos atípicos en regresión suelen provocar cambios drásticos en el ajuste de los modelos de regresión, y por tanto, habrá que tener
-% mucho cuidado con ellos.
-% 
-% \begin{center}
-% \scalebox{0.55}{\input{img/regresion/recta_regresion_con_datos_atipicos}}
-% \qquad
-% \scalebox{0.55}{\input{img/regresion/recta_regresion_sin_datos_atipicos}}
-% \end{center}
-% 
-% \note{Los datos atípicos en un estudio de regresión son un problema porque suelen provocar cambios drásticos en el modelo de regresión.
-% 
-% Como puede apreciarse en estos dos diagramas de dispersión, hay una clara tendencia lineal de la nube de puntos, pero en el primer caso hay
-% un dato atípico. Si se calcula la recta de regresión con el dato atípico, la recta resultante aparece bastante desviada de la tendencia de
-% la nube de puntos ya que el dato atípico está ejerciendo una gran influencia sobre ella. Como consecuencia el modelo resultante tiene
-% coeficiente de determinación $0.08$ y lo que indica que esta recta no explica bien la relación entre las variables. Sin embargo, cuando se
-% calcula la recta sin tener en cuenta el dato atípico, la recta resultante tiene un coeficiente de determinación de $0.98$ y explica casi a
-% la perfección la relación que hay entre las variables. 
-% 
-% Así pues, cuando haya datos atípicos en un estudio de regresión habrá que tener mucho cuidado con ellos y muchas ocasiones se eliminarán
-% para que no distorsionen el modelo de regresión.}
-% \end{frame}
-% 
-% 
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Fitting an exponential regression model}
+\framesubtitle{Example of evolution of a bacterial culture}
+Although the linear model is not bad, according to the shape of the point cloud of the scatter plot, an exponential
+model looks more suitable. 
+
+To construct an exponential model $y = e^{a+bx}$ we can apply the transformation $z=\log y$, that is, applying
+a logarithmic transformation to the dependent variable.
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\[
+\begin{array}{c|c|c}
+\mbox{Hours} & \mbox{Bacteria} & \mbox{$\log$(Bacteria)}\\
+\hline
+0 &  25 & 3.22\\
+1 & 28 & 3.33\\
+2 &  47 & 3.85\\
+3 & 65  & 4.17\\
+4 & 86 & 4.45\\
+5 & 121 & 4.80\\
+6 & 190 & 5.25\\
+7 & 290 & 5.67\\
+8 & 362 & 5.89
+\end{array}
+\]
+\end{column}
+\begin{column}{0.55\textwidth}
+\begin{center}
+\tikzsetnextfilename{regression/log_bacteria_evolution}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/log_bacteria_evolution}}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Fitting an exponential regression model}
+\framesubtitle{Example of evolution of a bacterial culture}
+Now it only remains to compute the regression line of the logarithm of bacteria on hours,
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\[
+\mbox{$\log$(Bacteria)} = 3.107 + 0.352\, \mbox{Horas},
+\]
+and, undoing the change of variable, 
+\[
+\mbox{Bacteria} = e^{3.107+0.352\,\mbox{Hours}},
+\]
+with $r^2=0.99$.
+
+Thus, the exponential model fits much better than the linear model. 
+\end{column}
+\begin{column}{0.55\textwidth}
+\begin{center}
+\tikzsetnextfilename{regression/exponential_regression_bacteria}
+\resizebox{0.9\textwidth}{!}{\input{img/regression/exponential_regression_bacteria}}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Lack of fit doesn't mean independence}
+It's important to note that every regression model has its own coefficient of determination. Thus, a coefficient of
+determination near zero means that there is no relation as set by the model, but \emph{that doesn't mean that the
+variables are independent}, cause it could be a different type of relation
+\begin{center}
+\tikzsetnextfilename{regression/linear_regression_parabolic_relation}
+\resizebox{0.49\textwidth}{!}{\input{img/regression/linear_regression_parabolic_relation}}
+\tikzsetnextfilename{regression/parabolic_regression}
+\resizebox{0.49\textwidth}{!}{\input{img/regression/parabolic_regression}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Outliers in regression}
+Outliers in regression studies are points that clearly doesn't follow the tendency of the rest of points, even if the
+values of the pair are not outliers for every variable separately.
+\begin{center}
+\tikzsetnextfilename{regression/scatterplot_with_outliers}
+\resizebox{0.7\textwidth}{!}{\input{img/regression/scatterplot_with_outliers}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Outliers influence in regression}
+Outliers in regression studies can provoke drastic changes in the regression models. 
+\begin{center}
+\tikzsetnextfilename{regression/linear_regression_with_outliers}
+\resizebox{0.49\textwidth}{!}{\input{img/regression/linear_regression_with_outliers}}
+\tikzsetnextfilename{regression/linear_regresssion_without_outliers}
+\resizebox{0.49\textwidth}{!}{\input{img/regression/linear_regression_without_outliers}}
+\end{center}
+\end{frame}
+
+
+
+
+
+%   
 % \subsection{Medidas de relación entre atributos}
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
