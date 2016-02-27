@@ -1,4 +1,4 @@
-\section{Regresión y Correlación}
+\section{Regression and correlation}
 
 \mode<presentation>{
 %---------------------------------------------------------------------slide----
@@ -8,8 +8,6 @@
 \end{frame}
 }
 
-
-\subsection{Joint frequency distribution}
 
 % ---------------------------------------------------------------------slide----
 \begin{frame}
@@ -28,6 +26,8 @@ The simpler case is a \emph{simple dependency study} when there is only one inde
 covered in this chapter. 
 \end{frame}
 
+
+\subsection{Joint frequency distribution}
 
 % ---------------------------------------------------------------------slide----
 \begin{frame}
@@ -59,7 +59,7 @@ f_{ij}=\frac{n_{ij}}{n}
 \begin{frame}
 \frametitle{Joint frequency distribution}
 The values of the two-dimensional variable with their frequencies is known as \highlight{joint frequency distribution},
-and is represented in a \hightlight{joint frequency table}.
+and is represented in a \highlight{joint frequency table}.
 \[
 \begin{array}{|c|ccccc|}
 \hline
@@ -120,7 +120,7 @@ Usually the independent variable is represented in the $X$ axis and the dependen
 For every data pair $(x_i,y_j)$ in the sample a dot is drawn on the plane with those coordinates.  
 \begin{center}
 \tikzsetnextfilename{regression/scatterplot}
-\resizebox*{!}{0.45\textheight}{\input{img/regression/scatterplot}}
+\resizebox{0.4\textwidth}{!}{\input{img/regression/scatterplot}}
 \end{center}
 
 The result is a set of points that usually is known as a \emph{point cloud}.
@@ -141,7 +141,8 @@ The result is a set of points that usually is known as a \emph{point cloud}.
 \framesubtitle{Example of heights and weights}
 \begin{center}
 \tikzsetnextfilename{regression/height_weight_scatterplot}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/height_weight_scatterplot}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/regression/height_weight_scatterplot}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/height_weight_scatterplot}}}
 \end{center}
 \end{frame}
 
@@ -151,18 +152,8 @@ The result is a set of points that usually is known as a \emph{point cloud}.
 \frametitle{Scatter plot interpretation}
 The shape of the point cloud in a scatter plot gives information about the type of relation between the variables.
 
-\begin{center}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{ccc}
-\input{img/regression/no_relation_scatterplot} &
-\input{img/regression/linear_scatterplot} &
-\input{img/regression/quadratic_scatterplot} \\
-\input{img/regression/exponential_scatterplot} &
-\input{img/regression/logarithmic_scatterplot} &
-\input{img/regression/inverse_scatterplot}
-\end{tabular}
-}
-\end{center}
+\tikzsetnextfilename{regression/scatterplot_different_relations}
+\resizebox{\textwidth}{!}{\input{img/regression/scatterplot_different_relations}}
 \end{frame}
 
 
@@ -241,10 +232,11 @@ and the corresponding statistics are
 \begin{frame}
 \frametitle{Deviations from the means}
 To study the relation between two variables, we have to analyze the joint variation of them.
-
-\centering
+\begin{center}
 \tikzsetnextfilename{regression/deviations_to_means}
-\resizebox{0.8\textwidth}{!}{\input{img/regression/deviations_to_means}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/regression/deviations_to_means}}}
+\mode<presentation>{\resizebox{0.8\textwidth}{!}{\input{img/regression/deviations_to_means}}}
+\end{center}
 \end{frame}
 
 
@@ -254,8 +246,6 @@ To study the relation between two variables, we have to analyze the joint variat
 Dividing the point cloud of the scatter plot in 4 quadrants centered in the mean point $(\bar x, \bar y)$, the sign of
 deviations from the mean is:
 \begin{center}
-\tikzsetnextfilename{regression/scatterplot_quadrants}
-\resizebox*{!}{0.5\textheight}{\input{img/regression/scatterplot_quadrants}}
 %\mode<presentation>{\rowcolors{1}{red!20}{red!10}}
 \begin{tabular}{cccc}
 Quadrant & $(x_i-\bar x)$ & $(y_j-\bar y)$ & $(x_i-\bar x)(y_j-\bar y)$\\
@@ -266,6 +256,9 @@ Quadrant & $(x_i-\bar x)$ & $(y_j-\bar y)$ & $(x_i-\bar x)(y_j-\bar y)$\\
 4 & $+$ & $-$ & \alert{$-$}\\
 \hline
 \end{tabular}
+
+\tikzsetnextfilename{regression/scatterplot_quadrants}
+\resizebox{0.4\textwidth}{!}{\input{img/regression/scatterplot_quadrants}}
 \end{center}
 \end{frame}
 
@@ -280,9 +273,10 @@ and 3, and the sum of the products of deviations from the mean will be positive.
 
 \centering
 \tikzsetnextfilename{regression/increasing_linear_scatterplot}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/increasing_linear_scatterplot}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/regression/increasing_linear_scatterplot}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/increasing_linear_scatterplot}}}
 
-$\sum(x_i-\bar x)(y_j-\bar y) = +$
+$$\sum(x_i-\bar x)(y_j-\bar y) = +$$
 \end{column}
 
 \begin{column}{0.5\textwidth}
@@ -291,9 +285,10 @@ and 4, and the sum of the products of deviations from the mean will be negative.
 
 \centering
 \tikzsetnextfilename{regression/decreasing_linear_scatterplot}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/decreasing_linear_scatterplot}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/regression/decreasing_linear_scatterplot}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/decreasing_linear_scatterplot}}}
 
-$\sum(x_i-\bar x)(y_j-\bar y) = -$
+$$\sum(x_i-\bar x)(y_j-\bar y) = -$$
 \end{column}
 \end{columns}
 \end{frame}
@@ -397,7 +392,7 @@ Sigmoidal & $y= e^{a+\frac{b}{x}}$\\
 \end{tabular}
 \end{center}
 
-The model choice depends on the shape of the points cloud in the scatterplot.
+The model choice depends on the shape of the points cloud in the scatter plot.
 \end{frame}
 
 
@@ -426,11 +421,10 @@ e_{ij} = y_j-f(x_i).
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Residuals or predictive errors on $Y$}
-\bigskip\bigskip
-
 \centering
 \tikzsetnextfilename{regression/y_residuals}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/y_residuals}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/regression/y_residuals}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/y_residuals}}}
 \end{frame}
 
 
@@ -518,12 +512,13 @@ x = \bar x +\frac{s_{xy}}{s_y^2}(y-\bar y) = 174.67+\frac{104.07}{164.42}(y-69.6
 \framesubtitle{Example of heights and weights}
 \begin{center}
 \tikzsetnextfilename{regression/regression_lines}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/regression_lines}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/regression/regression_lines}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/regression_lines}}}
 \end{center}
 \end{frame}
 
 
-%---------------------------------------------------------------------slide----
+%------------------------------------------ ---------------------------slide----
 \begin{frame}
 \frametitle{Relative position of the regression lines}
 Usually, the regression line of $Y$ on $X$ and the regression line of $X$
@@ -535,7 +530,8 @@ If there is a perfect linear relation between the variables, then both regressio
 makes both $X$-residuals and $Y$-residuals zero.
 \begin{center}
 \tikzsetnextfilename{regression/perfect_linear_regression}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/perfect_linear_regression}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/regression/perfect_linear_regression}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/perfect_linear_regression}}}
 \end{center}
 \end{column}
 \begin{column}{0.48\textwidth}
@@ -547,7 +543,8 @@ $y = \bar y$, \qquad $x = \bar x,$
 So, they intersect perpendicularly.
 \begin{center}
 \tikzsetnextfilename{regression/non_linear_regression}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/non_linear_regression}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/regression/non_linear_regression}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/non_linear_regression}}}
 \end{center}
 \end{column}
 \end{columns}
@@ -583,7 +580,7 @@ In the sample of heights and weights, the regression line of weight on height wa
 \[
 y=-108.49 +1.02 x.
 \]
-Thus, the regression coefficient of weight on height was
+Thus, the regression coefficient of weight on height is
 \[
 b_{yx}= 1.02 \mbox{Kg/cm.}
 \]
@@ -661,7 +658,8 @@ variance is the same than the variance of the dependent variable.
 \frametitle{Explained and non-explained variation}
 \begin{center}
 \tikzsetnextfilename{regression/variation_decomposition}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/variation_decomposition}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/regression/variation_decomposition}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/variation_decomposition}}}
 \end{center}
 \end{frame}
 
@@ -780,10 +778,9 @@ This means that there is a rather strong linear increasing relation between heig
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Different correlations}
-\begin{center}
+\centering
 \tikzsetnextfilename{regression/different_correlations}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/different_correlations}}
-\end{center}
+\resizebox{\textwidth}{!}{\input{img/regression/different_correlations}}
 \end{frame}
 
 
@@ -869,7 +866,8 @@ The number of bacteria in a culture evolves with time according to the table bel
 The scatter plot of the sample is showed below.
 \begin{center}
 \tikzsetnextfilename{regression/bacteria_evolution}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/bacteria_evolution}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/regression/bacteria_evolution}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/bacteria_evolution}}}
 \end{center}
 \end{column}
 \end{columns}
@@ -905,7 +903,8 @@ Fitting a linear model we get
 \begin{column}{0.6\textwidth}
 \begin{center}
 \tikzsetnextfilename{regression/linear_regression_bacteria}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/linear_regression_bacteria}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/regression/linear_regression_bacteria}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/linear_regression_bacteria}}}
 \end{center}
 \end{column}
 \end{columns}
@@ -945,7 +944,8 @@ a logarithmic transformation to the dependent variable.
 \begin{column}{0.55\textwidth}
 \begin{center}
 \tikzsetnextfilename{regression/log_bacteria_evolution}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/log_bacteria_evolution}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/regression/log_bacteria_evolution}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/log_bacteria_evolution}}}
 \end{center}
 \end{column}
 \end{columns}
@@ -973,7 +973,8 @@ Thus, the exponential model fits much better than the linear model.
 \begin{column}{0.55\textwidth}
 \begin{center}
 \tikzsetnextfilename{regression/exponential_regression_bacteria}
-\resizebox{0.9\textwidth}{!}{\input{img/regression/exponential_regression_bacteria}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/regression/exponential_regression_bacteria}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/exponential_regression_bacteria}}}
 \end{center}
 \end{column}
 \end{columns}
@@ -985,7 +986,7 @@ Thus, the exponential model fits much better than the linear model.
 \frametitle{Lack of fit doesn't mean independence}
 It's important to note that every regression model has its own coefficient of determination. Thus, a coefficient of
 determination near zero means that there is no relation as set by the model, but \emph{that doesn't mean that the
-variables are independent}, cause it could be a different type of relation
+variables are independent}, cause it could be a different type of relation.
 \begin{center}
 \tikzsetnextfilename{regression/linear_regression_parabolic_relation}
 \resizebox{0.49\textwidth}{!}{\input{img/regression/linear_regression_parabolic_relation}}
@@ -1018,10 +1019,6 @@ Outliers in regression studies can provoke drastic changes in the regression mod
 \resizebox{0.49\textwidth}{!}{\input{img/regression/linear_regression_without_outliers}}
 \end{center}
 \end{frame}
-
-
-
-
 
 %   
 % \subsection{Medidas de relación entre atributos}
