@@ -1,0 +1,15 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\begin{tikzpicture}
+\def\firstcircle{(1.5,1.5) circle (0.5cm)}
+\def\secondcircle{(2,1.5) circle (1.2cm)}
+
+\fill[color1!30] \secondcircle;
+\fill[color2!30] \firstcircle; 
+
+\draw (0,3) node[anchor=north east] {$\Omega$} rectangle (4,0);
+\draw \firstcircle node {$A$};
+\draw \secondcircle node[xshift=1cm, yshift=1cm] {$B$};
+
+\node[anchor=east] at (3,1.5) {$B-A$};
+\end{tikzpicture}

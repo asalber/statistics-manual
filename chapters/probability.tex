@@ -1,0 +1,1247 @@
+\section{Probability}
+
+\mode<presentation>{
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probability}
+\tableofcontents[sectionstyle=show/hide,hideothersubsections]
+\end{frame}
+}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Introduction}
+Descriptive Statistics provide methods to describe de variables measured in the sample and their relations, but it
+doesn't allow to draw any conclusion about the population.
+
+Now it's time to make the leap from the sample to the population and the bridge for that is the
+\highlight{probability theory}.
+
+Remember that the sample has a limited information about the population, and in order to draw valid conclusions for the
+population the sample must be representative of it.
+For that reason, to guarantee the representativeness of the sample, this must be drawn randomly. 
+This means that the choice of individuals in the sample is by chance. 
+
+The probability theory will give us the tools to control the random in the sampling and to determine the level of
+reliability of the conclusions drawn from the sample. 
+\end{frame}
+
+
+\subsection{Random experiments and events}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Random experiments}
+The study of a characteristic of the population is conducted through random experiments. 
+
+\begin{definition}[Random experiment] A \emph{random experiment} is an experiment that meets two conditions:
+\begin{enumerate}
+\item It is known the set of possible outcomes. 
+\item It is impossible to predict the outcome with absolute certainty.
+\end{enumerate} 
+\end{definition}
+
+\textbf{Example}. Gambling are typical examples of random experiments. 
+The roll of a dice, for example, is a random experiment cause
+\begin{itemize}
+\item It is known the the set of possible outcomes: $\{1,2,3,4,5,6\}$.
+\item Before rolling the dice, it's impossible to predict with absolute certainty the face of the dice that will occur. 
+\end{itemize}
+
+Another non-gambling example is the random choice of an individual of a human population and the determination of its
+blood type. 
+Generally, the draw of a sample by a random method  is an random experiment.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Sample space}
+\begin{definition}[Sample space]
+The set $\Omega$ of the possible outcomes of a random experiment is known as \emph{sample space}.
+\end{definition}
+
+\textbf{Example} Some examples of sample spaces are:
+\begin{itemize}
+\item For the toss of a coin $\Omega=\{head,tail\}$.
+\item For the roll of a dice $\Omega=\{1,2,3,4,5,6\}$.
+\item For the blood type of an individual drawn by chance $\Omega=\{\mbox{A},\mbox{B},\mbox{AB},\mbox{0}\}$.
+\item For the height of an individual drawn by chance $\Omega=\mathbb{R}^+$.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Sample space construction}
+In experiments where more than one variable is measured, the determination of the sample space can be difficult. 
+In such a cases, it is advisable to use a \highlight{tree diagram} to construct the sample space. 
+
+In a tree diagram every variable is represented in a level of the tree and every possible outcome of the variable as a
+branch.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Sample space construction}
+\framesubtitle{Example of gender and blood type}
+% The tree below represents the sample space of a random experiment where we measure the gender and the blood type of a
+% person.
+
+\begin{center}
+\tikzsetnextfilename{probability/sample_space}
+\resizebox{0.8\textwidth}{!}{\input{img/probability/sample_space}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Random events}
+\begin{definition}[Random event]
+A \emph{random event} is any subset of the sample space $\Omega$ of a random experiment.
+\end{definition}
+
+There are different types of events:
+\begin{itemize}
+\item \textbf{Impossible event:} Is the event with no elements $\emptyset$. It has no chance of occurring.
+\item \textbf{Elemental events:} Are events with only one element, that is, a singleton.
+\item \textbf{Composed events:} Are events with two or more elements.
+\item \textbf{Sure event:} Is the event that contains the whole sample space. It always happens.
+\end{itemize}
+\end{frame}
+
+
+\subsection{Set theory}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Event space}
+\begin{definition}[Event space] Given a sample space $\Omega$ of a random experiment, the \emph{event space} of
+$\Omega$ is the set of all possible events of $\Omega$, and is noted $\mathcal{P}(\Omega)$.
+\end{definition}
+
+\textbf{Example}. Given the sample space $\Omega=\{a,b,c\}$, its even space is 
+\[
+\mathcal{P}(\Omega)=\left\{\emptyset, \{a\},\{b\},\{c\},\{a,b\},\{a,c\},\{b,c\},\{a,b,c\}\right\}
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Event operations}
+As events are subsets of the sample space, using the set theory we have the following operations on events:
+\begin{itemize}
+\item Union
+\item Intersection
+\item Complement
+\item Difference
+\end{itemize}
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Union of events}
+\begin{definition}[Union event]
+Given two events $A,B\in \mathcal{P}(\Omega)$, the \emph{union} of $A$ and $B$, denoted by $A\cup B$, is the event of
+all elements that are members of $A$ or $B$ or both.
+\[
+A\cup B = \{x\,|\, x\in A\textrm{ or }x\in B\}.
+\]
+\end{definition}
+
+\begin{center}
+\tikzsetnextfilename{probability/union}
+\input{img/probability/union}
+\end{center}
+The union event $A\cup B$ happens when $A$ \alert{or} $B$ happen.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Intersection of events}
+\begin{definition}[Intersection event]
+Given two events $A,B\in \mathcal{P}(\Omega)$, the \emph{intersection} of $A$ and $B$, denoted by $A\cap B$, is the
+event of all elements that are members of both $A$ and $B$.
+\[
+A\cap B = \{x\,|\, x\in A\textrm{ and }x\in B\}.
+\]
+\end{definition}
+
+\begin{center}
+\tikzsetnextfilename{probability/intersection}
+\input{img/probability/intersection}
+\end{center}
+The intersection event $A\cap B$ happens when $A$ \alert{and} $B$ happen.
+
+Observe that the intersection event is included in the union even $A\cap B \subseteq A\cup B$.
+
+Two events are \highlight{incompatible} if their intersection is empty.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Complement of an event}
+\begin{definition}[Complementary event]
+Given an event $A\in \mathcal{P}(\Omega)$, the \emph{complementary or contrary event} of $A$, denoted by $\bar A$, is
+the event of all elements of $\Omega$ except the elements that are members of $A$.
+\[
+\overline A = \{x\,|\, x\not\in A\}.
+\]
+\end{definition}
+
+\begin{center}
+\tikzsetnextfilename{probability/complement}
+\input{img/probability/complement}
+\end{center}
+
+The complementary event $\bar A$ happens when $A$ does \alert{no} happen.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Difference of events}
+\begin{definition}[Intersection event]
+Given two events $A,B\in \mathcal{P}(\Omega)$, the \emph{intersection} of $A$ and $B$, denoted by $A\cap B$, is the
+event of all elements that are members of both $A$ and $B$.
+\[
+A-B = \{x\,|\, x\in A\textrm{ and }x\not\in B\} = A \cap \bar B.
+\]
+\end{definition}
+
+\begin{center}
+\tikzsetnextfilename{probability/difference}
+\input{img/probability/difference}
+\end{center}
+
+The difference event $A-B$ happens when $A$ happens but $B$ not.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Event operations}
+\framesubtitle{Example}
+Given the sample space of rolling a dice $\Omega=\{1,2,3,4,5,6\}$ and the events $A=\{2,4,6\}$ and $B=\{1,2,3,4\}$, 
+\begin{itemize}
+\item The union of $A$ and $B$ is $A\cup B=\{1,2,3,4,6\}$.
+\item The intersection of $A$ and $B$ is $A\cap B=\{2,4\}$.
+\item The complement of $A$ is $\bar A=\{1,3,5\}$.
+\item The events $A$ and $\bar A$ are incompatible.
+\item The difference of $A$ and $B$ is $A-B=\{6\}$, and the difference of $B$ and $A$ is $B-A=\{1,3\}$.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Algebra of events}
+Given the events $A,B,C\in  \mathcal{P}(\Omega)$, the following properties are meet. 
+\begin{enumerate}
+\item $A\cup A=A$, $A\cap A=A$ (idempotency).
+\item $A\cup B=B\cup A$, $A\cap B = B\cap A$ (commutative).
+\item $(A\cup B)\cup C = A\cup (B\cup C)$, $(A\cap B)\cap C = A\cap (B\cap C)$ (associative).
+\item $(A\cup B)\cap C = (A\cap C)\cup (B\cap C)$, $(A\cap B)\cup C = (A\cup C)\cap (B\cup C)$ (distributive).
+\item $A\cup \emptyset=A$, $A\cap \Omega=A$ (neutral element).
+\item $A\cup \Omega=\Omega$, $A\cap \emptyset=\emptyset$ (absorbing element).
+\item $A\cup \overline A = \Omega$, $A\cap \overline A= \emptyset$ (complementary symmetric element).
+\item $\overline{\overline A} = A$ (double contrary).
+\item $\overline{A\cup B} = \overline A\cap \overline B$, $\overline{A\cap B} = \overline A\cup \overline B$ (Morgan's
+laws).
+\end{enumerate}
+\end{frame}
+
+
+\subsection{Probability defintion}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Classical definition of probability}
+\begin{definition}[Probability --- Laplace]
+Given a sample space $\Omega$ of a random experiment where all elements of $\Omega$ are equally likely, the
+\emph{probability} of an event $A\subseteq \Omega$ is the quotient between the number of elements of $A$ and the number
+of elements of $\Omega$
+\[ P(A) = \frac{|A|}{|\Omega|} = \frac{\mbox{number of favorable outcomes}}{\mbox{number of possible outcomes}}\]
+\end{definition}
+
+This definition is widespread, but it has important restrictions:
+\begin{itemize}
+\item It is required that all the elements of the sample space are equally likely (\emph{equiprobability}).
+\item It can't be used with infinite sample spaces.
+\end{itemize}
+
+\alert{\emph{Watch out! These conditions are not meet in many real experiments.}}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Classical definition of probability}
+\framesubtitle{Example}
+Given the sample space of rolling a dice $\Omega=\{1,2,3,4,5,6\}$ and the event $A=\{2,4,6\}$, the probability of $A$ is 
+\[
+P(A) = \frac{|A|}{|\Omega|} = \frac{3}{6} = 0.5.
+\]
+
+However, given the sample space of the blood type of a random individual $\Omega\{O,A,B,AB\}$, it's not possible to use
+the classical definition to compute the probability of having group $A$,
+\[
+P(A) \neq \frac{|A|}{|\Omega|} = \frac{1}{4} = 0.25,
+\]
+cause the blood types are not equally likely in human populations. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Frequency definition of probability}
+\begin{theorem}[Law of large numbers]
+When a random experiment is repeated a large number of times, the relative frequency of an event tends to a number that
+is the real probability of the event.
+\end{theorem}
+
+The following definition of probability uses this theorem.
+\begin{definition}[Frequency probability]
+Given a sample space $\Omega$ of a replicable random experiment, the \emph{probability} of an event $A\subseteq \Omega$
+is the relative frequency of the event $A$ in an infinite number of repetitions of the experiment 
+\[
+P(A) = lim_{n\rightarrow \infty}\frac{n_{A}}{n}
+\]
+\end{definition}
+
+Although frequency probability avoid the restrictions of classical definition, it also have some drawbacks
+\begin{itemize}
+\item It computes an estimation of the real probability (more accurate the higher the sample size).
+\item The repetition of the experiment must be in identical conditions.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Frequency definition of probability}
+\framesubtitle{Example}
+Given the sample space of tossing a coin $\Omega=\{H,T\}$, if after tossing the coin 100 times we got 54 heads, then the
+probability of $H$ is
+\[
+P(H) = \frac{n_H}{n} = \frac{54}{100} = 0.54.
+\]
+
+Given the sample space of the blood type of a random individual $\Omega\{O,A,B,AB\}$, if after drawing a random sample
+of 1000 persons we got 412 with blood type $A$, then the probability of $A$ is 
+\[
+P(A) \neq \frac{n_A}{n} = \frac{412}{1000} = 0.412.
+\]
+\end{frame}
+
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Axiomatic definition of probability}
+\begin{definition}[Probability --- Kolmogórov]
+Given a sample space $\Omega$ of a random experiment, a \emph{probability} function is a function that maps
+every event $A\subseteq \Omega$ a real number $P(A)$, known as the probability of $A$, that meets the following axioms:
+\begin{enumerate}
+\item The probability of any event is nonnegative, 
+\[
+P(A)\geq 0.
+\]
+\item The probability of the sure event is 1,
+\[
+P(\Omega)=1
+\] 
+\item The probability of the union of two incompatible events ($A\cap B=\emptyset$) is the sum of their probabilities
+\[P(A\cup B) = P(A)+P(B).\]
+\end{enumerate}
+\end{definition}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Properties of the axiomatic probability}
+From the previous axioms is possible to deduce some important properties of a probability function. 
+
+Given a sample space $\Omega$ of a random experiment and the events $A,B\subseteq \Omega$, the following properties are
+meet:
+\begin{enumerate}
+\item <2-> $P(\bar A) = 1-P(A)$.
+\item <3-> $P(\emptyset)= 0$.
+\item <4-> If $A\subseteq B$ then $P(A)\leq P(B)$.
+\item <5-> $P(A) \leq 1$. This means that $P(A)\in [0,1]$.
+\item <6-> $P(A-B)=P(A)-P(A\cap B)$. 
+\item <7-> $P(A\cup B)= P(A) + P(B) - P(A\cap B)$.
+\item <8-> If $A=\{e_1,\ldots,e_n\}$, where $e_i$ $i=1,\ldots,n$ are elemental events, then
+\[
+P(A)=\sum_{i=1}^n P(e_i).
+\]
+\end{enumerate}
+
+\mode<article>{
+\textbf{Proof.}
+\begin{enumerate}
+\item $\bar A = \Omega \Rightarrow P(A\cup \bar A) = P(\Omega) \Rightarrow P(A)+P(\bar A) = 1 \Rightarrow
+P(\bar A)=1-P(A)$.
+\item $\emptyset = \bar \Omega \Rightarrow P(\emptyset) = P(\bar \Omega) = 1-P(\Omega) = 1-1 = 0.$
+\item $B = A\cup (B-A)$. As $A$ and $B-A$ are incompatible, $P(B) = P(A\cup (B-A)) = P(A)+P(B-A) \geq
+P(A).$
+
+If we think in probabilities as areas, is easy to see graphically,
+\begin{center}
+\tikzsetnextfilename{probability/inclusion_probability}
+\input{img/probability/inclusion_probability}
+\end{center}
+
+\item $A\subseteq \Omega \Rightarrow P(A)\leq P(\Omega)=1.$
+\item $A=(A-B)\cup (A\cap B)$. As $A-B$ and $A\cap B$ are incompatible, $P(A)=P(A-B)+P(A\cap B) \Rightarrow 
+P(A-B)=P(A)-P(A\cap B)$.
+
+I we think in probabilities as areas, is easy to see graphically, 
+\begin{center}
+\tikzsetnextfilename{probability/difference_probability}
+\input{img/probability/difference_probability}
+\end{center}
+
+\item $A\cup B= (A-B) \cup (B-A) \cup (A\cap B)$. As $A-B$, $B-A$ and $A\cap B$ are incompatible, $P(A\cup
+B)=P(A-B)+P(B-A)+P(A\cap B) = P(A)-P(A\cap B)+P(B)-P(A\cap B)+P(A\cap B)= P(A)+P(B)-P(A\cup B)$.
+
+I we think again in probabilities as areas, is easy to see graphically cause the area of $A\cap B$ is added to times
+(one for $A$ and other for $B$), so it must be subtracted one time. 
+\begin{center}
+\tikzsetnextfilename{probability/union_probability}
+\input{img/probability/union_probability}
+\end{center}
+\item $A=\{e_1,\cdots,e_n\} = \{e_1\}\cup \cdots \cup \{e_n\} \Rightarrow P(A)=P(\{e_1\}\cup \cdots \cup \{e_n\}) =
+P(\{e_1\})+ \cdots P(\{e_n\}).$
+\end{enumerate}
+}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probability interpretation}
+As set by the previous axioms, the probability of an event $A$, is a real number $P(A)$ that always ranges from 0 to 1. 
+
+In a certain way, this number expresses the plausibility of the event, that is, the chances that the event $A$ occurs in the experiment.
+Therefore, it also gives a measure of the uncertainty about the event.
+\begin{itemize}
+\item The maximum uncertainty correspond to probability $P(A)=0.5$ ($A$ and $\bar A$ have the same chances of
+happening.)
+\item The minimum uncertainty correspond to probability $P(A)=1$ ($A$ will happen with absolute certainty) and $P(A)=0$
+($A$ won't happen with absolute certainty)
+\end{itemize} 
+
+When $P(A)$ is closer to 0 than to 1, the chances of not happening $A$ are grater than the chances of happening $A$.
+On the contrary, when $P(A)$ is closer to 1 than to 0, the chances of happening $A$ are grater than the chances of not
+happening $A$.
+\end{frame}
+
+
+\subsection{Conditional probability}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Conditional experiments}
+Occasionally, we can get some information about the experiment before its realization. 
+Usually that information is given as an event $B$ of the same sample space that we know that is true before to
+conduct the experiment.
+
+In such a case, we will say that $B$ is a \emph{conditioning} event and the probability of another event $A$ known as a
+\highlight{conditional probability} and expressed 
+\[
+P(A|B).
+\]
+
+This must be read as \emph{probability of event $A$ conditional on event $B$ occurring}.
+\end{frame}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Conditional experiments}
+\framesubtitle{Example}
+Usually, conditioning events change the sample space and therefore the probabilities of events.
+ 
+Assume that we have a sample of 100 women and 100 men with the following frequencies
+\[
+\begin{array}{|c|c|c|}
+\cline{2-3}
+ \multicolumn{1}{c|}{} & \mbox{Non-smokers} & \mbox{Smokers} \\ \hline
+ \only<2->{\rowcolor{color1!30}} \mbox{Females} & 80 & 20 \\ \hline
+ \mbox{Males} & 60 & 40 \\ \hline
+\end{array}
+\]
+Then, using the frequency definition of probability, the probability of being smoker from the whole sample is
+\[
+P(\mbox{Smoker})= 60/200=0.3.
+\]
+
+\pause
+
+However, if we know that the person is a woman, then the sample is reduced to the first row, and the probability of
+being smoker is 
+\[
+P(\mbox{Smoker}|\mbox{Female})=20/100=0.2.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Conditional probability}
+\begin{definition}[Conditional probability]
+Given a sample space $\Omega$ of a random experiment, and two events $A,B\subseteq \Omega$, the probability of $A$
+conditional on $B$ occurring is
+\[
+P(A|B) = \frac{P(A\cap B)}{P(B)},
+\]
+as long as, $P(B)\neq 0$.
+\end{definition}
+
+This definition allows to calculate conditional probabilities without changing the original sample space. 
+
+\textbf{Example}. In the previous example
+\[
+P(\mbox{Smoker}|\mbox{Female})= \frac{P(\mbox{Smoker}\cap \mbox{Female})}{P(\mbox{Female})} =
+\frac{20/200}{100/200}=\frac{80}{100}=0.8.
+\]
+
+
+De esta definición se deduce que la probabilidad de la intersección es
+\[ P(A\cap B) = P(A)P(B/A) = P(B)P(A/B).\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probability of the intersection event}
+From the definition of conditional probability it's possible to derive the formula for the probability of the
+intersection of two events. 
+\[
+P(A\cap B) = P(A)P(B/A) = P(B)P(A/B).
+\]
+
+\textbf{Example}. In a population there are a 30\% of smokers and we know that there are a 40\% of smokers with breast
+cancer. 
+The probability of a random person being smoker and having breast cancer is 
+\[
+P(\mbox{Smoker}\cap \mbox{Cancer})= P(\mbox{Smoker})P(\mbox{Cancer}|\mbox{Smoker}) =
+0.3\times 0.4 = 0.12.
+\]
+\end{frame}
+
+
+\subsection{Dependence of events}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Independence of events}
+Sometimes, the probability the conditioning event doesn't change the original probability of the main event. 
+\begin{definition}[Independent events]
+Given a sample space $\Omega$ of a random experiment, two events  $A,B\subseteq \Omega$ are \emph{independents} if the
+probability of $A$ doesn't change when conditioning on $B$, and vice-versa, that is,
+\[
+P(A|B) = P(A) \quad \mbox{and} \quad P(B|A)=P(B),
+\]
+if $P(A)\neq 0$ and $P(B)\neq 0$.
+\end{definition}
+
+This means that the occurrence of one event doesn't give relevant information to change the uncertainty of the other.
+
+When two events are independent, the probability of the intersection of them is the product of their probabilities,
+\[
+P(A\cap B) = P(A)P(B).
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Independence of events}
+\framesubtitle{Example of tossing coins}
+The sample space of tossing twice a coin is $\Omega=\{(H,H),(H,T),(T,H),(T,T)\}$ and all the elements are equiprobable
+if the coin is fair. 
+Thus, applying the classical definition of probability we have 
+\[
+P((H,H)) = \frac{1}{4} = 0.25.
+\]
+
+If we name $H_1=\{(H,H),(H,T)\}$, that is, having heads in the first toss, and $H_2=\{(H,H),(T,H)\}$, that is, having
+heads in the second toss, we can get the same result assuming that these events are independent,
+\[
+P(H,H)= P(H_1\cap H_2) = P(H_1)P(H_2) = \frac{2}{4}\frac{2}{4}=\frac{1}{4}=0.25.
+\] 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probabilistic space}
+\begin{definition}[Probabilistic space]
+A \emph{probabilistic space} of a random experiment is a triplet $(\Omega,\mathcal{F},P)$ where
+\begin{itemize}
+\item $\Omega$ is the sample space of the experiment.
+\item $\mathcal{F}$ is a set of events of the experiment.
+\item $P$ is a probability function. 
+\end{itemize} 
+\end{definition}
+
+If we know the probabilities of all the elements of $\Omega$, then we can calculate the probability of every event in
+$\mathcal{F}$ and we can construct easily the probability space. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probabilistic space construction}
+In order to determine the probability of every elemental event we can use a tree diagram, using the following rules:
+\begin{enumerate}
+\item For every node of the tree label the incoming edge with the probability of the variable in that level having the
+value of the node, conditioned by events corresponding to its ancestor nodes in the tree.
+\item The probability of every elemental event in the leaves is the product of the probabilities on edges
+that go form the root tho the leave.
+\end{enumerate}
+\begin{center}
+\tikzsetnextfilename{probability/probability_space}
+\resizebox{0.8\textwidth}{!}{\input{img/probability/probability_space}}
+\end{center}
+\end{frame}
+
+
+% % ---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Árboles de probabilidad con variables dependientes}
+% \framesubtitle{Ejemplo de dependencia del cáncer con respecto al tabaco}
+% Sea una población en la que el 30\% de las personas fuman, y que la incidencia del cáncer de pulmón en fumadores es del 40\% mientras que en
+% los no fumadores es del 10\%.
+% 
+% El espacio probabilístico de este experimento es:
+% 
+% \begin{center}
+% \psset{treesep=0.6cm, levelsep=2.5cm, tpos=0.6}
+% \renewcommand{\psedge}[2]{\ncdiag[armA=0.8cm,angleA=180,angleB=0,armB=0cm]{#2}{#1}} 
+% \pstree[treemode=R, nodesep=1pt]{\Tp*}{
+% 	\pstree[linestyle=none]{\TR[edge=none]{Tabaco}}{
+% 		\pstree{\TR{Enfermedad}}{
+% 			\pstree{\TR{$E$}}{\TR{$P$}}
+% 		}
+% 	}
+% 	\pstree{\TR{Fuma}\taput{\scriptsize $0.3$}}{
+% 		\pstree[linestyle=none]{\TR{Cáncer}\taput{\scriptsize $0.4$}}{
+% 			\pstree{\TR{(Fuma,Cáncer)}}{\TR{$0.3\cdot 0.4 = 0.12$}}
+% 		}
+% 		\pstree[linestyle=none]{\TR{$\overline{\mbox{Cáncer}}$}\taput{\scriptsize $0.6$}}{
+% 			\pstree{\TR{(Fuma,$\overline{\mbox{Cáncer}}$)}}{\TR{$0.3\cdot 0.6 = 0.18$}}
+% 		}
+% 	}
+% 	\pstree{\TR{$\overline{\mbox{Fuma}}$}\taput{\scriptsize $0.7$}}{
+% 		\pstree[linestyle=none]{\TR{Cáncer}\taput{\scriptsize $0.1$}}{
+% 			\pstree{\TR{($\overline{\mbox{Fuma}}$,Cáncer)}}{\TR{$0.7\cdot 0.1 = 0.07$}}
+% 		}
+% 		\pstree[linestyle=none]{\TR{$\overline{\mbox{Cáncer}}$}\taput{\scriptsize $0.9$}}{
+% 			\pstree{\TR{($\overline{\mbox{Fuma}}$,$\overline{\mbox{Cáncer}}$)}}{\TR{$0.7\cdot 0.9 = 0.63$}}
+% 		}
+% 	}
+% 	\pstree[linestyle=none]{\Tp[edge=none]}{\Tp}
+% }
+% \end{center}
+% 
+% \note{
+% Sea una población en la que el 30\% de las personas fuman, y que la incidencia del cáncer de pulmón en fumadores es del 40\% mientras que en
+% los no fumadores es del 10\%.
+% 
+% El árbol de probabilidad que expresa este experimento es el siguiente:
+% 
+% Obsérvese que el fumar o no depende del sexo, así que las ramas que salen del suceso mujer no tienen las mismas probabilidades que las que
+% salen del suceso hombre. }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Árboles de probabilidad con variables independientes}
+% \framesubtitle{Ejemplo de independencia en el lanzamiento de dos monedas}
+% 
+% El árbol de probabilidad asociado al experimento aleatorio que consiste en el lanzamiento de dos monedas es:
+% 
+% \begin{center}
+% \psset{treesep=0.6cm, levelsep=2.5cm, tpos=0.7}
+% \renewcommand{\psedge}[2]{\ncdiag[armA=0.8cm,angleA=180,angleB=0,armB=0cm]{#2}{#1}} 
+% \pstree[treemode=R, nodesep=1pt]{\Tp*}{
+% 	\pstree[linestyle=none]{\TR[edge=none]{1ª Moneda}}{\pstree{\TR{2ª Moneda}}{\pstree{\TR{$E$}}{\TR{$P$}}}}
+% 	\pstree{\TR{C}\taput{\scriptsize $0.5$}}{
+% 		\pstree[linestyle=none]{\TR{C}\taput{\scriptsize $0.5$}}{\pstree{\TR{(C,C)}}{\TR{$0.5\cdot 0.5 = 0.25$}}}
+% 		\pstree[linestyle=none]{\TR{X}\taput{\scriptsize $0.5$}}{\pstree{\TR{(C,X)}}{\TR{$0.5\cdot 0.5 = 0.25$}}}
+% 	}
+% 	\pstree{\TR{X}\taput{\scriptsize $0.5$}}{
+% 		\pstree[linestyle=none]{\TR{C}\taput{\scriptsize $0.5$}}{\pstree{\TR{(X,C)}}{\TR{$0.5\cdot 0.5 = 0.25$}}}
+% 		\pstree[linestyle=none]{\TR{X}\taput{\scriptsize $0.5$}}{\pstree{\TR{(X,X)}}{\TR{$0.5\cdot 0.5 = 0.25$}}}
+% 	}
+% 	\pstree[linestyle=none]{\Tp[edge=none]}{\Tp}
+% }
+% \end{center}
+% 
+% \note{
+% El árbol de probabilidad asociado al experimento aleatorio que consiste en el lanzamiento de dos monedas es:
+% 
+% Obsérvese ahora que el resultado de la segunda moneda no depende del resultado de la primera, de manera que las ramas que salen del suceso
+% cara en la primera moneda tienen las mismas probabilidades que las que salen del suceso cruz.
+% }
+% \end{frame}
+% 
+% 
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Árboles de probabilidad con variables independientes}
+% \framesubtitle{Ejemplo de independencia en la elección de una muestra aleatoria de tamaño 3}
+% Dada una población en la que hay un 40\% de hombres y un 60\% de mujeres, el experimento aleatorio que consiste en tomar una muestra
+% aleatoria de tres personas tiene el siguiente árbol de probabilidad:
+% 
+% \begin{center}
+% \psset{treesep=0.4cm, levelsep=2cm, tpos=0.7}
+% \renewcommand{\psedge}[2]{\ncdiag[armA=0.8cm,angleA=180,angleB=0,armB=0cm]{#2}{#1}} 
+% \pstree[treemode=R, nodesep=1pt]{\Tp*}{
+% 	\pstree[linestyle=none]{\TR[edge=none]{1ª Persona}}{
+% 		\pstree{\TR{2ª Persona}}{
+% 			\pstree[thislevelsep=1cm]{\TR{3ª Persona}}{
+% 				\pstree[thislevelsep=2.5cm]{\TR{$E$}}{\TR{$P$}}
+% 			}
+% 		}
+% 	}
+% 	\pstree{\TR{H}\taput{\scriptsize $0.4$}}{
+% 		\pstree{\TR{H}\taput{\scriptsize $0.4$}}{
+% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{H}\taput{\scriptsize $0.4$}}{
+% 				\pstree[thislevelsep=2.5cm]{\TR{(H,H,H)}}{\TR{$0.4\cdot 0.4\cdot 0.4 = 0.064$}}
+% 			}
+% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{M}\taput{\scriptsize $0.6$}}{
+% 				\pstree[thislevelsep=2.5cm]{\TR{(H,H,M)}}{\TR{$0.4\cdot 0.4\cdot 0.6 = 0.096$}}
+% 			}
+% 		}
+% 		\pstree{\TR{M}\taput{\scriptsize $0.6$}}{
+% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{H}\taput{\scriptsize $0.4$}}{
+% 				\pstree[thislevelsep=2.5cm]{\TR{(H,M,H)}}{\TR{$0.4\cdot 0.6\cdot 0.4 = 0.096$}}
+% 			}
+% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{M}\taput{\scriptsize $0.6$}}{
+% 				\pstree[thislevelsep=2.5cm]{\TR{(H,M,M)}}{\TR{$0.4\cdot 0.6\cdot 0.6 = 0.144$}}
+% 			}
+% 		}	
+% 	}
+% 	\pstree{\TR{M}\taput{\scriptsize $0.6$}}{
+% 		\pstree{\TR{H}\taput{\scriptsize $0.4$}}{
+% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{H}\taput{\scriptsize $0.4$}}{
+% 				\pstree[thislevelsep=2.5cm]{\TR{(M,H,H)}}{\TR{$0.6\cdot 0.4\cdot 0.4 = 0.096$}}
+% 			}
+% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{M}\taput{\scriptsize $0.6$}}{
+% 				\pstree[thislevelsep=2.5cm]{\TR{(M,H,M)}}{\TR{$0.6\cdot 0.4\cdot 0.6 = 0.144$}}
+% 			}
+% 		}
+% 		\pstree{\TR{M}\taput{\scriptsize $0.6$}}{
+% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{H}\taput{\scriptsize $0.4$}}{
+% 				\pstree[thislevelsep=2.5cm]{\TR{(M,M,H)}}{\TR{$0.6\cdot 0.6\cdot 0.4 = 0.144$}}
+% 			}
+% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{M}\taput{\scriptsize $0.6$}}{
+% 				\pstree[thislevelsep=2.5cm]{\TR{(M,M,M)}}{\TR{$0.6\cdot 0.6\cdot 0.6 = 0.216$}}
+% 			}
+% 		}	
+% 	}
+% 	\pstree[linestyle=none]{\Tp[edge=none]}{\Tp}
+% }
+% \end{center}
+% 
+% \note{
+% Otro ejemplo de árbol con independencia sería la obtención de una muestra aleatoria con reemplazamiento. 
+% Dada una población en la que hay un 40\% de hombres y un 60\% de mujeres, el experimento aleatorio que consiste en tomar una muestra
+% aleatoria con reemplazamiento de tres personas tiene el siguiente árbol de probabilidad:
+% 
+% Obsérvese de nuevo cómo todas las ramas del suceso hombre tienen las mismas probabilidades y lo mismo ocurre con las ramas del suceso mujer. 
+% }
+% \end{frame}
+% 
+% 
+% \subsection{Teorema de la probabilidad total}
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Sistema completo de sucesos}
+% \begin{definition}[Sistema completo de sucesos]
+% Una colección de sucesos $A_1,A_2,\ldots,A_n$ de un mismo espacio de sucesos es un \emph{sistema completo} si cumple las siguientes condiciones:
+% \begin{enumerate}
+% \item La unión de todos es el espacio muestral: $A_1\cup \cdots\cup A_n =E$.
+% \item Son incompatibles dos a dos: $A_i\cap A_j = \emptyset$ $\forall i\neq j$.
+% \end{enumerate}
+% \end{definition}
+% \begin{center}
+% \psset{unit=0.8}
+% \begin{pspicture}(0,0)(5,3.5)
+% \psset{fillstyle=solid}
+% \pscustom[fillcolor=white]{\psframe(0,0)(5,3)}
+% \psline(1,0)(1,3)
+% \psline(2,0)(2,3)
+% \psline(4,0)(4,3)
+% \rput(0.5,1.5){$A_1$}
+% \rput(1.5,1.5){$A_2$}
+% \rput(3,1.5){$\cdots$}
+% \rput(4.5,1.5){$A_n$}
+% \rput[b](0.2,3.2){$E$}
+% \end{pspicture}
+% \end{center}
+% 
+% En realidad un sistema completo de sucesos es una partición del espacio muestral de acuerdo a algún atributo, como por ejemplo el sexo o el
+% grupo sanguíneo.
+% 
+% \note{
+% En algunos experimentos es posible descomponer el espacio muestral en partes que forman un sistema completo de sucesos. 
+% 
+% \begin{definition}[Sistema completo de sucesos]
+% Una colección de sucesos $A_1,A_2,\ldots,A_n$ de un mismo espacio de sucesos es un \emph{sistema completo} si cumple las siguientes condiciones:
+% \begin{enumerate}
+% \item La unión de todos es el espacio muestral: $A_1\cup \cdots\cup A_n =E$.
+% \item Son incompatibles dos a dos: $A_i\cap A_j = \emptyset$ $\forall i\neq j$.
+% \end{enumerate}
+% \end{definition}
+% 
+% En realidad un sistema completo de sucesos es una partición del espacio muestral de acuerdo a algún atributo, como por ejemplo el sexo o el
+% grupo sanguíneo.
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Teorema de la probabilidad total}
+% Conocer las probabilidades de un determinado suceso en cada una de las partes de un sistema completo puede ser útil para calcular su
+% probabilidad.
+% \begin{teorema}[Probabilidad total]
+% Dado un sistema completo de sucesos $A_1,\ldots,A_n$ y un suceso $B$ de un mismo espacio de sucesos, se cumple
+% \[
+% P(B) = \sum_{i=1}^n P(A_i)P(B/A_i).
+% \]
+% \end{teorema}
+% 
+% \begin{center}
+% \psset{unit=1}
+% \begin{pspicture}(0,0)(5,3.5)
+% \psset{fillstyle=solid}
+% \pscustom[fillcolor=white]{\psframe(0,0)(5,3)}
+% \pscustom[fillcolor=coral]{\psellipse(2.5,1.5)(2,1)}
+% \psline(1,0)(1,3)
+% \psline(2,0)(2,3)
+% \psline(4,0)(4,3)
+% \rput(0.5,0.2){$A_1$}
+% \rput(1.5,0.2){$A_2$}
+% \rput(3,0.2){$\cdots$}
+% \rput(4.5,0.2){$A_n$}
+% \rput(3,1.5){$B$}
+% \rput[b](0.2,3.2){$E$}
+% \end{pspicture}
+% \end{center}
+% 
+% \note{
+% Conocer las probabilidades de un determinado suceso en cada una de las partes de un sistema completo puede ser útil para calcular su
+% probabilidad.
+% \begin{teorema}[Probabilidad total]
+% Dado un sistema completo de sucesos $A_1,\ldots,A_n$ y un suceso $B$ de un mismo espacio de sucesos, se cumple
+% \[
+% P(B) = \sum_{i=1}^n P(A_i)P(B/A_i).
+% \]
+% \end{teorema}
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Teorema de la probabilidad total}
+% \framesubtitle{Demostración}
+% La demostración del teorema es sencilla, ya que al ser $A_1,\ldots,A_n$ un sistema completo tenemos
+% \[
+% B = B\cap E = B\cap (A_1\cup \cdots \cup A_n) = (B\cap A_1)\cup \cdots \cup (B\cap A_n)
+% \]
+% y como estos sucesos son incompatibles entre sí, se tiene
+% \begin{align*}
+% P(B) &= P((B\cap A_1)\cup \cdots \cup (B\cap A_n)) = P(B\cap A_1)+\cdots + P(B\cap A_n) =\\
+% &= P(A_1)P(B/A_1)+\cdots + P(A_n)P(B/A_n) = \sum_{i=1}^n P(A_i)P(B/A_i).
+% \end{align*}
+% 
+% \note{
+% La demostración del teorema es sencilla, ya que al ser $A_1,\ldots,A_n$ un sistema completo tenemos
+% \[
+% B = B\cap E = B\cap (A_1\cup \cdots \cup A_n) = (B\cap A_1)\cup \cdots \cup (B\cap A_n)
+% \]
+% y como estos sucesos son incompatibles entre sí, se tiene
+% \begin{align*}
+% P(B) &= P((B\cap A_1)\cup \cdots \cup (B\cap A_n)) = P(B\cap A_1)+\cdots + P(B\cap A_n) =\\
+% &= P(A_1)P(B/A_1)+\cdots + P(A_n)P(B/A_n) = \sum_{i=1}^n P(A_i)P(B/A_i).
+% \end{align*}
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Teorema de la probabilidad total}
+% \framesubtitle{Un ejemplo de diagnóstico}
+% Un determinado síntoma $B$ puede ser originado por una enfermedad $A$ pero también lo pueden presentar las personas sin
+% la enfermedad. Sabemos que en la población la tasa de personas con la enfermedad A es $0.2$. Además, de las personas
+% que presentan la enfermedad, el $90\%$ presentan el síntoma, mientras que de las personas sin la enfermedad sólo lo presentan el $40\%$.
+% 
+% Si se toma una persona al azar de la población, \emph{¿qué probabilidad hay de que tenga el síntoma?}
+% 
+% Para responder a la pregunta hay que fijarse en que el conjunto de sucesos $\{A,\overline{A}\}$ es un sistema completo, ya que $A\cup \overline A = E$ y $A\cap \overline A = \emptyset$, de modo que se puede aplicar el teorema de la probabilidad total:
+% \[
+% P(B) = P(A)P(B/A)+P(\overline A)P(B/\overline A) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
+% \]
+% Es decir, la mitad de la población tendrá el síntoma. 
+% 
+% \begin{center}
+% \emph{¡En el fondo se trata de una media ponderada de probabilidades!} 
+% \end{center}
+% 
+% \note{
+% Veamos un ejemplo de aplicación del teorema de la probabilidad total.
+% 
+% Supongamos que un determinado síntoma $B$ puede ser originado por una enfermedad $A$ pero también lo pueden presentar las personas sin
+% la enfermedad. Sabemos que en la población la tasa de personas con la enfermedad A es $0.2$. Además, de las personas
+% que presentan la enfermedad, el $90\%$ presentan el síntoma, mientras que de las personas sin la enfermedad sólo lo presentan el $40\%$.
+% 
+% Si se toma una persona al azar de la población, \emph{¿qué probabilidad hay de que tenga el síntoma?}
+% 
+% Para responder a la pregunta hay que fijarse en que el conjunto de sucesos $\{A,\overline{A}\}$ es un sistema completo, ya que $A\cup \overline A = E$ y $A\cap \overline A = \emptyset$, de modo que se puede aplicar el teorema de la probabilidad total:
+% \[
+% P(B) = P(A)P(B/A)+P(\overline A)P(B/\overline A) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
+% \]
+% Es decir, la mitad de la población tendrá el síntoma. 
+% 
+% \begin{center}
+% \emph{¡En el fondo se trata de una media ponderada de probabilidades!} 
+% \end{center}
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Teorema de la probabilidad total}
+% \framesubtitle{Cálculo con el árbol de probabilidad}
+% La respuesta a la pregunta anterior es evidente a la luz del espacio probabilístico del experimento. 
+% \begin{center}
+% \psset{treesep=0.6cm, levelsep=2.5cm, tpos=0.6}
+% \renewcommand{\psedge}[2]{\ncdiag[armA=0.8cm,angleA=180,angleB=0,armB=0cm]{#2}{#1}} 
+% \pstree[treemode=R, nodesep=1pt]{\Tp*}{
+% 	\pstree[linestyle=none]{\TR[edge=none]{Enfermedad}}{
+% 		\pstree{\TR{Síntoma}}{
+% 			\pstree{\TR{$E$}}{\TR{$P$}}
+% 		}
+% 	}
+% 	\pstree{\TR{$A$}\taput{\scriptsize $0.2$}}{
+% 		\pstree[linestyle=none]{\TR{$B$}\taput{\scriptsize $0.9$}}{
+% 			\pstree{\TR{\alert{$(A,B)$}}}{\TR{\alert{$0.2\cdot 0.9 = 0.18$}}}
+% 		}
+% 		\pstree[linestyle=none]{\TR{$\overline B$}\taput{\scriptsize $0.1$}}{
+% 			\pstree{\TR{$(A,\overline B)$}}{\TR{$0.2\cdot 0.1 = 0.02$}}
+% 		}
+% 	}
+% 	\pstree{\TR{$\overline A$}\taput{\scriptsize $0.8$}}{
+% 		\pstree[linestyle=none]{\TR{$B$}\taput{\scriptsize $0.4$}}{
+% 			\pstree{\TR{\alert{$(\overline A,B)$}}}{\TR{\alert{$0.8\cdot 0.4 = 0.32$}}}
+% 		}
+% 		\pstree[linestyle=none]{\TR{$\overline B$}\taput{\scriptsize $0.6$}}{
+% 			\pstree{\TR{$(\overline A,\overline B)$}}{\TR{$0.8\cdot 0.6 = 0.48$}}
+% 		}
+% 	}
+% 	\pstree[linestyle=none]{\Tp[edge=none]}{\Tp}
+% }
+% \end{center}
+% \begin{align*}
+% P(B) &= P(A,B) + P(\overline A,B) =\\
+% &= P(A)P(B/A)+P(\overline A)P(B/\overline A) = 0.2\cdot 0.9+ 0.8\cdot 0.4 = 0.18 + 0.32 = 0.5. 
+% \end{align*}
+% 
+% \note{
+% El teorema de la probabilidad total también puede deducirse fácilmente a partir del diagrama de árbol de este experimento. 
+% }
+% \end{frame}
+% 
+% 
+% \subsection{Teorema de Bayes}
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Teorema de Bayes}
+% Los sucesos de un sistema completo de sucesos $A_1,\cdots,A_n$ también pueden verse como las distintas hipótesis ante
+% un determinado hecho $B$.
+% 
+% En estas condiciones resulta útil poder calcular las probabilidades a posteriori $P(A_i/B)$ de cada una de las hipótesis.
+% 
+% \begin{teorema}[Bayes]
+% Dado un sistema completo de sucesos $A_1,\ldots,A_n$ y un suceso $B$ de un mismo espacio de sucesos, se cumple
+% \[
+% P(A_i/B) = \frac{P(A_i\cap B)}{P(B)} = \frac{P(A_i)P(B/A_i)}{\sum_{i=1}^n P(A_i)P(B/A_i)}.
+% \]
+% \end{teorema}
+% 
+% \note{
+% Los sucesos de un sistema completo de sucesos $A_1,\cdots,A_n$ también pueden verse como las distintas hipótesis ante
+% un determinado hecho $B$.
+% 
+% En estas condiciones puede ser útil calcular las probabilidades a posteriori $P(A_i/B)$ de cada una de las hipótesis, es decir, una vez
+% se haya cumplido el suceso $B$. Para ello se utiliza el teorema de Bayes. 
+% 
+% \begin{teorema}[Bayes]
+% Dado un sistema completo de sucesos $A_1,\ldots,A_n$ y un suceso $B$ de un mismo espacio de sucesos, se cumple
+% \[
+% P(A_i/B) = \frac{P(A_i\cap B)}{P(B)} = \frac{P(A_i)P(B/A_i)}{\sum_{i=1}^n P(A_i)P(B/A_i)}.
+% \]
+% \end{teorema}
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Teorema de Bayes}
+% \framesubtitle{Un ejemplo de diagnóstico}
+% En el ejemplo anterior se ha visto cómo calcular la probabilidad de que una persona elegida al azar presente el síntoma, pero desde un punto
+% de vista de diagnóstico clínico, una pregunta más interesante es:
+%   
+% Si llega a la consulta una persona que presenta el síntoma, \emph{¿qué se debe diagnosticar?}
+% 
+% En este caso, las hipótesis ante las que hay que decidir son $A$ y $\overline A$ y sus probabilidades ``a priori'' son $P(A)=0.2$ y
+% $P(\overline A)=0.8$.
+% 
+% Esto quiere decir que si no hubiese ninguna información sobre la persona, el diagnóstico sería que no tiene la enfermedad pues es mucho más
+% probable que que la tenga.
+% 
+% Sin embargo, si al reconocer a la persona se observa que presenta el síntoma, dicha información condiciona a las hipótesis, y para decidir
+% entre ellas es necesario calcular sus probabilidades ``a posteriori'', es decir 
+% \[ P(A/B) \mbox{ y } P(\overline A/B)\]
+% 
+% \note{
+% En el ejemplo anterior se ha visto cómo calcular la probabilidad de que una persona elegida al azar presente el síntoma, pero desde un punto
+% de vista de diagnóstico clínico, una pregunta más interesante es:
+%   
+% Si llega a la consulta una persona que presenta el síntoma, \emph{¿qué se debe diagnosticar?}
+% 
+% En este caso, las hipótesis ante las que hay que decidir son $A$ y $\overline A$ y sus probabilidades ``a priori'' son $P(A)=0.2$ y
+% $P(\overline A)=0.8$.
+% 
+% Esto quiere decir que si no hubiese ninguna información sobre la persona, el diagnóstico sería que no tiene la enfermedad pues es mucho más
+% probable que que la tenga.
+% 
+% Sin embargo, si al reconocer a la persona se observa que presenta el síntoma, dicha información condiciona a las hipótesis, y para decidir
+% entre ellas es necesario calcular sus probabilidades ``a posteriori'', es decir 
+% \[ P(A/B) \mbox{ y } P(\overline A/B)\]
+% }
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Teorema de Bayes}
+% \framesubtitle{Un ejemplo de diagnóstico}
+% Para calcular las probabilidades ``a posteriori'' se puede utilizar el teorema de Bayes:
+% \begin{align*}
+% P(A/B) &= \frac{P(A)P(B/A)}{P(A)P(B/A)+P(\overline A)P(B/\overline A)} = \frac{0.2\cdot 0.9}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.18}{0.5}=0.36,\\
+% P(\overline A/B) &= \frac{P(\overline A)P(B/\overline A)}{P(A)P(B/A)+P(\overline A)P(B/\overline A)} = \frac{0.8\cdot 0.4}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.32}{0.5}=0.64.
+% \end{align*}
+% Según esto, a pesar de que la probabilidad de estar enfermo ha aumentado, seguiríamos diagnosticando que no lo está, puesto que es más
+% probable.
+% 
+% En este caso se dice que el síntoma $B$ \emph{no es determinante} a la hora de diagnosticar la enfermedad, pues la información que aporta no
+% sirve para cambiar el diagnóstico en ningún caso.
+% 
+% \note{
+% Para calcular las probabilidades ``a posteriori'' se puede utilizar el teorema de Bayes:
+% \begin{align*}
+% P(A/B) &= \frac{P(A)P(B/A)}{P(A)P(B/A)+P(\overline A)P(B/\overline A)} = \frac{0.2\cdot 0.9}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.18}{0.5}=0.36,\\
+% P(\overline A/B) &= \frac{P(\overline A)P(B/\overline A)}{P(A)P(B/A)+P(\overline A)P(B/\overline A)} = \frac{0.8\cdot 0.4}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.32}{0.5}=0.64.
+% \end{align*}
+% Según esto, a pesar de que la probabilidad de estar enfermo ha aumentado, seguiríamos diagnosticando que no lo está, puesto que es más
+% probable.
+% 
+% En este caso se dice que el síntoma $B$ \emph{no es determinante} a la hora de diagnosticar la enfermedad, pues la información que aporta no
+% sirve para cambiar el diagnóstico en ningún caso.
+% }
+% \end{frame}
+% 
+% \subsection{Tests diagnósticos}
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Tests diagnósticos}
+% En epidemiología es común el uso de tests para diagnosticar enfermedades.
+% 
+% Generalmente estos tests no son totalmente fiables, sino que hay cierta probabilidad de acierto o fallo en el diagnóstico, que suele
+% representarse en la siguiente tabla:
+% \begin{center}
+% \begin{tabular}{|m{3cm}<{\centering}|m{3.5cm}<{\centering}|m{3.5cm}<{\centering}|}
+% \cline{2-3}
+% \multicolumn{1}{c|}{} & Presencia de la\newline enfermedad ($E$) & Ausencia de la\newline enfermedad ($\overline E$)\\ \hline
+% Test positivo\newline ($+$) & \textcolor{green}{Diagnóstico acertado\newline  $P(+/E)$}\qquad
+% \highlight{Sensibilidad}& \textcolor{red}{Diagnóstico erróneo\newline $P(+/\overline E)$}\\ \hline Test negativo\newline ($-$) &
+% \textcolor{red}{Diagnóstico erróneo\newline $P(-/E)$} & \textcolor{green}{Diagnóstico acertado\newline $P(-/\overline
+% E)$}\qquad \highlight{Especificidad}\\ \hline
+% \end{tabular}
+% \end{center}
+% 
+% \note{
+% En epidemiología es común el uso de tests para diagnosticar enfermedades.
+% 
+% Generalmente estos tests no son totalmente fiables, sino que hay cierta probabilidad de acierto o fallo en el diagnóstico, que suele
+% representarse en la siguiente tabla:
+% \begin{center}
+% \begin{tabular}{|m{3cm}<{\centering}|m{3.5cm}<{\centering}|m{3.5cm}<{\centering}|}
+% \cline{2-3}
+% \multicolumn{1}{c|}{} & Presencia de la\newline enfermedad ($E$) & Ausencia de la\newline enfermedad ($\overline E$)\\ \hline
+% Test positivo\newline ($+$) & \textcolor{green}{Diagnóstico acertado\newline  $P(+/E)$}\newline\highlight{Sensibilidad}& \textcolor{red}{\noindent Diagnóstico erróneo\newline $P(+/\overline E)$}\\ \hline
+% Test negativo\newline ($-$) & \textcolor{red}{Diagnóstico erróneo\newline $P(-/E)$} & \textcolor{green}{Diagnóstico acertado\newline $P(-/\overline E)$}\newline\highlight{Especificidad}\\ \hline
+% \end{tabular}
+% \end{center}
+% }
+% \end{frame}
+% 
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Tests diagnósticos}
+% La valided de una prueba diagnóstica depende de estas dos probabilidades:
+% \begin{description}
+% \item[\textbf{Sensibilidad}] Es el porcentaje de positivos entre las personas enfermas: $P(+/E)$.
+% \item[\textbf{Especificidad}] Es el porcentaje de negativos entre las personas sanas: $P(-/\bar E)$.
+% \end{description}
+% 
+% Pero lo realmente interesante de un un test diagnóstico es su capacidad predictiva para diagnosticar, lo cual se mide mediante las
+% siguientes probabilidades a posteriori:
+% \begin{description}
+% \item[\textbf{Valor predictivo positivo}] Es el porcentaje de enfermos entre los positivos: $P(E/+)$.
+% \item[\textbf{Valor predictivo negativo}] Es el porcentaje de sanos entre los negativos: $P(\bar E/-)$.
+% \end{description}
+% 
+% Sin embargo, estos últmos valores dependen del porcentaje de enfermos en la población $P(E)$, lo que se conoce como, \highlight{\textbf{tasa
+% o prevalencia}} de la enfermedad.
+% 
+% \note{
+% La valided de una prueba diagnóstica depende de estas dos probabilidades:
+% \begin{description}
+% \item[Sensibilidad] Es el porcentaje de positivos entre las personas enfermas: $P(+/E)$.
+% \item[Especificidad] Es el porcentaje de negativos entre las personas sanas: $P(-/\bar E)$.
+% \end{description}
+% 
+% Pero lo realmente interesante de un un test diagnóstico es su capacidad predictiva para diagnosticar, lo cual se mide mediante las
+% siguientes probabilidades a posteriori:
+% \begin{description}
+% \item[Valor predictivo positivo] Es el porcentaje de enfermos entre los positivos: $P(E/+)$.
+% \item[Valor predictivo negativo] Es el porcentaje de sanos entre los negativos: $P(\bar E/-)$.
+% \end{description}
+% 
+% Sin embargo, estos últimos valores dependen del porcentaje de enfermos en la población $P(E)$, lo que se conoce como,
+% \highlight{\textbf{tasa o prevalencia}} de la enfermedad.
+% }
+% \end{frame}
+% 
+% 
+% % ---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Tests diagnósticos}
+% \frametitle{Ejemplo}
+% Un test para diagnosticar la gripe tiene una sensibilidad del $95\%$ y una especificidad del $90\%$. Según esto, las probabilidades de
+% acierto y fallo del test son:
+% \begin{center}
+% \begin{tabular}{|c|c|c|}
+% \cline{2-3}
+% \multicolumn{1}{c|}{} & Gripe & No gripe\\ \hline
+% Test $+$ & \textcolor{green}{$0.95$} & \textcolor{red}{$0.10$}\\ \hline
+% Test $-$ & \textcolor{red}{$0.05$} & \textcolor{green}{$0.90$}\\ \hline
+% \end{tabular}
+% \end{center}
+% 
+% Si la prevalencia de la gripe en la población es del $10\%$ y al aplicar el test a un individuo da positivo, \emph{¿cuál es la probabilidad
+% de que tenga gripe?}
+% 
+% Aplicando el teorema de Bayes, se tiene que el valor predictivo positivo del test vale
+% \begin{align*}
+% P(\mbox{Gripe}/+) &= \frac{P(\mbox{Gripe})P(+/\mbox{Gripe})}{P(\mbox{Gripe})P(+/\mbox{Gripe})+P(\overline{\mbox{Gripe}})P(+/\overline{\mbox{Gripe}})} =\\
+% &= \frac{0.1\cdot 0.95}{0.1\cdot 0.95+0.9\cdot 0.1} = 0.5135.
+% \end{align*}
+% Aunque con esta probabilidad se diagnosticaría la enfermedad en caso de que el test diese positivo, se trata de un valor predictivo positivo
+% muy bajo. 
+% 
+% \note{
+% Veamos un ejemplo. 
+% 
+% Un test para diagnosticar la gripe tiene una sensibilidad del $95\%$ y una especificidad del $90\%$. Según esto, las probabilidades de
+% acierto y fallo del test son:
+% \begin{center}
+% \begin{tabular}{|c|c|c|}
+% \cline{2-3}
+% \multicolumn{1}{c|}{} & Gripe & No gripe\\ \hline
+% Test $+$ & \textcolor{green}{$0.95$} & \textcolor{red}{$0.10$}\\ \hline
+% Test $-$ & \textcolor{red}{$0.05$} & \textcolor{green}{$0.90$}\\ \hline
+% \end{tabular}
+% \end{center}
+% 
+% Si la prevalencia de la gripe en la población es del $10\%$ y al aplicar el test a un individuo da positivo, \emph{¿cuál es la probabilidad
+% de que tenga gripe?}
+% 
+% Aplicando el teorema de Bayes, se tiene
+% \begin{align*}
+% P(\mbox{Gripe}/+) &= \frac{P(\mbox{Gripe})P(+/\mbox{Gripe})}{P(\mbox{Gripe})P(+/\mbox{Gripe})+P(\overline{\mbox{Gripe}})P(+/\overline{\mbox{Gripe}})} =\\
+% &= \frac{0.1\cdot 0.95}{0.1\cdot 0.95+0.9\cdot 0.1} = 0.51.
+% \end{align*}
+% 
+% La probabilidad de no tener la gripe sería $1-0.51=0.49$ ya que es el suceso contrario de tener la gripe, y como la probabilidad de tener la
+% gripe es mayor que la de no tenerla, se diagnosticaría que tiene gripe. Sin embargo, el valor predictivo positivo de este test es muy bajo y
+% nos equivoaríamos en el 49\% de los diagnósticos de enfermedad.
+% }
+% \end{frame}
+% 
+% 
+% % ---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Tests diagnósticos}
+% \frametitle{Ejemplo}
+% \begin{center}
+% \begin{tabular}{|c|c|c|}
+% \cline{2-3}
+% \multicolumn{1}{c|}{} & Gripe & No gripe\\ \hline
+% Test $+$ & \textcolor{green}{$0.95$} & \textcolor{red}{$0.10$}\\ \hline
+% Test $-$ & \textcolor{red}{$0.05$} & \textcolor{green}{$0.90$}\\ \hline
+% \end{tabular}
+% \end{center}
+% 
+% Y si el test da negativo, \emph{¿cuál es la probabilidad de que no tenga gripe?}
+% 
+% De nuevo, aplicando el teorema de Bayes, se tiene que el valor predictivo negativo del test vale
+% \begin{align*}
+% P(\overline{\mbox{Gripe}}/-) &=
+% \frac{P(\overline{\mbox{Gripe}})P(-/\overline{\mbox{Gripe}})}{P(\mbox{Gripe})P(-/\mbox{Gripe})+P(\overline{\mbox{Gripe}})P(-/\overline{\mbox{Gripe}})}
+% =\\ &= \frac{0.9\cdot 0.9}{0.1\cdot 0.05+0.9\cdot 0.9} = 0.9939.
+% \end{align*}
+% De manera que el valor predictivo negativo de este test es mucho más alto que el valor predictivo positivo.
+% 
+% \note{
+% Y si el test da negativo, \emph{¿cuál es la probabilidad de que no tenga gripe?}
+% 
+% De nuevo, aplicando el teorema de Bayes, se tiene que el valor predictivo negativo del test vale
+% \begin{align*}
+% P(\overline{\mbox{Gripe}}/-) &=
+% \frac{P(\overline{\mbox{Gripe}})P(-/\overline{\mbox{Gripe}})}{P(\mbox{Gripe})P(-/\mbox{Gripe})+P(\overline{\mbox{Gripe}})P(-/\overline{\mbox{Gripe}})}
+% =\\ &= \frac{0.9\cdot 0.9}{0.1\cdot 0.05+0.9\cdot 0.9} = 0.9939.
+% \end{align*}
+% De manera que el valor predictivo negativo de este test es mucho más alto que el valor predictivo positivo, y por tanto este test es mucho
+% más útil para descartar la enfermedad que para detectarla. 
+% }
+% \end{frame}
+
+

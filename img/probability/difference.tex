@@ -1,0 +1,17 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\begin{tikzpicture}
+\def\firstcircle{(1.5,1.5) circle (1cm)}
+\def\secondcircle{(2.5,1.5) circle (1cm)}
+
+\begin{scope}[even odd rule]
+\clip \secondcircle (0,0) rectangle (4,3);
+\fill[color1!30] \firstcircle;
+\end{scope}
+
+\draw (0,3) node[anchor=north east] {$\Omega$} rectangle (4,0);
+\draw \firstcircle node[xshift=-0.9cm, yshift=0.9cm] {$A$};
+\draw \secondcircle node[xshift=0.9cm, yshift=0.9cm] {$B$};
+
+\node[anchor=east] at (1.5,1.5) {$A-B$};
+\end{tikzpicture}

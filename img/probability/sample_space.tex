@@ -1,0 +1,49 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\begin{tikzpicture}[
+grow'=right,
+% sloped,
+level 1/.style ={level distance=2cm, sibling distance=3.2cm, parent anchor=east, child anchor=west},
+level 2/.style ={level distance=4cm, sibling distance=0.8cm},
+level 3/.style ={level distance=2cm, sibling distance=0.8cm, dashed}
+]
+
+\node (root) {}
+	child {
+		node {Female}
+    	child {node {0}
+				child {node{(Female,0)}}
+			}
+ 			child {node {A}
+				child {node{(Female,A)}}
+			}
+			child {node {B}
+				child {node{(Female,B)}}
+			}
+			child {node {AB}
+				child {node{(Female,AB)}}
+			}
+    }
+	child {
+		node {Male}
+    	child {node {0}
+				child {node{(Male,0)}}
+			}
+ 			child {node {A}
+				child {node{(Male,A)}}
+			}
+			child {node {B}
+				child {node{(Male,B)}}
+			}
+			child {node {AB}
+				child {node{(Male,AB)}}
+			}
+    };
+
+\begin{scope}[every node/.style={text width=2cm, align=center, anchor=center, font=\bfseries,}]
+\node[above= 0.5cm of root-1-1-1] (labels-level) {$\Omega$};
+\node[at =(labels-level-|root-1-1)] {Blood type};
+\node[at =(labels-level-|root-1)] {Gender};
+\end{scope}
+\end{tikzpicture}
+

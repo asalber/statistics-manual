@@ -4,10 +4,8 @@ library(plyr)
 library(plotly)
 require(Hmisc)
 
-
-
-
 options(tikzDefaultEngine = "pdftex")
+
 # Bar chart
 data <- read.table("data/children_cars_data.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 tab <- table(data$children)

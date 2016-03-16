@@ -1,0 +1,15 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\begin{tikzpicture}
+\def\firstcircle{(1.5,1.5) circle (1cm)}
+\def\secondcircle{(2.5,1.5) circle (1cm)}
+
+\draw (0,3) node[anchor=north east] {$\Omega$} rectangle (4,0);
+\draw[pattern=north west lines, pattern color=color1] \firstcircle node[xshift=-0.9cm, yshift=0.9cm] {$A$};
+\draw[pattern=north east lines, pattern color=color2] \secondcircle node[xshift=0.9cm, yshift=0.9cm] {$B$};
+
+\node at (2,0.3) {$A\cup B$};
+\node at (2,1.5) {$A\cap B$};
+\node[anchor=east] at (1.5,1.5) {$A-B$};
+\node[anchor=west] at (2.5,1.5) {$B-A$};
+\end{tikzpicture}

@@ -1,0 +1,15 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\begin{tikzpicture}
+\def\circle{(1.5,1.5) circle (1cm)}
+\def\rectangle{(4,0) rectangle (0,3)}
+
+\begin{scope}[even odd rule]
+\clip \circle (0,0) rectangle (4,3);
+\fill[color1!30] \rectangle;
+\end{scope}
+
+\draw \rectangle node[anchor=north east] {$\Omega$};
+\draw \circle node {$A$};
+\node at (3,1.5) {$\bar A$};
+\end{tikzpicture}
