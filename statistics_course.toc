@@ -4,6 +4,8 @@
 \beamer@sectionintoc {1}{Probability}{4}{0}{1}
 \beamer@subsectionintoc {1}{1}{Random experiments and events}{7}{0}{1}
 \beamer@subsectionintoc {1}{2}{Set theory}{12}{0}{1}
-\beamer@subsectionintoc {1}{3}{Probability defintion}{20}{0}{1}
+\beamer@subsectionintoc {1}{3}{Probability definition}{20}{0}{1}
 \beamer@subsectionintoc {1}{4}{Conditional probability}{34}{0}{1}
 \beamer@subsectionintoc {1}{5}{Dependence of events}{39}{0}{1}
+\beamer@subsectionintoc {1}{6}{Total probability theorem}{46}{0}{1}
+\beamer@subsectionintoc {1}{7}{Bayes theorem}{55}{0}{1}

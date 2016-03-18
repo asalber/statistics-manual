@@ -64,7 +64,7 @@ The set $\Omega$ of the possible outcomes of a random experiment is known as \em
 
 \textbf{Example} Some examples of sample spaces are:
 \begin{itemize}
-\item For the toss of a coin $\Omega=\{head,tail\}$.
+\item For the toss of a coin $\Omega=\{heads,tails\}$.
 \item For the roll of a dice $\Omega=\{1,2,3,4,5,6\}$.
 \item For the blood type of an individual drawn by chance $\Omega=\{\mbox{A},\mbox{B},\mbox{AB},\mbox{0}\}$.
 \item For the height of an individual drawn by chance $\Omega=\mathbb{R}^+$.
@@ -179,7 +179,7 @@ A\cap B = \{x\,|\, x\in A\textrm{ and }x\in B\}.
 \end{center}
 The intersection event $A\cap B$ happens when $A$ \alert{and} $B$ happen.
 
-Observe that the intersection event is included in the union even $A\cap B \subseteq A\cup B$.
+% Observe that the intersection event is included in the union even $A\cap B \subseteq A\cup B$.
 
 Two events are \highlight{incompatible} if their intersection is empty.
 \end{frame}
@@ -201,16 +201,16 @@ the event of all elements of $\Omega$ except the elements that are members of $A
 \input{img/probability/complement}
 \end{center}
 
-The complementary event $\bar A$ happens when $A$ does \alert{no} happen.
+The complementary event $\bar A$ happens when $A$ does \alert{not} happen.
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Difference of events}
-\begin{definition}[Intersection event]
-Given two events $A,B\in \mathcal{P}(\Omega)$, the \emph{intersection} of $A$ and $B$, denoted by $A\cap B$, is the
-event of all elements that are members of both $A$ and $B$.
+\begin{definition}[Difference event]
+Given two events $A,B\in \mathcal{P}(\Omega)$, the \emph{difference} of $A$ and $B$, denoted by $A-B$, is the
+event of all elements that are members of $A$ but not are members of $B$.
 \[
 A-B = \{x\,|\, x\in A\textrm{ and }x\not\in B\} = A \cap \bar B.
 \]
@@ -259,7 +259,7 @@ laws).
 \end{frame}
 
 
-\subsection{Probability defintion}
+\subsection{Probability definition}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -481,7 +481,7 @@ Assume that we have a sample of 100 women and 100 men with the following frequen
 \]
 Then, using the frequency definition of probability, the probability of being smoker from the whole sample is
 \[
-P(\mbox{Smoker})= 60/200=0.3.
+P(\mbox{Smoker})= \frac{60}{200}=0.3.
 \]
 
 \pause
@@ -489,7 +489,7 @@ P(\mbox{Smoker})= 60/200=0.3.
 However, if we know that the person is a woman, then the sample is reduced to the first row, and the probability of
 being smoker is 
 \[
-P(\mbox{Smoker}|\mbox{Female})=20/100=0.2.
+P(\mbox{Smoker}|\mbox{Female})=\frac{20}{100}=0.2.
 \]
 \end{frame}
 
@@ -513,10 +513,6 @@ This definition allows to calculate conditional probabilities without changing t
 P(\mbox{Smoker}|\mbox{Female})= \frac{P(\mbox{Smoker}\cap \mbox{Female})}{P(\mbox{Female})} =
 \frac{20/200}{100/200}=\frac{80}{100}=0.8.
 \]
-
-
-De esta definición se deduce que la probabilidad de la intersección es
-\[ P(A\cap B) = P(A)P(B/A) = P(B)P(A/B).\]
 \end{frame}
 
 
@@ -611,469 +607,209 @@ that go form the root tho the leave.
 \end{enumerate}
 \begin{center}
 \tikzsetnextfilename{probability/probability_space}
-\resizebox{0.8\textwidth}{!}{\input{img/probability/probability_space}}
+\resizebox{0.9\textwidth}{!}{\input{img/probability/probability_space}}
 \end{center}
 \end{frame}
 
 
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Árboles de probabilidad con variables dependientes}
-% \framesubtitle{Ejemplo de dependencia del cáncer con respecto al tabaco}
-% Sea una población en la que el 30\% de las personas fuman, y que la incidencia del cáncer de pulmón en fumadores es del 40\% mientras que en
-% los no fumadores es del 10\%.
-% 
-% El espacio probabilístico de este experimento es:
-% 
-% \begin{center}
-% \psset{treesep=0.6cm, levelsep=2.5cm, tpos=0.6}
-% \renewcommand{\psedge}[2]{\ncdiag[armA=0.8cm,angleA=180,angleB=0,armB=0cm]{#2}{#1}} 
-% \pstree[treemode=R, nodesep=1pt]{\Tp*}{
-% 	\pstree[linestyle=none]{\TR[edge=none]{Tabaco}}{
-% 		\pstree{\TR{Enfermedad}}{
-% 			\pstree{\TR{$E$}}{\TR{$P$}}
-% 		}
-% 	}
-% 	\pstree{\TR{Fuma}\taput{\scriptsize $0.3$}}{
-% 		\pstree[linestyle=none]{\TR{Cáncer}\taput{\scriptsize $0.4$}}{
-% 			\pstree{\TR{(Fuma,Cáncer)}}{\TR{$0.3\cdot 0.4 = 0.12$}}
-% 		}
-% 		\pstree[linestyle=none]{\TR{$\overline{\mbox{Cáncer}}$}\taput{\scriptsize $0.6$}}{
-% 			\pstree{\TR{(Fuma,$\overline{\mbox{Cáncer}}$)}}{\TR{$0.3\cdot 0.6 = 0.18$}}
-% 		}
-% 	}
-% 	\pstree{\TR{$\overline{\mbox{Fuma}}$}\taput{\scriptsize $0.7$}}{
-% 		\pstree[linestyle=none]{\TR{Cáncer}\taput{\scriptsize $0.1$}}{
-% 			\pstree{\TR{($\overline{\mbox{Fuma}}$,Cáncer)}}{\TR{$0.7\cdot 0.1 = 0.07$}}
-% 		}
-% 		\pstree[linestyle=none]{\TR{$\overline{\mbox{Cáncer}}$}\taput{\scriptsize $0.9$}}{
-% 			\pstree{\TR{($\overline{\mbox{Fuma}}$,$\overline{\mbox{Cáncer}}$)}}{\TR{$0.7\cdot 0.9 = 0.63$}}
-% 		}
-% 	}
-% 	\pstree[linestyle=none]{\Tp[edge=none]}{\Tp}
-% }
-% \end{center}
-% 
-% \note{
-% Sea una población en la que el 30\% de las personas fuman, y que la incidencia del cáncer de pulmón en fumadores es del 40\% mientras que en
-% los no fumadores es del 10\%.
-% 
-% El árbol de probabilidad que expresa este experimento es el siguiente:
-% 
-% Obsérvese que el fumar o no depende del sexo, así que las ramas que salen del suceso mujer no tienen las mismas probabilidades que las que
-% salen del suceso hombre. }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Árboles de probabilidad con variables independientes}
-% \framesubtitle{Ejemplo de independencia en el lanzamiento de dos monedas}
-% 
-% El árbol de probabilidad asociado al experimento aleatorio que consiste en el lanzamiento de dos monedas es:
-% 
-% \begin{center}
-% \psset{treesep=0.6cm, levelsep=2.5cm, tpos=0.7}
-% \renewcommand{\psedge}[2]{\ncdiag[armA=0.8cm,angleA=180,angleB=0,armB=0cm]{#2}{#1}} 
-% \pstree[treemode=R, nodesep=1pt]{\Tp*}{
-% 	\pstree[linestyle=none]{\TR[edge=none]{1ª Moneda}}{\pstree{\TR{2ª Moneda}}{\pstree{\TR{$E$}}{\TR{$P$}}}}
-% 	\pstree{\TR{C}\taput{\scriptsize $0.5$}}{
-% 		\pstree[linestyle=none]{\TR{C}\taput{\scriptsize $0.5$}}{\pstree{\TR{(C,C)}}{\TR{$0.5\cdot 0.5 = 0.25$}}}
-% 		\pstree[linestyle=none]{\TR{X}\taput{\scriptsize $0.5$}}{\pstree{\TR{(C,X)}}{\TR{$0.5\cdot 0.5 = 0.25$}}}
-% 	}
-% 	\pstree{\TR{X}\taput{\scriptsize $0.5$}}{
-% 		\pstree[linestyle=none]{\TR{C}\taput{\scriptsize $0.5$}}{\pstree{\TR{(X,C)}}{\TR{$0.5\cdot 0.5 = 0.25$}}}
-% 		\pstree[linestyle=none]{\TR{X}\taput{\scriptsize $0.5$}}{\pstree{\TR{(X,X)}}{\TR{$0.5\cdot 0.5 = 0.25$}}}
-% 	}
-% 	\pstree[linestyle=none]{\Tp[edge=none]}{\Tp}
-% }
-% \end{center}
-% 
-% \note{
-% El árbol de probabilidad asociado al experimento aleatorio que consiste en el lanzamiento de dos monedas es:
-% 
-% Obsérvese ahora que el resultado de la segunda moneda no depende del resultado de la primera, de manera que las ramas que salen del suceso
-% cara en la primera moneda tienen las mismas probabilidades que las que salen del suceso cruz.
-% }
-% \end{frame}
-% 
-% 
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Árboles de probabilidad con variables independientes}
-% \framesubtitle{Ejemplo de independencia en la elección de una muestra aleatoria de tamaño 3}
-% Dada una población en la que hay un 40\% de hombres y un 60\% de mujeres, el experimento aleatorio que consiste en tomar una muestra
-% aleatoria de tres personas tiene el siguiente árbol de probabilidad:
-% 
-% \begin{center}
-% \psset{treesep=0.4cm, levelsep=2cm, tpos=0.7}
-% \renewcommand{\psedge}[2]{\ncdiag[armA=0.8cm,angleA=180,angleB=0,armB=0cm]{#2}{#1}} 
-% \pstree[treemode=R, nodesep=1pt]{\Tp*}{
-% 	\pstree[linestyle=none]{\TR[edge=none]{1ª Persona}}{
-% 		\pstree{\TR{2ª Persona}}{
-% 			\pstree[thislevelsep=1cm]{\TR{3ª Persona}}{
-% 				\pstree[thislevelsep=2.5cm]{\TR{$E$}}{\TR{$P$}}
-% 			}
-% 		}
-% 	}
-% 	\pstree{\TR{H}\taput{\scriptsize $0.4$}}{
-% 		\pstree{\TR{H}\taput{\scriptsize $0.4$}}{
-% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{H}\taput{\scriptsize $0.4$}}{
-% 				\pstree[thislevelsep=2.5cm]{\TR{(H,H,H)}}{\TR{$0.4\cdot 0.4\cdot 0.4 = 0.064$}}
-% 			}
-% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{M}\taput{\scriptsize $0.6$}}{
-% 				\pstree[thislevelsep=2.5cm]{\TR{(H,H,M)}}{\TR{$0.4\cdot 0.4\cdot 0.6 = 0.096$}}
-% 			}
-% 		}
-% 		\pstree{\TR{M}\taput{\scriptsize $0.6$}}{
-% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{H}\taput{\scriptsize $0.4$}}{
-% 				\pstree[thislevelsep=2.5cm]{\TR{(H,M,H)}}{\TR{$0.4\cdot 0.6\cdot 0.4 = 0.096$}}
-% 			}
-% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{M}\taput{\scriptsize $0.6$}}{
-% 				\pstree[thislevelsep=2.5cm]{\TR{(H,M,M)}}{\TR{$0.4\cdot 0.6\cdot 0.6 = 0.144$}}
-% 			}
-% 		}	
-% 	}
-% 	\pstree{\TR{M}\taput{\scriptsize $0.6$}}{
-% 		\pstree{\TR{H}\taput{\scriptsize $0.4$}}{
-% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{H}\taput{\scriptsize $0.4$}}{
-% 				\pstree[thislevelsep=2.5cm]{\TR{(M,H,H)}}{\TR{$0.6\cdot 0.4\cdot 0.4 = 0.096$}}
-% 			}
-% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{M}\taput{\scriptsize $0.6$}}{
-% 				\pstree[thislevelsep=2.5cm]{\TR{(M,H,M)}}{\TR{$0.6\cdot 0.4\cdot 0.6 = 0.144$}}
-% 			}
-% 		}
-% 		\pstree{\TR{M}\taput{\scriptsize $0.6$}}{
-% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{H}\taput{\scriptsize $0.4$}}{
-% 				\pstree[thislevelsep=2.5cm]{\TR{(M,M,H)}}{\TR{$0.6\cdot 0.6\cdot 0.4 = 0.144$}}
-% 			}
-% 			\pstree[linestyle=none,thislevelsep=1.5cm]{\TR{M}\taput{\scriptsize $0.6$}}{
-% 				\pstree[thislevelsep=2.5cm]{\TR{(M,M,M)}}{\TR{$0.6\cdot 0.6\cdot 0.6 = 0.216$}}
-% 			}
-% 		}	
-% 	}
-% 	\pstree[linestyle=none]{\Tp[edge=none]}{\Tp}
-% }
-% \end{center}
-% 
-% \note{
-% Otro ejemplo de árbol con independencia sería la obtención de una muestra aleatoria con reemplazamiento. 
-% Dada una población en la que hay un 40\% de hombres y un 60\% de mujeres, el experimento aleatorio que consiste en tomar una muestra
-% aleatoria con reemplazamiento de tres personas tiene el siguiente árbol de probabilidad:
-% 
-% Obsérvese de nuevo cómo todas las ramas del suceso hombre tienen las mismas probabilidades y lo mismo ocurre con las ramas del suceso mujer. 
-% }
-% \end{frame}
-% 
-% 
-% \subsection{Teorema de la probabilidad total}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Sistema completo de sucesos}
-% \begin{definition}[Sistema completo de sucesos]
-% Una colección de sucesos $A_1,A_2,\ldots,A_n$ de un mismo espacio de sucesos es un \emph{sistema completo} si cumple las siguientes condiciones:
-% \begin{enumerate}
-% \item La unión de todos es el espacio muestral: $A_1\cup \cdots\cup A_n =E$.
-% \item Son incompatibles dos a dos: $A_i\cap A_j = \emptyset$ $\forall i\neq j$.
-% \end{enumerate}
-% \end{definition}
-% \begin{center}
-% \psset{unit=0.8}
-% \begin{pspicture}(0,0)(5,3.5)
-% \psset{fillstyle=solid}
-% \pscustom[fillcolor=white]{\psframe(0,0)(5,3)}
-% \psline(1,0)(1,3)
-% \psline(2,0)(2,3)
-% \psline(4,0)(4,3)
-% \rput(0.5,1.5){$A_1$}
-% \rput(1.5,1.5){$A_2$}
-% \rput(3,1.5){$\cdots$}
-% \rput(4.5,1.5){$A_n$}
-% \rput[b](0.2,3.2){$E$}
-% \end{pspicture}
-% \end{center}
-% 
-% En realidad un sistema completo de sucesos es una partición del espacio muestral de acuerdo a algún atributo, como por ejemplo el sexo o el
-% grupo sanguíneo.
-% 
-% \note{
-% En algunos experimentos es posible descomponer el espacio muestral en partes que forman un sistema completo de sucesos. 
-% 
-% \begin{definition}[Sistema completo de sucesos]
-% Una colección de sucesos $A_1,A_2,\ldots,A_n$ de un mismo espacio de sucesos es un \emph{sistema completo} si cumple las siguientes condiciones:
-% \begin{enumerate}
-% \item La unión de todos es el espacio muestral: $A_1\cup \cdots\cup A_n =E$.
-% \item Son incompatibles dos a dos: $A_i\cap A_j = \emptyset$ $\forall i\neq j$.
-% \end{enumerate}
-% \end{definition}
-% 
-% En realidad un sistema completo de sucesos es una partición del espacio muestral de acuerdo a algún atributo, como por ejemplo el sexo o el
-% grupo sanguíneo.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Teorema de la probabilidad total}
-% Conocer las probabilidades de un determinado suceso en cada una de las partes de un sistema completo puede ser útil para calcular su
-% probabilidad.
-% \begin{teorema}[Probabilidad total]
-% Dado un sistema completo de sucesos $A_1,\ldots,A_n$ y un suceso $B$ de un mismo espacio de sucesos, se cumple
-% \[
-% P(B) = \sum_{i=1}^n P(A_i)P(B/A_i).
-% \]
-% \end{teorema}
-% 
-% \begin{center}
-% \psset{unit=1}
-% \begin{pspicture}(0,0)(5,3.5)
-% \psset{fillstyle=solid}
-% \pscustom[fillcolor=white]{\psframe(0,0)(5,3)}
-% \pscustom[fillcolor=coral]{\psellipse(2.5,1.5)(2,1)}
-% \psline(1,0)(1,3)
-% \psline(2,0)(2,3)
-% \psline(4,0)(4,3)
-% \rput(0.5,0.2){$A_1$}
-% \rput(1.5,0.2){$A_2$}
-% \rput(3,0.2){$\cdots$}
-% \rput(4.5,0.2){$A_n$}
-% \rput(3,1.5){$B$}
-% \rput[b](0.2,3.2){$E$}
-% \end{pspicture}
-% \end{center}
-% 
-% \note{
-% Conocer las probabilidades de un determinado suceso en cada una de las partes de un sistema completo puede ser útil para calcular su
-% probabilidad.
-% \begin{teorema}[Probabilidad total]
-% Dado un sistema completo de sucesos $A_1,\ldots,A_n$ y un suceso $B$ de un mismo espacio de sucesos, se cumple
-% \[
-% P(B) = \sum_{i=1}^n P(A_i)P(B/A_i).
-% \]
-% \end{teorema}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Teorema de la probabilidad total}
-% \framesubtitle{Demostración}
-% La demostración del teorema es sencilla, ya que al ser $A_1,\ldots,A_n$ un sistema completo tenemos
-% \[
-% B = B\cap E = B\cap (A_1\cup \cdots \cup A_n) = (B\cap A_1)\cup \cdots \cup (B\cap A_n)
-% \]
-% y como estos sucesos son incompatibles entre sí, se tiene
-% \begin{align*}
-% P(B) &= P((B\cap A_1)\cup \cdots \cup (B\cap A_n)) = P(B\cap A_1)+\cdots + P(B\cap A_n) =\\
-% &= P(A_1)P(B/A_1)+\cdots + P(A_n)P(B/A_n) = \sum_{i=1}^n P(A_i)P(B/A_i).
-% \end{align*}
-% 
-% \note{
-% La demostración del teorema es sencilla, ya que al ser $A_1,\ldots,A_n$ un sistema completo tenemos
-% \[
-% B = B\cap E = B\cap (A_1\cup \cdots \cup A_n) = (B\cap A_1)\cup \cdots \cup (B\cap A_n)
-% \]
-% y como estos sucesos son incompatibles entre sí, se tiene
-% \begin{align*}
-% P(B) &= P((B\cap A_1)\cup \cdots \cup (B\cap A_n)) = P(B\cap A_1)+\cdots + P(B\cap A_n) =\\
-% &= P(A_1)P(B/A_1)+\cdots + P(A_n)P(B/A_n) = \sum_{i=1}^n P(A_i)P(B/A_i).
-% \end{align*}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Teorema de la probabilidad total}
-% \framesubtitle{Un ejemplo de diagnóstico}
-% Un determinado síntoma $B$ puede ser originado por una enfermedad $A$ pero también lo pueden presentar las personas sin
-% la enfermedad. Sabemos que en la población la tasa de personas con la enfermedad A es $0.2$. Además, de las personas
-% que presentan la enfermedad, el $90\%$ presentan el síntoma, mientras que de las personas sin la enfermedad sólo lo presentan el $40\%$.
-% 
-% Si se toma una persona al azar de la población, \emph{¿qué probabilidad hay de que tenga el síntoma?}
-% 
-% Para responder a la pregunta hay que fijarse en que el conjunto de sucesos $\{A,\overline{A}\}$ es un sistema completo, ya que $A\cup \overline A = E$ y $A\cap \overline A = \emptyset$, de modo que se puede aplicar el teorema de la probabilidad total:
-% \[
-% P(B) = P(A)P(B/A)+P(\overline A)P(B/\overline A) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
-% \]
-% Es decir, la mitad de la población tendrá el síntoma. 
-% 
-% \begin{center}
-% \emph{¡En el fondo se trata de una media ponderada de probabilidades!} 
-% \end{center}
-% 
-% \note{
-% Veamos un ejemplo de aplicación del teorema de la probabilidad total.
-% 
-% Supongamos que un determinado síntoma $B$ puede ser originado por una enfermedad $A$ pero también lo pueden presentar las personas sin
-% la enfermedad. Sabemos que en la población la tasa de personas con la enfermedad A es $0.2$. Además, de las personas
-% que presentan la enfermedad, el $90\%$ presentan el síntoma, mientras que de las personas sin la enfermedad sólo lo presentan el $40\%$.
-% 
-% Si se toma una persona al azar de la población, \emph{¿qué probabilidad hay de que tenga el síntoma?}
-% 
-% Para responder a la pregunta hay que fijarse en que el conjunto de sucesos $\{A,\overline{A}\}$ es un sistema completo, ya que $A\cup \overline A = E$ y $A\cap \overline A = \emptyset$, de modo que se puede aplicar el teorema de la probabilidad total:
-% \[
-% P(B) = P(A)P(B/A)+P(\overline A)P(B/\overline A) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
-% \]
-% Es decir, la mitad de la población tendrá el síntoma. 
-% 
-% \begin{center}
-% \emph{¡En el fondo se trata de una media ponderada de probabilidades!} 
-% \end{center}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Teorema de la probabilidad total}
-% \framesubtitle{Cálculo con el árbol de probabilidad}
-% La respuesta a la pregunta anterior es evidente a la luz del espacio probabilístico del experimento. 
-% \begin{center}
-% \psset{treesep=0.6cm, levelsep=2.5cm, tpos=0.6}
-% \renewcommand{\psedge}[2]{\ncdiag[armA=0.8cm,angleA=180,angleB=0,armB=0cm]{#2}{#1}} 
-% \pstree[treemode=R, nodesep=1pt]{\Tp*}{
-% 	\pstree[linestyle=none]{\TR[edge=none]{Enfermedad}}{
-% 		\pstree{\TR{Síntoma}}{
-% 			\pstree{\TR{$E$}}{\TR{$P$}}
-% 		}
-% 	}
-% 	\pstree{\TR{$A$}\taput{\scriptsize $0.2$}}{
-% 		\pstree[linestyle=none]{\TR{$B$}\taput{\scriptsize $0.9$}}{
-% 			\pstree{\TR{\alert{$(A,B)$}}}{\TR{\alert{$0.2\cdot 0.9 = 0.18$}}}
-% 		}
-% 		\pstree[linestyle=none]{\TR{$\overline B$}\taput{\scriptsize $0.1$}}{
-% 			\pstree{\TR{$(A,\overline B)$}}{\TR{$0.2\cdot 0.1 = 0.02$}}
-% 		}
-% 	}
-% 	\pstree{\TR{$\overline A$}\taput{\scriptsize $0.8$}}{
-% 		\pstree[linestyle=none]{\TR{$B$}\taput{\scriptsize $0.4$}}{
-% 			\pstree{\TR{\alert{$(\overline A,B)$}}}{\TR{\alert{$0.8\cdot 0.4 = 0.32$}}}
-% 		}
-% 		\pstree[linestyle=none]{\TR{$\overline B$}\taput{\scriptsize $0.6$}}{
-% 			\pstree{\TR{$(\overline A,\overline B)$}}{\TR{$0.8\cdot 0.6 = 0.48$}}
-% 		}
-% 	}
-% 	\pstree[linestyle=none]{\Tp[edge=none]}{\Tp}
-% }
-% \end{center}
-% \begin{align*}
-% P(B) &= P(A,B) + P(\overline A,B) =\\
-% &= P(A)P(B/A)+P(\overline A)P(B/\overline A) = 0.2\cdot 0.9+ 0.8\cdot 0.4 = 0.18 + 0.32 = 0.5. 
-% \end{align*}
-% 
-% \note{
-% El teorema de la probabilidad total también puede deducirse fácilmente a partir del diagrama de árbol de este experimento. 
-% }
-% \end{frame}
-% 
-% 
-% \subsection{Teorema de Bayes}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Teorema de Bayes}
-% Los sucesos de un sistema completo de sucesos $A_1,\cdots,A_n$ también pueden verse como las distintas hipótesis ante
-% un determinado hecho $B$.
-% 
-% En estas condiciones resulta útil poder calcular las probabilidades a posteriori $P(A_i/B)$ de cada una de las hipótesis.
-% 
-% \begin{teorema}[Bayes]
-% Dado un sistema completo de sucesos $A_1,\ldots,A_n$ y un suceso $B$ de un mismo espacio de sucesos, se cumple
-% \[
-% P(A_i/B) = \frac{P(A_i\cap B)}{P(B)} = \frac{P(A_i)P(B/A_i)}{\sum_{i=1}^n P(A_i)P(B/A_i)}.
-% \]
-% \end{teorema}
-% 
-% \note{
-% Los sucesos de un sistema completo de sucesos $A_1,\cdots,A_n$ también pueden verse como las distintas hipótesis ante
-% un determinado hecho $B$.
-% 
-% En estas condiciones puede ser útil calcular las probabilidades a posteriori $P(A_i/B)$ de cada una de las hipótesis, es decir, una vez
-% se haya cumplido el suceso $B$. Para ello se utiliza el teorema de Bayes. 
-% 
-% \begin{teorema}[Bayes]
-% Dado un sistema completo de sucesos $A_1,\ldots,A_n$ y un suceso $B$ de un mismo espacio de sucesos, se cumple
-% \[
-% P(A_i/B) = \frac{P(A_i\cap B)}{P(B)} = \frac{P(A_i)P(B/A_i)}{\sum_{i=1}^n P(A_i)P(B/A_i)}.
-% \]
-% \end{teorema}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Teorema de Bayes}
-% \framesubtitle{Un ejemplo de diagnóstico}
-% En el ejemplo anterior se ha visto cómo calcular la probabilidad de que una persona elegida al azar presente el síntoma, pero desde un punto
-% de vista de diagnóstico clínico, una pregunta más interesante es:
-%   
-% Si llega a la consulta una persona que presenta el síntoma, \emph{¿qué se debe diagnosticar?}
-% 
-% En este caso, las hipótesis ante las que hay que decidir son $A$ y $\overline A$ y sus probabilidades ``a priori'' son $P(A)=0.2$ y
-% $P(\overline A)=0.8$.
-% 
-% Esto quiere decir que si no hubiese ninguna información sobre la persona, el diagnóstico sería que no tiene la enfermedad pues es mucho más
-% probable que que la tenga.
-% 
-% Sin embargo, si al reconocer a la persona se observa que presenta el síntoma, dicha información condiciona a las hipótesis, y para decidir
-% entre ellas es necesario calcular sus probabilidades ``a posteriori'', es decir 
-% \[ P(A/B) \mbox{ y } P(\overline A/B)\]
-% 
-% \note{
-% En el ejemplo anterior se ha visto cómo calcular la probabilidad de que una persona elegida al azar presente el síntoma, pero desde un punto
-% de vista de diagnóstico clínico, una pregunta más interesante es:
-%   
-% Si llega a la consulta una persona que presenta el síntoma, \emph{¿qué se debe diagnosticar?}
-% 
-% En este caso, las hipótesis ante las que hay que decidir son $A$ y $\overline A$ y sus probabilidades ``a priori'' son $P(A)=0.2$ y
-% $P(\overline A)=0.8$.
-% 
-% Esto quiere decir que si no hubiese ninguna información sobre la persona, el diagnóstico sería que no tiene la enfermedad pues es mucho más
-% probable que que la tenga.
-% 
-% Sin embargo, si al reconocer a la persona se observa que presenta el síntoma, dicha información condiciona a las hipótesis, y para decidir
-% entre ellas es necesario calcular sus probabilidades ``a posteriori'', es decir 
-% \[ P(A/B) \mbox{ y } P(\overline A/B)\]
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Teorema de Bayes}
-% \framesubtitle{Un ejemplo de diagnóstico}
-% Para calcular las probabilidades ``a posteriori'' se puede utilizar el teorema de Bayes:
-% \begin{align*}
-% P(A/B) &= \frac{P(A)P(B/A)}{P(A)P(B/A)+P(\overline A)P(B/\overline A)} = \frac{0.2\cdot 0.9}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.18}{0.5}=0.36,\\
-% P(\overline A/B) &= \frac{P(\overline A)P(B/\overline A)}{P(A)P(B/A)+P(\overline A)P(B/\overline A)} = \frac{0.8\cdot 0.4}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.32}{0.5}=0.64.
-% \end{align*}
-% Según esto, a pesar de que la probabilidad de estar enfermo ha aumentado, seguiríamos diagnosticando que no lo está, puesto que es más
-% probable.
-% 
-% En este caso se dice que el síntoma $B$ \emph{no es determinante} a la hora de diagnosticar la enfermedad, pues la información que aporta no
-% sirve para cambiar el diagnóstico en ningún caso.
-% 
-% \note{
-% Para calcular las probabilidades ``a posteriori'' se puede utilizar el teorema de Bayes:
-% \begin{align*}
-% P(A/B) &= \frac{P(A)P(B/A)}{P(A)P(B/A)+P(\overline A)P(B/\overline A)} = \frac{0.2\cdot 0.9}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.18}{0.5}=0.36,\\
-% P(\overline A/B) &= \frac{P(\overline A)P(B/\overline A)}{P(A)P(B/A)+P(\overline A)P(B/\overline A)} = \frac{0.8\cdot 0.4}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.32}{0.5}=0.64.
-% \end{align*}
-% Según esto, a pesar de que la probabilidad de estar enfermo ha aumentado, seguiríamos diagnosticando que no lo está, puesto que es más
-% probable.
-% 
-% En este caso se dice que el síntoma $B$ \emph{no es determinante} a la hora de diagnosticar la enfermedad, pues la información que aporta no
-% sirve para cambiar el diagnóstico en ningún caso.
-% }
-% \end{frame}
-% 
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probability tree with dependent variables}
+\framesubtitle{Example of smoking and cancer}
+In a population there are a 30\% of smokers and we know that there are a 40\% of smokers with breast cancer, while only
+10\% of non-smokers have breast cancer. 
+The probability tree of the probabilistic space of the random experiment consisting in picking a random person an
+measuring the variables smoking and breast cancer is below.  
+\begin{center}
+\tikzsetnextfilename{probability/smoking_cancer_probability_space}
+\resizebox{0.8\textwidth}{!}{\input{img/probability/smoking_cancer_probability_space}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probability tree with independent variables}
+\framesubtitle{Example of tossing coins}
+The probability tree of the random experiment of tossing two coins is below.
+\begin{center}
+\tikzsetnextfilename{probability/coins_probability_space}
+\resizebox{0.8\textwidth}{!}{\input{img/probability/coins_probability_space}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probability tree with independent variables}
+\framesubtitle{Example of a sample of size 3}
+In a population there are 40\% of males and 60\% of females, the probability tree of drawing a random sample of three
+persons is below.
+\begin{center}
+\tikzsetnextfilename{probability/sample_probability_space}
+\resizebox{0.9\textwidth}{!}{\input{img/probability/sample_probability_space}}
+\end{center}
+\end{frame}
+
+
+\subsection{Total probability theorem}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Partition of the sample space}
+\begin{definition}[Partition of the sample space]
+A collection of events $A_1,A_2,\ldots,A_n$ of the same sample space $\Omega$ is a \emph{partition} of the sample space
+if it meets the following conditions
+\begin{enumerate}
+\item The union of the events is the sample space, that is, $A_1\cup \cdots\cup A_n =\Omega$.
+\item All the events are mutually incompatible, that is, $A_i\cap A_j = \emptyset$ $\forall i\neq j$.
+\end{enumerate}
+\end{definition}
+
+\begin{center}
+\tikzsetnextfilename{probability/sample_space_partition}
+\input{img/probability/sample_space_partition}
+\end{center}
+
+Usually it's easy to get a partition of the sample space splitting a population according to some categorical variable,
+like for example gender, blood type, etc.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Total probability theorem}
+If we have a partition of a sample space, we can use it to calculate the probabilities of other events in the same
+sample space.
+\begin{theorem}[Total probability]
+Given a partition $A_1,\ldots,A_n$ of a sample space $\Omega$, the probability of any other event $B$ of the same sample
+space can be calculated with the formula
+\[
+P(B) = \sum_{i=1}^n P(A_i\cap B) = \sum_{i=1}^n P(A_i)P(B|A_i).
+\]
+\end{theorem}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Total probability theorem}
+\framesubtitle{Proof}
+The theorem proof is quite simple.
+As $A_1,\ldots,A_n$ is a partition of $\Omega$, we have 
+\[
+B = B\cap \Omega = B\cap (A_1\cup \cdots \cup A_n) = (B\cap A_1)\cup \cdots \cup (B\cap A_n).
+\]
+And all the events of this union are mutually incompatible as $A_1,\ldots,A_n$ are, thus
+\begin{align*}
+P(B) &= P((B\cap A_1)\cup \cdots \cup (B\cap A_n)) = P(B\cap A_1)+\cdots + P(B\cap A_n) =\\
+&= P(A_1)P(B|A_1)+\cdots + P(A_n)P(B|A_n) = \sum_{i=1}^n P(A_i)P(B|A_i).
+\end{align*}
+
+\begin{center}
+\tikzsetnextfilename{probability/total_probability}
+\input{img/probability/total_probability}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Total probability theorem}
+\framesubtitle{Example of diagnosis}
+A symptom $S$ can be caused by a disease $D$, but can also be present in persons without the disease.
+In a population, the rate of people with the disease is $0.2$. 
+We know also that $90\%$ of persons with the disease present the symptom, while only $40\%$ of persons without the
+disease present it. 
+
+\emph{What is the probability that a random person of the population presents the symptom?}
+
+To answer the question we can apply the total probability theorem using the partition $\{A,\bar A\}$:
+\[
+P(S) = P(D)P(S|D)+P(\bar D)P(S/\bar D) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
+\]
+That is, half of the population have the symptom. 
+
+\begin{center}
+\emph{Indeed, it is a weighted mean of probabilities!}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Total probability theorem}
+\framesubtitle{Example of diagnosis with a tree diagram}
+The answer to the previous question is even clearer with the tree diagram of the probabilistic space.
+
+\begin{center}
+\tikzsetnextfilename{probability/total_probability_space}
+\resizebox{0.8\textwidth}{!}{\input{img/probability/total_probability_space}}
+\end{center}
+
+\begin{align*}
+P(S) &= P(D,S) + P(\bar D,S) = P(D)P(S|D)+P(\bar D)P(S|\bar D)\\
+& = 0.2\cdot 0.9+ 0.8\cdot 0.4 = 0.18 + 0.32 = 0.5.
+\end{align*}
+\end{frame}
+
+
+\subsection{Bayes theorem}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Bayes theorem}
+A partition of a sample space $A_1,\cdots,A_n$ may also be interpreted as a set of feasible hypothesis to a fact
+$B$.
+
+In such cases may be helpful to calculate the posterior probability $P(A_i|B)$ of every hypothesis.
+
+\begin{theorem}[Bayes]
+Given a partition $A_1,\ldots,A_n$ of a sample space $\Omega$ and another event $B$ of the same sample space, the
+conditional probability of every even $A_i$ $i=1,\ldots,n$ on $B$ can be calculated with the following formula
+\[
+P(A_i|B) = \frac{P(A_i\cap B)}{P(B)} = \frac{P(A_i)P(B|A_i)}{\sum_{i=1}^n P(A_i)P(B|A_i)}.
+\]
+\end{theorem}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Bayes theorem}
+\framesubtitle{Example of diagnosis}
+In the previous example, a more interesting question is about the diagnosis for a person with the symptom.  
+
+In this case we can interpret $D$ and $\bar D$ as the two feasible hypothesis for the symptom $S$.
+The prior probabilities for them are $P(D)=0.2$ and $P(D)=0.8$.
+That means that if we don't have information about the symptom, the diagnosis would be that the person doesn't have the
+disease.
+
+However, if after examining the person we observe the symptom, that information changes the uncertainty about the
+hypothesis, an we need calculate the posterior probabilities to diagnose, that is,
+\[
+P(D|S) \mbox{ y } P(\bar D|S)
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Teorema de Bayes theorem}
+\framesubtitle{Example of diagnosis}
+To calculate the posterior probabilities we can use the Bayes theorem.
+\begin{align*}
+P(D/S) &= \frac{P(D)P(S/D)}{P(D)P(S/D)+P(\bar D)P(S/\bar D)} = \frac{0.2\cdot 0.9}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.18}{0.5}=0.36,\\
+P(\bar D/S) &= \frac{P(\bar D)P(S/\bar D)}{P(D)P(S/D)+P(\bar D)P(S/\bar D)} = \frac{0.8\cdot 0.4}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.32}{0.5}=0.64.
+\end{align*}
+
+As we can see the probability of having the disease has increased. 
+Nevertheless, the probability of not having the disease is still greater than the probability of having it, and for that
+reason, the diagnosis is not having the disease. 
+
+In this case it is said the the symptom $S$ is \emph{not decisive} in order to diagnose the disease.
+\end{frame}
+
 % \subsection{Tests diagnósticos}
 % 
 % %---------------------------------------------------------------------slide----

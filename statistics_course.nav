@@ -42,20 +42,20 @@
 \headcommand {\beamer@framepages {18}{18}}
 \headcommand {\slideentry {1}{2}{8}{19/19}{Set theory}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{20}{Probability defintion}}\headcommand {\beamer@subsectionpages {12}{19}}
-\headcommand {\slideentry {1}{3}{1}{20/20}{Probability defintion}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{20}{Probability definition}}\headcommand {\beamer@subsectionpages {12}{19}}
+\headcommand {\slideentry {1}{3}{1}{20/20}{Probability definition}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {1}{3}{2}{21/21}{Probability defintion}{0}}
+\headcommand {\slideentry {1}{3}{2}{21/21}{Probability definition}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\slideentry {1}{3}{3}{22/22}{Probability defintion}{0}}
+\headcommand {\slideentry {1}{3}{3}{22/22}{Probability definition}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {1}{3}{4}{23/23}{Probability defintion}{0}}
+\headcommand {\slideentry {1}{3}{4}{23/23}{Probability definition}{0}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {1}{3}{5}{24/24}{Probability defintion}{0}}
+\headcommand {\slideentry {1}{3}{5}{24/24}{Probability definition}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\slideentry {1}{3}{6}{25/32}{Probability defintion}{0}}
+\headcommand {\slideentry {1}{3}{6}{25/32}{Probability definition}{0}}
 \headcommand {\beamer@framepages {25}{32}}
-\headcommand {\slideentry {1}{3}{7}{33/33}{Probability defintion}{0}}
+\headcommand {\slideentry {1}{3}{7}{33/33}{Probability definition}{0}}
 \headcommand {\beamer@framepages {33}{33}}
 \headcommand {\beamer@subsectionentry {0}{1}{4}{34}{Conditional probability}}\headcommand {\beamer@subsectionpages {20}{33}}
 \headcommand {\slideentry {1}{4}{1}{34/34}{Conditional probability}{0}}
@@ -75,8 +75,32 @@
 \headcommand {\beamer@framepages {41}{41}}
 \headcommand {\slideentry {1}{5}{4}{42/42}{Dependence of events}{0}}
 \headcommand {\beamer@framepages {42}{42}}
-\headcommand {\beamer@partpages {1}{42}}
-\headcommand {\beamer@subsectionpages {39}{42}}
-\headcommand {\beamer@sectionpages {4}{42}}
-\headcommand {\beamer@documentpages {42}}
-\headcommand {\def \inserttotalframenumber {32}}
+\headcommand {\slideentry {1}{5}{5}{43/43}{Dependence of events}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {1}{5}{6}{44/44}{Dependence of events}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\slideentry {1}{5}{7}{45/45}{Dependence of events}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\beamer@subsectionentry {0}{1}{6}{46}{Total probability theorem}}\headcommand {\beamer@subsectionpages {39}{45}}
+\headcommand {\slideentry {1}{6}{1}{46/46}{Total probability theorem}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\slideentry {1}{6}{2}{47/47}{Total probability theorem}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\slideentry {1}{6}{3}{48/52}{Total probability theorem}{0}}
+\headcommand {\beamer@framepages {48}{52}}
+\headcommand {\slideentry {1}{6}{4}{53/53}{Total probability theorem}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\slideentry {1}{6}{5}{54/54}{Total probability theorem}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\beamer@subsectionentry {0}{1}{7}{55}{Bayes theorem}}\headcommand {\beamer@subsectionpages {46}{54}}
+\headcommand {\slideentry {1}{7}{1}{55/55}{Bayes theorem}{0}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\slideentry {1}{7}{2}{56/56}{Bayes theorem}{0}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\slideentry {1}{7}{3}{57/57}{Bayes theorem}{0}}
+\headcommand {\beamer@framepages {57}{57}}
+\headcommand {\beamer@partpages {1}{57}}
+\headcommand {\beamer@subsectionpages {55}{57}}
+\headcommand {\beamer@sectionpages {4}{57}}
+\headcommand {\beamer@documentpages {57}}
+\headcommand {\def \inserttotalframenumber {43}}

@@ -1,0 +1,89 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\begin{tikzpicture}[
+grow'=right,
+% sloped,
+level 1/.style ={level distance=2cm, sibling distance=3.2cm, parent anchor=east, child anchor=west},
+level 2/.style ={level distance=2cm, sibling distance=1.6cm},
+level 3/.style ={level distance=2cm, sibling distance=0.8cm},
+level 4/.style ={level distance=1.5cm, sibling distance=0.8cm, dashed},
+level 5/.style ={level distance=3cm, sibling distance=0.8cm, dashed},
+prob/.style={font=\footnotesize,above}
+]
+
+\node (root) {}
+	child {node {F}
+		child {node {F}
+	   		child {node {F}
+				child {node{(F,F,F)}
+					child {node {$0.216$} edge from parent node[prob] {$0.6\cdot 0.6\cdot 0.6$}} 
+				}
+				edge from parent node[prob] {$0.6$}
+			}
+			child {node {M}
+				child {node{(F,F,M)}
+					child {node {$0.144$} edge from parent node[prob] {$0.6\cdot 0.6\cdot 0.4$}}
+				}
+				edge from parent node[prob,below] {$0.4$}
+			}
+			edge from parent node[prob] {$0.6$}
+		}
+		child {node {M}
+	   		child {node {F}
+				child {node{(F,M,F)}
+					child {node{$0.144$} edge from parent node[prob] {$0.6\cdot 0.4\cdot 0.6$}}
+				}
+				edge from parent node[prob] {$0.6$}
+			}
+			child {node {M}
+				child {node{(F,M,M)}
+					child {node{$0.096$} edge from parent node[prob] {$0.6\cdot 0.4\cdot 0.4$}}
+				}
+				edge from parent node[prob,below] {$0.4$}
+			}
+			edge from parent node[prob,below] {$0.4$}
+		}
+		edge from parent node[prob,left] {$0.6$}
+	}
+	child {node {M}
+		child {node {F}
+	   		child {node {F}
+				child {node{(M,F,F)}
+					child {node {$0.144$} edge from parent node[prob] {$0.4\cdot 0.6\cdot 0.6$}} 
+				}
+				edge from parent node[prob] {$0.6$}
+			}
+			child {node {M}
+				child {node{(M,F,M)}
+					child {node {$0.096$} edge from parent node[prob] {$0.4\cdot 0.6\cdot 0.4$}}
+				}
+				edge from parent node[prob,below] {$0.4$}
+			}
+			edge from parent node[prob] {$0.6$}
+		}
+		child {node {M}
+	   		child {node {F}
+				child {node{(M,M,F)}
+					child {node{$0.096$} edge from parent node[prob] {$0.4\cdot 0.4\cdot 0.6$}}
+				}
+				edge from parent node[prob] {$0.6$}
+			}
+			child {node {M}
+				child {node{(M,M,M)}
+					child {node{$0.064$} edge from parent node[prob] {$0.4\cdot 0.4\cdot 0.4$}}
+				}
+				edge from parent node[prob,below] {$0.4$}
+			}
+			edge from parent node[prob,below] {$0.4$}
+		}
+		edge from parent node[prob,left] {$0.4$}
+	};
+
+\begin{scope}[every node/.style={text width=2cm, align=center, anchor=center, font=\bfseries,}]
+\node[above= 0.5cm of root-1-1-1-1-1] (labels-level) {Probability};
+\node[at =(labels-level-|root-1)] {Person 1};
+\node[at =(labels-level-|root-1-1)] {Person 2};
+\node[at =(labels-level-|root-1-1-1)] {Person 3};
+\node[at =(labels-level-|root-1-1-1-1)]{$\Omega$};
+\end{scope}
+\end{tikzpicture}
