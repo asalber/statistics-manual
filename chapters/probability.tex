@@ -92,7 +92,8 @@ branch.
 
 \begin{center}
 \tikzsetnextfilename{probability/sample_space}
-\resizebox{0.8\textwidth}{!}{\input{img/probability/sample_space}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/probability/sample_space}}}
+\mode<presentation>{\resizebox{0.8\textwidth}{!}{\input{img/probability/sample_space}}}
 \end{center}
 \end{frame}
 
@@ -607,7 +608,8 @@ that go form the root tho the leave.
 \end{enumerate}
 \begin{center}
 \tikzsetnextfilename{probability/probability_space}
-\resizebox{0.9\textwidth}{!}{\input{img/probability/probability_space}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/probability/probability_space}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/probability/probability_space}}}
 \end{center}
 \end{frame}
 
@@ -622,7 +624,8 @@ The probability tree of the probabilistic space of the random experiment consist
 measuring the variables smoking and breast cancer is below.  
 \begin{center}
 \tikzsetnextfilename{probability/smoking_cancer_probability_space}
-\resizebox{0.8\textwidth}{!}{\input{img/probability/smoking_cancer_probability_space}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/probability/smoking_cancer_probability_space}}}
+\mode<presentation>{\resizebox{0.8\textwidth}{!}{\input{img/probability/smoking_cancer_probability_space}}}
 \end{center}
 \end{frame}
 
@@ -634,7 +637,8 @@ measuring the variables smoking and breast cancer is below.
 The probability tree of the random experiment of tossing two coins is below.
 \begin{center}
 \tikzsetnextfilename{probability/coins_probability_space}
-\resizebox{0.8\textwidth}{!}{\input{img/probability/coins_probability_space}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/probability/coins_probability_space}}}
+\mode<presentation>{\resizebox{0.8\textwidth}{!}{\input{img/probability/coins_probability_space}}}
 \end{center}
 \end{frame}
 
@@ -647,7 +651,8 @@ In a population there are 40\% of males and 60\% of females, the probability tre
 persons is below.
 \begin{center}
 \tikzsetnextfilename{probability/sample_probability_space}
-\resizebox{0.9\textwidth}{!}{\input{img/probability/sample_probability_space}}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/probability/sample_probability_space}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/probability/sample_probability_space}}}
 \end{center}
 \end{frame}
 
@@ -708,7 +713,8 @@ P(B) &= P((B\cap A_1)\cup \cdots \cup (B\cap A_n)) = P(B\cap A_1)+\cdots + P(B\c
 
 \begin{center}
 \tikzsetnextfilename{probability/total_probability}
-\input{img/probability/total_probability}
+\mode<article>{\resizebox{0.4\textwidth}{!}{\input{img/probability/total_probability}}}
+\mode<presentation>{\input{img/probability/total_probability}}
 \end{center}
 \end{frame}
 
@@ -744,7 +750,8 @@ The answer to the previous question is even clearer with the tree diagram of the
 
 \begin{center}
 \tikzsetnextfilename{probability/total_probability_space}
-\resizebox{0.8\textwidth}{!}{\input{img/probability/total_probability_space}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/probability/total_probability_space}}}
+\mode<presentation>{\resizebox{0.8\textwidth}{!}{\input{img/probability/total_probability_space}}}
 \end{center}
 
 \begin{align*}
@@ -795,7 +802,7 @@ P(D|S) \mbox{ y } P(\bar D|S)
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Teorema de Bayes theorem}
+\frametitle{Bayes theorem}
 \framesubtitle{Example of diagnosis}
 To calculate the posterior probabilities we can use the Bayes theorem.
 \begin{align*}
@@ -810,174 +817,246 @@ reason, the diagnosis is not having the disease.
 In this case it is said the the symptom $S$ is \emph{not decisive} in order to diagnose the disease.
 \end{frame}
 
-% \subsection{Tests diagnósticos}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Tests diagnósticos}
-% En epidemiología es común el uso de tests para diagnosticar enfermedades.
-% 
-% Generalmente estos tests no son totalmente fiables, sino que hay cierta probabilidad de acierto o fallo en el diagnóstico, que suele
-% representarse en la siguiente tabla:
-% \begin{center}
-% \begin{tabular}{|m{3cm}<{\centering}|m{3.5cm}<{\centering}|m{3.5cm}<{\centering}|}
-% \cline{2-3}
-% \multicolumn{1}{c|}{} & Presencia de la\newline enfermedad ($E$) & Ausencia de la\newline enfermedad ($\overline E$)\\ \hline
-% Test positivo\newline ($+$) & \textcolor{green}{Diagnóstico acertado\newline  $P(+/E)$}\qquad
-% \highlight{Sensibilidad}& \textcolor{red}{Diagnóstico erróneo\newline $P(+/\overline E)$}\\ \hline Test negativo\newline ($-$) &
-% \textcolor{red}{Diagnóstico erróneo\newline $P(-/E)$} & \textcolor{green}{Diagnóstico acertado\newline $P(-/\overline
-% E)$}\qquad \highlight{Especificidad}\\ \hline
-% \end{tabular}
-% \end{center}
-% 
-% \note{
-% En epidemiología es común el uso de tests para diagnosticar enfermedades.
-% 
-% Generalmente estos tests no son totalmente fiables, sino que hay cierta probabilidad de acierto o fallo en el diagnóstico, que suele
-% representarse en la siguiente tabla:
-% \begin{center}
-% \begin{tabular}{|m{3cm}<{\centering}|m{3.5cm}<{\centering}|m{3.5cm}<{\centering}|}
-% \cline{2-3}
-% \multicolumn{1}{c|}{} & Presencia de la\newline enfermedad ($E$) & Ausencia de la\newline enfermedad ($\overline E$)\\ \hline
-% Test positivo\newline ($+$) & \textcolor{green}{Diagnóstico acertado\newline  $P(+/E)$}\newline\highlight{Sensibilidad}& \textcolor{red}{\noindent Diagnóstico erróneo\newline $P(+/\overline E)$}\\ \hline
-% Test negativo\newline ($-$) & \textcolor{red}{Diagnóstico erróneo\newline $P(-/E)$} & \textcolor{green}{Diagnóstico acertado\newline $P(-/\overline E)$}\newline\highlight{Especificidad}\\ \hline
-% \end{tabular}
-% \end{center}
-% }
-% \end{frame}
-% 
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Tests diagnósticos}
-% La valided de una prueba diagnóstica depende de estas dos probabilidades:
-% \begin{description}
-% \item[\textbf{Sensibilidad}] Es el porcentaje de positivos entre las personas enfermas: $P(+/E)$.
-% \item[\textbf{Especificidad}] Es el porcentaje de negativos entre las personas sanas: $P(-/\bar E)$.
-% \end{description}
-% 
-% Pero lo realmente interesante de un un test diagnóstico es su capacidad predictiva para diagnosticar, lo cual se mide mediante las
-% siguientes probabilidades a posteriori:
-% \begin{description}
-% \item[\textbf{Valor predictivo positivo}] Es el porcentaje de enfermos entre los positivos: $P(E/+)$.
-% \item[\textbf{Valor predictivo negativo}] Es el porcentaje de sanos entre los negativos: $P(\bar E/-)$.
-% \end{description}
-% 
-% Sin embargo, estos últmos valores dependen del porcentaje de enfermos en la población $P(E)$, lo que se conoce como, \highlight{\textbf{tasa
-% o prevalencia}} de la enfermedad.
-% 
-% \note{
-% La valided de una prueba diagnóstica depende de estas dos probabilidades:
-% \begin{description}
-% \item[Sensibilidad] Es el porcentaje de positivos entre las personas enfermas: $P(+/E)$.
-% \item[Especificidad] Es el porcentaje de negativos entre las personas sanas: $P(-/\bar E)$.
-% \end{description}
-% 
-% Pero lo realmente interesante de un un test diagnóstico es su capacidad predictiva para diagnosticar, lo cual se mide mediante las
-% siguientes probabilidades a posteriori:
-% \begin{description}
-% \item[Valor predictivo positivo] Es el porcentaje de enfermos entre los positivos: $P(E/+)$.
-% \item[Valor predictivo negativo] Es el porcentaje de sanos entre los negativos: $P(\bar E/-)$.
-% \end{description}
-% 
-% Sin embargo, estos últimos valores dependen del porcentaje de enfermos en la población $P(E)$, lo que se conoce como,
-% \highlight{\textbf{tasa o prevalencia}} de la enfermedad.
-% }
-% \end{frame}
-% 
-% 
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Tests diagnósticos}
-% \frametitle{Ejemplo}
-% Un test para diagnosticar la gripe tiene una sensibilidad del $95\%$ y una especificidad del $90\%$. Según esto, las probabilidades de
-% acierto y fallo del test son:
-% \begin{center}
-% \begin{tabular}{|c|c|c|}
-% \cline{2-3}
-% \multicolumn{1}{c|}{} & Gripe & No gripe\\ \hline
-% Test $+$ & \textcolor{green}{$0.95$} & \textcolor{red}{$0.10$}\\ \hline
-% Test $-$ & \textcolor{red}{$0.05$} & \textcolor{green}{$0.90$}\\ \hline
-% \end{tabular}
-% \end{center}
-% 
-% Si la prevalencia de la gripe en la población es del $10\%$ y al aplicar el test a un individuo da positivo, \emph{¿cuál es la probabilidad
-% de que tenga gripe?}
-% 
-% Aplicando el teorema de Bayes, se tiene que el valor predictivo positivo del test vale
-% \begin{align*}
-% P(\mbox{Gripe}/+) &= \frac{P(\mbox{Gripe})P(+/\mbox{Gripe})}{P(\mbox{Gripe})P(+/\mbox{Gripe})+P(\overline{\mbox{Gripe}})P(+/\overline{\mbox{Gripe}})} =\\
-% &= \frac{0.1\cdot 0.95}{0.1\cdot 0.95+0.9\cdot 0.1} = 0.5135.
-% \end{align*}
-% Aunque con esta probabilidad se diagnosticaría la enfermedad en caso de que el test diese positivo, se trata de un valor predictivo positivo
-% muy bajo. 
-% 
-% \note{
-% Veamos un ejemplo. 
-% 
-% Un test para diagnosticar la gripe tiene una sensibilidad del $95\%$ y una especificidad del $90\%$. Según esto, las probabilidades de
-% acierto y fallo del test son:
-% \begin{center}
-% \begin{tabular}{|c|c|c|}
-% \cline{2-3}
-% \multicolumn{1}{c|}{} & Gripe & No gripe\\ \hline
-% Test $+$ & \textcolor{green}{$0.95$} & \textcolor{red}{$0.10$}\\ \hline
-% Test $-$ & \textcolor{red}{$0.05$} & \textcolor{green}{$0.90$}\\ \hline
-% \end{tabular}
-% \end{center}
-% 
-% Si la prevalencia de la gripe en la población es del $10\%$ y al aplicar el test a un individuo da positivo, \emph{¿cuál es la probabilidad
-% de que tenga gripe?}
-% 
-% Aplicando el teorema de Bayes, se tiene
-% \begin{align*}
-% P(\mbox{Gripe}/+) &= \frac{P(\mbox{Gripe})P(+/\mbox{Gripe})}{P(\mbox{Gripe})P(+/\mbox{Gripe})+P(\overline{\mbox{Gripe}})P(+/\overline{\mbox{Gripe}})} =\\
-% &= \frac{0.1\cdot 0.95}{0.1\cdot 0.95+0.9\cdot 0.1} = 0.51.
-% \end{align*}
-% 
-% La probabilidad de no tener la gripe sería $1-0.51=0.49$ ya que es el suceso contrario de tener la gripe, y como la probabilidad de tener la
-% gripe es mayor que la de no tenerla, se diagnosticaría que tiene gripe. Sin embargo, el valor predictivo positivo de este test es muy bajo y
-% nos equivoaríamos en el 49\% de los diagnósticos de enfermedad.
-% }
-% \end{frame}
-% 
-% 
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Tests diagnósticos}
-% \frametitle{Ejemplo}
-% \begin{center}
-% \begin{tabular}{|c|c|c|}
-% \cline{2-3}
-% \multicolumn{1}{c|}{} & Gripe & No gripe\\ \hline
-% Test $+$ & \textcolor{green}{$0.95$} & \textcolor{red}{$0.10$}\\ \hline
-% Test $-$ & \textcolor{red}{$0.05$} & \textcolor{green}{$0.90$}\\ \hline
-% \end{tabular}
-% \end{center}
-% 
-% Y si el test da negativo, \emph{¿cuál es la probabilidad de que no tenga gripe?}
-% 
-% De nuevo, aplicando el teorema de Bayes, se tiene que el valor predictivo negativo del test vale
-% \begin{align*}
-% P(\overline{\mbox{Gripe}}/-) &=
-% \frac{P(\overline{\mbox{Gripe}})P(-/\overline{\mbox{Gripe}})}{P(\mbox{Gripe})P(-/\mbox{Gripe})+P(\overline{\mbox{Gripe}})P(-/\overline{\mbox{Gripe}})}
-% =\\ &= \frac{0.9\cdot 0.9}{0.1\cdot 0.05+0.9\cdot 0.9} = 0.9939.
-% \end{align*}
-% De manera que el valor predictivo negativo de este test es mucho más alto que el valor predictivo positivo.
-% 
-% \note{
-% Y si el test da negativo, \emph{¿cuál es la probabilidad de que no tenga gripe?}
-% 
-% De nuevo, aplicando el teorema de Bayes, se tiene que el valor predictivo negativo del test vale
-% \begin{align*}
-% P(\overline{\mbox{Gripe}}/-) &=
-% \frac{P(\overline{\mbox{Gripe}})P(-/\overline{\mbox{Gripe}})}{P(\mbox{Gripe})P(-/\mbox{Gripe})+P(\overline{\mbox{Gripe}})P(-/\overline{\mbox{Gripe}})}
-% =\\ &= \frac{0.9\cdot 0.9}{0.1\cdot 0.05+0.9\cdot 0.9} = 0.9939.
-% \end{align*}
-% De manera que el valor predictivo negativo de este test es mucho más alto que el valor predictivo positivo, y por tanto este test es mucho
-% más útil para descartar la enfermedad que para detectarla. 
-% }
-% \end{frame}
+\subsection{Diagnostic tests}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Diagnostic tests}
+In Epidemiology is common to use diagnostic test to diagnose diseases.
+
+In general, diagnostic tests are not fully reliable and they have some risk of misdiagnosis as is represented in the
+table below.
+
+\begin{center}
+\begin{tabular}{|m{2.5cm}|m{3cm}<{\centering}|m{3cm}<{\centering}|}
+\cline{2-3}
+\multicolumn{1}{c|}{} & Presence of disease $D$ & Absence of disease $\bar D$\\ \hline
+Test outcome\newline positive $+$ & \textcolor{green}{True Positive}\newline $TP$ & \textcolor{red}{False
+Positive}\newline $FP$\\ \hline Test outcome\newline negative $-$ & \textcolor{red}{False Negative}\newline $FN$ &
+\textcolor{green}{True Negative}\newline $TN$\\ \hline
+\end{tabular}
+\end{center}
+\end{frame}
 
 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Sensitivity and specificity of a diagnostic test}
+The performance of a diagnostic test depends on the following two probabilities.
+\begin{definition}[Sensitivity]
+The \emph{sensitivity} of a diagnostic test is the proportion of positive outcomes in persons with the disease 
+\[
+P(+|D)=\frac{VP}{VP+FN}
+\]
+\end{definition}
+
+\begin{definition}[Specificity]
+The \emph{specificity} of a diagnostic test is the proportion of negative outcomes in persons without the disease
+\[
+P(-|\bar D)=\frac{VN}{VN+FP}
+\]
+\end{definition}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Sensitivity and specificity interpretation}
+Usually, there is a trade-off between sensibility and specificity.  
+
+A test with high sensitivity will detect the disease in most sick persons, but it will produce also more false positives
+than a less sensitive test. 
+This way, a positive outcome in a test with high sensitivity is not useful for confirming the disease, but a negative
+outcome is useful for ruling out the disease, since it rarely misdiagnoses those who have the disease.
+
+On the other hand, a test with a high specificity will rule out the disease in most healthy persons, but it will produce
+also more false negatives than a less specific test. 
+Thus, a negative outcome in a test with high specificity is not useful for ruling out the disease, but a positive
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Sensitivity and specificity interpretation}
+Deciding on a test with greater sensitivity or a test with greater specificity depends on the type of disease and the
+goal of the test.
+In general, we will use a sensitive test when:
+\begin{itemize}
+\item The disease is serious and is important detecting it. 
+\item The disease is curable. 
+\item The false positives doesn't provoke serious traumas.
+\end{itemize}
+
+An we will use a specific test when:
+\begin{itemize}
+\item The disease is important but difficult or impossible to cure.
+\item The false positives provoke serious traumas. 
+\item The treatment of false positives can have dangerous consequences.  
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Predictive values of a diagnostic test}
+But the most important in a diagnostic test is its predictive power, that is measured with the following two posterior 
+probabilities.
+\begin{definition}[Positive predictive value $PPV$]
+The \emph{positive predictive value} of a diagnostic test is the proportion of persons with the disease in persons with
+a positive outcome
+\[
+P(D|+) = \frac{TP}{TP+FP}
+\]
+\end{definition}
+
+\begin{definition}[Negative predictive value $NPV$]
+The \emph{negative predictive value} of a diagnostic test is the proportion of persons without the disease in persons
+with a negative outcome 
+\[
+P(\bar D|-) = \frac{TN}{TN+FN}
+\]
+\end{definition}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Predictive values interpretation}
+Positive and negative predictive values allow to confirm or to rule out the disease, respectively, if they reach at
+least a threshold of $0.5$.
+\[
+\begin{array}{rcl}
+PPV>0.5 & \Rightarrow & \mbox{Disease diagnostic}\\
+NPV>0.5 & \Rightarrow & \mbox{Not disease diagnostic} 
+\end{array}
+\]
+
+However, these probabilities depends on the proportion of persons with the disease in the population $P(D)$ that is
+known as \highlight{prevalence} of the disease.
+They can be calculated from the sensibility and the specificity of the diagnostic test using the Bayes theorem.
+
+\begin{align*}
+PPV=P(D|+) &= \frac{P(D)P(+|D)}{P(D)P(+|D)+P(\bar D)P(+|\bar D)}\\
+NPV=P(\bar D|-) &= \frac{P(\bar D)P(-|\bar D)}{P(D)P(-|D)+P(\bar D)P(-|\bar D)}
+%  = \frac{\mbox{Prevalence}\cdot
+% \mbox{Sensitivity}}{\mbox{Prevalence}\cdot \mbox{Sensitivity}+(1-\mbox{Prevalence})\cdot (1-\mbox{Specificity})}
+\end{align*} 
+
+Thus, with frequent diseases the positive predictive value increases and with rare diseases the negative predictive
+value increases. 
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Diagnostic tests}
+\framesubtitle{Example}
+A diagnostic test for the flu has been tried in a random sample of 1000 persons.
+The results are summarized in the table below.
+\begin{center}
+\begin{tabular}{|m{2.5cm}|m{3cm}<{\centering}|m{3cm}<{\centering}|}
+\cline{2-3}
+\multicolumn{1}{c|}{} & Presence of flu $D$ & Absence of flu $\bar D$\\ \hline
+Test outcome $+$ & 95 & 90 \\
+\hline
+Test outcome $-$ & 5 & 810 \\
+\hline
+\end{tabular}
+\end{center}
+
+According to this sample, the prevalence of the flu can be estimated as
+\[
+P(D) = \frac{95+5}{1000} = 0.1.
+\] 
+
+The sensitivity of this diagnostic test is
+\[
+P(+|D) = \frac{95}{95+5}= 0.95. 
+\] 
+
+And the specificity is 
+\[
+P(-|\bar D) = \frac{810}{90+810}=0.9.
+\]
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Diagnostic tests}
+\framesubtitle{Example cont.}
+The predictive positive value of the diagnostic test is
+\[
+PPV = P(D|+) = \frac{95}{95+90} = 0.5135.
+\]
+
+As this value is over $0.5$, this means that we will diagnose the flu if the outcome of the test is positive. 
+However, the confidence in the diagnostic will be low, as this value is pretty close to $0.5$.
+
+On the other hand, the predictive negative value is 
+\[
+NPV = P(\bar D|-) = \frac{810}{5+810} = 0.9939. 
+\]
+
+As this value is almost 1, that means that is almost sure that a person doesn't have the flu if he or she gets a
+negative outcome in the test. 
+
+Thus, this test is a powerful test to rule out the flu, but not so powerful to confirm it.    
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Likelihood ratios of a diagnostic test}
+The following measures are usually derived from sensibility and specificity.
+\begin{definition}[Positive likelihood ratio $LR+$]
+The \emph{positive likelihood ratio} of a diagnostic test is the ratio between the probability of positive outcomes in
+persons with the disease and healthy persons respectively,
+\[
+LR+=\frac{P(+|D)}{P(+|\bar D)} = \frac{\mbox{Sensitivity}}{1-\mbox{Specificity}}
+\]
+\end{definition}
+
+\begin{definition}[Negative likelihood ratio $LR-$]
+The \emph{negative likelihood ratio} of a diagnostic test is the ratio between the probability of negative outcomes in
+persons with the disease and healthy persons respectively,
+\[
+LR-=\frac{P(-|D)}{P(-|\bar D)} = \frac{1-\mbox{Sensitivity}}{\mbox{Specificity}}
+\]
+\end{definition}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Likelihood ratios interpretation}
+Positive likelihood ratio can be interpreted as the number of times that a positive outcome is more probable in people
+with the disease than in people without it. 
+
+On the other hand, negative likelihood ratio can be interpreted as the number of times that a negative outcome is more
+probable in people with the disease than in people without it. 
+
+Post-test probabilities can be calculated from pre-test probabilities through likelihood ratios.
+
+\[
+P(D|+) = \frac{P(D)P(+|D)}{P(D)P(+|D)+P(\bar D)P(+|\bar D)} = \frac{P(D)LR+}{1-P(D)+P(D)LR+}
+\]
+
+Thus, 
+\begin{itemize}
+\item A likelihood ratio greater than 1 increases the probability of disease.
+\item A likelihood ratio less than 1 decreases the probability of disease.
+\item A likelihood ratio 1 doesn't change the pre-test probability. 
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Likelihood ratios interpretation}
+\begin{center}
+\tikzsetnextfilename{probability/likelihood_ratios}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/probability/likelihood_ratios}}}
+\mode<presentation>{\resizebox{\textwidth}{!}{\input{img/probability/likelihood_ratios}}}
+\end{center}
+\end{frame}

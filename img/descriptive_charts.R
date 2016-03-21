@@ -1,3 +1,5 @@
+# Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
 setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_course")
 library(tikzDevice)
 library(plyr)
