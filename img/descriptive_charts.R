@@ -6,9 +6,6 @@ library(plyr)
 library(plotly)
 require(Hmisc)
 
-
-
-
 options(tikzDefaultEngine = "pdftex")
 # Bar chart
 data <- read.table("data/children_cars_data.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
@@ -98,7 +95,6 @@ p<-plot_ly(x=h[["mids"]], y=h[["counts"]],type="bar", marker=list(line=list(widt
 p<-add_trace(p,x=h[["breaks"]],y=c(0,h[["counts"]]),type="scatter",name="ogive")
 layout(p,title="Cumulative relative frequency distribution of heights", xaxis=list(title="Height"), yaxis=list(title="Cumulative relative frequency"), autosize=FALSE, width=600, height=400, bargap=0, showlegend=FALSE)
 
-
 # Histogram by sex
 tikz(file="img/descriptive/factor_histogram.tex", width=5, height=5)
 options(digits=1)
@@ -132,8 +128,6 @@ freq<-count(data,'blood.type.child')
 p<-plot_ly(labels=freq[["blood.type.child"]],values=freq[["freq"]], type="pie")
 layout(p,title="Relative frequency distribution of blood types", autosize=FALSE, width=600, height=400)
 
-
-
 # Box plot newborn
 data <- read.table("data/newborn_weights.csv", header=TRUE, sep=" ", na.strings="NA", dec=".", strip.white=TRUE)
 tikz(file="img/descriptive/boxplot.tex", width=7, height=5)
@@ -155,7 +149,7 @@ par(cex.lab=1.2)
 boxplot(data$children, horizontal=TRUE, col="coral", pch=16, main="Box plot of number of children", xlab="Number of children")
 dev.off()
 
-# Symmetrical histrogramç
+# Symmetrical histrogram
 x <- rnorm(1000000)
 m <- mean(x)
 tikz(file="img/descriptive/symmetrical_distribution.tex", width=7, height=5)

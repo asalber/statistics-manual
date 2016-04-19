@@ -23,7 +23,7 @@ population the sample must be representative of it.
 For that reason, to guarantee the representativeness of the sample, this must be drawn randomly. 
 This means that the choice of individuals in the sample is by chance. 
 
-The probability theory will give us the tools to control the random in the sampling and to determine the level of
+The probability theory will provide us the tools to control the random in the sampling and to determine the level of
 reliability of the conclusions drawn from the sample. 
 \end{frame}
 
@@ -44,10 +44,10 @@ The study of a characteristic of the population is conducted through random expe
 
 \textbf{Example}. Gambling are typical examples of random experiments. 
 The roll of a dice, for example, is a random experiment cause
-\begin{itemize}
+\begin{enumerate}
 \item It is known the the set of possible outcomes: $\{1,2,3,4,5,6\}$.
 \item Before rolling the dice, it's impossible to predict with absolute certainty the face of the dice that will occur. 
-\end{itemize}
+\end{enumerate}
 
 Another non-gambling example is the random choice of an individual of a human population and the determination of its
 blood type. 
@@ -74,7 +74,7 @@ The set $\Omega$ of the possible outcomes of a random experiment is known as \em
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Sample space construction}
+\frametitle{Tree diagrams}
 In experiments where more than one variable is measured, the determination of the sample space can be difficult. 
 In such a cases, it is advisable to use a \highlight{tree diagram} to construct the sample space. 
 
@@ -85,7 +85,7 @@ branch.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Sample space construction}
+\frametitle{Tree diagram}
 \framesubtitle{Example of gender and blood type}
 % The tree below represents the sample space of a random experiment where we measure the gender and the blood type of a
 % person.
@@ -110,7 +110,7 @@ There are different types of events:
 \item \textbf{Impossible event:} Is the event with no elements $\emptyset$. It has no chance of occurring.
 \item \textbf{Elemental events:} Are events with only one element, that is, a singleton.
 \item \textbf{Composed events:} Are events with two or more elements.
-\item \textbf{Sure event:} Is the event that contains the whole sample space. It always happens.
+\item \textbf{Sure event:} Is the event that contains the whole sample space $\Omega$. It always happens.
 \end{itemize}
 \end{frame}
 
@@ -148,7 +148,7 @@ As events are subsets of the sample space, using the set theory we have the foll
 \begin{frame}
 \frametitle{Union of events}
 \begin{definition}[Union event]
-Given two events $A,B\in \mathcal{P}(\Omega)$, the \emph{union} of $A$ and $B$, denoted by $A\cup B$, is the event of
+Given two events $A,B\subseteq \Omega$, the \emph{union} of $A$ and $B$, denoted by $A\cup B$, is the event of
 all elements that are members of $A$ or $B$ or both.
 \[
 A\cup B = \{x\,|\, x\in A\textrm{ or }x\in B\}.
@@ -167,7 +167,7 @@ The union event $A\cup B$ happens when $A$ \alert{or} $B$ happen.
 \begin{frame}
 \frametitle{Intersection of events}
 \begin{definition}[Intersection event]
-Given two events $A,B\in \mathcal{P}(\Omega)$, the \emph{intersection} of $A$ and $B$, denoted by $A\cap B$, is the
+Given two events $A,B\subseteq \Omega$, the \emph{intersection} of $A$ and $B$, denoted by $A\cap B$, is the
 event of all elements that are members of both $A$ and $B$.
 \[
 A\cap B = \{x\,|\, x\in A\textrm{ and }x\in B\}.
@@ -190,10 +190,10 @@ Two events are \highlight{incompatible} if their intersection is empty.
 \begin{frame}
 \frametitle{Complement of an event}
 \begin{definition}[Complementary event]
-Given an event $A\in \mathcal{P}(\Omega)$, the \emph{complementary or contrary event} of $A$, denoted by $\bar A$, is
+Given an event $A\subseteq \Omega$, the \emph{complementary or contrary event} of $A$, denoted by $\bar A$, is
 the event of all elements of $\Omega$ except the elements that are members of $A$.
 \[
-\overline A = \{x\,|\, x\not\in A\}.
+\bar A = \{x\,|\, x\not\in A\}.
 \]
 \end{definition}
 
@@ -210,7 +210,7 @@ The complementary event $\bar A$ happens when $A$ does \alert{not} happen.
 \begin{frame}
 \frametitle{Difference of events}
 \begin{definition}[Difference event]
-Given two events $A,B\in \mathcal{P}(\Omega)$, the \emph{difference} of $A$ and $B$, denoted by $A-B$, is the
+Given two events $A,B\subseteq \Omega$, the \emph{difference} of $A$ and $B$, denoted by $A-B$, is the
 event of all elements that are members of $A$ but not are members of $B$.
 \[
 A-B = \{x\,|\, x\in A\textrm{ and }x\not\in B\} = A \cap \bar B.
@@ -244,7 +244,7 @@ Given the sample space of rolling a dice $\Omega=\{1,2,3,4,5,6\}$ and the events
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Algebra of events}
-Given the events $A,B,C\in  \mathcal{P}(\Omega)$, the following properties are meet. 
+Given the events $A,B,C\subseteq \Omega$, the following properties are meet. 
 \begin{enumerate}
 \item $A\cup A=A$, $A\cap A=A$ (idempotency).
 \item $A\cup B=B\cup A$, $A\cap B = B\cap A$ (commutative).
@@ -291,7 +291,7 @@ Given the sample space of rolling a dice $\Omega=\{1,2,3,4,5,6\}$ and the event 
 P(A) = \frac{|A|}{|\Omega|} = \frac{3}{6} = 0.5.
 \]
 
-However, given the sample space of the blood type of a random individual $\Omega\{O,A,B,AB\}$, it's not possible to use
+However, given the sample space of the blood type of a random individual $\Omega=\{O,A,B,AB\}$, it's not possible to use
 the classical definition to compute the probability of having group $A$,
 \[
 P(A) \neq \frac{|A|}{|\Omega|} = \frac{1}{4} = 0.25,
@@ -313,13 +313,13 @@ The following definition of probability uses this theorem.
 Given a sample space $\Omega$ of a replicable random experiment, the \emph{probability} of an event $A\subseteq \Omega$
 is the relative frequency of the event $A$ in an infinite number of repetitions of the experiment 
 \[
-P(A) = lim_{n\rightarrow \infty}\frac{n_{A}}{n}
+P(A) = lim_{n\rightarrow \infty}\frac{n_A}{n}
 \]
 \end{definition}
 
-Although frequency probability avoid the restrictions of classical definition, it also have some drawbacks
+This definition also have some drawbacks
 \begin{itemize}
-\item It computes an estimation of the real probability (more accurate the higher the sample size).
+\item It computes an estimation of the real probability. % (more accurate the higher the sample size).
 \item The repetition of the experiment must be in identical conditions.
 \end{itemize}
 \end{frame}
@@ -335,13 +335,12 @@ probability of $H$ is
 P(H) = \frac{n_H}{n} = \frac{54}{100} = 0.54.
 \]
 
-Given the sample space of the blood type of a random individual $\Omega\{O,A,B,AB\}$, if after drawing a random sample
+Given the sample space of the blood type of a random individual $\Omega=\{O,A,B,AB\}$, if after drawing a random sample
 of 1000 persons we got 412 with blood type $A$, then the probability of $A$ is 
 \[
-P(A) \neq \frac{n_A}{n} = \frac{412}{1000} = 0.412.
+P(A) = \frac{n_A}{n} = \frac{412}{1000} = 0.412.
 \]
 \end{frame}
-
 
 
 %---------------------------------------------------------------------slide----
@@ -456,13 +455,13 @@ Occasionally, we can get some information about the experiment before its realiz
 Usually that information is given as an event $B$ of the same sample space that we know that is true before to
 conduct the experiment.
 
-In such a case, we will say that $B$ is a \emph{conditioning} event and the probability of another event $A$ known as a
-\highlight{conditional probability} and expressed 
+In such a case, we will say that $B$ is a \emph{conditioning} event and the probability of another event $A$ is known as
+a \highlight{conditional probability} and expressed 
 \[
 P(A|B).
 \]
 
-This must be read as \emph{probability of event $A$ conditional on event $B$ occurring}.
+This must be read as \emph{probability of $A$ given $B$} or \emph{probability of $A$ under the condition $B$}.
 \end{frame}
 
 %---------------------------------------------------------------------slide----
@@ -523,7 +522,7 @@ P(\mbox{Smoker}|\mbox{Female})= \frac{P(\mbox{Smoker}\cap \mbox{Female})}{P(\mbo
 From the definition of conditional probability it's possible to derive the formula for the probability of the
 intersection of two events. 
 \[
-P(A\cap B) = P(A)P(B/A) = P(B)P(A/B).
+P(A\cap B) = P(A)P(B|A) = P(B)P(A|B).
 \]
 
 \textbf{Example}. In a population there are a 30\% of smokers and we know that there are a 40\% of smokers with breast
@@ -535,8 +534,6 @@ P(\mbox{Smoker}\cap \mbox{Cancer})= P(\mbox{Smoker})P(\mbox{Cancer}|\mbox{Smoker
 \]
 \end{frame}
 
-
-\subsection{Dependence of events}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -578,6 +575,8 @@ P(H,H)= P(H_1\cap H_2) = P(H_1)P(H_2) = \frac{2}{4}\frac{2}{4}=\frac{1}{4}=0.25.
 \] 
 \end{frame}
 
+
+\subsection{Probabilistic space}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -732,7 +731,7 @@ disease present it.
 
 To answer the question we can apply the total probability theorem using the partition $\{A,\bar A\}$:
 \[
-P(S) = P(D)P(S|D)+P(\bar D)P(S/\bar D) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
+P(S) = P(D)P(S|D)+P(\bar D)P(S|\bar D) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
 \]
 That is, half of the population have the symptom. 
 
@@ -795,7 +794,7 @@ disease.
 However, if after examining the person we observe the symptom, that information changes the uncertainty about the
 hypothesis, an we need calculate the posterior probabilities to diagnose, that is,
 \[
-P(D|S) \mbox{ y } P(\bar D|S)
+P(D|S) \mbox{ and } P(\bar D|S)
 \]
 \end{frame}
 
@@ -806,8 +805,10 @@ P(D|S) \mbox{ y } P(\bar D|S)
 \framesubtitle{Example of diagnosis}
 To calculate the posterior probabilities we can use the Bayes theorem.
 \begin{align*}
-P(D/S) &= \frac{P(D)P(S/D)}{P(D)P(S/D)+P(\bar D)P(S/\bar D)} = \frac{0.2\cdot 0.9}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.18}{0.5}=0.36,\\
-P(\bar D/S) &= \frac{P(\bar D)P(S/\bar D)}{P(D)P(S/D)+P(\bar D)P(S/\bar D)} = \frac{0.8\cdot 0.4}{0.2\cdot 0.9 + 0.8\cdot 0.4} = \frac{0.32}{0.5}=0.64.
+P(D|S) &= \frac{P(D)P(S|D)}{P(D)P(S|D)+P(\bar D)P(S|\bar D)} = \frac{0.2\cdot 0.9}{0.2\cdot 0.9 + 0.8\cdot 0.4} =
+\frac{0.18}{0.5}=0.36,\\
+P(\bar D|S) &= \frac{P(\bar D)P(S|\bar D)}{P(D)P(S|D)+P(\bar D)P(S|\bar D)} = \frac{0.8\cdot 0.4}{0.2\cdot 0.9 +
+0.8\cdot 0.4} = \frac{0.32}{0.5}=0.64.
 \end{align*}
 
 As we can see the probability of having the disease has increased. 
@@ -846,14 +847,14 @@ The performance of a diagnostic test depends on the following two probabilities.
 \begin{definition}[Sensitivity]
 The \emph{sensitivity} of a diagnostic test is the proportion of positive outcomes in persons with the disease 
 \[
-P(+|D)=\frac{VP}{VP+FN}
+P(+|D)=\frac{TP}{TP+FN}
 \]
 \end{definition}
 
 \begin{definition}[Specificity]
 The \emph{specificity} of a diagnostic test is the proportion of negative outcomes in persons without the disease
 \[
-P(-|\bar D)=\frac{VN}{VN+FP}
+P(-|\bar D)=\frac{TN}{TN+FP}
 \]
 \end{definition}
 \end{frame}
@@ -862,7 +863,7 @@ P(-|\bar D)=\frac{VN}{VN+FP}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Sensitivity and specificity interpretation}
-Usually, there is a trade-off between sensibility and specificity.  
+Usually, there is a trade-off between sensitivity and specificity.  
 
 A test with high sensitivity will detect the disease in most sick persons, but it will produce also more false positives
 than a less sensitive test. 
@@ -871,7 +872,8 @@ outcome is useful for ruling out the disease, since it rarely misdiagnoses those
 
 On the other hand, a test with a high specificity will rule out the disease in most healthy persons, but it will produce
 also more false negatives than a less specific test. 
-Thus, a negative outcome in a test with high specificity is not useful for ruling out the disease, but a positive
+Thus, a negative outcome in a test with high specificity is not useful for ruling out the disease, but a positive is
+useful to confirm the disease, since it rarely give positive outcomes in healthy people.  
 \end{frame}
 
 
@@ -933,7 +935,7 @@ NPV>0.5 & \Rightarrow & \mbox{Not disease diagnostic}
 
 However, these probabilities depends on the proportion of persons with the disease in the population $P(D)$ that is
 known as \highlight{prevalence} of the disease.
-They can be calculated from the sensibility and the specificity of the diagnostic test using the Bayes theorem.
+They can be calculated from the sensitivity and the specificity of the diagnostic test using the Bayes theorem.
 
 \begin{align*}
 PPV=P(D|+) &= \frac{P(D)P(+|D)}{P(D)P(+|D)+P(\bar D)P(+|\bar D)}\\
@@ -1008,7 +1010,7 @@ Thus, this test is a powerful test to rule out the flu, but not so powerful to c
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Likelihood ratios of a diagnostic test}
-The following measures are usually derived from sensibility and specificity.
+The following measures are usually derived from sensitivity and specificity.
 \begin{definition}[Positive likelihood ratio $LR+$]
 The \emph{positive likelihood ratio} of a diagnostic test is the ratio between the probability of positive outcomes in
 persons with the disease and healthy persons respectively,

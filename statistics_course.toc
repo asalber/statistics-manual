@@ -1,34 +1,7 @@
 \beamer@endinputifotherversion {3.36pt}
 \select@language {english}
 \select@language {english}
-\beamer@sectionintoc {1}{Intoduction to Statistics}{4}{0}{1}
-\beamer@subsectionintoc {1}{1}{Statistics as a scientific tool}{6}{0}{1}
-\beamer@subsectionintoc {1}{2}{Population and sample}{13}{0}{1}
-\beamer@subsectionintoc {1}{3}{Sampling}{23}{0}{1}
-\beamer@subsectionintoc {1}{4}{Statistical variables}{26}{0}{1}
-\beamer@subsectionintoc {1}{5}{Phases of a statistical study}{33}{0}{1}
-\beamer@sectionintoc {2}{Frequency distributions: Tabulation and charts}{39}{0}{2}
-\beamer@subsectionintoc {2}{1}{Frequency distribution}{42}{0}{2}
-\beamer@subsectionintoc {2}{2}{Frequency distribution graphs}{53}{0}{2}
-\beamer@sectionintoc {3}{Sample statistics}{70}{0}{3}
-\beamer@subsectionintoc {3}{1}{Location statistics}{72}{0}{3}
-\beamer@subsectionintoc {3}{2}{Dispersion statistics}{117}{0}{3}
-\beamer@subsectionintoc {3}{3}{Shape statistics}{140}{0}{3}
-\beamer@subsectionintoc {3}{4}{Variable transformations}{152}{0}{3}
-\beamer@sectionintoc {4}{Regression and correlation}{161}{0}{4}
-\beamer@subsectionintoc {4}{1}{Joint frequency distribution}{164}{0}{4}
-\beamer@subsectionintoc {4}{2}{Covariance}{172}{0}{4}
-\beamer@subsectionintoc {4}{3}{Regression}{177}{0}{4}
-\beamer@subsectionintoc {4}{4}{Regression line}{182}{0}{4}
-\beamer@subsectionintoc {4}{5}{Correlation}{190}{0}{4}
-\beamer@subsectionintoc {4}{6}{Correlation coefficients}{193}{0}{4}
-\beamer@subsectionintoc {4}{7}{Non-linear regression}{200}{0}{4}
-\beamer@sectionintoc {5}{Probability}{209}{0}{5}
-\beamer@subsectionintoc {5}{1}{Random experiments and events}{212}{0}{5}
-\beamer@subsectionintoc {5}{2}{Set theory}{217}{0}{5}
-\beamer@subsectionintoc {5}{3}{Probability definition}{225}{0}{5}
-\beamer@subsectionintoc {5}{4}{Conditional probability}{239}{0}{5}
-\beamer@subsectionintoc {5}{5}{Dependence of events}{244}{0}{5}
-\beamer@subsectionintoc {5}{6}{Total probability theorem}{251}{0}{5}
-\beamer@subsectionintoc {5}{7}{Bayes theorem}{260}{0}{5}
-\beamer@subsectionintoc {5}{8}{Diagnostic tests}{263}{0}{5}
+\beamer@sectionintoc {1}{Random variables}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Probability distribution of a discrete random variable}{8}{0}{1}
+\beamer@subsectionintoc {1}{2}{Discrete uniform distribution}{15}{0}{1}
+\beamer@subsectionintoc {1}{3}{Binomial distribution}{17}{0}{1}

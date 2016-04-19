@@ -1,0 +1,52 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\begin{tikzpicture}[
+grow'=right,
+% sloped,
+level 1/.style ={level distance=2cm, sibling distance=1.6cm, parent anchor=east, child anchor=west},
+level 2/.style ={level distance=2cm, sibling distance=0.8cm},
+level 3/.style ={level distance=1.5cm, sibling distance=0.8cm, dashed},
+level 4/.style ={level distance=3cm, sibling distance=0.8cm, dashed},
+prob/.style={font=\footnotesize,above}
+]
+
+
+\node (root) {}
+	child {node {H}
+		child {node {H}
+			child {node{(H,H)}
+				child {node{$0.25$} edge from parent node[prob] {$0.5\cdot 0.5$}}
+			}
+			edge from parent node[prob] {$0.5$}
+		}
+		child {node {T}
+			child {node{(H,T)}
+				child {node{$0.25$} edge from parent node[prob] {$0.5\cdot 0.5$}}
+			}
+			edge from parent node[prob,below] {$0.5$}
+		}
+		edge from parent node[prob] {$0.5$}
+	}
+	child {node {$T$}
+   		child {node {H}
+			child {node{(T,H)} 
+				child {node{$0.25$} edge from parent node[prob] {$0.5\cdot 0.5$}}
+			}
+			edge from parent node[prob] {$0.5$}
+		}
+		child {node {T}
+			child {node{(T,T)} 
+				child {node{$0.25$} edge from parent node[prob] {$0.5\cdot 0.5$}}
+			}
+			edge from parent node[prob,below] {$0.5$}
+		}
+		edge from parent node[prob,below] {$0.5$}
+	};
+
+\begin{scope}[every node/.style={text width=2cm, align=center, anchor=center, font=\bfseries,}]
+\node[above= 0.5cm of root-1-1-1-1] (labels-level) {Probability};
+\node[at =(labels-level-|root-1-1-1)] {$\Omega$};
+\node[at =(labels-level-|root-1-1)] {2nd coin};
+\node[at =(labels-level-|root-1)] {1st coin};
+\end{scope}
+\end{tikzpicture}
