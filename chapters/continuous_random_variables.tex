@@ -9,392 +9,258 @@
 \end{frame}
 }
 
-% 
-% \subsection{Variables aleatorias continuas}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Variables aleatorias continuas}
-% Las variables aleatorias continuas, a diferencia de las discretas, se caracterizan porque pueden tomar cualquier valor en un intervalo real.
-% Es decir el conjunto de valores que pueden tomar no sólo es infinito, sino que además es no numerable.
-% 
-% Tal densidad de valores hace imposible el cálculo de las probabilidades de cada uno de ellos, y por tanto no podemos definir los modelos de
-% distribución de probabilidad por medio de una función de probabilidad como en el caso discreto.
-% 
-% Por otro lado, la medida de una variable aleatoria continua suele estar limitada por las imprecisiones del proceso o instrumento de medida.
-% Por ejemplo, cuando se dice que una estatura es $1.68$ m, no se está diciendo que es exactamente $1.68$ m, sino que la estatura está entre
-% $1.675$ y $1.685$ m, ya que el instrumento de medida sólo es capaz de precisar hasta cm.
-% 
-% Así pues, en el caso de variables continuas, \alert{\emph{no tiene sentido medir probabilidades de valores aislados, sino que se medirán
-% probabilidades de intervalos.}}
-% 
-% \note{
-% Ya hemos visto cómo estudiar la distribución de probabilidad de variables discretas. Veamos ahora como estudiar las continuas. 
-% 
-% Las variables aleatorias continuas, a diferencia de las discretas, se caracterizan porque pueden tomar cualquier valor en un intervalo real.
-% Es decir el conjunto de valores que pueden tomar no sólo es infinito, sino que además es no numerable.
-% 
-% Tal densidad de valores hace imposible el cálculo de las probabilidades de cada uno de ellos, y por tanto no podemos definir los modelos de
-% distribución de probabilidad por medio de una función de probabilidad como en el caso discreto.
-% 
-% Por otro lado, la medida de una variable aleatoria continua suele estar limitada por las imprecisiones del proceso o instrumento de medida.
-% Por ejemplo, conocer la estatura exacta de una persona es imposible, ya que no se dispone de un instrumento de medida de precisión infinta.
-% Cuando se dice que una estatura es $1.68$ m, no se está diciendo que es exactamente $1.68$ m, sino que la estatura está entre $1.675$ y
-% $1.685$ m, ya que el instrumento de medida sólo es capaz de precisar hasta cm.
-% 
-% Así pues, en el caso de variables continuas, \alert{\emph{no tiene sentido medir probabilidades de valores aislados, sino que se medirán
-% probabilidades de intervalos.}}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de densidad}
-% Para conocer cómo se distribuye la probabilidad entre los valores de una variable aleatoria continua se utiliza la función de densidad.
-% \begin{definition}[Función de densidad]
-% La \emph{función de densidad} de una variable aleatoria continua $X$ es una función $f(x)$ que cumple las siguientes propiedades:
-% \begin {itemize}
-% \item Es no negativa: $f(x)\geq 0$ $\forall x\in \mathbb{R}$,
-% \item El área acumulada entre la función y el eje de abscisas es 1, es decir,
-% \[
-% \int_{-\infty}^{\infty} f(x)\; dx = 1.
-% \]
-% \end{itemize}
-% \end{definition}
-% La probabilidad de que la variable tome un valor dentro un intervalo cualquiera $[a,b]$ es
-% \[
-% P(a\leq X\leq b) = \int_a^b f(x)\; dx
-% \] 
-% \begin{center}
-% \alert{\emph{¡Ojo! $f(x)$ no es la probabilidad de que la variable tome el valor $x$.}}
-% \end{center}
-% 
-% \note{
-% Para conocer cómo se distribuye la probabilidad entre los valores de una variable aleatoria continua se utiliza una función equivalente a
-% la función de probabilidad de las variables discretas, pero continua. Esta función se conoce como función de densidad y se caracteriza por
-% \begin {itemize}
-% \item Es no negativa: $f(x)\geq 0$ $\forall x\in \mathbb{R}$,
-% \item El área acumulada entre la función y el eje de abscisas es 1, es decir,
-% \[
-% \int_{-\infty}^{\infty} f(x)\; dx = 1.
-% \]
-% \end{itemize}
-% 
-% La forma de calcular probabilidades a partir de la función de densidad es medir el área que queda por debajo de la función hasta el eje $X$
-% y por tanto el area total que viene dada por la integral entre $-\infty$ y $\infty$ debe ser 1 que es la probabilidad total. 
-% 
-% De este modo, la probabilidad de que la variable tome un valor dentro un intervalo cualquiera $[a,b]$ es el área que queda por debajo de la
-% función de densidad en los límites del intervalo y eso es 
-% \[
-% P(a\leq X\leq b) = \int_a^b f(x)\; dx
-% \] 
-% \begin{center}
-% \alert{\emph{¡Ojo! a diferencia del caso discreto $f(x)$ no es la probabilidad de que la variable tome el valor $x$, ya que para variables
-% continuas la probabilidad de un valor aislado es siempre nula.}}
-% \end{center}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de distribución}
-% Al igual que para las variables discretas, también tiene sentido medir probabilidades acumuladas por debajo de un determinado valor.
-% \begin{definition}[Función de distibución]
-% La \emph{función de distribución} de una variable aleatoria continua $X$ es una función $F(x)$ que asocia a cada valor
-% $a$ la probabilidad de que la variable tome un valor menor o igual que dicho valor.
-% \[
-% F(a) = P(X\leq a) = \int_{-\infty}^{a} f(x)\; dx.
-% \] 
-% \end{definition} 
-% 
-% \note{
-% Al igual que para las variables discretas, también tiene sentido medir probabilidades acumuladas por debajo de un determinado valor mediante
-% la función de distribución, que ahora se define, para un valor $a$ como 
-% \[
-% F(a) = P(X\leq a) = \int_{-\infty}^{a} f(x)\; dx.
-% \] 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de probabilidades como áreas}
-% La función de densidad nos permite calcular la probabilidad un intervalo $[a,b]$ como el área acumulada por debajo de la función en dicho
-% intervalo.
-% \begin{center}
-% \scalebox{0.55}{\input{img/variables_aleatorias_continuas/calculo_probabilidad_funcion_densidad}}
-% \end{center}
-% \[
-% P(a\leq X\leq b) = \int_a^b f(x)\; dx = F(b) -F(a)
-% \]
-% 
-% \note{
-% Como ya hemos dicho, la función de densidad nos permite calcular la probabilidad un intervalo $[a,b]$ como el área acumulada por debajo de
-% la función en dicho intervalo.
-% 
-% Para ello tenemos dos posibilidades, a partir de la función de la función de densidad, calculando la integral definidad de esta entre $a$ y
-% $b$ o, a partir de la función de distribución, midiendo el área acumulada por debajo de $b$ y restandole el área acumulada por debajo de $a$
-% para quedarnos precisamente con el área que hay entre $a$ y $b$. Como es más fácil hacer restas que calcular integrales, trabajaremos la
-% mayoría de las veces con funciones de distribución. 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de probabilidades como áreas}
-% \framesubtitle{Ejemplo}
-% Dada la siguiente función:
-% \[
-% f(x) = 
-% \begin{cases}
-% 0 & \mbox{si $x<0$}\\
-% e^{-x} & \mbox{si $x\geq 0$},
-% \end{cases}
-% \]
-% veamos que se trata de una función de densidad. Para ello hay que comprobar que es no negativa, lo cual es evidente al tratarse de una función exponencial, y que el área por debajo de ella es 1:
-% \begin{align*}
-% \int_{-\infty}^\infty f(x)\;dx &= \int_{-\infty}^0 f(x)\;dx +\int_0^\infty f(x)\;dx = \int_{-\infty}^0 0\;dx +\int_0^\infty e^{-x}\;dx =\\
-% &= \left[-e^{-x}\right]_0^{\infty} = -e^{-\infty}+e^0 = 1.
-% \end{align*}
-% Ahora, a partir de ella, se puede calcular por ejemplo la probabilidad de que la variable tome un valor entre 0 y 2.
-% \begin{align*}
-% P(0\leq X\leq 2) &= \int_0^2 f(x)\;dx = \int_0^2 e^{-x}\;dx = \left[-e^{-x}\right]_0^2 = -e^{-2}+e^0 = 0.8646. 
-% \end{align*}
-% 
-% \note{
-% Veamos un ejemplo.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Estadísticos poblacionales}
-% El cálculo de los estadísticos poblacionales es similar al caso discreto, pero utilizando la función de densidad, en lugar de la función de
-% probabilidad, y extendiendo la suma discreta a la integral en todo el recorrido de la variable.
-% 
-% Los más importantes son:
-% \begin{itemize}
-% \item \structure{Media o esperanza matemática}:
-% \[
-% \mu = E(X) = \int_{-\infty}^\infty x f(x)\; dx
-% \]
-% \item \structure{Varianza}:
-% \[
-% \sigma^2 = Var(X) = \int_{-\infty}^\infty x^2f(x)\; dx -\mu^2
-% \]
-% \item \structure{Desviación típica}:
-% \[
-% \sigma = +\sqrt{\sigma^2}
-% \] 
-% \end{itemize}
-% 
-% \note{
-% El cálculo de los estadísticos poblacionales es similar al caso discreto, pero utilizando la función de densidad, en lugar de la función de
-% probabilidad, y extendiendo la suma discreta a la integral en todo el recorrido de la variable.
-% 
-% Así la media se define como 
-% \begin{itemize}
-% \item \structure{Media o esperanza matemática}:
-% \[
-% \mu = E(X) = \int_{-\infty}^\infty x f(x)\; dx
-% \]
-% \item \structure{Varianza}:
-% \[
-% \sigma^2 = Var(X) = \int_{-\infty}^\infty x^2f(x)\; dx -\mu^2
-% \]
-% \item \structure{Desviación típica}:
-% \[
-% \sigma = +\sqrt{\sigma^2}
-% \] 
-% \end{itemize}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de los estadísticos poblacionales}
-% \framesubtitle{Ejemplo}
-% Sea la función de densidad del ejemplo anterior:
-% \[
-% f(x) = 
-% \begin{cases}
-% 0 & \mbox{si $x<0$}\\
-% e^{-x} & \mbox{si $x\geq 0$}
-% \end{cases}
-% \]
-% Su media es
-% \begin{align*}
-% \mu &= \int_{-\infty}^\infty xf(x)\;dx = \int_{-\infty}^0 xf(x)\;dx +\int_0^\infty xf(x)\;dx = \int_{-\infty}^0 0\;dx +\int_0^\infty xe^{-x}\;dx =\\
-% &= \left[-e^{-x}(1+x)\right]_0^{\infty} = 1.
-% \end{align*}
-% y su varianza vale
-% \begin{align*}
-% \sigma^2 &= \int_{-\infty}^\infty x^2f(x)\;dx -\mu^2 = \int_{-\infty}^0 x^2f(x)\;dx +\int_0^\infty x^2f(x)\;dx -\mu^2 = \\
-% &= \int_{-\infty}^0 0\;dx +\int_0^\infty x^2e^{-x}\;dx -\mu^2= \left[-e^{-x}(x^2+2x+2)\right]_0^{\infty} - 1^2= 2e^0-1 = 1.
-% \end{align*}
-% 
-% \note{
-% Siguiendo con el ejemplo anterior, la media vale:
-% }
-% \end{frame}
-% 
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Modelos de distribución continuos}
-% Existen varios modelos de distribución de probabilidad que aparecen bastante a menudo en la naturaleza y también como consecuencia de los
-% procesos de muestreo aleatorio simple.
-% 
-% A continuación veremos los más importantes:
-% \begin{itemize}
-% \item Distribución Uniforme continua.
-% \item Distribución Normal.
-% \item Distribución T de Student.
-% \item Distribución Chi-cuadrado.
-% \item Distribución F de Fisher-Snedecor.
-% \end{itemize}
-% 
-% \note{
-% Existen varios modelos de distribución de probabilidad que aparecen bastante a menudo en la naturaleza y también como consecuencia de los
-% procesos de muestreo aleatorio simple.
-% 
-% A continuación veremos los más importantes:
-% \begin{itemize}
-% \item Distribución Uniforme continua.
-% \item Distribución Normal.
-% \item Distribución T de Student.
-% \item Distribución Chi-cuadrado.
-% \item Distribución F de Fisher-Snedecor.
-% \end{itemize}
-% }
-% \end{frame}
-% 
-% 
-% \subsection{Distribución Uniforme continua}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Distribución Uniforme continua $U(a,b)$}
-% Cuando todos los valores de una variable continua son equiprobables, se dice que la variable sigue un \emph{modelo de distribución uniforme
-% continuo}.
-% \begin{definition}[Distribución Uniforme continua]
-% Una variable aleatoria continua $X$, cuyo recorrido es el intervalo $[a,b]$, sigue un modelo de distribución \emph{uniforme} $U(a,b)$, si todos los valores de la variable son equiprobables, y por tanto, su función de densidad es constante en todo el intervalo:
-% \[
-% f(x)= \frac{1}{b-a}\quad \forall x\in [a,b]
-% \]
-% \end{definition}
-% 
-% Su media y varianza valen
-% \[
-% \mu = \frac{a+b}{2}\qquad \sigma^2=\frac{(b-a)^2}{12}.
-% \]
-% 
-% \note{
-% Al igual que para variables discretas, cuando todos los valores de una variable continua son equiprobables, se dice que la variable sigue
-% un \emph{modelo de distribución uniforme continuo}.
-% 
-% Si el recorrido de la variable es el intervalo $[a,b]$ entonces se dice que sigue un modelo de distribución \emph{uniforme} $U(a,b)$, y se
-% cumple que su función de densidad es constante y vale:
-% \[
-% f(x)= \frac{1}{b-a}\quad \forall x\in [a,b]
-% \]
-% 
-% Además, su media vale
-% \[
-% \mu = \frac{a+b}{2}.
-% \]
-% y su varianza
-% \[
-% \sigma^2=\frac{(b-a)^2}{12}.
-% \]
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de densidad de la Uniforme continua $U(a,b)$}
-% La generación aleatoria de un número real entre 0 y 1 sigue un modelo de distribución uniforme continuo $U(0,1)$. 
-% \begin{center}
-% \scalebox{0.7}{\input{img/variables_aleatorias_continuas/funcion_densidad_uniforme}}
-% \end{center}
-% 
-% \note{
-% Un ejemplo de variable aleatoria uniforme continua sería la que mide el resultado de generar aleatoriamente un número entre 0 y 1. Esta
-% variable seguiría un modelo de distribución uniforme continuo $U(0,1)$, y la gráfica de su función de densidad es esta. Como se ve, la
-% función es constante y vale 1, ya que debe cumplirse, al ser función de densidad, que el área total por debajo de ella debe ser 1, y como en
-% realidad se trata del área de un rectángulo de base 1, pues la altura debe ser también 1.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de distribución de la Uniforme continua $U(a,b)$}
-% Como la función de densidad es constante, la función de distribución presenta un crecimiento lineal.
-% \begin{center}
-% \scalebox{0.7}{\input{img/variables_aleatorias_continuas/funcion_distribucion_uniforme}}
-% \end{center}
-% 
-% \note{
-% En esta otra gráfica tenemos la función de distribución $U(0,1)$.
-% Como la función de densidad es constante, la función de distribución presenta un crecimiento lineal. Obsérvese que, como para cualquier
-% función de distribución, la probabilidad acumulada al comienzo del recorrido es 0, y al final, vale 1, que es la probabilidad total. 
-% }
-% \end{frame}
-% 
-% 
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de probabilidades con una Uniforme continua}
-% \framesubtitle{Ejemplo de espera de un autobús}
-% Supóngase que un autobús pasa por una parada cada 15 minutos. Si una persona puede llegar a la parada en cualquier instante, \emph{¿cuál es
-% la probabilidad de que espere entre 5 y 10 minutos?}
-% \begin{columns}
-% \begin{column}{0.52\textwidth}
-% En este caso, la variable $X$ que mide el tiempo de espera sigue un modelo de distribución uniforme continua $U(0,15)$ ya que cualquier
-% valor entre los 0 y los 15 minutos es equipobrable.
-% 
-% Así pues, la probabilidad que nos piden es
-% \begin{align*}
-% P(5\leq X\leq 10) &= \int_{5}^{10} \frac{1}{15}\;dx = \left[\frac{x}{15}\right]_5^{10} = \\
-% &= \frac{10}{15}-\frac{5}{15} =\frac{1}{3}.
-% \end{align*}
-% \end{column}
-% \begin{column}{0.43\textwidth}
-% \begin{center}
-% \scalebox{0.5}{\input{img/variables_aleatorias_continuas/calculo_probabilidades_uniforme}}
-% \end{center}
-% \end{column}
-% \end{columns}
-% Además, el tiempo medio de espera será $\mu=\frac{0+15}{2}=7.5$ minutos.
-% 
-% \note{
-% Como ejemplo, supóngase que un autobús pasa por una parada cada 15 minutos. Si una persona puede llegar a la parada en cualquier instante,
-% \emph{¿cuál es la probabilidad de que espere entre 5 y 10 minutos?}
-% 
-% Está claro que lo mínimo que puede esperar una persona es 0 minutos, si llega justo cuando está el autobús, y lo máximo es 15 minutos, si
-% llega justo cuando el autobús se marcha. Como además puede llegar en cualquier instante con equiprobabiliadad, la variable $X$ que mide el
-% tiempo de espera sigue un modelo de distribución uniforme continua $U(0,15)$.
-% 
-% Así pues, la probabilidad que nos piden es
-% \begin{align*}
-% P(5\leq X\leq 10) &= \int_{5}^{10} \frac{1}{15}\;dx = \left[\frac{x}{15}\right]_5^{10} = \\
-% &= \frac{10}{15}-\frac{5}{15} =\frac{1}{3}.
-% \end{align*}
-% 
-% Aunque también podría calcularse fácilmente a partir de la gráfica de la función de densidad que es constante y vale $1/15$, midiendo el
-% área que queda por debajo de esta función entre 5 y 10. Como se tráta del área de un rectánculo, basta multiplicar la base, que es 5, por la
-% altura que es $1/15$ y de nuevo se obtiene $1/3$.
-% }
-% \end{frame}
+
+\subsection{Variables aleatorias continuas}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Continuous random variables}
+Continuous random variables, unlike discrete random variables, can take any value in a real interval. 
+Thus the range of a continuous random variables is infinite and uncountable. 
+
+Such a density of values makes impossible to compute the probability for each one of them, and therefore, it's not
+possible to define a probabilistic model trough a probability function like with discrete random variables.
+
+Besides, usually the measurement of continuous random variable is limited by the precision of the measuring instrument.
+For instance, when somebody says that is $1.68$ meters tall, his or her true height is no exactly $1.68$ meters, cause
+the precision of the measuring instrument is only cm (two decimal places). 
+This means that the true height of that person is between $1.675$ y $1.685$ meters.
+
+Hence, for continuous variables, \alert{\emph{it make no sense to calculate the probability of an isolated value, and we
+will calculate probabilities for intervals.}}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probability density function}
+To model the probability distribution of a continuous random variable is used a probability density function.
+
+\begin{definition}[Probability density function]
+The \emph{probability density function} of a continuous random variable $X$ is a function $f(x)$ that meets the
+following conditions:
+\begin {itemize}
+\item Is non-negative: $f(x)\geq 0$ $\forall x\in \mathbb{R}$,
+\item The area bounded by the curve of the density function and the x-axis is equal to 1, that is,
+\[
+\int_{-\infty}^{\infty} f(x)\; dx = 1.
+\]
+\item The probability that $X$ assumes a value between $a$ and $b$ is equal to the area under the density function
+bounded by $a$ and $b$, that is,
+\[
+P(a\leq X\leq b) = \int_a^b f(x)\; dx
+\]
+\end{itemize}
+\end{definition}
+
+The probability density function measures the relative likelihood of every value, but \alert{\emph{Watch out!, $f(x)$ is
+not the probability of $x$.}}, cause $P(X=x)=0$ for every $x$ value by definition.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Distribution function}
+The same way that for discrete random variables, for continuous random variables it makes sense to calculate cumulative
+probabilities.
+\begin{definition}[Distribution function]
+The \emph{distribution function} of a continuous random variable $X$ is a function $F(x)$ that maps every value $a$ to
+the probability that $X$ takes on a value less than or equal to $a$, that is,
+\[
+F(a) = P(X\leq a) = \int_{-\infty}^{a} f(x)\; dx.
+\]
+\end{definition}
+
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probabilities as areas}
+
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/density_function}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/continuous_random_variables/density_function}}}
+\mode<presentation>{\resizebox{0.7\textwidth}{!}{\input{img/continuous_random_variables/density_function}}}
+$\displaystyle P(a\leq X\leq b) = \int_a^b f(x)\, dx = F(b)-F(a)$
+\end{center}
+\end{frame}
+
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Probability calculation}
+\framesubtitle{Example}
+Given the following function
+\[
+f(x) =
+\begin{cases}
+0 & \mbox{si $x<0$}\\
+e^{-x} & \mbox{si $x\geq 0$},
+\end{cases}
+\]
+let's check that is a density function. 
+
+As this function is clearly non-negative, we have to check that total area bounded by the curve and the x-axis is 1.
+\begin{align*}
+\int_{-\infty}^\infty f(x)\;dx &= \int_{-\infty}^0 f(x)\;dx +\int_0^\infty f(x)\;dx = \int_{-\infty}^0 0\;dx +\int_0^\infty e^{-x}\;dx =\\
+&= \left[-e^{-x}\right]_0^{\infty} = -e^{-\infty}+e^0 = 1.
+\end{align*}
+Now, let's calculate the probability of $X$ having a value between 0 and 2. 
+\begin{align*}
+P(0\leq X\leq 2) &= \int_0^2 f(x)\;dx = \int_0^2 e^{-x}\;dx = \left[-e^{-x}\right]_0^2 = -e^{-2}+e^0 = 0.8646.
+\end{align*}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Population statistics}
+The calculation of the population statistics is similar to the case of discrete variables, but using the density
+function instead of the probability function, and extending the discrete sum to the integral.
+
+The most important are:
+\begin{itemize}
+\item \structure{Mean}:
+\[
+\mu = E(X) = \int_{-\infty}^\infty x f(x)\; dx
+\]
+\item \structure{Variance}:
+\[
+\sigma^2 = Var(X) = \int_{-\infty}^\infty x^2f(x)\; dx -\mu^2
+\]
+\item \structure{Standard deviation}:
+\[
+\sigma = +\sqrt{\sigma^2}
+\]
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Population statistics}
+\framesubtitle{Example}
+Let $X$ be a variable with the following probability density function
+\[
+f(x) =
+\begin{cases}
+0 & \mbox{si $x<0$}\\
+e^{-x} & \mbox{si $x\geq 0$}
+\end{cases}
+\]
+
+The mean is 
+\begin{align*}
+\mu &= \int_{-\infty}^\infty xf(x)\;dx = \int_{-\infty}^0 xf(x)\;dx +\int_0^\infty xf(x)\;dx = \int_{-\infty}^0 0\;dx +\int_0^\infty xe^{-x}\;dx =\\
+&= \left[-e^{-x}(1+x)\right]_0^{\infty} = 1.
+\end{align*}
+and the variance is
+\begin{align*}
+\sigma^2 &= \int_{-\infty}^\infty x^2f(x)\;dx -\mu^2 = \int_{-\infty}^0 x^2f(x)\;dx +\int_0^\infty x^2f(x)\;dx -\mu^2 = \\
+&= \int_{-\infty}^0 0\;dx +\int_0^\infty x^2e^{-x}\;dx -\mu^2= \left[-e^{-x}(x^2+2x+2)\right]_0^{\infty} - 1^2= 2e^0-1 = 1.
+\end{align*}
+\end{frame}
+
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Continuous probability distribution models}
+According to the type of experiment where the random variable is measured, there are different probability distributions
+models. 
+The most common are
+\begin{itemize}
+\item Continuous uniform.
+\item Normal.
+\item Student's T.
+\item Chi-square.
+\item Fisher-Snedecor's F.
+\end{itemize}
+\end{frame}
+
+
+\subsection{Continuous uniform distribution}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Continuous uniform probability distribution model $U(a,b)$}
+When all the values of a random variable $X$ have equal probability, the probability distribution of $X$ is uniform.
+
+\begin{definition}[Continuous uniform distribution $U(a,b)$]
+A continuouo random variable $X$ follows a probability distribution model \emph{uniform} of parameters $a$ and
+$b$, noted $X\sim U(a,b)$, if its range is $\mbox{Ran}(X) = [a,b]$ and its density function is
+\[
+f(x)= \frac{1}{b-a}\quad \forall x\in [a,b]
+\]
+\end{definition}
+
+Observe that $a$ and $b$ are the minimum and the maximum of the range respectively, and that the density function is
+constant. 
+
+The mean and the variance are
+\[
+\mu = \frac{a+b}{2}\qquad \sigma^2=\frac{(b-a)^2}{12}.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Continuous uniform probability density function}
+\framesubtitle{Example}
+
+The generation of a random number between 0 and 1 is follows a continuous uniform distribution $U(0,1)$.
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/uniform_density_function}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/continuous_random_variables/uniform_density_function}}}
+\mode<presentation>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/uniform_density_function}}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Continuous uniform distribution function}
+\framesubtitle{Example}
+As the density function is constant, the distribution function has a linear growth. 
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/uniform_distribution_function}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/continuous_random_variables/uniform_distribution_function}}}
+\mode<presentation>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/uniform_distribution_function}}}
+\end{center}
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Cálculo de probabilidades con una Uniforme continua}
+\framesubtitle{Ejemplo de espera de un autobús}
+Supóngase que un autobús pasa por una parada cada 15 minutos. Si una persona puede llegar a la parada en cualquier instante, \emph{¿cuál es
+la probabilidad de que espere entre 5 y 10 minutos?}
+\begin{columns}
+\begin{column}{0.52\textwidth}
+En este caso, la variable $X$ que mide el tiempo de espera sigue un modelo de distribución uniforme continua $U(0,15)$ ya que cualquier
+valor entre los 0 y los 15 minutos es equipobrable.
+
+Así pues, la probabilidad que nos piden es
+\begin{align*}
+P(5\leq X\leq 10) &= \int_{5}^{10} \frac{1}{15}\;dx = \left[\frac{x}{15}\right]_5^{10} = \\
+&= \frac{10}{15}-\frac{5}{15} =\frac{1}{3}.
+\end{align*}
+\end{column}
+\begin{column}{0.43\textwidth}
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/uniform_probability_calculation}
+\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/continuous_random_variables/uniform_probability_calculation}}}
+\mode<presentation>{\resizebox{1\textwidth}{!}{\input{img/continuous_random_variables/uniform_probability_calculation}}}
+\end{center}
+\end{column}
+\end{columns}
+Además, el tiempo medio de espera será $\mu=\frac{0+15}{2}=7.5$ minutos.
+
+\end{frame}
 % 
 % 
 % \subsection{Distribución Normal}
