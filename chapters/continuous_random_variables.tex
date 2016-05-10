@@ -10,7 +10,7 @@
 }
 
 
-\subsection{Variables aleatorias continuas}
+\subsection{Probability distribution of a continuous random variable}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -189,7 +189,7 @@ The most common are
 When all the values of a random variable $X$ have equal probability, the probability distribution of $X$ is uniform.
 
 \begin{definition}[Continuous uniform distribution $U(a,b)$]
-A continuouo random variable $X$ follows a probability distribution model \emph{uniform} of parameters $a$ and
+A continuous random variable $X$ follows a probability distribution model \emph{uniform} of parameters $a$ and
 $b$, noted $X\sim U(a,b)$, if its range is $\mbox{Ran}(X) = [a,b]$ and its density function is
 \[
 f(x)= \frac{1}{b-a}\quad \forall x\in [a,b]
@@ -214,7 +214,7 @@ The mean and the variance are
 The generation of a random number between 0 and 1 is follows a continuous uniform distribution $U(0,1)$.
 \begin{center}
 \tikzsetnextfilename{continuous_random_variables/uniform_density_function}
-\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/continuous_random_variables/uniform_density_function}}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/uniform_density_function}}}
 \mode<presentation>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/uniform_density_function}}}
 \end{center}
 \end{frame}
@@ -227,7 +227,7 @@ The generation of a random number between 0 and 1 is follows a continuous unifor
 As the density function is constant, the distribution function has a linear growth. 
 \begin{center}
 \tikzsetnextfilename{continuous_random_variables/uniform_distribution_function}
-\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/continuous_random_variables/uniform_distribution_function}}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/uniform_distribution_function}}}
 \mode<presentation>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/uniform_distribution_function}}}
 \end{center}
 \end{frame}
@@ -235,16 +235,17 @@ As the density function is constant, the distribution function has a linear grow
 
 % ---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Cálculo de probabilidades con una Uniforme continua}
-\framesubtitle{Ejemplo de espera de un autobús}
-Supóngase que un autobús pasa por una parada cada 15 minutos. Si una persona puede llegar a la parada en cualquier instante, \emph{¿cuál es
-la probabilidad de que espere entre 5 y 10 minutos?}
+\frametitle{Continuous uniform probability calculation}
+\framesubtitle{Example of waiting time for a bus}
+A bus has a frequency of 15 minutes. 
+Assuming that a person can arrive to the bus station in any time, \emph{what is the probability of waiting the bus
+between 5 and 10 minutes?}
 \begin{columns}
 \begin{column}{0.52\textwidth}
-En este caso, la variable $X$ que mide el tiempo de espera sigue un modelo de distribución uniforme continua $U(0,15)$ ya que cualquier
-valor entre los 0 y los 15 minutos es equipobrable.
+In this case, the variable $X$ that measures the waiting time follows a continuous uniform distribution $U(0,15)$ as any
+waiting time between 0 and 15 is equally likely. 
 
-Así pues, la probabilidad que nos piden es
+Then, the probability of waiting between 5 and 10 minutes is
 \begin{align*}
 P(5\leq X\leq 10) &= \int_{5}^{10} \frac{1}{15}\;dx = \left[\frac{x}{15}\right]_5^{10} = \\
 &= \frac{10}{15}-\frac{5}{15} =\frac{1}{3}.
@@ -253,658 +254,430 @@ P(5\leq X\leq 10) &= \int_{5}^{10} \frac{1}{15}\;dx = \left[\frac{x}{15}\right]_
 \begin{column}{0.43\textwidth}
 \begin{center}
 \tikzsetnextfilename{continuous_random_variables/uniform_probability_calculation}
-\mode<article>{\resizebox{0.7\textwidth}{!}{\input{img/continuous_random_variables/uniform_probability_calculation}}}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/uniform_probability_calculation}}}
 \mode<presentation>{\resizebox{1\textwidth}{!}{\input{img/continuous_random_variables/uniform_probability_calculation}}}
 \end{center}
 \end{column}
 \end{columns}
-Además, el tiempo medio de espera será $\mu=\frac{0+15}{2}=7.5$ minutos.
-
+And the expected waiting (the mean) time is $\mu=\frac{0+15}{2}=7.5$ minutes.
 \end{frame}
-% 
-% 
-% \subsection{Distribución Normal}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Distribución Normal $N(\mu,\sigma)$}
-% El modelo de distribución normal es, sin duda, el modelo de distribución continuo más importante, ya que es el que más a menudo se presenta
-% en la naturaleza.
-% \begin{definition}[Distribución Normal]
-% Una variable aleatoria continua $X$ sigue un modelo de distribución \emph{normal} $N(\mu,\sigma)$ si su recorrido es $\mathbb{R}$ y su función de densidad vale
-% \[
-% f(x)= \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
-% \]
-% \end{definition}
-% 
-% La distribución normal depende de dos parámetros $\mu$ y $\sigma$ que son, precisamente, su media y desviación típica.
-% 
-% \note{
-% El modelo de distribución normal es, sin duda, el modelo de distribución continuo más importante, ya que es el que más a menudo se presenta
-% en la naturaleza, sobre todo en variables continuas biológicas.
-% 
-% \begin{definition}[Distribución Normal]
-% Una variable aleatoria continua $X$ sigue un modelo de distribución \emph{normal} $N(\mu,\sigma)$ si su recorrido es $\mathbb{R}$ y su función de densidad vale
-% \[
-% f(x)= \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
-% \]
-% \end{definition}
-% 
-% La distribución normal depende de dos parámetros $\mu$ y $\sigma$ que son, precisamente, su media y desviación típica.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de densidad de la Normal $N(\mu,\sigma)$}
-% La gráfica de la función de densidad de la distribución normal tiene forma de una especie de campana, conocida como \emph{campana de Gauss}
-% (en honor a su descubridor), y está centrada en la media $\mu$.
-% \begin{center}
-% \scalebox{0.65}{\input{img/variables_aleatorias_continuas/funcion_densidad_normal}}
-% \end{center}
-% 
-% \note{
-% La gráfica de la función de densidad de la distribución normal tiene forma de una especie de campana, conocida como \emph{campana de Gauss}
-% (en honor a su descubridor), y está centrada en la media $\mu$.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de densidad de la Normal $N(\mu,\sigma)$}
-% La forma de la campana de Gauss depende de sus dos parámetros:
-% \begin{itemize}
-% \item La media $\mu$ determina dónde está centrada.
-% \item La desviación típica $\sigma$ determina su anchura.
-% \end{itemize} 
-% \begin{center}
-% \scalebox{0.5}{\input{img/variables_aleatorias_continuas/funcion_densidad_normales_distinta_media}}
-% \quad
-% \scalebox{0.5}{\input{img/variables_aleatorias_continuas/funcion_densidad_normales_distinta_varianza}}
-% \end{center}
-% 
-% \note{
-% La forma de la campana de Gauss depende de sus dos parámetros:
-% \begin{itemize}
-% \item Por un lado, ya hemos visto que la media $\mu$ determina dónde está centrada. En la gráfica de la izquierda podemos ver las funciones
-% de densidad de dos normales, una con media 0 y desviación típica 1, y otra con media 2 y desviación típica 1. Como se ve, ambas gráficas son
-% idénticas, salvo que la primera está centrada en el 0 y la segunda en el 2.
-% \item Por otro lado, la desviación típica $\sigma$, al ser una medida de la dispersión de la población, determina su anchura. En la gráfica
-% de la derecha podemos ver las funciones de densidad de dos normales con la misma media 0, y desviaciones típicas 1, y 2 respectivamente.
-% Como se ve, ambas están centradas en el 0, pero la primera es más estrecha que la segunda al tener menos dispersión. 
-% \end{itemize} 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de distribución de la Normal $N(\mu,\sigma)$}
-% Por su parte, la gráfica de la función de distribución tiene forma de S. 
-% \begin{center}
-% \scalebox{0.7}{\input{img/variables_aleatorias_continuas/funcion_distribucion_normal}}
-% \end{center}
-% 
-% \note{
-% Por su parte, la gráfica de la función de distribución de una normal siempre tiene forma de S. 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Propiedades de la distribución Normal}
-% \begin{itemize}
-% \item La función de densidad es simétrica respecto a la media y por tanto, su coeficiente de asimetría es $g_1=0$.
-% \item También es mesocúrtica, y por tanto, su coeficiente de apuntamiento vale $g_2=0$.
-% \item La media, la mediana y la moda coinciden
-% \[
-% \mu = Me = Mo.
-% \]
-% \item Tiende asintóticamente a 0 cuando $x$ tiende a $\pm \infty$.
-% \end{itemize}
-% 
-% \note{
-% La distribución normal tiene propiedades muy interesantes:
-% \begin{itemize}
-% \item La función de densidad es simétrica respecto a la media y por tanto, su coeficiente de asimetría es $g_1=0$.
-% \item También es mesocúrtica, y por tanto, su coeficiente de apuntamiento vale $g_2=0$. Recordemos que el apuntamiento de cualquier variable
-% se compara precisamente con el apuntamiento de la distribución normal, ya que al ser esta la distribución más común, se toma como
-% referencia.
-% \item De nuevo, al ser simétrica con respecto a la media, hasta la media tendremos acumulada la mitad de la probabilidad, y por tanto la
-% media coincide con la mediana, y también con la moda, ya que sobre la media se alcanza el máximo de la función de densidad.
-% \[
-% \mu = Me = Mo.
-% \]
-% \item Tiende asintóticamente a 0 cuando $x$ tiende a $\pm \infty$.
-% \end{itemize}
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Propiedades de la distribución Normal}
-% \begin{itemize}
-% \item Se cumple que
-% \begin{align*}
-% & P(\mu-\sigma \leq X \leq \mu+\sigma) = 0.68,\\
-% & P(\mu-2\sigma \leq X \leq \mu+2\sigma) = 0.95,\\
-% & P(\mu-3\sigma \leq X \leq \mu+3\sigma) = 0.99.
-% \end{align*}
-% \end{itemize}
-% \begin{center}
-% \scalebox{0.6}{\input{img/variables_aleatorias_continuas/propiedades_normal}}
-% \end{center}
-% 
-% \note{
-% Y también se cumple que
-% \begin{align*}
-% & P(\mu-\sigma \leq X \leq \mu+\sigma) = 0.68,\\
-% & P(\mu-2\sigma \leq X \leq \mu+2\sigma) = 0.95,\\
-% & P(\mu-3\sigma \leq X \leq \mu+3\sigma) = 0.99.
-% \end{align*}
-% }
-% es decir, casi la totalidad de los individuos de la población presentarán valores entre la media menos tres veces la desviación típica, y la
-% media mas tres veces la desviación típica.
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Propiedades de la distribución Normal}
-% \framesubtitle{Ejemplo}
-% En un estudio se ha comprobado que el nivel de colesterol total en mujeres
-% sanas de entre 40 y 50 años sigue una distribución normal de media de 210 mg/dl y desviación
-% típica 20 mg/dl. 
-% \emph{¿Qué quiere decir esto?}
-% 
-% Atendiendo a las propiedades de la campana de Gauss, se tiene que 
-% \begin{itemize}
-% \item El 68\% de las mujeres sanas tendrán el colesterol entre $210\pm 20$ mg/dl, es decir, entre 190 y 230 mg/dl.
-% \item El 95\% de las mujeres sanas tendrán el colesterol entre $210\pm 2\cdot 20$ mg/dl, es decir, entre 170 y 250
-% mg/dl.
-% \item El 99\% de las mujeres sanas tendrán el colesterol entre $210\pm 3\cdot 20$ mg/dl, es decir, entre 150 y 270
-% mg/dl.
-% \end{itemize}
-% 
-% En la analítica sanguínea suele utilizarse el intervalo $\mu\pm 2\sigma$ para detectar posibles patologías. En el caso
-% del coresterol, dicho intervalo es $[170\text{ mg/dl}, 250\text{ mg/dl}]$. Cuando una persona tiene el colesterol fuera
-% de estos límites, se tiende a pensar que tiene alguna patología, aunque ciertamente podría estar sana, pero la
-% probabilidad de que eso ocurra es sólo de un 5\%.
-% 
-% \note{
-% Veamos una aplicación de estas propiedades. 
-% 
-% En un estudio se ha comprobado que el nivel de colesterol total en mujeres sanas de entre 40 y 50 años sigue una distribución normal de
-% media de 210 mg/dl y desviación típica 20 mg/dl. 
-% \emph{¿Qué quiere decir esto?}
-% 
-% Atendiendo a las propiedades de la campana de Gauss, se tiene que 
-% \begin{itemize}
-% \item El 68\% de las mujeres sanas tendrán el colesterol entre $210\pm 20$ mg/dl, es decir, entre 190 y 230 mg/dl.
-% \item El 95\% de las mujeres sanas tendrán el colesterol entre $210\pm 2\cdot 20$ mg/dl, es decir, entre 170 y 250
-% mg/dl.
-% \item El 99\% de las mujeres sanas tendrán el colesterol entre $210\pm 3\cdot 20$ mg/dl, es decir, entre 150 y 270
-% mg/dl.
-% \end{itemize}
-% 
-% En la analítica sanguínea suele utilizarse el intervalo $\mu\pm 2\sigma$ para detectar posibles patologías. En el caso
-% del coresterol, dicho intervalo es $[170\text{ mg/dl}, 250\text{ mg/dl}]$. Cuando una persona tiene el colesterol fuera
-% de estos límites, se tiende a pensar que tiene alguna patología, aunque ciertamente podría estar sana, pero la
-% probabilidad de que eso ocurra es sólo de un 5\%.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{El teorema central del límite}
-% El comportamiento anterior lo presentan muchas variables continuas físicas y biológicas.
-% 
-% Si se piensa por ejemplo en la distribución de las estaturas, se verá que la mayor parte de los individuos presentan estaturas en torno a la
-% media, tanto por arriba, como por debajo, pero que a medida que van alejándose de la media, cada vez hay menos individuos con dichas
-% estaturas.
-% 
-% La justificación de que la distribución normal aparezca de manera tan frecuente en la naturaleza la encontramos en el
-% \structure{\textbf{teorema central del límite}}, que veremos más adelante, y que establece que si una variable aleatoria $X$ proviene de un
-% experimento aleatorio cuyos resultados son debidos a un conjunto muy grande de causas independientes que actúan sumando sus efectos,
-% entonces $X$ sigue una distribución aproximadamente normal.
-% 
-% \note{
-% Se ha observado que la mayor parte de las variables continuas físicas y biológicas presentan una distribucón con forma de campana de Gauss.
-% 
-% Si se piensa por ejemplo en la distribución de las estaturas, se verá que la mayor parte de los individuos presentan estaturas en torno a la
-% media, tanto por arriba, como por debajo, pero que a medida que van alejándose de la media, cada vez hay menos individuos con dichas
-% estaturas.
-% 
-% La justificación de que la distribución normal aparezca de manera tan frecuente en la naturaleza la encontramos en el
-% \structure{\textbf{teorema central del límite}}, que veremos más detenidamente en el siguiente tema, y que establece que si una variable
-% aleatoria $X$ proviene de un experimento aleatorio cuyos resultados son debidos a un conjunto muy grande de causas independientes que actúan
-% sumando sus efectos, entonces $X$ sigue una distribución aproximadamente normal.
-% 
-% Si pensamos en cualquier variable biológica, como por ejemplo la tensión arterial, rápidamente podremos identificar multitud de factores que
-% influyen en ella, como por ejemplo la edad, el sexo, la dieta, el ejercicio físico, si se fuma o no, etc. El valor de la tensión arterial en
-% un individuo es el resultado de todos estos factores que suman sus efectos de manera independiente, y por ello, el el colesterol acaba
-% teniendo una distribución normal.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{La distribución Normal estándar $N(0,1)$}
-% De todas las distribuciones normales, la más importante es la que tiene media $\mu=0$ y desviación típica $\sigma=1$,
-% que se conoce como \structure{\textbf{normal estándar}} y se designa por $Z$.
-% \begin{center}
-% \scalebox{0.65}{\input{img/variables_aleatorias_continuas/funcion_densidad_normal_estandar}}
-% \end{center}
-% 
-% \note{
-% De todas las distribuciones normales, la más importante es la que tiene media $\mu=0$ y desviación típica $\sigma=1$,
-% que se conoce como \structure{\textbf{normal estándar}} y se designa por $Z$.
-% 
-% Su función de densidad será una campana de Gauss centrada en el 0, en la que el 99\% de los individuos estarán entre -3 y 3. 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de probabilidades con la Normal estándar}
-% \framesubtitle{Manejo de la tabla de la función de distribución}
-% Para evitar tener que calcular probabilidades integrando la función de densidad de la normal estándar se suele utilizar su función de
-% distribución.
-% 
-% Habitualmente se suele manejar una tabla con los valores de la función de distribución tabulados cada centésima. 
-% \begin{columns}
-% \begin{column}{0.47\textwidth}
-% \begin{center}
-% Ejemplo $P(Z\leq 0.52)$
-% 
-% \scalebox{0.8}{\input{img/variables_aleatorias_continuas/tabla_normal}}
-% 
-% $0.52 \rightarrow $ fila $0.5$ + columna $0.02$
-% \end{center}
-% \end{column}
-% \begin{column}{0.53\textwidth}
-% \scalebox{0.6}{\input{img/variables_aleatorias_continuas/calculo_probabilidades_normal_estandar}}
-% \end{column}
-% \end{columns}
-% 
-% \note{
-% Para evitar tener que calcular probabilidades integrando la función de densidad de la normal estándar se suele utilizar su función de
-% distribución.
-% 
-% Habitualmente se suele manejar una tabla con los valores de la función de distribución tabulados cada centésima. En esta tabla, la primera
-% columna contiene las décimas y la primera fila las centésimas, de forma que si por ejemplo queremos medir la probabilidad acumulada hasta el
-% $0.52$, tenemos que ir hasta la casilla correspondiente a la fila $0.5$  (5 décimas) y hasta la columna $0.02$ (2 centésimas), donde aparece
-% la probabilidad acumulada $0.6985$ y esta sería el área que queda por debajo de la campana de Gauss de la normal estándar entre $-\infty$ y
-% $0.52$.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de probabilidades con la Normal estándar}
-% \framesubtitle{Probabilidades acumuladas por encima de un valor}
-% Cuando tengamos que calcular probabilidades acumuladas por encima de un determinado valor, podemos hacerlo por medio de la probabilidad del
-% suceso contrario.
-% 
-% Por ejemplo
-% \[
-% P(Z>0.52) =1-P(Z\leq 0.52) = 1-F(0.52) = 1 - 0.6985 = 0.3015.
-% \]
-% \begin{center}
-% \scalebox{0.55}{\input{img/variables_aleatorias_continuas/calculo_probabilidades_derecha_normal_estandar}}
-% \end{center}
-% 
-% \note{
-% Cuando tengamos que calcular probabilidades acumuladas por encima de un determinado valor, podemos hacerlo por medio de la probabilidad del
-% suceso contrario, ya que la función de distribución siempre mide probabilidades acumuladas por debajo de cada valor. 
-% 
-% Así, la probabilidad acumulada por encima de $0.52$, será 1 menos la probabilidad acumulada por debajo de dicho valor, que como hemos visto
-% en la tabla, valía $0.6985$, lo que nos da $0.3015$. Esto es lógico, ya que si el área total por debajo de la campana de Gauss es 1, el área
-% acumulada por encima de $0.52$ será 1 menos el área que quede por debajo de este valor. 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Tipificación}
-% Ya se ha visto cómo calcular probabilidades con una distribución normal estándar, pero \emph{¿qué hacer cuando la
-% distribución normal no es la estándar?}
-% 
-% Afortunadamente, siempre se puede transformar una variable normal para convertirla en una normal estándar. 
-% \begin{teorema}[Tipificación]
-% Si $X$ es una variable normal de media $\mu$ y desviación típica $\sigma$, entonces la variable resultante de restarle a $X$ su media y
-% dividir por su desviación típica, sigue un modelo de distribución normal estándar:
-% \[
-% X\sim N(\mu,\sigma) \Rightarrow Z=\frac{X-\mu}{\sigma}\sim N(0,1).
-% \]
-% Esta transformación lineal se conoce como \emph{transformación de tipificación} y la variable resultante $Z$ se conoce como \emph{normal
-% tipificada}.
-% \end{teorema} 
-% 
-% Así pues, para calcular probabilidades de una variable normal que no sea la normal estándar, se aplica primero la transformación de
-% tipificación y después se puede utilizar la función de distribución de la normal estándar.
-% 
-% \note{
-% Ya se ha visto cómo calcular probabilidades con una distribución normal estándar, pero \emph{¿qué hacer cuando la
-% distribución normal no es la estándar?}
-% 
-% Afortunadamente, siempre se puede transformar una variable normal para convertirla en una normal estándar tipificándola.
-% \begin{teorema}[Tipificación]
-% Si $X$ es una variable normal de media $\mu$ y desviación típica $\sigma$, entonces la variable resultante de restarle a $X$ su media y
-% dividir por su desviación típica, sigue un modelo de distribución normal estándar:
-% \[
-% X\sim N(\mu,\sigma) \Rightarrow Z=\frac{X-\mu}{\sigma}\sim N(0,1).
-% \]
-% Esta transformación lineal se conoce como \emph{transformación de tipificación} y la variable resultante $Z$ se conoce como \emph{normal
-% tipificada}.
-% \end{teorema} 
-% 
-% Así pues, para calcular probabilidades de una variable normal que no sea la normal estándar, tendremos que aplicar la transformación de
-% tipificación primero y después se puede utilizar la tabla de la función de distribución de la normal estándar.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de probabilidades tipificando}
-% \framesubtitle{Ejemplo}
-% Supóngase que la nota de un examen sigue un modelo de distribución de probabilidad normal $N(\mu=6,\sigma=1.5)$. \emph{¿Qué porcentaje de
-% suspensos habrá en la población?}
-% 
-% Para responder a esta pregunta necesitamos calcular la probabilidad $P(X<5)$. Como $X$ no es la normal estándar, se le aplica la
-% transformación de tipificación $Z=\displaymath \frac{X-\mu}{\sigma} = \frac{X-6}{1.5}$:
-% \[
-% P(X<5) = P\left(\frac{X-6}{1.5}<\frac{5-6}{1.5}\right) = P(Z<-0.67).
-% \]
-% Después se mira en la tabla de la función de distribución de la normal estándar:
-% \[
-% P(Z<-0.67) = F(-0.67) = 0.2514.
-% \]
-% 
-% Así pues, habrán suspendido el $25.14\%$ de los alumnos. 
-% 
-% \note{
-% Veamos un ejemplo. 
-% 
-% Supóngase que la nota de un examen sigue un modelo de distribución de probabilidad normal $N(\mu=6,\sigma=1.5)$. \emph{¿Qué porcentaje de
-% suspensos habrá en la población?}
-% 
-% Para responder a esta pregunta necesitamos calcular la probabilidad de que la nota sea inferior a 5. Como $X$ no es la normal estándar, se
-% le aplica la transformación de tipificación, que es $Z=\displaymath \frac{X-\mu}{\sigma} = \frac{X-6}{1.5}$. Por tanto, 
-% \[
-% P(X<5) = P\left(\frac{X-6}{1.5}<\frac{5-6}{1.5}\right) = P(Z<-0.67).
-% \]
-% Después sólo queda mirar en tabla de la función de distribución de la normal estándar y observar que la probabilidad acumulada hasta el
-% $-0.67$ es $0.2514$.
-% 
-% Así pues, habrán suspendido el $25.14\%$ de los alumnos. 
-% }
-% \end{frame}
-% 
-% 
-% \subsection{Distribución Chi-cuadrado}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Distribución chi-cuadrado $\chi^2(n)$}
-% \begin{definition}[Distribución chi-cuadrado $\chi^2(n)$]
-% Si  $Z_1,\ldots,Z_n$ son $n$ variables aleatorias normales estándar independientes, entonces la suma de sus cuadrados sigue un modelo de
-% distribución \emph{chi-cuadrado de $n$ grados de libertad}:
-% \[
-% \chi^2(n) = Z_1^2+\cdots +Z_n^2.
-% \]
-% \end{definition}
-% Su recorrido es  $\mathbb{R}^+$ y su media y varianza valen
-% \[
-% \mu = n, \qquad \sigma^2 = 2n.
-% \]
-% Como se verá más adelante, la distribución chi-cuadrado juega un papel importante en la estimación de la varianza poblacional y en el
-% estudio de la relación entre variables cualitativas.
-% 
-% \note{
-% Las distribuciones que veremos a continuación son distribuciones que siguen algunos de los estadísticos observados en las muestras
-% aleatorias. Su principal utilidad se verá en el siguiente tema.
-% 
-% El primer modelo de distribución es el modelo chi-cuadrado.
-% 
-% Si  $Z_1,\ldots,Z_n$ son $n$ variables aleatorias normales estándar independientes, entonces
-% la suma de sus cuadrados sigue un modelo de distribución \emph{chi-cuadrado de $n$ grados de libertad}:
-% \[
-% \chi^2(n) = Z_1^2+\cdots +Z_n^2.
-% \]
-% 
-% Se cumple que su recorrido es  $\mathbb{R}^+$, su media vale $\mu=n$ y su varianza vale $\sigma^2 = 2n$.
-% 
-% Como se verá más adelante, la distribución chi-cuadrado juega un papel importante en la estimación de la varianza poblacional y en el
-% estudio de la relación entre variables cualitativas.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de densidad de la distribución chi-cuadrado}
-% 
-% \begin{center}
-% \scalebox{0.8}{\input{img/variables_aleatorias_continuas/funcion_densidad_chi_cuadrado}}
-% \end{center}
-% 
-% \note{
-% Aquí tenemos las gráfica de la función de densidad de varias distribuciones chi-cuadrado con distintos grados de libertad. Como se puede
-% apreciar, esta distribución, por ser la suma de cuadrados, no presenta valores negativos, y a diferencia de la normal, siempre es asimétrica
-% hacia la izquierda.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Propiedades de la distribución chi-cuadrado $\chi^2(n)$}
-% \begin{itemize}
-% \item No toma valores negativos.
-% \item Si $X\sim \chi^2(n)$ e $Y\sim \chi^2(m)$, entonces
-% \[
-% X+Y \sim \chi^2(n+m).
-% \]
-% \item Al aumentar el número de grados de libertad, se aproxima asintóticamente a una normal.
-% \end{itemize}
-% 
-% \note{
-% Algunas propiedades que tiene la distribución chi-cuadrado son:
-% \begin{itemize}
-% \item No toma valores negativos.
-% \item Si $X\sim \chi^2(n)$ e $Y\sim \chi^2(m)$, entonces
-% \[
-% X+Y \sim \chi^2(n+m).
-% \]
-% \item Al aumentar el número de grados de libertad, se aproxima asintóticamente a una normal.
-% \end{itemize}
-% }
-% \end{frame}
-% 
-% 
-% \subsection{Distribución T de Student}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Distribución T de Student $T(n)$}
-% \begin{definition}[Distribución T de Student $T(n)$]
-% Si  $Z\sim N(0,1)$ es una variable aleatoria normal estándar y $X\sim \chi^2(n)$ es una variable aleatoria chi-cuadrado de $n$ grados de
-% libertad, ambas independientes, entonces la variable
-% \[
-% T = \frac{Z}{\sqrt{X/n}},
-% \]
-% sigue un modelo de distribución \emph{T de Student de $n$ grados de libertad}.
-% \end{definition}
-% 
-% Su recorrido es $\mathbb{R}$ y su media y varianza valen
-% \[
-% \mu = 0, \qquad \sigma^2 = \frac{n}{n-2} \mbox{ si $n>2$}.
-% \]
-% 
-% Como se verá más adelante, la distribución T de Student juega un papel importante en la estimación la media poblacional.
-% 
-% \note{
-% \begin{definition}[Distribución T de Student $T(n)$]
-% Si  $Z\sim N(0,1)$ es una variable aleatoria normal estándar y $X\sim \chi^2(n)$ es una variable aleatoria chi-cuadrado de $n$ grados de
-% libertad, ambas independientes, entonces la variable
-% \[
-% T = \frac{Z}{\sqrt{X/n}},
-% \]
-% sigue un modelo de distribución \emph{T de Student de $n$ grados de libertad}.
-% \end{definition}
-% 
-% Se cumple que su recorrido es $\mathbb{R}$ y su media vale $\mu=0$ y su varianza vale
-% \[
-% \sigma^2 = \frac{n}{n-2} \mbox{ si $n>2$}.
-% \]
-% 
-% Como se verá más adelante, la distribución T de Student juega un papel importante en la estimación la media poblacional.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de densidad de la distribución T de Student}
-% 
-% \begin{center}
-% \scalebox{0.8}{\input{img/variables_aleatorias_continuas/funcion_densidad_t_student}}
-% \end{center}
-% 
-% \note{
-% Aquí tenemos las gráfica de la función de densidad de varias distribuciones T de student con distintos grados de libertad. Como se puede
-% apreciar, esta distribución está centrada en el 0 y es muy parecida a la normal estándar, aunque un poco más platicúrtica. 
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Propiedades de la distribución T de Student $T(n)$}
-% \begin{itemize}
-% \item Es simétrica con respecto a su media $\mu=0$.
-% \item Es muy similar a la normal estándar, pero algo más platicúrtica. Además, a medida que aumentan los grados de libertad, la gráfica de la distribución tiende hacia la de la normal estándar, hasta llegar a ser prácticamente iguales para $n\geq 30$.
-% \[
-% T(n)\stackrel{n\rightarrow \infty}{\approx}N(0,1).
-% \]
-% \end{itemize}
-% 
-% \note{
-% Algunas propiedades que tiene la distribución T de student son:
-% \begin{itemize}
-% \item Es simétrica con respecto a su media $\mu=0$.
-% \item Como ya hemos dicho, es muy similar a la normal estándar, pero algo más platicúrtica. Además, a medida que aumentan los grados de
-% libertad, la gráfica de la distribución tiende hacia la de la normal estándar, hasta llegar a ser prácticamente iguales para $n\geq 30$.
-% \[
-% T(n)\stackrel{n\rightarrow \infty}{\approx}N(0,1).
-% \]
-% \end{itemize}
-% }
-% \end{frame}
-% 
-% 
-% \subsection{Distribución F de Fisher-Snedecor}
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Distribución F de Fisher-Snedecor $F(m,n)$}
-% \begin{definition}[Distribución F de Fisher-Snedecor $F(m,n)$]
-% Si  $X\sim \chi^2(m)$ es una variable aleatoria chi-cuadrado de $m$ grados de libertad e $Y\sim \chi^2(n)$ es otra variable aleatoria
-% chi-cuadrado de $n$ grados de libertad, ambas independientes, entonces la variable
-% \[
-% F = \frac{X/m}{Y/n},
-% \]
-% sigue un modelo de distribución \emph{F de Fisher-Snedecor de $m$ y $n$ grados de libertad}.
-% \end{definition}
-% 
-% Su recorrido es $\mathbb{R}^+$ y su media y varianza valen
-% \[
-% \mu = \frac{n}{n-2}, \qquad \sigma^2 =\frac{2n^2(m+n−2)}{m(n-2)^2(n-4)}\mbox{ si $n>4$}.
-% \]
-% 
-% Como se verá más adelante, la distribución F de Fisher-Snedecor juega un papel importante en la comparación de varianzas poblacionales y en
-% el análisis de la varianza.
-% 
-% \note{
-% \begin{definition}[Distribución F de Fisher-Snedecor $F(m,n)$]
-% Si  $X\sim \chi^2(m)$ es una variable aleatoria chi-cuadrado de $m$ grados de libertad e $Y\sim \chi^2(n)$ es otra variable aleatoria
-% chi-cuadrado de $n$ grados de libertad, ambas independientes, entonces la variable
-% \[
-% F = \frac{X/m}{Y/n},
-% \]
-% sigue un modelo de distribución \emph{F de Fisher-Snedecor de $m$ y $n$ grados de libertad}.
-% \end{definition}
-% 
-% Se cumple que su recorrido es $\mathbb{R}^+$ y su media vale
-% \[
-% \mu = \frac{n}{n-2},
-% \]
-% y su varianza 
-% \[
-% \sigma^2 =\frac{2n^2(m+n−2)}{m(n-2)^2(n-4)}\mbox{ si $n>4$}.
-% \]
-% 
-% Como se verá más adelante, la distribución F de Fisher-Snedecor juega un papel importante en la comparación de varianzas poblacionales y en
-% el análisis de la varianza.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Función de densidad de la distribución F de Fisher-Snedecor $F(m,n)$}
-% 
-% \begin{center}
-% \scalebox{0.75}{\input{img/variables_aleatorias_continuas/funcion_densidad_f_fisher}}
-% \end{center}
-% 
-% \note{
-% Aquí tenemos las gráfica de la función de densidad de varias distribuciones F de Fisher con distintos grados de libertad. Como se puede
-% apreciar, al igual que la distribución chi-cuadrado, no presenta valores negativos, y siempre es asimétrica hacia la izquierda.
-% }
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Propiedades de la distribución F de Fisher-Snedecor $F(m,n)$}
-% \begin{itemize}
-% \item No está definida para valores negativos.
-% \item De la definición se deduce que
-% \[
-% F(m,n) =\frac{1}{F(n,m)}
-% \]
-% de manera que si llamamos $f(m,n)_p$ al valor que cumple que $P(F(m,n)≤f(m,n)_p)=p$, entonces se cumple
-% \[                                          
-% f(m,n)_p =\frac{1}{f(n,m)_{1−p}}
-% \]
-% Esto resulta muy útil para utilizar las tablas de su función de distribución.
-% \end{itemize}
-% 
-% \note{
-% Algunas propiedades que tiene la distribución F de Fisher son:
-% \begin{itemize}
-% \item No está definida para valores negativos.
-% \item De la definición se deduce que
-% \[
-% F(m,n) =\frac{1}{F(n,m)}
-% \]
-% de manera que si llamamos $f(m,n)_p$ al valor que cumple que $P(F(m,n)≤f(m,n)_p)=p$, entonces se cumple
-% \[                                          
-% f(m,n)_p =\frac{1}{f(n,m)_{1−p}}
-% \]
-% Esto resulta muy útil para utilizar las tablas de su función de distribución.
-% \end{itemize}
-% }
-% \end{frame}
+
+
+\subsection{Normal distribution}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal probability distribution model $N(\mu,\sigma)$}
+The normal distribution model is, without a doubt, the most important continuous distribution model as is the most
+common in Nature.
+\begin{definition}[Normal distribution $N(\mu,\sigma)$]
+A continuous random variable $X$ follows a probability distribution model \emph{normal} of parameters $\mu$ and
+$\sigma$, noted $X\sim N(\mu,\sigma)$, if its range is $\mbox{Ran}(X) = (-\infty,\infty)$ and its density function is
+\[
+f(x)= \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+\]
+\end{definition}
+
+The two parameters $\mu$ and $\sigma$ are the mean and the standard deviation of the population respectively. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal probability density function}
+The plot of the probability density function of a normal distribution $N(\mu,\sigma)$ is bell shaped and it is known as
+a \emph{Gauss bell}.
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/normal_density_function}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/normal_density_function}}}
+\mode<presentation>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/normal_density_function}}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal probability density function}
+The bell shape depends on the mean $\mu$ and the standard deviation $\sigma$,
+\begin{itemize}
+\item The mean $\mu$ sets the center of the bell.
+\item The standard deviation sets $\sigma$ the width of the bell.
+\end{itemize}
+\medskip
+\begin{columns}
+\begin{column}{0.47\textwidth}
+
+\mode<presentation>{\resizebox{\textwidth}{!}{\input{img/continuous_random_variables/normal_density_function_different_means}}}
+\end{column}
+\begin{column}{0.47\textwidth}
+\mode<article>{
+\tikzsetnextfilename{continuous_random_variables/normal_density_function_different_means}
+\resizebox{0.5\textwidth}{!}{\input{img/continuous_random_variables/normal_density_function_different_means}}
+\tikzsetnextfilename{continuous_random_variables/normal_density_function_different_variances}
+\resizebox{0.5\textwidth}{!}{\input{img/continuous_random_variables/normal_density_function_different_variances}}
+}
+\mode<presentation>{\resizebox{\textwidth}{!}{\input{img/continuous_random_variables/normal_density_function_different_variances}}}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal distribution function}
+The plot of the distribution function of a normal distribution is S shaped. 
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/normal_distribution_function}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/normal_distribution_function}}}
+\mode<presentation>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/normal_distribution_function}}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal distribution properties}
+\begin{itemize}
+\item It is symmetric with respect to the mean, and then, the coefficient of skewness is zero,
+$g_1=0$.
+\item It is mesokurtic, as the density function is bell shaped, and then, the coefficient of kurtosis is zero, $g_2=0$.
+\item The mean, median and mode are the same
+\[
+\mu = Me = Mo.
+\]
+\item Asymptotically approaches 0 when $x$ tends to $\pm \infty$.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal distribution properties}
+\begin{center}
+\onslide<2->{$P(\mu-\sigma \leq X \leq \mu+\sigma) = 0.68$,}\\
+\onslide<3->{$P(\mu-2\sigma \leq X \leq \mu+2\sigma) = 0.95$,}\\
+\onslide<4->{$P(\mu-3\sigma \leq X \leq \mu+3\sigma) = 0.99$.}
+\end{center}
+
+\begin{center}
+\mode<article>{
+\tikzsetnextfilename{continuous_random_variables/normal_interval_68}
+\resizebox{0.33\textwidth}{!}{\input{img/continuous_random_variables/normal_interval_68}
+\tikzsetnextfilename{continuous_random_variables/normal_interval_95}}
+\resizebox{0.33\textwidth}{!}{\input{img/continuous_random_variables/normal_interval_95}
+\tikzsetnextfilename{continuous_random_variables/normal_interval_99}}
+\resizebox{0.33\textwidth}{!}{\input{img/continuous_random_variables/normal_interval_99}}
+}
+\mode<presentation>{\resizebox{0.5\textwidth}{!}{\input{img/continuous_random_variables/normal_properties1}}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal distribution properties}
+\framesubtitle{Example of cholesterol}
+It is known that the cholesterol level of females between 40 and 50 follows a normal distribution with mean 210 mg/dl
+and standard deviation 20 mg/dl. 
+
+According to the Gauss bell properties, this means that
+\begin{itemize}
+\item The 68\% of females have a cholesterol level between $210\pm 20$ mg/dl, i.e., between 190 and 230 mg/dl.
+\item The 95\% of females have a cholesterol level between $210\pm 2\cdot 20$ mg/dl, i.e., between  170 and 250
+mg/dl.
+\item The 99\% of females have a cholesterol level between $210\pm 3\cdot 20$ mg/dl, i.e., between  150 and 270
+mg/dl.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal distribution properties}
+\framesubtitle{Example blood analysis}
+\begin{columns}
+\begin{column}{0.47\textwidth}
+In blood analysis is common to use the interval $\mu\pm 2\sigma$ to detect possible pathologies.
+In the case of cholesterol, this interval is $[170\text{ mg/dl}, 250\text{ mg/dl}]$. 
+
+Thus, when a women between 40 and 50 has a cholesterol level out of this interval, it's common thinking about some
+pathology. However this person could be healthy, although the likelihood of that happening is only 5\%.
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{center}
+\mode<article>{\includegraphics[width=0.7\textwidth]{img/continuous_random_variables/blood_analysis.jpg}}
+\mode<presentation>{\includegraphics[width=\textwidth]{img/continuous_random_variables/blood_analysis.jpg}}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{The central limit theorem}
+This behavior is common in many physical and biological variables in Nature.
+
+If you think about the distribution of the height, for instance, you can check that most people in the population have a
+height around the mean, but as the heights move away from the mean, both below and above the mean, there are few and few
+people with such a heights.
+
+The explanation for this behavior is the \highlight{\textbf{Central Limit Theorem}}, that we will see in the next
+chapter, and states that a continuous random variable whose values depends on a huge number of independent factors
+adding their effects,  always follows a normal distribution.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{The standard normal distribution $N(0,1)$}
+The most important normal distribution has mean zero, $\mu=0$, and standard deviation one, $\sigma=1$.
+It is known as \highlight{\textbf{Standard normal distribution}} and usually represented as $Z\sim N(0,1)$.
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/standard_normal_density_function}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/standard_normal_density_function}}}
+\mode<presentation>{\resizebox{0.55\textwidth}{!}{\input{img/continuous_random_variables/standard_normal_density_function}}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Calculation of probabilities with the normal distribution}
+\framesubtitle{Managing the distribution function table}
+To avoid integrating the normal density function to compute probabilities it's common to use the distribution function,
+that is given in a tabular format like the one below.
+
+\begin{columns}
+\begin{column}{0.47\textwidth}
+\begin{center}
+For instance, to calculate $P(Z\leq 0.52)$
+
+\mode<article>{\input{img/continuous_random_variables/normal_table}}
+\mode<presentation>{\scalebox{0.9}{\input{img/continuous_random_variables/normal_table}}}
+
+$0.52 \rightarrow $ row $0.5$ + column $0.02$
+\end{center}
+\end{column}
+\begin{column}{0.53\textwidth}
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/normal_probability_calculation_left_tail}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/normal_probability_calculation_left_tail}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/continuous_random_variables/normal_probability_calculation_left_tail}}}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Calculation of probabilities with the normal distribution}
+\framesubtitle{Right tail probabilities}
+To compute cumulative probabilities to the right of a value, we can apply the rule for the complement event.
+For instance, 
+\[
+P(Z>0.52) =1-P(Z\leq 0.52) = 1-F(0.52) = 1 - 0.6985 = 0.3015.
+\]
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/normal_probability_calculation_right_tail}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/normal_probability_calculation_right_tail}}}
+\mode<presentation>{\resizebox{0.5\textwidth}{!}{\input{img/continuous_random_variables/normal_probability_calculation_right_tail}}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Standardization}
+We have seen how to use the table of the standard normal distribution function to compute probabilities, but, \emph{what
+to do when the normal distribution is not the standard one?}
+
+In that case we can use standardization to transform any normal distribution in the standard normal distribution.
+\begin{theorem}[Standardization]
+If $X$ is a continuous random variables that follow a Normal probability distribution model with mean $\mu$ and standard
+deviation $\sigma$, $X\sim N(\mu,\sigma)$, then the variable that result of subtracting $\mu$ to $X$ and dividing by
+$\sigma$, follows a Standard Normal probability distribution,
+\[
+X\sim N(\mu,\sigma) \Rightarrow Z=\frac{X-\mu}{\sigma}\sim N(0,1).
+\]
+\end{theorem}
+
+Thus, to compute probabilities with a non-standard normal distribution first we have to standardize the variable before 
+using the table of the standard normal distribution function.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Standardization}
+\framesubtitle{Example}
+Assume that the grade of an exam $X$ follows a normal probability distribution model $N(\mu=6,\sigma=1.5)$. 
+What percentage of students didn't pass the exam?
+
+As $X$ follows a non-standard normal distribution model, we have to apply standardization first, $Z=\displaystyle
+\frac{X-\mu}{\sigma} = \frac{X-6}{1.5}$,
+\[
+P(X<5) = P\left(\frac{X-6}{1.5}<\frac{5-6}{1.5}\right) = P(Z<-0.67).
+\]
+Then we can use the table of the standard normal distribution function,
+\[
+P(Z<-0.67) = F(-0.67) = 0.2514.
+\]
+
+Therefore, $25.14\%$ of students didn't pass the exam.
+\end{frame}
+
+
+\subsection{Chi-square distribution}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Chi-square probability distribution model $\chi^2(n)$}
+\begin{definition}[Chi-square distribution $\chi^2(n)$]
+Given $n$ independent random variables $Z_1,\ldots,Z_n$, all of them following a standard normal probability
+distribution, then the variable
+\[
+\chi^2(n) = Z_1^2+\cdots +Z_n^2,
+\]
+follows a \emph{chi-square probability distribution with $n$ degrees of freedom}.
+\end{definition}
+
+Its range is $\mathbb{R}^+$ and its mean and variance are
+\[
+\mu = n, \qquad \sigma^2 = 2n.
+\]
+As we will see in the next chapter, the chi-square distribution plays an important role in the estimation of the
+population variance and in the study of relations between qualitative variables.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Chi-square probability density function}
+
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/chi_square_density_function}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/chi_square_density_function}}}
+\mode<presentation>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/chi_square_density_function}}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Chi-square distribution properties}
+\begin{itemize}
+\item The range is non-negative.
+\item If $X\sim \chi^2(n)$ and $Y\sim \chi^2(m)$, then
+\[
+X+Y \sim \chi^2(n+m).
+\]
+\item Asymptotically approaches a normal distribution as the degrees of freedom increases. 
+\end{itemize}
+\end{frame}
+
+
+\subsection{Student's t distribution}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Student's t probability distribution $T(n)$}
+\begin{definition}[Student's t distribution $T(n)$]
+Given a variable $Z$ following a standard normal distribution model, $Z\sim N(0,1)$, and a variable $X$ following a
+chi-square distribution model with $n$ degrees of freedom, $X\sim \chi^2(n)$,  both independent, the variable 
+\[
+T = \frac{Z}{\sqrt{X/n}},
+\]
+follows a \emph{Student's t probability distribution model with $n$ degrees of freedom}.
+\end{definition}
+
+Its range is $\mathbb{R}$ and its mean and variance are
+\[
+\mu = 0, \qquad \sigma^2 = \frac{n}{n-2} \mbox{ si $n>2$}.
+\]
+
+As we will see in the next chapter, the Student's t distribution plays an important role in the estimation of the
+population mean.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Student's t probability density function}
+
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/student_t_density_function}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/student_t_density_function}}}
+\mode<presentation>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/student_t_density_function}}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Student's t distribution properties}
+\begin{itemize}
+\item The mean, the median and the mode are the same, $\mu=Me=Mo$
+\item Is symmetric $g_1=0$.
+\item Asymptotically approaches the standard normal distribution as the degrees of freedom increases. 
+In practice for $n\geq 30$ both distributions are approximately the same. 
+\[
+T(n)\stackrel{n\rightarrow \infty}{\approx}N(0,1).
+\]
+\end{itemize}
+\end{frame}
+
+
+\subsection{Fisher-Snedecor's F distribution}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Fisher-Snedecor's F probability distribution $F(m,n)$}
+\begin{definition}[Fisher-Snedecor's F distribution $F(m,n)$]
+Given two independent variables $X$ and $Y$ both following a chi-square probability distribution model with $m$ an $n$
+degrees of freedom respectively,  $X\sim \chi^2(m)$ and $Y\sim \chi^2(n)$, then the variable
+\[
+F = \frac{X/m}{Y/n},
+\]
+follows a \emph{Fisher-Snedecor's F probability distribution model with $m$ and $n$ degrees of freedom}.
+\end{definition}
+
+Its range is $\mathbb{R}^+$ and its mean and variance are
+\[
+\mu = \frac{n}{n-2}, \qquad \sigma^2 =\frac{2n^2(m+n−2)}{m(n-2)^2(n-4)}\mbox{ if $n>4$}.
+\]
+
+As we will see in the next chapter, the Fisher-Snedecor's F distribution plays an important role in the comparison of
+population variances and in the analysis of variance test (ANOVA).
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Fisher-Snedecor's F probability density function}
+
+\begin{center}
+\tikzsetnextfilename{continuous_random_variables/fisher_f_density_function}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/fisher_f_density_function}}}
+\mode<presentation>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/fisher_f_density_function}}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Fisher-Snedecor's F distribution properties}
+\begin{itemize}
+\item The range is non-negative.
+\item It meets
+\[
+F(m,n) =\frac{1}{F(n,m)}.
+\]
+Thus, if we name $f(m,n)_p$ the value that meets $P(F(m,n)\leq f(m,n)_p)=p$, then
+\[
+f(m,n)_p =\frac{1}{f(n,m)_{1-p}}
+\]
+what is helpful in order to compute probabilities from the table of the distribution function.
+\end{itemize}
+\end{frame}

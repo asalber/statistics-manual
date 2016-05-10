@@ -1,1 +1,0 @@
-\begingroup \toks 0={macro:->[baseline=-0.5ex]\node at (0,0) [fill=color2!50,single arrow,shape border rotate=270, single arrow head extend=1mm]{$+$\phantom {}}; }\xdef \tikzexternallastkey {\the \toks 0 }\endgroup %
