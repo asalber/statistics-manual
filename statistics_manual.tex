@@ -2,15 +2,15 @@
 % ASPECT RATIO FOR YOUTUBE VIDEO
 % \documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
 % ASPECT RATIO FOR PROJECTOR
-\documentclass[profesionalfont,10pt,svgnames,xcolor=table]{beamer}
+%\documentclass[profesionalfont,10pt,svgnames,xcolor=table]{beamer}
 
 % BEAMER THEME
-\usetheme[progressbar=frametitle,background=light,titleformat=smallcaps,block=fill]{metropolis}
+%\usetheme[progressbar=frametitle,background=light,titleformat=smallcaps,block=fill]{metropolis}
 
 % ARTICLE VERSION
 % \pdfminorversion=4 % for solving some problems with png graphics in acrobat reader
-% \documentclass[10pt,a4paper,titlepage]{article}
-% \usepackage[hyperref]{beamerarticle}
+\documentclass[10pt,a4paper,titlepage]{article}
+\usepackage[hyperref]{beamerarticle}
 
 % LANGUAGE
 \usepackage{polyglossia}
@@ -123,11 +123,12 @@
 }
 
 
-% HEADINGS AND FOOTERS FOR ARTICLE
+% HEADINGS AND FOOTERS : Statistics manual 
+
 \mode<article>{
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\rhead{\sffamily\slshape Elementary Statistics Course}
+\rhead{\sffamily\slshape Elementary Statistics Manual}
 \renewcommand{\headrulewidth}{0pt}
 %\renewcommand{\floatpagefraction}{.8}
 %\renewcommand{\textfraction}{.1} 
@@ -160,15 +161,19 @@
 
 %---------------------------------------------------------------------cover----
 \mode<article>{
-\title{\textcolor{color1}{\Huge Elementary Statistics Course}}
-\author{Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})}
-\date{Feb 2016\\[1cm]
+\title{\vskip 3cm
+\textcolor{color1}{\Huge Elementary Statistics Manual}}
+\author{
+Pablo Ares Gastesi (\href{mailto:pablo.aresgastesi@ceu.es}{pablo.aresgastesi@ceu.es}) \and
+Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})
+}
+\date{Sep 2016\\[1cm]
 Department of Applied Math and Statistics\\ CEU San Pablo\\[1cm]
 \includegraphics[height=2cm]{img/logo_uspceu}
 }
 }
 \mode<presentation>{
-\title{Elementary Statistics Course}
+\title{Elementary Statistics Manual}
 \author{
 Pablo Ares Gastesi (\href{mailto:pablo.aresgastesi@ceu.es}{pablo.aresgastesi@ceu.es}) \\
 Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})
