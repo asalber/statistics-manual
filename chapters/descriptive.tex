@@ -16,11 +16,11 @@
 Descriptive Statistics is the part of Statistics in charge of representing, analysing and summarizing the information
 contained in the sample.
 
-After the sampling process, is the next step in every statistical study and usually consists of:
+After the sampling process, this is the next step in every statistical study and usually consists of:
 \begin{enumerate}
-\item Classify, group and sort the data of the sample.
-\item Tabulate and plot data according to their frequencies.
-\item Calculate numerical measures that summarize the information contained in the sample (\emph{sample statistics}).
+\item To classify, group and sort the data of the sample.
+\item To tabulate and plot data according to their frequencies.
+\item To calculate numerical measures that summarize the information contained in the sample (\emph{sample statistics}).
 \end{enumerate} 
 
 It has no inferential power $\Rightarrow$ \alert{\emph{Do not generalize to the population!}} 
@@ -31,14 +31,13 @@ It has no inferential power $\Rightarrow$ \alert{\emph{Do not generalize to the 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Sample classification}
-The study of a statistical variable starts measuring the variable in the individuals of the sample and classifying the
-values.
+The study of a statistical variable starts by measuring the variable in the individuals of the sample and classifying the values.
 
 There are two ways of classifying data:
 \begin{description}
-\item[Non-grouping] Sort values from lowest to highest value (if there is an order).
+\item[Non-grouping] Sorting values from lowest to highest value (if there is an order).
 Used with qualitative variables and discrete variables with few distinct values.
-\item[Grouping] Group values in intervals (classes) and sort them from lowest to highest intervals. 
+\item[Grouping] Grouping values into intervals (classes) and sort them from lowest to highest intervals. 
 Used with continuous variables and discrete variables with many distinct values. 
 \end{description}
 \end{frame}
@@ -70,20 +69,19 @@ $X=$Height
 \begin{frame}
 \frametitle{Sample frequencies}
 \begin{definition}[Sample frequencies]
-Given a sample of $n$ values of a variable $X$, for every value $x_i$ of the variable
-is defined 
+Given a sample of $n$ values of a variable $X$, for every value $x_i$ of the variable we define 
 \begin{itemize}
-\item \highlight{Absolute frequency $n_i$}: Is the number of times that value $x_i$ appears in the sample.
-\item \highlight{Relative frequency $f_i$}: Is the proportion of times that value $x_i$ appears in the sample.
+\item \highlight{Absolute frequency $n_i$}: The number of times that value $x_i$ appears in the sample.
+\item \highlight{Relative frequency $f_i$}: The proportion of times that value $x_i$ appears in the sample.
 \[
 f_i = \frac{n_i}{n}
 \]
-\item \highlight{Cumulative absolute frequency $N_i$}: Is the number of values in the sample less than or equal to
+\item \highlight{Cumulative absolute frequency $N_i$}: The number of values in the sample less than or equal to
 $x_i$.
 \[
 N_i = n_1 + \cdots + n_i
 \]
-\item \highlight{Cumulative relative frequency $F_i$}: Is the proportion of values in the sample less than or equal to
+\item \highlight{Cumulative relative frequency $F_i$}: The proportion of values in the sample less than or equal to
 $x_i$.
 \[
 F_i = \frac{N_i}{n}
@@ -186,7 +184,7 @@ When grouping data into intervals, the following rules must be taken into accoun
 \item The number of intervals should not be too big nor too small. 
 A usual rule of thumb is to take a number of intervals approximately $\sqrt{n}$ or $\log_2(n)$.
 \item The intervals must not overlap and must cover the entire range of values.
-It doesn't matter if intervals are left-open and right-closed or vice versa. 
+It does not matter if intervals are left-open and right-closed or vice versa. 
 \item The minimum value must fall in the first interval and the maximum value in the last.
 \end{itemize}
 \end{frame}
@@ -196,7 +194,7 @@ It doesn't matter if intervals are left-open and right-closed or vice versa.
 \begin{frame}
 \frametitle{Frequency table}
 \framesubtitle{Example with qualitative variable}
-The blood type of 30 people are:
+The blood types of 30 people are:
 \begin{center}
 A, B, B, A, AB, 0, 0, A, B, B, A, A, A, A, AB,\\
 A, A, A, B, 0, B, B, B, A, A, A, 0, A, AB, 0.
@@ -231,7 +229,7 @@ The frequency table of the blood type is
 \frametitle{Frequency distribution graphs}
 Usually the frequency distribution is also displayed graphically.
  
-Depending on the type of variable and if data has been grouped or not, there are different types of charts:
+Depending on the type of variable and whether data has been grouped or not, there are different types of charts:
 \begin{itemize}
 \item Bar chart
 \item Histogram
@@ -244,7 +242,7 @@ Depending on the type of variable and if data has been grouped or not, there are
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Bar chart}
-A \highlight{bar chart} consists in a set of bars, one for every value or category of the variable, plotted on a
+A \highlight{bar chart} consists of a set of bars, one for every value or category of the variable, plotted on a
 coordinate system.
 
 Usually the values or categories of the variable are represented on the $x$-axis, and the frequencies on the $y$-axis. 
@@ -310,8 +308,7 @@ A \highlight{histogram} is similar to a bar chart but for grouped data.
 
 Usually the classes or grouping intervals are represented on the $x$-axis, and the frequencies on the $y$-axis. 
 For each class, a bar is draw to the height of its frequency.
-Contrary to bar charts, the width of bars coincides with the width of classes, and there are no space between two
-consecutive bars.
+Contrary to bar charts, the width of bars coincides with the width of classes, and there are no space between two consecutive bars.
 
 Depending on the type of frequency represented in the $y$-axis we get different types of histograms.
  
@@ -384,21 +381,18 @@ Sometimes a polygon, known as \highlight{\textbf{frequency polygon}}, is plotted
 \scalebox{0.6}{\input{img/descriptive/cum_rel_freq_histogram_polygon}} 
 \end{center} 
 \end{frame}
-\mode<article>{Observe that in the ogive we join the top right corner of bars with straight lines, instead of the top
-center, cause we don't reach the accumulated frequency of the class until the end of the interval.}
+\mode<article>{Observe that in the ogive we join the top right corner of bars with straight lines, instead of the top center, because we don't reach the accumulated frequency of the class until the end of the interval.}
  
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Pie chart}
-A \highlight{pie chart} consists in a circle divided in slices, one for every value or category of the variable. 
-Each slice is called \highlight{sector} and its angle or area is proportional to the frequency of the corresponding
+A \highlight{pie chart} consists of a circle divided in slices, one for every value or category of the variable. 
+Each slice is called a \highlight{sector} and its angle or area is proportional to the frequency of the corresponding
 value or category. 
 
-Pie charts can represent absolute or relative frequencies, but not cumulative frequencies, and are used with nominal
-qualitative variables.
-For ordinal qualitative or quantitative variables is better to use bar charts or histograms, cause it's easier to
-perceive differences in one dimension (length of bars) than in two dimensions (areas of sectors).
+Pie charts can represent absolute or relative frequencies, but not cumulative frequencies, and are used with nominal qualitative variables.
+For ordinal qualitative or quantitative variables is better to use bar charts or histograms, because it is easier to perceive differences in one dimension (length of bars) than in two dimensions (areas of sectors).
 \end{frame}
 
 
@@ -416,17 +410,14 @@ perceive differences in one dimension (length of bars) than in two dimensions (a
 % ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Outliers}
-One of the main problems in samples are \highlight{\textbf{outliers}}, that are values very different from the rest of
-values of the sample.
+One of the main problems in samples are \highlight{\textbf{outliers}}, values very different from the rest of values of the sample.
 \begin{center}
 \includegraphics[scale=0.5]{img/descriptive/outlier.png}
 \end{center}
 
-It's important to find out outliers before doing any analysis, cause \alert{\emph{outliers usually distort the
-results}}.
+It is important to find out outliers before doing any analysis, because \alert{\emph{outliers usually distort the results}}.
 
-They always appears in the ends of the distribution, and can be find out easily with a box and whiskers chart (as 
-be showed later).
+They always appears in the ends of the distribution, and can be found out easily with a box and whiskers chart (as be show later).
 \end{frame}
 
 
@@ -438,10 +429,9 @@ With big samples outliers have less importance and can be left in the sample.
 With small samples we have several options:
 
 \begin{itemize}
-\item Remove the outlier if it's an error. 
-\item Replace the outlier by the lower or higher value in the distribution that is not an outlier if it's not an error
-and the outlier doesn't fit the theoretical distribution. 
-\item Leave the outlier if it's not an error, and change the theoretical model to fit it to outliers.  
+\item Remove the outlier if it is an error. 
+\item Replace the outlier by the lower or higher value in the distribution that is not an outlier if it is not an error and the outlier does not fit the theoretical distribution. 
+\item Leave the outlier if it is not an error, and change the theoretical model to fit it to outliers.  
 \end{itemize}
 \end{frame}
  
@@ -452,10 +442,7 @@ and the outlier doesn't fit the theoretical distribution.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Sample statistics}
-The frequency table and charts summarize and give an overview of the distribution of values of the studied variable in
-the sample, but it's difficult to describe some aspects of the distribution from it, as for example, which are the most
-representative values of the distribution, how is the spread of data, which data could be considered outliers, how is
-the symmetry of the distribution. 
+The frequency table and charts summarize and give an overview of the distribution of values of the studied variable in the sample, but it is difficult to describe some aspects of the distribution from it, as for example, which are the most representative values of the distribution, how is the spread of data, which data could be considered outliers, how is the symmetry of the distribution. 
 
 To describe those aspects of the sample distribution more specific numerical measures, called
 \highlight{\textbf{sample statistics}}, are used.
@@ -465,7 +452,7 @@ According to the aspect of the distribution that they study, there are different
 \item[Measures of locations:] They measure the values where data are concentrated or that divide the distribution into
 equal parts. 
 \item[Measures of dispersion:] They measure the spread of data.
-\item[Measures of shape:] They measure the symmetry and kurtosis of the distribution.  
+\item[Measures of shape:] They measure the symmetry and ``tailedness'' of the distribution.  
 \end{description}
 \end{frame}
 
@@ -478,7 +465,7 @@ equal parts.
 There are two groups: 
 
 \begin{description}
-\item [Central location measures:] They measure the values where data are concentrated, and that usually are in the
+\item [Central location measures:] They measure the values where data are concentrated, usually at the
 centre of the distribution. 
 These values are the values that best represents the sample data. 
 The most important are:
@@ -508,7 +495,7 @@ size
 \bar{x} = \frac{\sum x_i}{n}
 \]
 \end{definition}
-From the frequency table can be calculated with the formula
+It can be calculated from the frequency table with the formula
 \[
 \bar{x} = \frac{\sum x_in_i}{n} = \sum x_i f_i
 \]
@@ -589,7 +576,7 @@ or using the frequency table and taking the class marks as $x_i$,
 \bar{x} = \frac{\sum x_in_i}{n} = \frac{5240}{30}= 174.67 \mbox{ cm}\qquad \bar{x}=\sum{x_if_i} = 174.67 \mbox{ cm}.
 \]
 
-Observe that when the mean is calculated from the table the result differs a little from the real value, cause the
+Observe that when the mean is calculated from the table the result differs a little from the real value, because the
 values used in the calculations are the class marks instead of the actual values.
 \end{frame}
 
@@ -619,7 +606,7 @@ From the frequency table can be calculated with the formula
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Weighted mean calculation}
-Assume that a student wants to calculate a representative measure o its performance in a course. 
+Assume that a student wants to calculate a representative measure of his/her performance in a course. 
 The grade and the credits of every subjects are 
 \begin{center}
 \footnotesize
@@ -641,7 +628,7 @@ However, this measure does not represent well the performance of the student, as
 importance and require the same effort to pass. 
 Subjects with more credits require more work and must have more weight in the calculation of the mean. 
 
-In this case is better to use the weighted mean, using the credits as the
+In this case it is better to use the weighted mean, using the credits as the
 weights of grades, as a representative measure of the student effort
 \[
 \bar{x}_w = \frac{\sum x_iw_i}{\sum w_i} = \frac{5\cdot 6+3\cdot 4+6\cdot 8}{6+4+8}= \frac{90}{18} = 5 \text{ points}.
@@ -771,7 +758,7 @@ With grouped data the \emph{modal class} is the class with the highest frequency
 
 It can be calculated for all types of variables (qualitative and quantitative). 
 
-Some distributions can have more than one mode
+Distributions can have more than one mode.
 \begin{center}
 \tikzsetnextfilename{descriptive/mode}
 \scalebox{0.4}{\input{img/descriptive/mode}}
@@ -826,16 +813,16 @@ class $Mo=(170,180]$.
 In general, when all the central tendency statistics can be calculated, is advisable to use them as representative
 values in the following order:
 \begin{enumerate}
-\item Mean. Mean takes more information from the sample than the others, as it takes into account the magnitude
+\item The mean. Mean takes more information from the sample than the others, as it takes into account the magnitude
 of data.
-\item Median. Median takes less information than mean but more than mode, as it takes into account the order
+\item The median. Median takes less information than mean but more than mode, as it takes into account the order
 of data.
-\item Mode. Mode is the measure that fewer information takes from the sample, as it only takes into account the
+\item The mode. Mode is the measure that fewer information takes from the sample, as it only takes into account the
 absolute frequency of values.
 \end{enumerate}
 
 But, \emph{be careful with outliers}, as the mean can be distorted by them.
-In that case is better to use the median as the value most representative.
+In that case it is better to use the median as the value most representative.
 
 For example, if a sample of number of children of 7 families is
 \begin{center}
@@ -942,14 +929,14 @@ For quantitative variables, the most important are:
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Range and interquartile range}
+\frametitle{Range}
 \begin{definition}[Sample range]
-The \emph{sample range} of a variable $X$ is the difference between the the maximum and the minimum value in the sample.
+The \emph{sample range} of a variable $X$ is the difference between the the maximum and the minimum values in the sample.
 \[\text{Range} = \max_{x_i} -\min_{x_i}\]
 \end{definition}
 
-The range measure the largest variation among the sample data. 
-However, it's very sensitive to outliers, as they appear at the ends of the distribution, and for that reason is
+The range measures the largest variation among the sample data. 
+However, it is very sensitive to outliers, as they appear at the ends of the distribution, and for that reason is
 rarely used. 
 \begin{center}
 \tikzsetnextfilename{descriptive/range}
@@ -960,8 +947,8 @@ rarely used.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Range and interquartile range}
-The following measure avoid the problem of outliers and is much more used.
+\frametitle{Interquartile range}
+The following measure avoids the problem of outliers and is much more used.
 
 \begin{definition}[Sample interquartile range]
 The \emph{sample interquartile range} of a variable $X$ is the difference between the third and the first
@@ -988,7 +975,7 @@ Usually the box is split in two with the median.
 
 This chart is very helpful as it serves to many purposes:  
 \begin{itemize}
-\item It serves to measure the spread of data as it represent the range and the interquartile range. 
+\item It serves to measure the spread of data as it represents the range and the interquartile range. 
 \item It serves to detect outliers, that are the values outside the interval defined by the whiskers.
 \item It serves to measure the symmetry of distribution, comparing the length of the boxes and whiskers above and below
 the median. 
@@ -1025,7 +1012,7 @@ Any value outside that interval is considered an outlier. \\
 For the lower whisker draw a segment from the lower quartile to the lower value in the sample grater than or
 equal to $f_1$, and for the upper whisker draw a segment from the upper quartile to the highest value in the sample lower than
 or equal to $f_2$.
-\item Finally, if there are some outlier, draw a dot in every outlier. 
+\item Finally, if there are outliers, draw a dot at every outlier. 
 \end{enumerate}
 \end{frame}
 
@@ -1053,7 +1040,7 @@ or equal to $f_2$.
 \frametitle{Deviations from the mean}
 Another way of measuring spread of data is with respect to a central tendency measure, as for example the mean. 
 
-In that case, it's measured the distance from every value in the sample to the mean, that is called
+In that case, it is measured the distance from every value in the sample to the mean, that is called
 \highlight{\textbf{deviation from the mean.}}
 
 \begin{center}
@@ -1072,7 +1059,7 @@ If deviations are big, the mean is less representative than when they are small.
 \begin{frame}
 \frametitle{Variance and standard deviation}
 \begin{definition}[Sample variance $s^2$]
-The \emph{sample variance} of a variable $X$ is the average of squared deviations from the mean. 
+The \emph{sample variance} of a variable $X$ is the average of the squared deviations from the mean. 
 \[
 s^2 = \frac{\sum (x_i-\bar x)^2n_i}{n} = \sum (x_i-\bar x)^2f_i
 \]
@@ -1081,8 +1068,7 @@ It can also be calculated with the formula
 \[
 s^2 = \frac{\sum x_i^2n_i}{n} -\bar x^2= \sum x_i^2f_i-\bar x^2
 \]
-The variance has the units of the variable squared, and to ease their interpretation it's common to calculate its square
-root.
+The variance has the units of the variable squared, and to ease its interpretation it is common to calculate its square root.
 
 \begin{definition}[Sample standard deviation $s$]
 The \emph{sample standard deviation} of a variable $X$ is the square root of the variance.
@@ -1096,11 +1082,10 @@ s = +\sqrt{s^2}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Variance and standard deviation interpretation}
-Both variance and standard deviation measures the spread of data around the mean. 
+Both variance and standard deviation measure the spread of data around the mean. 
 When the variance or the standard deviation are small, the sample data are concentrated around the mean, and the mean is
 a good representative measure. 
-In contrast, when variance or the standard deviation are high, the sample data are far from the mean, and the mean
-doesn't represent so good. 
+In contrast, when variance or the standard deviation are high, the sample data are far from the mean, and the mean does not represent so well. 
 \begin{center}
 \begin{tabular}{lcl}
 \emph{Standard deviation small} & $\Rightarrow$ & \emph{Mean is representative}\\
@@ -1189,24 +1174,20 @@ distribution of heights has little dispersion and the mean is very representativ
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Coefficient of variation}
-Both, variance and standard deviation, have units and that makes difficult to interpret them, specially when comparing
-distributions of variables with different units.
+Both, variance and standard deviation, have units and that makes difficult to interpret them, specially when comparing distributions of variables with different units.
 
-For that reason it's also common to use the following dispersion measure that has no units.  
+For that reason it is also common to use the following dispersion measure that has no units.  
 \begin{definition}[Sample coefficient of variation $cv$]
-The \emph{sample coefficient of variation} of a variable $X$ is the quotient between the sample standard deviation and se
-absolute value of the sample mean.
+The \emph{sample coefficient of variation} of a variable $X$ is the quotient between the sample standard deviation and the absolute value of the sample mean.
 \[
 cv = \frac{s}{|\bar x|}
 \]
 \end{definition}
 The coefficient of variation measures the relative dispersion of data around the sample mean.  
 
-As it has no units, it's easier to interpret: The higher the it is the higher the relative dispersion with respect to
-the mean and less representative is the mean.
+As it has no units, it is easier to interpret: The higher the coefficient of variation is, the higher the relative dispersion with respect to the mean and the less representative the mean is.
 
-The coefficient of variation it's very helpful to compare dispersion in distributions of different variables, even if
-variables have different units.
+The coefficient of variation it is very helpful to compare dispersion in distributions of different variables, even if variables have different units.
 \begin{center}
 \alert{\emph{Watch out! It makes no sense when the mean is 0 or close to 0.}}
 \end{center}
@@ -1345,8 +1326,7 @@ mean to the fourth power, divided by the standard deviation to the fourth power 
 \[g_2 = \frac{\sum (x_i-\bar x)^4 n_i/n}{s^4}-3 = \frac{\sum (x_i-\bar x)^4 f_i}{s^4}-3\]
 \end{definition}
 
-The coefficient of kurtosis measures the the length of tails or the peakness of distribution with respect to normal
-(bell-shaped) distribution of reference.
+The coefficient of kurtosis measures the length of tails or the peakness of distribution with respect to the normal (bell-shaped) distribution of reference.
 \begin{itemize}
 \item $g_2=0$ indicates that the distribution has the same tails and peakedness than a normal distribution
 (\emph{mesokurtic}).
@@ -1424,13 +1404,10 @@ bit platykurtic.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Interpretation }
-As we will see in the chapters of inferential statistics, many of the statistical test can only be applied to normal
-(bell-shaped) populations. 
+\frametitle{Interpretation}
+As we will see in the chapters of inferential statistics, many of the statistical test can only be applied to normal (bell-shaped) populations. 
 
-Normal distributions are symmetrical and mesokurtic, and therefore, they have both the coefficients of symmetry and
-kurtosis 0. So, a way of checking if a sample comes from a normal population is looking how far are the coefficients of
-skewness and kurtosis from 0. 
+Normal distributions are symmetrical and mesokurtic, and therefore, their coefficients of symmetry and kurtosis are equal to 0. So, a way of checking if a sample comes from a normal population is looking how far are the coefficients of skewness and kurtosis from 0. 
  
 In general, the normality of population is rejected when $g_1$ or $g_2$ are outside the interval $[-2,2]$.
 
@@ -1443,24 +1420,22 @@ In that case, is common to apply a transformation to the variable to correct non
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Variable transformations}
-\small
-In many cases, the raw sample data are transformed to correct non-normality of distribution or just to get a more
-appropriate scale.
+In many cases, the raw sample data are transformed to correct non-normality of distribution or just to get a more appropriate scale.
 
-For example, if we are working with heights in metres and a sample contains the following values:
+For example, if we have the following sample of heights in metres:
 \begin{center}
 $1.75$ m, $1.65$ m, $1.80$ m,
 \end{center}
-it's possible to avoid decimals multiplying by 100, that is, changing from metres to centimetres:
+it is possible to avoid decimals multiplying by 100, that is, changing from metres to centimetres:
 \begin{center}
 175 cm, 165 cm, 180 cm,
 \end{center}
-And it's also possible to reduce the magnitude of data subtracting the minimum value in the sample, in this case 165 cm:
+And it is also possible to reduce the magnitude of data subtracting the minimum value in the sample, in this case 165 cm:
 \begin{center}
-10 cm, 0 cm, 15 cm,
+10 cm, 0 cm, 15 cm.
 \end{center}
-It's obvious that these data are easier to work with than the original ones.
-In essences, what it's been done is to apply the following transformation o data:
+It is obvious that these data are easier to work with than the original ones.
+In essence, we have applied the following transformation to the data:
 \[Y= 100X-165\]
 \end{frame}
 
@@ -1468,18 +1443,18 @@ In essences, what it's been done is to apply the following transformation o data
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Linear transformations}
-One of the most common transformations is a \emph{linear transformation}:
+One of the most common transformations is the \emph{linear transformation}:
 \[
 Y=a+bX.
 \]
 
-For a linear transformation the mean and the standard deviation of the transformed variable are
+For a linear transformation, the mean and the standard deviation of the transformed variable are
 \begin{align*}
 \bar y &= a+ b\bar x,\\
 s_{y} &= |b|s_{x}
 \end{align*}
 
-Additionally, the coefficient of kurtosis doesn't change and the coefficient of skewness changes only the sign if $b$ is
+Additionally, the coefficient of kurtosis does not change and the coefficient of skewness changes only the sign if $b$ is
 negative.
 \end{frame}
 
@@ -1489,22 +1464,19 @@ negative.
 \frametitle{Standardization and standard scores}
 One of the most common linear transformations is the \emph{standardization}.
 \begin{definition}[Standardized variable and standard scores]
-The \emph{standardized variable} of a variable $X$ is the variable that result of subtracting the mean from $X$ and
-dividing by the standard deviation 
+The \emph{standardized variable} of a variable $X$ is the variable that results from subtracting the mean from $X$ and dividing it by the standard deviation 
 \[
 Z=\frac{X-\bar x}{s_{x}}.
 \]
-For each value $x_i$ of the sample, the \emph{standard score} is the value that results of applying the standardization
-transformation
+For each value $x_i$ of the sample, the \emph{standard score} is the value that results of applying the standardization transformation
 \[
 z_i=\frac{x_i-\bar x}{s_{x}}.
 \]
 \end{definition}
 
-The standard score is the number of standard deviations a value is above or below the mean, and it's useful to avoid
-the dependency of the variable from its measurement units.
+The standard score is the number of standard deviations a value is above or below the mean, and it is useful to avoid the dependency of the variable from its measurement units.
 
-The standardized variable always have mean 0 and standard deviation 1.  
+The standardized variable always has mean 0 and standard deviation 1.  
 \[
 \bar z = 0 \qquad s_{z} = 1
 \]
@@ -1527,17 +1499,16 @@ Y: & 1 & 9 & \alert{8} & 5 & 2 & \qquad & \bar y = 5 & \quad s_y = 3.16\\
 \emph{Did the fourth student get the same performance in subject $X$ than the third student in subject $Y$?}
 \end{center}
 It might seem that both students had the same performance in every subject because they have the same
-degree, but in order to get the performance of every student relative to the group of students, the dispersion
+grade, but in order to get the performance of every student relative to the group of students, the dispersion
 of grades in every subject must be considered.
-For that reason is better to use the standard score as a measure of relative performance. 
+For that reason it is better to use the standard score as a measure of relative performance. 
 \[
 \begin{array}{cccccc}
 X: & -1.5 & 0 & -0.5 & \alert{1.5} & 0.5 \\
 Y: & -1.26 & 1.26 & \alert{0.95} & 0 & -0.95\\
 \end{array}
 \]
-That is, the student with an 8 in $X$ is $1.5$ times the standard deviation below the mean of $X$, while the student
-with an 8 in $Y$ is only $0.95$ times the standard deviation below the mean of $Y$. 
+That is, the student with an 8 in $X$ is $1.5$ times the standard deviation above the mean of $X$, while the student with an 8 in $Y$ is only $0.95$ times the standard deviation above the mean of $Y$. 
 Therefore, the first student had a higher performance in $X$ than the second in $Y$.
 \end{frame}
 
@@ -1580,7 +1551,7 @@ the best student is the fourth one.
 Non-linear transformations are also common to correct non-normality of distributions.
 
 The square transformation $Y=X^2$ compresses small values and expand large values.
-So, it's used to correct left-skewed distributions.
+So, it is used to correct left-skewed distributions.
 
 \begin{center}
 \tikzsetnextfilename{descriptive/square_transformation}
@@ -1592,8 +1563,7 @@ So, it's used to correct left-skewed distributions.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Non-linear transformation}
-The square root transformation $Y=\sqrt x$, the logarithmic tranformation $Y= \log X$ and the inverse transformation
-$Y=1/X$ compresses large values and expand small values.
+The square root transformation $Y=\sqrt x$, the logarithmic transformation $Y= \log X$ and the inverse transformation $Y=1/X$ compress large values and expand small values.
 So, they are used to correct right-skewed distributions. 
 \begin{center}
 \tikzsetnextfilename{descriptive/log_transformation}
@@ -1605,8 +1575,8 @@ So, they are used to correct right-skewed distributions.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Factors}
-Sometimes is interesting to describe the frequency distribution of the main variable for different subsamples
-corresponding to the categories of another variable that is known as \highlight{\textbf{classificatory variable}} or
+Sometimes it is interesting to describe the frequency distribution of the main variable for different subsamples
+corresponding to the categories of another variable, known as \highlight{\textbf{classificatory variable}} or
 \highlight{\textbf{factor}}.
 
 \highlight{Example} Dividing the sample of heights by gender we get two subsamples

@@ -163,7 +163,7 @@ The shape of the point cloud in a scatter plot gives information about the type 
 The frequency distributions of each variable of the two-dimensional variable are known as \highlight{marginal frequency
 distributions}.
 
-We can get the marginal frequency distributions from the joint frequency table summing frequencies by rows and columns. 
+We can get the marginal frequency distributions from the joint frequency table by adding frequencies by rows and columns. 
 
 \begin{center}
 \[
@@ -276,7 +276,7 @@ and 3, and the sum of the products of deviations from the mean will be positive.
 \mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/regression/increasing_linear_scatterplot}}}
 \mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/increasing_linear_scatterplot}}}
 
-$$\sum(x_i-\bar x)(y_j-\bar y) = +$$
+$$\sum(x_i-\bar x)(y_j-\bar y) >0$$
 \end{column}
 
 \begin{column}{0.5\textwidth}
@@ -288,7 +288,7 @@ and 4, and the sum of the products of deviations from the mean will be negative.
 \mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/regression/decreasing_linear_scatterplot}}}
 \mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/decreasing_linear_scatterplot}}}
 
-$$\sum(x_i-\bar x)(y_j-\bar y) = -$$
+$$\sum(x_i-\bar x)(y_j-\bar y) <0$$
 \end{column}
 \end{columns}
 \end{frame}
@@ -346,7 +346,7 @@ Using the joint frequency table of the sample of heights and weights
 \[
 \bar x = 174.67 \mbox{ cm} \qquad \bar y = 69.67 \mbox{ Kg}
 \]
-the covariance is 
+we get that the covariance is equal to 
 \begin{align*}
 s_{xy} &=\frac{\sum x_iy_jn_{ij}}{n}-\bar x\bar y =  \frac{155\cdot 55\cdot 2 + 165\cdot 55\cdot 4 + \cdots + 195\cdot 105\cdot 1}{30}-174.67\cdot 69.67 =\\
 & = \frac{368200}{30}-12169.26 = 104.07 \mbox{ cm$\cdot$ Kg},
@@ -364,16 +364,15 @@ that relation with a mathematical function,
 \[y=f(x)\]
 in order to predict the dependent variable for every value of the independent one.   
 
-The part of Statistics in charge of constructing such a function is \highlight{regression}, and the function is kwnon
-as \highlight{regression function} or \highlight{regression model}.
+The part of Statistics in charge of constructing such a function is called \highlight{regression}, and the function is known as \highlight{regression function} or \highlight{regression model}.
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Simple regression models}
-Depending on the type of function there are a lot of types of regression models
-The most common are shown in the table below.
+There are a lot of types of regression models.
+The most common models are shown in the table below.
 
 \begin{center}
 %\mode<presentation>{\rowcolors{1}{red!20}{red!10}}
@@ -400,10 +399,10 @@ The model choice depends on the shape of the points cloud in the scatter plot.
 \begin{frame}
 \frametitle{Residuals or predictive errors}
 Once chosen the type of regression model, we have to determine which function of that family explains better the
-relation between the dependent and the independent variables, that is, the function that predict better the
+relation between the dependent and the independent variables, that is, the function that predicts better the
 dependent variable. 
 
-That function is the function that minimize the distances from the observed values for $Y$ in the sample to the
+That function is the function that minimizes the distances from the observed values for $Y$ in the sample to the
 predicted values of the regression function.
 These distances are known as \emph{residuals} or \emph{predictive errors}.
 
@@ -431,8 +430,7 @@ e_{ij} = y_j-f(x_i).
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Least squares fitting}
-A way to get the regression function is the \emph{least squares method}, that determine the function that minimize the
-squared residuals.
+A way to get the regression function is the \emph{least squares method}, that determines the function that minimizes the squared residuals.
 \[
 \sum e_{ij}^2.
 \]
@@ -475,8 +473,7 @@ y = \bar y +\frac{s_{xy}}{s_x^2}(x-\bar x).
 \]
 \end{definition}
 
-The regression line of $Y$ on $X$ is the straight line that minimize the predictive errors on $Y$, therefore is the
-linear regression model that gives better predictions of $Y$.
+The regression line of $Y$ on $X$ is the straight line that minimizes the predictive errors on $Y$, therefore it is the linear regression model that gives better predictions of $Y$.
 \end{frame}
 
 
@@ -564,11 +561,10 @@ b_{yx} = \frac{s_{xy}}{s_x^2}
 \]
 \end{definition}
 
-The regression coefficient has always the same sign than the covariance. 
+The regression coefficient has always the same sign as the covariance. 
 
 It measures how the dependent variable changes in relation to the independent one according to the regression line. 
-In particular, it gives the number of units that the dependent variable increases or decreases for every unit that
-increases the independent variable. 
+In particular, it gives the number of units that the dependent variable increases or decreases for every unit that the independent variable increases. 
 \end{frame}
 
 
@@ -584,8 +580,7 @@ Thus, the regression coefficient of weight on height is
 \[
 b_{yx}= 1.02 \mbox{Kg/cm.}
 \]
-That means that, according to the regression line of weight on height, the weight will increase $1.02$ Kg for every cm
-that increases the height. 
+That means that, according to the regression line of weight on height, the weight will increase $1.02$ Kg for every cm that the height increases. 
 \begin{center}
 \tikzsetnextfilename{regression/slope_interpretation}
 \input{img/regression/slope_interpretation}
@@ -602,8 +597,7 @@ Usually the regression models are used to predict the dependent variable for som
 variable plays the dependent variable role.}}
 \end{center}
 
-Thus, in the sample of heights and weights, to predict the weight of a person with a height of 180 cm, we have to use
-the regression line of weight on height,
+Thus, in the sample of heights and weights, to predict the weight of a person with a height of 180 cm, we have to use the regression line of weight on height,
 \[
 y = -108.49 + 1.02 \cdot 180  = 75.11 \mbox{ Kg}.
 \]
@@ -621,12 +615,10 @@ x = 130.78 + 0.63\cdot 79 = 180.55 \mbox{ cm}.
 % ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Correlation}
-Once we have a regression model, in order to see if it is a good predictive model we have to assess the goodness of
-fit of the model and the strength of the of relation set by it. 
+Once we have a regression model, in order to see if it is a good predictive model we have to assess the goodness of fit of the model and the strength of the of relation set by it. 
 The part of Statistics in charge of this is \highlight{correlation}.
 
-The correlation study the residuals of a regression model: the smaller the residuals, the greater the goodness of fit,
-and the stronger the relation set by the model. 
+The correlation study the residuals of a regression model: the smaller the residuals, the greater the goodness of fit, and the stronger the relation set by the model. 
 \end{frame}
 
 
@@ -635,8 +627,7 @@ and the stronger the relation set by the model.
 \frametitle{Residual variance}
 To measure the goodness of fit of a regression model is common to use the \emph{residual variance}.
 \begin{definition}[Sample residual variance $s_{ry}^2$]
-Given a regression model $y=f(x)$ de of a two-dimensional variable $(X,Y)$, its \emph{sample residual variance} is the
-average of the squared residuals,
+Given a regression model $y=f(x)$ of a two-dimensional variable $(X,Y)$, its \emph{sample residual variance} is the average of the squared residuals,
 \[
 s_{ry}^2 = \frac{\sum e_{ij}^2n_{ij}}{n} = \frac{\sum (y_j - f(x_i))^2n_{ij}}{n}.
 \]
@@ -646,7 +637,7 @@ The greater the residuals, the greater the residual variance and the smaller the
 
 When the linear relation is perfect, the residuals are zero and the residual variance is zero. 
 Conversely, when there are no relation, the residuals coincide with deviations from the mean, and the residual
-variance is the same than the variance of the dependent variable.
+variance is equal to the variance of the dependent variable.
 \[
 0\leq s_{ry}^2\leq s_y^2
 \]
@@ -676,13 +667,13 @@ r^2 = 1- \frac{s_{ry}^2}{s_y^2}
 \]
 \end{definition}
 
-As the residual variance ranges from 0 to $s_y^2$, 
+As the residual variance ranges from 0 to $s_y^2$, we have
 \[
 \alert{0\leq r^2\leq 1}
 \]
 
-The greater $r^2$ is, the greater the goodness of fit of the regression model, and more reliable will be its
-predictions. 
+The greater $r^2$ is, the greater the goodness of fit of the regression model, and the more reliable will its
+predictions be. 
 In particular, 
 \begin{itemize}
 \item If $r^2 =0$ then there is no relation as set by the regression model.
@@ -738,15 +729,14 @@ model of height on weight also explains 65\% of the variation of height.
 Given a sample of a two-dimensional variable $(X,Y)$, the \emph{sample correlation coefficient} is the square
 root of the linear coefficient of determination, with the sign of the covariance,
 \[
-r = \sqrt{r^2} = \dfrac{s_{xy}}{s_xs_y}.
+r = \dfrac{s_{xy}}{s_xs_y}.
 \]
 \end{definition}
 As $r^2$ ranges from 0 to 1, $r$  ranges from -1 to 1,
 \[
 \alert{-1\leq r\leq 1}
 \]
-The correlation coefficient measures the strength of the linear association but also its direction (increasing or
-decreasing):
+The correlation coefficient measures not only the strength of the linear association but also its direction (increasing or decreasing):
 \begin{itemize}
 \item If $r=0$ then there is no linear relation.
 \item Si $r=1$ then there is a perfect increasing linear relation.
@@ -758,7 +748,7 @@ decreasing):
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Correlation coefficient}
-\framesubtitle{Example of heights and weights}
+\framesubtitle{The example of heights and weights}
 In the sample of heights and weights, we had
 \[
 \begin{array}{lll}
@@ -771,7 +761,7 @@ Thus, the correlation coefficient is
 \[
 r = \frac{s_{xy}}{s_xs_y} = \frac{104.07 \mbox{ cm\cdot Kg}}{10.1 \mbox{ cm} \cdot 12.82 \mbox{ Kg}} = +0.8.
 \]
-This means that there is a rather strong linear increasing relation between height and weight.
+This means that there is a rather strong linear, increasing, relation between height and weight.
 \end{frame}
 
 
@@ -791,17 +781,14 @@ The coefficient of determination explains the goodness of fit of a regression mo
 influence the reliability of regression predictions:
 
 \begin{itemize}
-\item The coefficient of determination: The greater $r^2$, the greater the goodness of fit and the more reliable the predictions.
-\item The variability of the population distribution: The greater the variation, the more difficult to predict and the
-less reliable the predictions.
+\item The coefficient of determination: The greater $r^2$, the greater the goodness of fit and the more reliable the predictions are.
+\item The variability of the population distribution: The greater the variation, the more difficult to predict and the less reliable the predictions are.
 \item The sample size: The greater the sample size, the more information we have and the more reliable the
-predictions. 
+predictions are. 
 \end{itemize}
 
-In addition, we have to take into account that a regression model is only valid for the range of values observed y the
-sample. 
-That means that, as we don't have any information outside that range, we must not do predictions for values far from
-that range.
+In addition, we have to take into account that a regression model is only valid for the range of values observed in the sample. 
+That means that, as we don't have any information outside that range, we must not do predictions for values far from that range.
 \end{frame}
 
 
@@ -809,10 +796,9 @@ that range.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Non-linear regression}
-The fit of a non-linear regression can be also done by least square fitting method.
+The fit of a non-linear regression can be also done by the least square fitting method.
 
-However, in some cases the fitting of a non-linear model can be reduced to the fitting of a linear model applying a
-simple transformation to the variables of the model. 
+However, in some cases the fitting of a non-linear model can be reduced to the fitting of a linear model applying a simple transformation to the variables of the model. 
 \end{frame}
 
 
@@ -820,7 +806,7 @@ simple transformation to the variables of the model.
 \begin{frame}
 \frametitle{Transformations of non-linear regression models}
 \begin{itemize}
-\small
+\mode<presentation>{\small}
 \item \highlight{Logarithmic model}: A logarithmic model $y = a+b \log x$ can be transformed in a linear model with
 the change $t=\log x$:
 \[y=a+b\log x = a+bt.\]
@@ -984,9 +970,7 @@ Thus, the exponential model fits much better than the linear model.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Lack of fit doesn't mean independence}
-It's important to note that every regression model has its own coefficient of determination. Thus, a coefficient of
-determination near zero means that there is no relation as set by the model, but \emph{that doesn't mean that the
-variables are independent}, cause it could be a different type of relation.
+It is important to note that every regression model has its own coefficient of determination. Thus, a coefficient of determination near zero means that there is no relation as set by the model, but \emph{that does not mean that the variables are independent}, because there could be a different type of relation.
 \begin{center}
 \tikzsetnextfilename{regression/linear_regression_parabolic_relation}
 \resizebox{0.49\textwidth}{!}{\input{img/regression/linear_regression_parabolic_relation}}
@@ -999,8 +983,7 @@ variables are independent}, cause it could be a different type of relation.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Outliers in regression}
-Outliers in regression studies are points that clearly doesn't follow the tendency of the rest of points, even if the
-values of the pair are not outliers for every variable separately.
+Outliers in regression studies are points that clearly do not follow the tendency of the rest of points, even if the values of the pair are not outliers for every variable separately.
 \begin{center}
 \tikzsetnextfilename{regression/scatterplot_with_outliers}
 \resizebox{0.7\textwidth}{!}{\input{img/regression/scatterplot_with_outliers}}
@@ -1015,7 +998,7 @@ Outliers in regression studies can provoke drastic changes in the regression mod
 \begin{center}
 \tikzsetnextfilename{regression/linear_regression_with_outliers}
 \resizebox{0.49\textwidth}{!}{\input{img/regression/linear_regression_with_outliers}}
-\tikzsetnextfilename{regression/linear_regresssion_without_outliers}
+\tikzsetnextfilename{regression/linear_regression_without_outliers}
 \resizebox{0.49\textwidth}{!}{\input{img/regression/linear_regression_without_outliers}}
 \end{center}
 \end{frame}
