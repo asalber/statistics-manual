@@ -18,15 +18,13 @@
 Continuous random variables, unlike discrete random variables, can take any value in a real interval. 
 Thus the range of a continuous random variables is infinite and uncountable. 
 
-Such a density of values makes impossible to compute the probability for each one of them, and therefore, it's not
-possible to define a probabilistic model trough a probability function like with discrete random variables.
+Such a density of values makes impossible to compute the probability for each one of them, and therefore, it's not possible to define a probabilistic model trough a probability function like with discrete random variables.
 
 Besides, usually the measurement of continuous random variable is limited by the precision of the measuring instrument.
-For instance, when somebody says that is $1.68$ meters tall, his or her true height is no exactly $1.68$ meters, cause
-the precision of the measuring instrument is only cm (two decimal places). 
+For instance, when somebody says that is $1.68$ meters tall, his or her true height is no exactly $1.68$ meters, because the precision of the measuring instrument is only cm (two decimal places). 
 This means that the true height of that person is between $1.675$ y $1.685$ meters.
 
-Hence, for continuous variables, \alert{\emph{it make no sense to calculate the probability of an isolated value, and we
+Hence, for continuous variables, \alert{\emph{it makes no sense to calculate the probability of an isolated value, and we
 will calculate probabilities for intervals.}}
 \end{frame}
 
@@ -34,13 +32,13 @@ will calculate probabilities for intervals.}}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Probability density function}
-To model the probability distribution of a continuous random variable is used a probability density function.
+To model the probability distribution of a continuous random variable we use a probability density function.
 
 \begin{definition}[Probability density function]
 The \emph{probability density function} of a continuous random variable $X$ is a function $f(x)$ that meets the
 following conditions:
 \begin {itemize}
-\item Is non-negative: $f(x)\geq 0$ $\forall x\in \mathbb{R}$,
+\item It is non-negative: $f(x)\geq 0$ $\forall x\in \mathbb{R}$,
 \item The area bounded by the curve of the density function and the x-axis is equal to 1, that is,
 \[
 \int_{-\infty}^{\infty} f(x)\; dx = 1.
@@ -238,12 +236,10 @@ As the density function is constant, the distribution function has a linear grow
 \frametitle{Continuous uniform probability calculation}
 \framesubtitle{Example of waiting time for a bus}
 A bus has a frequency of 15 minutes. 
-Assuming that a person can arrive to the bus station in any time, \emph{what is the probability of waiting the bus
-between 5 and 10 minutes?}
+Assuming that a person can arrive to the bus station in any time, \emph{what is the probability of waiting for the bus between 5 and 10 minutes?}
 \begin{columns}
 \begin{column}{0.52\textwidth}
-In this case, the variable $X$ that measures the waiting time follows a continuous uniform distribution $U(0,15)$ as any
-waiting time between 0 and 15 is equally likely. 
+In this case, the variable $X$ that measures the waiting time follows a continuous uniform distribution $U(0,15)$ as any waiting time between 0 and 15 is equally likely. 
 
 Then, the probability of waiting between 5 and 10 minutes is
 \begin{align*}
@@ -268,8 +264,7 @@ And the expected waiting (the mean) time is $\mu=\frac{0+15}{2}=7.5$ minutes.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Normal probability distribution model $N(\mu,\sigma)$}
-The normal distribution model is, without a doubt, the most important continuous distribution model as is the most
-common in Nature.
+The normal distribution model is, without a doubt, the most important continuous distribution model as it is the most common in Nature.
 \begin{definition}[Normal distribution $N(\mu,\sigma)$]
 A continuous random variable $X$ follows a probability distribution model \emph{normal} of parameters $\mu$ and
 $\sigma$, noted $X\sim N(\mu,\sigma)$, if its range is $\mbox{Ran}(X) = (-\infty,\infty)$ and its density function is
@@ -338,14 +333,14 @@ The plot of the distribution function of a normal distribution is S shaped.
 \begin{frame}
 \frametitle{Normal distribution properties}
 \begin{itemize}
-\item It is symmetric with respect to the mean, and then, the coefficient of skewness is zero,
+\item It is symmetric with respect to the mean, and therefore, the coefficient of skewness is zero,
 $g_1=0$.
-\item It is mesokurtic, as the density function is bell shaped, and then, the coefficient of kurtosis is zero, $g_2=0$.
+\item It is mesokurtic, as the density function is bell shaped, and so, the coefficient of kurtosis is zero, $g_2=0$.
 \item The mean, median and mode are the same
 \[
 \mu = Me = Mo.
 \]
-\item Asymptotically approaches 0 when $x$ tends to $\pm \infty$.
+\item It asymptotically approaches 0 when $x$ tends to $\pm \infty$.
 \end{itemize}
 \end{frame}
 
@@ -377,8 +372,7 @@ $g_1=0$.
 \begin{frame}
 \frametitle{Normal distribution properties}
 \framesubtitle{Example of cholesterol}
-It is known that the cholesterol level of females between 40 and 50 follows a normal distribution with mean 210 mg/dl
-and standard deviation 20 mg/dl. 
+It is known that the cholesterol level in females of age between 40 and 50 follows a normal distribution with mean 210 mg/dl and standard deviation 20 mg/dl. 
 
 According to the Gauss bell properties, this means that
 \begin{itemize}
@@ -397,11 +391,10 @@ mg/dl.
 \framesubtitle{Example blood analysis}
 \begin{columns}
 \begin{column}{0.47\textwidth}
-In blood analysis is common to use the interval $\mu\pm 2\sigma$ to detect possible pathologies.
+In blood analysis it is common to use the interval $\mu\pm 2\sigma$ to detect possible pathologies.
 In the case of cholesterol, this interval is $[170\text{ mg/dl}, 250\text{ mg/dl}]$. 
 
-Thus, when a women between 40 and 50 has a cholesterol level out of this interval, it's common thinking about some
-pathology. However this person could be healthy, although the likelihood of that happening is only 5\%.
+Thus, when a women between 40 and 50 years of age has a cholesterol level out of this interval, it's common to think about some pathology. However this person could be healthy, although the likelihood of that happening is only 5\%.
 \end{column}
 \begin{column}{0.47\textwidth}
 \begin{center}
@@ -418,12 +411,10 @@ pathology. However this person could be healthy, although the likelihood of that
 \frametitle{The central limit theorem}
 This behavior is common in many physical and biological variables in Nature.
 
-If you think about the distribution of the height, for instance, you can check that most people in the population have a
-height around the mean, but as the heights move away from the mean, both below and above the mean, there are few and few
-people with such a heights.
+If you think about the distribution of the height, for instance, you can check that most people in the population have a height around the mean, but as the heights move away from the mean, both below and above the mean, there are few and few people with such a heights.
 
 The explanation for this behavior is the \highlight{\textbf{Central Limit Theorem}}, that we will see in the next
-chapter, and states that a continuous random variable whose values depends on a huge number of independent factors
+chapter; it states that a continuous random variable whose values depends on a huge number of independent factors
 adding their effects,  always follows a normal distribution.
 \end{frame}
 
@@ -573,8 +564,9 @@ population variance and in the study of relations between qualitative variables.
 \[
 X+Y \sim \chi^2(n+m).
 \]
-\item Asymptotically approaches a normal distribution as the degrees of freedom increases. 
+\item It asymptotically approaches to a normal distribution as the degrees of freedom increase. 
 \end{itemize}
+As we will see in the next chapter, the chi-square distribution plays an important role in the estimation of the population variance and in the study of relations between qualitative variables.
 \end{frame}
 
 
@@ -585,7 +577,7 @@ X+Y \sim \chi^2(n+m).
 \frametitle{Student's t probability distribution $T(n)$}
 \begin{definition}[Student's t distribution $T(n)$]
 Given a variable $Z$ following a standard normal distribution model, $Z\sim N(0,1)$, and a variable $X$ following a
-chi-square distribution model with $n$ degrees of freedom, $X\sim \chi^2(n)$,  both independent, the variable 
+chi-square distribution model with $n$ degrees of freedom, $X\sim \chi^2(n)$,  independent, the variable 
 \[
 T = \frac{Z}{\sqrt{X/n}},
 \]
@@ -594,7 +586,7 @@ follows a \emph{Student's t probability distribution model with $n$ degrees of f
 
 Its range is $\mathbb{R}$ and its mean and variance are
 \[
-\mu = 0, \qquad \sigma^2 = \frac{n}{n-2} \mbox{ si $n>2$}.
+\mu = 0, \qquad \sigma^2 = \frac{n}{n-2} \mbox{ if $n>2$}.
 \]
 
 As we will see in the next chapter, the Student's t distribution plays an important role in the estimation of the
@@ -619,13 +611,14 @@ population mean.
 \frametitle{Student's t distribution properties}
 \begin{itemize}
 \item The mean, the median and the mode are the same, $\mu=Me=Mo$
-\item Is symmetric $g_1=0$.
-\item Asymptotically approaches the standard normal distribution as the degrees of freedom increases. 
+\item It is symmetric, $g_1=0$.
+\item It asymptotically approaches to the standard normal distribution as the degrees of freedom increase. 
 In practice for $n\geq 30$ both distributions are approximately the same. 
 \[
 T(n)\stackrel{n\rightarrow \infty}{\approx}N(0,1).
 \]
 \end{itemize}
+As we will see in the next chapter, the Student’s t distribution plays an important role in the estimation of the population mean.
 \end{frame}
 
 
@@ -670,14 +663,17 @@ population variances and in the analysis of variance test (ANOVA).
 \frametitle{Fisher-Snedecor's F distribution properties}
 \begin{itemize}
 \item The range is non-negative.
-\item It meets
+\item It satisfies
 \[
 F(m,n) =\frac{1}{F(n,m)}.
 \]
-Thus, if we name $f(m,n)_p$ the value that meets $P(F(m,n)\leq f(m,n)_p)=p$, then
+Thus, if we name $f(m,n)_p$ the value that satisfies $P(F(m,n)\leq f(m,n)_p)=p$, then
 \[
 f(m,n)_p =\frac{1}{f(n,m)_{1-p}}
 \]
-what is helpful in order to compute probabilities from the table of the distribution function.
+which is helpful in order to compute probabilities from the table of the distribution function.
 \end{itemize}
+
+As we will see in the next chapter, the Fisher-Snedecor’s F distribution plays an important role in the comparison of population variances and in the analysis of variance test (ANOVA).
 \end{frame}
+
