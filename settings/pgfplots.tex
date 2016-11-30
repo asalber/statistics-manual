@@ -1,0 +1,104 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\pgfplotsset{colormap={outcolormap}{color=(color1); color=(color1!50)},
+             colormap={incolormap}{color=(color2); color=(color2!50)},
+             colormap={twocolormap}{color=(color1); color=(color2)}}
+
+% Line styles for plotting 2d functions
+\pgfplotscreateplotcyclelist{2dfun cycle}{%
+  {color1, line width=0.8pt},
+  {color2, line width=0.8pt},
+  {color3, line width=0.8pt},
+  {color4, line width=0.8pt},
+}
+% Line and point styles for plotting 2d data
+\pgfplotscreateplotcyclelist{2dplot cycle}{%
+  {color1, line width=0.8pt, mark=*, mark size=1.5pt},
+  {color2, line width=0.8pt, mark=square*, mark size=1.3pt},
+  {color3, line width=0.8pt, mark=triangle*, mark size=1.5pt},
+  {color4, line width=0.8pt, mark=diamond*, mark size=1.5pt},
+}
+
+% Plot styles
+\pgfplotsset{
+  compat=1.14,
+% Basic 2D settings
+  2dbaseplot/.style={
+    axis line style={<->}, % arrows on the axis
+    scale only axis,        % otherwise width won't be as intended: http://tex.stackexchange.com/questions/36297/pgfplots-how-can-i-scale-to-text-width
+    x tick label style={font=\small},
+    y tick label style={font=\small},
+    every axis/.append style={font=\small}, 
+  },
+% Settings for generic 2D functions 
+  gen2dfun/.style={
+    2dbaseplot,
+    axis x line=middle,
+    axis y line=middle,
+    xlabel={$x$},         
+    ylabel={$y$},          
+    every axis x label/.style={at={(ticklabel* cs:1)}, anchor=west,},
+	every axis y label/.style={at={(ticklabel* cs:1)}, anchor=south,},
+    cycle list name=2dfun cycle,
+  },
+% Settings for 2D functions 
+  2dfun/.style={
+    2dbaseplot,
+    axis x line=middle,
+    axis y line=middle,
+    xlabel={$x$},         
+    ylabel={$y$},          
+    every axis x label/.style={at={(ticklabel* cs:1)}, anchor=west,},
+	every axis y label/.style={at={(ticklabel* cs:1)}, anchor=south,},
+    x tick label style={font=\tiny},
+    y tick label style={font=\tiny},
+    cycle list name=2dfun cycle,
+  },
+% Settings for 2D plots
+  2dplot/.style={
+    baseplot,
+    xmajorgrids=true,
+    ymajorgrids=true,
+    major grid style={dotted},
+    axis x line=bottom,
+    axis y line=left,
+    legend style={cells={anchor=west}, draw=none, font=\footnotesize},
+    x tick label style={font=\tiny}, 
+    y tick label style={font=\tiny},
+    cycle list name=2dplot cycle,
+  },
+% Basic 3D settings
+  3dbaseplot/.style={
+%    axis line style={->}, % arrows on the axis
+    scale only axis,        % otherwise width won't be as intended: http://tex.stackexchange.com/questions/36297/pgfplots-how-can-i-scale-to-text-width
+    x tick label style={font=\small},
+    y tick label style={font=\small},
+    z tick label style={font=\small},
+    every axis/.append style={font=\small}, 
+  },
+% Settings for generic 3D functions 
+  gen3dfun/.style={
+    3dbaseplot,
+    xlabel={$x$},         
+    ylabel={$y$},
+    zlabel={$z$},
+    every axis x label/.style={at={(ticklabel cs:0.5)}, anchor=center,},
+	every axis y label/.style={at={(ticklabel cs:0.5)}, anchor=center,},
+	every axis z label/.style={at={(ticklabel cs:0.5)}, anchor=center,},           
+    cycle list name=2dfun cycle,
+  },
+% Settings for 3D functions 
+  3dfun/.style={
+    3dbaseplot,
+    xlabel={$x$},         
+    ylabel={$y$},
+    zlabel={$z$},           
+    every axis x label/.style={at={(ticklabel cs:0.5)}, anchor=center,},
+	every axis y label/.style={at={(ticklabel cs:0.5)}, anchor=center,},
+	every axis z label/.style={at={(ticklabel cs:0.5)}, anchor=center,},
+	x tick label style={font=\tiny}, 
+    y tick label style={font=\tiny},
+    z tick label style={font=\tiny},
+    cycle list name=2dfun cycle,
+  },
+}

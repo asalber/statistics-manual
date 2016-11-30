@@ -169,7 +169,7 @@ The union event $A\cup B$ happens when $A$ \alert{or} $B$ happen.
 Given two events $A,B\subseteq \Omega$, the \emph{intersection} of $A$ and $B$, denoted by $A\cap B$, is the
 event of all elements that are members of both $A$ and $B$.
 \[
-A\cap B = \{x\,|\, x\in A\textrm{ and }x\in B\}.
+A\cap B = \{x\,|\, x\in A\mbox{ and }x\in B\}.
 \]
 \end{definition}
 
@@ -189,10 +189,10 @@ Two events are \highlight{incompatible} if their intersection is empty.
 \begin{frame}
 \frametitle{Complement of an event}
 \begin{definition}[Complementary event]
-Given an event $A\subseteq \Omega$, the \emph{complementary or contrary event} of $A$, denoted by $\bar A$, is
+Given an event $A\subseteq \Omega$, the \emph{complementary or contrary event} of $A$, denoted by $\overline A$, is
 the event of all elements of $\Omega$ except the elements that are members of $A$.
 \[
-\bar A = \{x\,|\, x\not\in A\}.
+\overline A = \{x\,|\, x\not\in A\}.
 \]
 \end{definition}
 
@@ -201,7 +201,7 @@ the event of all elements of $\Omega$ except the elements that are members of $A
 \input{img/probability/complement}
 \end{center}
 
-The complementary event $\bar A$ happens when $A$ does \alert{not} happen.
+The complementary event $\overline A$ happens when $A$ does \alert{not} happen.
 \end{frame}
 
 
@@ -212,7 +212,7 @@ The complementary event $\bar A$ happens when $A$ does \alert{not} happen.
 Given two events $A,B\subseteq \Omega$, the \emph{difference} of $A$ and $B$, denoted by $A-B$, is the
 event of all elements that are members of $A$ but not are members of $B$.
 \[
-A-B = \{x\,|\, x\in A\textrm{ and }x\not\in B\} = A \cap \bar B.
+A-B = \{x\,|\, x\in A\mbox{ and }x\not\in B\} = A \cap \overline B.
 \]
 \end{definition}
 
@@ -233,8 +233,8 @@ Given the sample space of rolling a dice $\Omega=\{1,2,3,4,5,6\}$ and the events
 \begin{itemize}
 \item The union of $A$ and $B$ is $A\cup B=\{1,2,3,4,6\}$.
 \item The intersection of $A$ and $B$ is $A\cap B=\{2,4\}$.
-\item The complement of $A$ is $\bar A=\{1,3,5\}$.
-\item The events $A$ and $\bar A$ are incompatible.
+\item The complement of $A$ is $\overline A=\{1,3,5\}$.
+\item The events $A$ and $\overline A$ are incompatible.
 \item The difference of $A$ and $B$ is $A-B=\{6\}$, and the difference of $B$ and $A$ is $B-A=\{1,3\}$.
 \end{itemize}
 \end{frame}
@@ -244,7 +244,7 @@ Given the sample space of rolling a dice $\Omega=\{1,2,3,4,5,6\}$ and the events
 \begin{frame}
 \frametitle{Algebra of events}
 Given the events $A,B,C\subseteq \Omega$, the following properties are meet. 
-\begin{enumerate}
+\begin{enumerate}[<+->]
 \item $A\cup A=A$,\quad $A\cap A=A$ (idempotency).
 \item $A\cup B=B\cup A$,\quad $A\cap B = B\cap A$ (commutative).
 \item $(A\cup B)\cup C = A\cup (B\cup C)$,\quad $(A\cap B)\cap C = A\cap (B\cap C)$ (associative).
@@ -368,7 +368,7 @@ From the previous axioms is possible to deduce some important properties of a pr
 Given a sample space $\Omega$ of a random experiment and the events $A,B\subseteq \Omega$, the following properties are
 meet:
 \begin{enumerate}
-\item <2-> $P(\bar A) = 1-P(A)$.
+\item <2-> $P(\overline A) = 1-P(A)$.
 \item <3-> $P(\emptyset)= 0$.
 \item <4-> If $A\subseteq B$ then $P(A)\leq P(B)$.
 \item <5-> $P(A) \leq 1$. This means that $P(A)\in [0,1]$.
@@ -383,9 +383,9 @@ P(A)=\sum_{i=1}^n P(e_i).
 \mode<article>{
 \textbf{Proof.}
 \begin{enumerate}
-\item $\bar A = \Omega \Rightarrow P(A\cup \bar A) = P(\Omega) \Rightarrow P(A)+P(\bar A) = 1 \Rightarrow
-P(\bar A)=1-P(A)$.
-\item $\emptyset = \bar \Omega \Rightarrow P(\emptyset) = P(\bar \Omega) = 1-P(\Omega) = 1-1 = 0.$
+\item $\overline A = \Omega \Rightarrow P(A\cup \overline A) = P(\Omega) \Rightarrow P(A)+P(\overline A) = 1 \Rightarrow
+P(\overline A)=1-P(A)$.
+\item $\emptyset = \overline \Omega \Rightarrow P(\emptyset) = P(\overline \Omega) = 1-P(\Omega) = 1-1 = 0.$
 \item $B = A\cup (B-A)$. As $A$ and $B-A$ are incompatible, $P(B) = P(A\cup (B-A)) = P(A)+P(B-A) \geq
 P(A).$
 
@@ -428,10 +428,8 @@ As set by the previous axioms, the probability of an event $A$, is a real number
 In a certain way, this number expresses the plausibility of the event, that is, the chances that the event $A$ occurs in the experiment.
 Therefore, it also gives a measure of the uncertainty about the event.
 \begin{itemize}
-\item The maximum uncertainty correspond to probability $P(A)=0.5$ ($A$ and $\bar A$ have the same chances of
-happening).
-\item The minimum uncertainty correspond to probability $P(A)=1$ ($A$ will happen with absolute certainty) and $P(A)=0$
-($A$ won't happen with absolute certainty)
+\item The maximum uncertainty correspond to probability $P(A)=0.5$ ($A$ and $\overline A$ have the same chances of happening).
+\item The minimum uncertainty correspond to probability $P(A)=1$ ($A$ will happen with absolute certainty) and $P(A)=0$ ($A$ won't happen with absolute certainty)
 \end{itemize} 
 
 When $P(A)$ is closer to 0 than to 1, the chances of not happening $A$ are greater than the chances of happening $A$.
@@ -503,7 +501,7 @@ This definition allows to calculate conditional probabilities without changing t
 \textbf{Example}. In the previous example
 \[
 P(\mbox{Smoker}|\mbox{Female})= \frac{P(\mbox{Smoker}\cap \mbox{Female})}{P(\mbox{Female})} =
-\frac{20/200}{100/200}=\frac{80}{100}=0.8.
+\frac{20/200}{100/200}=\frac{20}{100}=0.2.
 \]
 \end{frame}
 
@@ -715,9 +713,9 @@ disease have it.
 
 \emph{What is the probability that a random person of the population has the symptom?}
 
-To answer the question we can apply the total probability theorem using the partition $\{A,\bar A\}$:
+To answer the question we can apply the total probability theorem using the partition $\{A,\overline A\}$:
 \[
-P(S) = P(D)P(S|D)+P(\bar D)P(S|\bar D) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
+P(S) = P(D)P(S|D)+P(\overline D)P(S|\overline D) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
 \]
 That is, half of the population has the symptom. 
 
@@ -740,7 +738,7 @@ The answer to the previous question is even clearer with the tree diagram of the
 \end{center}
 
 \begin{align*}
-P(S) &= P(D,S) + P(\bar D,S) = P(D)P(S|D)+P(\bar D)P(S|\bar D)\\
+P(S) &= P(D,S) + P(\overline D,S) = P(D)P(S|D)+P(\overline D)P(S|\overline D)\\
 & = 0.2\cdot 0.9+ 0.8\cdot 0.4 = 0.18 + 0.32 = 0.5.
 \end{align*}
 \end{frame}
@@ -812,7 +810,7 @@ In general, diagnostic tests are not fully reliable and have some risk of misdia
 \begin{center}
 \begin{tabular}{|m{2.5cm}|m{3cm}<{\centering}|m{3cm}<{\centering}|}
 \cline{2-3}
-\multicolumn{1}{c|}{} & Presence of disease $D$ & Absence of disease $\bar D$\\ \hline
+\multicolumn{1}{c|}{} & Presence of disease $D$ & Absence of disease $\overline D$\\ \hline
 Test outcome\newline positive $+$ & \textcolor{green}{True Positive}\newline $TP$ & \textcolor{red}{False
 Positive}\newline $FP$\\ \hline Test outcome\newline negative $-$ & \textcolor{red}{False Negative}\newline $FN$ &
 \textcolor{green}{True Negative}\newline $TN$\\ \hline
@@ -929,7 +927,7 @@ The results are summarized in the table below.
 \begin{center}
 \begin{tabular}{|m{2.5cm}|m{3cm}<{\centering}|m{3cm}<{\centering}|}
 \cline{2-3}
-\multicolumn{1}{c|}{} & Presence of flu $D$ & Absence of flu $\bar D$\\ \hline
+\multicolumn{1}{c|}{} & Presence of flu $D$ & Absence of flu $\overline D$\\ \hline
 Test outcome $+$ & 95 & 90 \\
 \hline
 Test outcome $-$ & 5 & 810 \\

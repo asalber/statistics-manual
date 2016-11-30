@@ -41,17 +41,7 @@
 \mode<article>{\usepackage[headsep=1cm, top=3cm, bottom=3cm, left=2.54cm, right=2.54cm]{geometry}}
 
 % COLORS
-\definecolor{color1}{RGB}{5,161,230}
-\definecolor{color2}{RGB}{238,50,36}
-\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
-\definecolor{blueceu}{RGB}{5,161,230} % Blue color of CEU logo
-\definecolor{greenceu}{RGB}{185,209,16} % Green color of CEU logo
-\definecolor{redceu}{RGB}{238,50,36} % Red color of CEU logo
-\definecolor{grayceu}{RGB}{111,107,83} % Gray color of CEU logo
-\definecolor{coral}{rgb}{1,0.5,0.31} % Orange color for graphics
-\definecolor{royalblue1}{rgb}{0.28,0.46,1} % Blue color for graphics
-\definecolor{mygreen}{rgb}{0,0.8,0} % Green color for graphics
-\definecolor{chaptergrey}{RGB}{5,161,230} % Blue color of CEU logo
+\input{settings/colors.tex}
 
 % TABLE OF CONTENT style
 \setbeamertemplate{section in toc}[sections numbered]
@@ -67,11 +57,26 @@
 \newcommand{\bcrule}{\arrayrulecolor{color1!50!white}\bottomrule}
 
 % GRAPHICS
+% GRAPHICS
 \usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+% pgfplots styles
+\input{settings/pgfplots}
 \usepackage{tikz}
-\usetikzlibrary{external,arrows,arrows.meta,calc,shapes,shapes.arrows,positioning,snakes,decorations.pathreplacing}
-\usepackage{tkz-euclide}
-\usetkzobj{all}
+\usetikzlibrary{external, arrows, arrows.meta, calc, shapes, shapes.arrows, positioning, decorations.pathreplacing, intersections, fillbetween}
+% TIKZ SETTINGS
+\tikzset{
+	% Overlays
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+    % Vectors
+    vector/.style={->, color1, thick},
+    % Arrow tips
+    >=stealth,
+  }
 % Graphics export
 \mode<article>{
 \tikzset{
