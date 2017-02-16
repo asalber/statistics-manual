@@ -8,17 +8,17 @@
 \tableofcontents[sectionstyle=show/hide,hideothersubsections]
 \end{frame}
 }
- 
+
 
 \subsection{Statistics as a scientific tool}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{What is Statistics?}
 \begin{definition}[Statistics]
-\emph{Statistics} is a branch of Mathematics that deals with data collection, summary, analysis an interpretation. 
+\emph{Statistics} is a branch of Mathematics that deals with data collection, summary, analysis an interpretation.
 \end{definition}
 
-The role of Statistics is to extract information from data in order to gain knowledge for taking decisions.  
+The role of Statistics is to extract information from data in order to gain knowledge for taking decisions.
 
 \begin{center}
 \tikzsetnextfilename{introduction/statistics_purpose}
@@ -33,7 +33,7 @@ with large volumes of data, such as Physics, Chemistry, Medicine, Psychology, Ec
 Sciences.}
 
 \uncover<6->{
-\begin{center} 
+\begin{center}
 But, \alert{\emph{Why is Statistics necessary?}}
 \end{center}
 }
@@ -44,7 +44,7 @@ But, \alert{\emph{Why is Statistics necessary?}}
 \begin{frame}
 \frametitle{A changing World}
 Scientists try to study the World. A World with a high variability that makes difficult determining the behaviour of
-things. 
+things.
 
 \begin{center}
 \alert{\emph{Variability is the reason for Statistics!}}
@@ -71,7 +71,7 @@ Every element of the population is called \emph{individual}.
 The number of individuals in a population is known as the \emph{population size} and is represented by $N$.
 \end{definition}
 
-Sometimes not all the individuals are accessible to study. 
+Sometimes not all the individuals are accessible to study.
 Then we distinguish between:
 \begin{description}
 \item [Theoretical population:] Individuals to which we want to extrapolate the study conclusions.
@@ -89,9 +89,9 @@ But, for a complete knowledge of the population it is necessary to study all its
 
 However, this is not always possible for several reasons:
 \begin{itemize}
-\item The population size is infinite or too large to study all its individuals.  
+\item The population size is infinite or too large to study all its individuals.
 \item The operations that individuals undergo are destructive.
-\item The cost, both in money and time, that would require study all the individuals in the population is not affordable. 
+\item The cost, both in money and time, that would require study all the individuals in the population is not affordable.
 \end{itemize}
 \end{frame}
 
@@ -99,7 +99,7 @@ However, this is not always possible for several reasons:
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Statistics Sample}
-When it is not possible or convenient to study all the individuals in a population, we study only a subset of them. 
+When it is not possible or convenient to study all the individuals in a population, we study only a subset of them.
 
 \begin{definition}[Sample]
 A \emph{sample} is a subset of the population.
@@ -109,9 +109,10 @@ A \emph{sample} is a subset of the population.
 The number of individuals of the sample is called \emph{sample size} and is represented by $n$.
 \end{definition}
 
-Usually, the population study is conducted on samples drawn from it. 
+Usually, the population study is conducted on samples drawn from it.
 
-The sample study only gives an approximate knowledge of the population. But in most cases it is \emph{enough}.
+The sample study only gives an approximate knowledge of the population.
+But in most cases it is \emph{enough}.
 \end{frame}
 
 
@@ -120,14 +121,12 @@ The sample study only gives an approximate knowledge of the population. But in m
 \frametitle{Sample size determination}
 One of the most interesting questions that arise:
 \begin{center}
-\alert{\emph{How many individuals are required to sample to have an approximate but enough knowledge of the
-population?}}
+\alert{\emph{How many individuals are required to sample to have an approximate but enough knowledge of the population?}}
 \end{center}
 
 The answer depends of several factors, as the population variability or the desired reliability for extrapolations to the population.
 
-Unfortunately we can not answer that question until the end of the course, but in general, the most individuals the sample has, the more reliable will the conclusions be on the population, but also the study will be longer and more
-expensive.
+Unfortunately we can not answer that question until the end of the course, but in general, the most individuals the sample has, the more reliable will the conclusions be on the population, but also the study will be longer and more expensive.
 \end{frame}
 
 
@@ -151,7 +150,7 @@ But, if there is a lot of variability in the colours, a large sample size will b
 
 The image below contains a small sample of the pixels of a picture.
 }
-Could you find out the motif of the picture? 
+Could you find out the motif of the picture?
 \begin{center}
 \includegraphics[scale=0.45]{img/introduction/sample_windmill1.pdf}
 
@@ -164,7 +163,9 @@ Could you find out the motif of the picture?
 \begin{frame}
 \frametitle{Sample size determination}
 \framesubtitle{Large sample of pixels of a picture}
-\mode<article>{The image below contains a larger sample of pixels.}
+\mode<article>{Surely you has not been able to guess the motif becuase the number of pixels picked in the sample is too small to understand the variability of colors in the picture.
+
+The image below contains a larger sample of pixels.}
 Could you find out the motif of the picture now?
 \begin{center}
 \includegraphics[scale=0.45]{img/introduction/sample_windmill2.pdf}
@@ -202,15 +203,13 @@ And here is the whole population.
 \begin{frame}
 \frametitle{Types of reasoning}
 \begin{description}
-\item [Deduction properties:] If the premises are true, it guarantees the certainty of the conclusions (that is, if something is true in the population, it is also true in the sample). 
-However, \alert{\emph{it does not provide new knowledge!}} 
-\item [Induction properties:] It does not guarantee the certainty of the conclusions (if something is true in the
-sample, it may not be true in the population, so be careful with the extrapolations!). 
-But, \alert{\emph{it is the only way to generate new knowledge!}}
+\item [Deduction properties:] If the premises are true, it guarantees the certainty of the conclusions (that is, if something is true in the population, it is also true in the sample).
+However, \alert{\emph{it does not provide new knowledge!}}
+\item [Induction properties:] It does not guarantee the certainty of the conclusions (if something is true in the sample, it may not be true in the population, so be careful with the extrapolations!).
+However, \alert{\emph{it is the only way to generate new knowledge!}}
 \end{description}
 
-Statistics is fundamentally based on inductive reasoning, because it uses the information obtained from samples to
-draw conclusions about populations.
+Statistics is fundamentally based on inductive reasoning, because it uses the information obtained from samples to draw conclusions about populations.
 \end{frame}
 
 
@@ -227,7 +226,7 @@ The process of selecting the elements included in a sample is known as \emph{sam
 \end{center}
 
 To reflect reliable information about the whole population, the sample must be representative of the population.
-That means that the sample should reproduce on a smaller scale the population variability.  
+That means that the sample should reproduce on a smaller scale the population variability.
 
 \begin{center}
 \alert{\emph{Our goal is to get a representative sample!}}
@@ -240,17 +239,16 @@ That means that the sample should reproduce on a smaller scale the population va
 \frametitle{Types of sampling}
 There exist a lot of sampling methods but all of them can be grouped in two categories:
 \begin{description}
-\item[Random sampling] The sample individuals are selected randomly. 
-All the population individuals have the same likelihood of being selected (equiprobability).  
-\item[Non random sampling:] The sample individuals are not selected randomly. 
-Some population individuals have a higher likelihood of being selected than others. 
+\item[Random sampling] The sample individuals are selected randomly.
+All the population individuals have the same likelihood of being selected (equiprobability).
+\item[Non random sampling:] The sample individuals are not selected randomly.
+Some population individuals have a higher likelihood of being selected than others.
 \end{description}
 
-Only random sampling methods avoid the selection bias and guarantee the representativeness of the sample, and therefore,
-the validity of conclusions. 
+Only random sampling methods avoid the selection bias and guarantee the representativeness of the sample, and therefore, the validity of conclusions.
 
 Non random sampling methods are not suitable to make generalizations because they do not guarantee the representativeness of the sample.
-Nevertheless, usually they are less expensive and can be used in exploratory studies. 
+Nevertheless, usually they are less expensive and can be used in exploratory studies.
 \end{frame}
 
 
@@ -260,14 +258,13 @@ Nevertheless, usually they are less expensive and can be used in exploratory stu
 \frametitle{Simple random sampling}
 The most popular random sampling method is the \emph{simple random sampling}, that has the following properties:
 \begin{itemize}
-\item All the population individuals have the same likelihood of being selected in the sample. 
-\item The individual selection is performed with replacement, that is, each selected individual is returned to the population before selecting the next one. 
-In this way the population does not change. 
-\item Each individual selection is independent of the others. 
+\item All the population individuals have the same likelihood of being selected in the sample.
+\item The individual selection is performed with replacement, that is, each selected individual is returned to the population before selecting the next one.
+In this way the population does not change.
+\item Each individual selection is independent of the others.
 \end{itemize}
 
-The only way of doing a random sampling is to assign a unique identity number to each population individual
-(conducting a \emph{census}) and performing a random drawing.
+The only way of doing a random sampling is to assign a unique identity number to each population individual (conducting a \emph{census}) and performing a random drawing.
 \end{frame}
 
 
@@ -276,15 +273,14 @@ The only way of doing a random sampling is to assign a unique identity number to
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Statistical variables and data}
-In every statistical study we are interested in some properties or characteristics of individuals. 
+In every statistical study we are interested in some properties or characteristics of individuals.
 \begin{definition}[Statistical variable]
-A \emph{statistical variable} is a property or characteristic measured in the population individuals. 
+A \emph{statistical variable} is a property or characteristic measured in the population individuals.
 
-The \emph{data} is the actual values or outcomes recorded on a statistical variable. 
+The \emph{data} is the actual values or outcomes recorded on a statistical variable.
 \end{definition}
 
 \begin{center}
-\tikzsetnextfilename{introduction/statistical_variables}
 \includegraphics[scale=0.5]{img/introduction/statistical_variables.png}
 \end{center}
 \end{frame}
@@ -295,21 +291,21 @@ The \emph{data} is the actual values or outcomes recorded on a statistical varia
 \frametitle{Types of statistical variables}
 According to the nature of their values and their scale, they can be:
 \begin{itemize}
-\item \highlight{Qualitative variables:} They measure non-numeric qualities. 
+\item \highlight{Qualitative variables:} They measure non-numeric qualities.
 They can be:
 \begin{itemize}
 \item \highlight{Nominal:} There is no natural order between its categories.\\
-Example: The eyes or hair colour. 
+Example: The hair colour or the gender.
 \item \highlight{Ordinal:} There is a natural order between its categories. \\
 Example: The education level.
 \end{itemize}
-\item \highlight{Quantitative variables:} They measure numeric quantities. 
+\item \highlight{Quantitative variables:} They measure numeric quantities.
 They can be:
 \begin{itemize}
 \item \highlight{Discrete:} Their values are isolated numbers (usually integers).\\
 Example: The number of children or cars in a family.
 \item \highlight{Continuous:} They can take any value in a real interval.\\
-Example: The height, weight or age of a person. 
+Example: The height, weight or age of a person.
 % They can be:
 % \begin{itemize}
 % \item \highlight{Interval:} There is no absolute zero in the scale.\\
@@ -338,21 +334,21 @@ Qualitative and discrete variables are also called \emph{categorical variables} 
 \begin{frame}
 \frametitle{Types of statistical variables}
 \framesubtitle{Choosing the appropriate variable}
-Sometimes a characteristic could be measured in variables of different types. 
+Sometimes a characteristic could be measured in variables of different types.
 
-\textbf{Example} Whether a person smokes or not could be measure in several ways: 
+\textbf{Example} Whether a person smokes or not could be measure in several ways:
 \begin{itemize}
-\item Smokes: yes/no. (Nominal) 
+\item Smokes: yes/no. (Nominal)
 \item Smoking level: No smoking/unusual/moderate/quite/heavy. (Ordinal)
-\item Number of cigarettes per day: 0,1,2,\ldots (Discrete) 
-\end{itemize} 
+\item Number of cigarettes per day: 0,1,2,\ldots (Discrete)
+\end{itemize}
 
 In those cases quantitative variables are preferable to qualitative, continuous variables are preferable to discrete
-variables and ordinal variables are preferable to nominal, as they give more information. 
+variables and ordinal variables are preferable to nominal, as they give more information.
 
 \begin{center}
 \tikzsetnextfilename{introduction/variable_information}
-\scalebox{1}{\input{img/introduction/variable_information}} 
+\scalebox{1}{\input{img/introduction/variable_information}}
 \end{center}
 \end{frame}
 
@@ -362,46 +358,45 @@ variables and ordinal variables are preferable to nominal, as they give more inf
 \frametitle{Types of statistical variables}
 According to their role in the study:
 \begin{itemize}
-\item \highlight{Independent variables:} Variables that do not depend on other variables in the study. 
+\item \highlight{Independent variables:} Variables that do not depend on other variables in the study.
 Usually they are manipulate in an experiment in order to observe their effect on a dependent variable.
-They are also known as \emph{predictor variables}. 
+They are also known as \emph{predictor variables}.
 \item \highlight{Dependent variables:} Variables that depend on other variables in the study.
-They are not manipulated in an experiment and are also known as \emph{outcome variables}. 
+They are not manipulated in an experiment and are also known as \emph{outcome variables}.
 \end{itemize}
 
 \textbf{Example} In a study on the performance of students in a course, the intelligence of students and the daily
-study time are independent variables, while the course grade is a dependent variable. 
+study time are independent variables, while the course grade is a dependent variable.
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Types of statistical studies}
-According to their role in the study:
 \begin{itemize}
 \item \highlight{Experimental:} When the independent variables are manipulated in order to see the effect that that change has on the dependent variables.\newline
-\textbf{Example} In a study on the performance of students in a test, the teacher manipulates the study time and create two or more groups asking students in each group to study a different number of hours. 
+\textbf{Example} In a study on the performance of students in a test, the teacher manipulates the methodology and creates two or more groups following different methodologies.
 \item \highlight{Non-experimental:} When the independent variables are not manipulated. That does not mean that it is
 impossible to do so, but it will either be impractical or unethical to do so.\newline
 \textbf{Example} In a study a researcher could be interested in the effect of smoking over the lung
-cancer. 
+cancer.
 However, whilst possible, it would be unethical to ask individuals to smoke in order to study what effect this had on
 their lungs. In this case, the researcher could study two groups of people, one with lung cancer and other
-without, an observe in each group how many persons smoke or not. 
+without, an observe in each group how many persons smoke or not.
 \end{itemize}
 
 Experimental studies allow to identify a cause and effect between variables while non-experimental studies
-only allow to identify association or relationship between variables. 
+only allow to identify association or relationship between variables.
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{The data table}
-The variables of a study will be measured in each individual of the sample. 
+The variables of a study will be measured in each individual of the sample.
 This will give a data set that usually is arranged in a tabular form known as \highlight{\textbf{data table}}.
 
-In this table each column contains the information of a variable and each row contains the information of an individual. 
+In this table each column contains the information of a variable and each row contains the information of an individual.
 
 \textbf{Example}
 \begin{center}
@@ -426,18 +421,15 @@ Antonio Ruiz & 68 & M & 66 & 174 \\
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Phases of a statistical study}
-Usually a statistical study goes through the following phases:  
+Usually a statistical study goes through the following phases:
 \begin{enumerate}
-\item The study begins with a previous design in which the study goals, the population, the variables to
-measure and the required sample size are set.
-\item Next, the sample is selected from the population and the variables are measured in the individuals of the sample
-(getting the data table).
-This is accomplished by \emph{sampling}.  
-\item The next step consists in describing and summarizing the information of the sample. 
-This is the job of \emph{Descriptive statistics}. 
-\item Then, the information obtained is projected on a mathematical model that intends to explain what happens in
-population, and the model is validated. 
-This is accomplished by \emph{Inferential statistics}.
+\item The study begins with a previous design in which the study goals, the population, the variables to measure and the required sample size are set.
+\item Next, the sample is selected from the population and the variables are measured in the individuals of the sample (getting the data table).
+This is accomplished by \emph{Sampling}.
+\item The next step consists in describing and summarizing the information of the sample.
+This is the job of \emph{Descriptive Statistics}.
+\item Then, the information obtained is projected on a mathematical model that intends to explain what happens in population, and the model is validated.
+This is accomplished by \emph{Inferential Statistics}.
 \item Finally, the validated model is used to perform predictions and to draw conclusions on the population.
 \end{enumerate}
 \end{frame}
@@ -451,4 +443,3 @@ This is accomplished by \emph{Inferential statistics}.
 \resizebox{0.85\textwidth}{!}{\input{img/introduction/statistical_cycle}}
 \end{center}
 \end{frame}
-
