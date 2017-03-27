@@ -13,8 +13,7 @@
 %---------------------------------------------------------------------slide----
 \begin{frame} 
 \frametitle{Descriptive Statistics}
-Descriptive Statistics is the part of Statistics in charge of representing, analysing and summarizing the information
-contained in the sample.
+Descriptive Statistics is the part of Statistics in charge of representing, analysing and summarizing the information contained in the sample.
 
 After the sampling process, this is the next step in every statistical study and usually consists of:
 \begin{enumerate}
@@ -35,9 +34,9 @@ The study of a statistical variable starts by measuring the variable in the indi
 
 There are two ways of classifying data:
 \begin{description}
-\item[Non-grouping] Sorting values from lowest to highest value (if there is an order).
+\item[Non-grouping]: Sorting values from lowest to highest value (if there is an order).
 Used with qualitative variables and discrete variables with few distinct values.
-\item[Grouping] Grouping values into intervals (classes) and sort them from lowest to highest intervals. 
+\item[Grouping]: Grouping values into intervals (classes) and sort them from lowest to highest intervals. 
 Used with continuous variables and discrete variables with many distinct values. 
 \end{description}
 \end{frame}
@@ -329,7 +328,7 @@ Sometimes a polygon, known as \highlight{\textbf{frequency polygon}}, is plotted
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Absolute frequency histogram}
+\frametitle{Absolute frequency polygon}
 \framesubtitle{Grouped data}
 \begin{center}
 \tikzsetnextfilename{descriptive/abs_freq_histogram_polygon}
@@ -371,7 +370,7 @@ Sometimes a polygon, known as \highlight{\textbf{frequency polygon}}, is plotted
 \end{frame}
 
 
-\mode<article>{The cumulative frequency polygon (for absolute or relative frequencies) is known as \textbf{ogive}.}
+\mode<article>{}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Cumulative relative frequency line chart or ogive}
@@ -381,7 +380,10 @@ Sometimes a polygon, known as \highlight{\textbf{frequency polygon}}, is plotted
 \scalebox{0.6}{\input{img/descriptive/cum_rel_freq_histogram_polygon}} 
 \end{center} 
 \end{frame}
-\mode<article>{Observe that in the ogive we join the top right corner of bars with straight lines, instead of the top center, because we don't reach the accumulated frequency of the class until the end of the interval.}
+\mode<article>{
+The cumulative frequency polygon (for absolute or relative frequencies) is known as \textbf{ogive}.
+
+Observe that in the ogive we join the top right corner of bars with straight lines, instead of the top center, because we don't reach the accumulated frequency of the class until the end of the interval.}
  
 
 %---------------------------------------------------------------------slide----
@@ -1241,15 +1243,12 @@ g_1 = \frac{\sum (x_i-\bar x)^3 n_i/n}{s^3} = \frac{\sum (x_i-\bar x)^3 f_i}{s^3
 \]
 \end{definition}
 
-It measures the symmetry or skewness of the distribution, that is, how many values in the
+It measures the symmetry of the distribution, that is, how many values in the
 sample are above or below the mean and how far from it. 
 \begin{itemize}
-\item $g_1=0$ indicates that there are the same number of values in the sample above and below the mean and
-equally deviated from it, and the distribution is symmetrical.
-\item $g_1<0$ indicates that there are more values above the mean than below it, but the values below are further from
-it, and the distribution is left-skewed (it has longer tail to the left). 
-\item $g_1>0$ indicates that there are more values below the mean than above it, but the values above are further from
-it, and the distribution is right-skewed (it has longer tail to the right).  
+\item $g_1=0$ indicates that there are the same number of values in the sample above and below the mean and equally deviated from it, and the distribution is symmetrical.
+\item $g_1<0$ indicates that there are more values above the mean than below it, but the values below are further from it, and the distribution is left-skewed (it has longer tail to the left). 
+\item $g_1>0$ indicates that there are more values below the mean than above it, but the values above are further from it, and the distribution is right-skewed (it has longer tail to the right).  
 \end{itemize}
 \end{frame}
 
@@ -1413,6 +1412,43 @@ In general, the normality of population is rejected when $g_1$ or $g_2$ are outs
 
 In that case, is common to apply a transformation to the variable to correct non-normality. 
 \end{frame}
+
+
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Right-skewed distribution}
+\framesubtitle{Household incomes}
+\begin{center}
+\tikzsetnextfilename{descriptive/right_skewed_distribution_example}
+\scalebox{0.6}{\input{img/descriptive/right_skewed_distribution_example}}
+\end{center} 
+\end{frame}
+
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Left-skewed distribution}
+\framesubtitle{Age of dead}
+\begin{center}
+\tikzsetnextfilename{descriptive/left_skewed_distribution_example}
+\scalebox{0.6}{\input{img/descriptive/left_skewed_distribution_example}}
+\end{center} 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Bimodal distribution}
+\framesubtitle{Arrival time of clients of a restaurant}
+\begin{center}
+\tikzsetnextfilename{descriptive/bimodal_distribution_example}
+\scalebox{0.6}{\input{img/descriptive/bimodal_distribution_example}}
+\end{center} 
+\end{frame}
+
 
 
 \subsection{Variable transformations}
