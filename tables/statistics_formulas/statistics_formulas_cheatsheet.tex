@@ -1,10 +1,10 @@
 % !TEX program = xelatex
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \documentclass[a4paper, 10pt]{article}
+\usepackage[top=3cm, bottom=2.5cm, left=2cm, right=2cm, headsep=1cm]{geometry}
 \usepackage[no-math]{fontspec}
 \setmainfont[BoldFont={Fira Sans}]{Fira Sans Light}
 \setmonofont{Fira Mono}
-%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{multicol}
 \usepackage{macros}
@@ -14,7 +14,6 @@
 \usepackage{fancybox}
 \usepackage[most]{tcolorbox}
 \usepackage{varwidth}
-\usepackage[top=3cm, bottom=2.5cm, left=2cm, right=2cm, headsep=1cm]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \usepackage[pdfauthor={Alfredo Sánchez Alberca}, pdftitle={Statistical formulas}, colorlinks=true]{hyperref}
@@ -151,7 +150,7 @@
 
 \begin{tcolorbox}[hbox, title=Standarization]
 \begin{varwidth}{0.4\textwidth}
-\rule{0.45\textwidth}{0}
+\rule{0.45\textwidth}{0pt}
 \[z=\frac{x-\bar x}{s_x}\]
 \end{varwidth}
 \end{tcolorbox}
@@ -161,7 +160,7 @@
 \begin{multicols}{2}
 \begin{tcolorbox}[hbox, title=Linear regression]
 \begin{varwidth}{0.4\textwidth}
-	\rule{\textwidth}{0}
+	\rule{\textwidth}{0pt}
 	\begin{description}
 		\item [Covariance] $s_{xy}=\dfrac{\sum x_iy_jn_{ij}}{n}-\bar{x}\bar{y}$.
 		\item [Regression lines]:
