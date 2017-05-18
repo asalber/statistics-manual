@@ -2,16 +2,21 @@
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \documentclass[a4paper, 10pt]{article}
 \usepackage[top=3cm, bottom=2.5cm, left=2cm, right=2cm, headsep=1cm]{geometry}
-\usepackage[no-math]{fontspec}
-\setmainfont[BoldFont={Fira Sans}]{Fira Sans Light}
-\setmonofont{Fira Mono}
+%\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{mathspec}
+%\usepackage{unicode-math}
+\setmainfont[Ligatures=TeX, BoldFont=FiraSans-Regular.otf, ItalicFont=FiraSans-LightItalic.otf,
+  BoldItalicFont=FiraSans-Italic.otf]{FiraSans-Light.otf}
+%\setmathfont{XITS Math}
+%\setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
+\usepackage{newtxsf}
+%\setmonofont{Fira Mono}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{multicol}
-\usepackage{macros}
+%\usepackage{macros}
 \usepackage{tikz}
-\usepackage{lmodern}
 \usepackage{graphicx}
-\usepackage{fancybox}
 \usepackage[most]{tcolorbox}
 \usepackage{varwidth}
 \usepackage{fancyhdr}
@@ -38,14 +43,8 @@
 
 % Lists
 \usepackage[shortlabels]{enumitem} % Customize lists
-\setlist{nolistsep} % Reduce spacing between bullet points and numbered lists
+%\setlist{nolistsep} % Reduce spacing between bullet points and numbered lists
 \setlist[description]{style=sameline,leftmargin=0cm}
-
-\makeatletter
-\let\savees@listquot\es@listquot
-\def\es@listquot{\protect\savees@listquot}
-\makeatletter
-
 
 \lhead{\textsc{San Pablo CEU University}} \rhead{\url{http://aprendeconalf.es}}
 \renewcommand{\headrulewidth}{0pt}
@@ -53,25 +52,6 @@
 \renewcommand{\textfraction}{.1}
 
 \setlength{\columnsep}{1cm}
-
-
-\newlength{\mylength}
-\newenvironment{marco}{
-	\setlength{\fboxsep}{5pt}
-	\setlength{\mylength}{\textwidth}
-	\addtolength{\mylength}{-2\fboxsep}
-	\addtolength{\mylength}{-2\fboxrule}
-	\noindent
-	\begin{Sbox}
-	\begin{minipage}{\mylength}
-	\setlength{\abovedisplayskip}{3pt}
-	\setlength{\belowdisplayskip}{3pt}
-}
-{
-	\end{minipage}
-	\end{Sbox}
-	\fbox{\TheSbox}
-}
 
 \begin{document}
 \sloppy
@@ -196,6 +176,60 @@
 	\end{description}
 \end{varwidth}
 \end{tcolorbox}
+\end{multicols}
+
+\newpage
+
+\subsection*{\sffamily Probability}
+\begin{multicols}{2}
+\begin{tcolorbox}[hbox, title=Basic probability]
+\begin{varwidth}{0.4\textwidth}
+	\rule{\textwidth}{0pt}
+	\begin{description}
+		\item [Union] $P(A\cup B)=P(A)+P(B)-P(A\cap B)$.
+		\item [Intersection] $P(A\cap B)=P(A)P(B|A)$.
+		\item [Difference] $P(A-B)=P(A)-P(A\cap B)$.
+		\item [Contrary] $P(\overline{A})=1-P(A)$.
+		\item [Conditional probability] $P(A|B)=\dfrac{P(A\cap B)}{P(B)}$.
+		\item [Independent events] $P(A|B)=P(A)$.
+		\item [Total prob. Theorem] \[P(B)=\sum_{i=1}^n P(A_i)P(B|A_i)\].
+		\item [Bayes Theorem] \[P(A_i|B)=\dfrac{P(A_i)P(B|A_i)}{\sum_{i=1}^n P(A_i)P(B|A_i)}\].
+	\end{description}
+\end{varwidth}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}[hbox, title=Diagnostic tests]
+\begin{varwidth}{0.4\textwidth}
+	\begin{description}
+	  \item[Prevalence] Proportion of people with the disease $P(D)$.
+	  \item[Sensitivity] $P(+|D)$.
+	  \item[Specificity] $P(-|\overline{D})$.
+	  \item[Positive Predictive Value (PPV)] $P(D|+)$.
+	  \item[Negative Predictive Value (NPV)] $P(\overline{D}|-)$.
+	  \item[Positive Likelihood Ratio (LR+)] $\dfrac{P(+|D)}{P(+|\overline{D})}$.
+	  \item[Negative Likelihood Ratio (LR-)] $\dfrac{P(-|D)}{P(-|\overline{D})}$.
+	\end{description}
+\end{varwidth}
+\end{tcolorbox}
+\end{multicols}
+
+\subsection*{\sffamily Random Variables}
+\begin{multicols}{2}
+\begin{tcolorbox}[hbox, title=Discrete]
+\begin{varwidth}{0.4\textwidth}
+	\rule{\textwidth}{0pt}
+	\begin{description}
+		\item [Binomial probability function $B(n,p)$]
+		\[f(x)=\binom{n}{x}p^x (1-p)^{n-x}\]
+		\item [Poisson probability function $P(\lambda)$]
+		\[f(x)=e^{-\lambda}\frac{\lambda^x}{x!}\]
+		\item [Law of rare events] $B(n,p)\approx P(np)$ for $n\geq 30$ and $p\leq 0.1$.
+	\end{description}
+\end{varwidth}
+\end{tcolorbox}
+
 \end{multicols}
 
 \end{document}
