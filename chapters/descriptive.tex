@@ -1243,8 +1243,7 @@ g_1 = \frac{\sum (x_i-\bar x)^3 n_i/n}{s^3} = \frac{\sum (x_i-\bar x)^3 f_i}{s^3
 \]
 \end{definition}
 
-It measures the symmetry of the distribution, that is, how many values in the
-sample are above or below the mean and how far from it. 
+The coefficient of skewness measures the symmetry of the distribution, that is, how many values in the sample are above or below the mean and how far from it. 
 \begin{itemize}
 \item $g_1=0$ indicates that there are the same number of values in the sample above and below the mean and equally deviated from it, and the distribution is symmetrical.
 \item $g_1<0$ indicates that there are more values above the mean than below it, but the values below are further from it, and the distribution is left-skewed (it has longer tail to the left). 
@@ -1325,14 +1324,13 @@ mean to the fourth power, divided by the standard deviation to the fourth power 
 \[g_2 = \frac{\sum (x_i-\bar x)^4 n_i/n}{s^4}-3 = \frac{\sum (x_i-\bar x)^4 f_i}{s^4}-3\]
 \end{definition}
 
-The coefficient of kurtosis measures the length of tails or the peakness of distribution with respect to the normal (bell-shaped) distribution of reference.
+The coefficient of kurtosis measures the concentration of values around the mean and the length of the tails of the distribution. 
+The normal (Gausssian bell-shaped) distribution is taken as a reference.
+
 \begin{itemize}
-\item $g_2=0$ indicates that the distribution has the same tails and peakedness than a normal distribution
-(\emph{mesokurtic}).
-\item $g_2<0$ indicates that the distribution has longer tails and lower peakedness than a normal distribution
-(\emph{platykurtic}).
-\item $g_2>0$ indicates that the distribution has shorter tails and higher peakedness than a normal distribution 
-(\emph{leptokurtic}).
+\item $g_2=0$ indicates that the kurtosis is normal, that is, the concentration of values around the mean is the same than in a Gaussian bell-shaped distribution (\emph{mesokurtic}).
+\item $g_2<0$ indicates that the kurtosis is less than normal, that is, the concentration of values around the mean is less than in a Gaussian bell-shaped distribution (\emph{platykurtic}).
+\item $g_2>0$ indicates that the kurtosis is greater than normal, that is, the concentration of values around the mean is greater than in a Gaussian bell-shaped distribution (\emph{leptokurtic}).
 \end{itemize}
 \end{frame}
 
@@ -1414,11 +1412,9 @@ In that case, is common to apply a transformation to the variable to correct non
 \end{frame}
 
 
-
-
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Right-skewed distribution}
+\frametitle{Non-normal right-skewed distribution}
 \framesubtitle{Household incomes}
 \begin{center}
 \tikzsetnextfilename{descriptive/right_skewed_distribution_example}
@@ -1427,11 +1423,10 @@ In that case, is common to apply a transformation to the variable to correct non
 \end{frame}
 
 
-
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Left-skewed distribution}
-\framesubtitle{Age of dead}
+\frametitle{Non-normal left-skewed distribution}
+\framesubtitle{Age at death}
 \begin{center}
 \tikzsetnextfilename{descriptive/left_skewed_distribution_example}
 \scalebox{0.6}{\input{img/descriptive/left_skewed_distribution_example}}
@@ -1441,7 +1436,7 @@ In that case, is common to apply a transformation to the variable to correct non
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Bimodal distribution}
+\frametitle{Non-normal bimodal distribution}
 \framesubtitle{Arrival time of clients of a restaurant}
 \begin{center}
 \tikzsetnextfilename{descriptive/bimodal_distribution_example}
