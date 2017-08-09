@@ -14,16 +14,14 @@
 \frametitle{Relations among variables}
 In the last chapter we saw how to describe the distribution of a single variable in a sample. 
 However, in most cases, studies require to describe several variables that are often related.
-For instance, a nutritional study should consider all the variables that could be related to the weight, as height, age,
-gender, smoking, diet, physic exercise, etc.
+For instance, a nutritional study should consider all the variables that could be related to the weight, as height, age, gender, smoking, diet, physic exercise, etc.
 
 To understand a phenomenon that involve several variables is not enough to study every variable by its own. 
 We have to study all the variables together to describe how they interact and the type of relation among them. 
 
 Usually in a \emph{dependency study} there is a \highlight{dependent variable} $Y$ that it is supposed to be influenced
 by a set of variables $X_1,\ldots,X_n$ known as \highlight{independent variables}. 
-The simpler case is a \emph{simple dependency study} when there is only one independent variable, that is the case
-covered in this chapter. 
+The simpler case is a \emph{simple dependency study} when there is only one independent variable, that is the case covered in this chapter. 
 \end{frame}
 
 
@@ -32,13 +30,10 @@ covered in this chapter.
 % ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Joint frequencies}
-To study the relation between two variables $X$ and $Y$, we have to study the joint distribution of the
-\highlight{two-dimensional variable} $(X,Y)$, whose values are pairs $(x_i,y_j)$ where the first element is a value of
-$X$ and the second a value of $Y$.
+To study the relation between two variables $X$ and $Y$, we have to study the joint distribution of the \highlight{two-dimensional variable} $(X,Y)$, whose values are pairs $(x_i,y_j)$ where the first element is a value of $X$ and the second a value of $Y$.
 
 \begin{definition}[Joint sample frequencies]
-Given a sample of $n$ values and a two-dimensional variable $(X,Y)$, for every value of the variable $(x_i,y_j)$
-is defined
+Given a sample of $n$ values and a two-dimensional variable $(X,Y)$, for every value of the variable $(x_i,y_j)$ is defined
 \begin{itemize}
 \item \highlight{Absolute frequency $n_{ij}$}: Is the number of times that the pair $(x_i,y_j)$ appears in the sample.
 \item \highlight{Relative frequency $f_{ij}$}: Is the proportion of times that the pair $(x_i,y_j)$ appears in the
@@ -58,8 +53,7 @@ f_{ij}=\frac{n_{ij}}{n}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Joint frequency distribution}
-The values of the two-dimensional variable with their frequencies is known as \highlight{joint frequency distribution},
-and is represented in a \highlight{joint frequency table}.
+The values of the two-dimensional variable with their frequencies is known as \highlight{joint frequency distribution}, and is represented in a \highlight{joint frequency table}.
 \[
 \begin{array}{|c|ccccc|}
 \hline
@@ -113,8 +107,7 @@ The joint frequency table is
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Scatter plot}
-The joint frequency distribution can be represented graphically with a \highlight{scatter plot}, where data is displayed
-as a collections of points on a $XY$ coordinate system.
+The joint frequency distribution can be represented graphically with a \highlight{scatter plot}, where data is displayed as a collection of points on a $XY$ coordinate system.
 
 Usually the independent variable is represented in the $X$ axis and the dependent variable in the $Y$ axis.
 For every data pair $(x_i,y_j)$ in the sample a dot is drawn on the plane with those coordinates.  
@@ -160,8 +153,7 @@ The shape of the point cloud in a scatter plot gives information about the type 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Marginal frequency distributions}
-The frequency distributions of each variable of the two-dimensional variable are known as \highlight{marginal frequency
-distributions}.
+The frequency distributions of each variable of the two-dimensional variable are known as \highlight{marginal frequency distributions}.
 
 We can get the marginal frequency distributions from the joint frequency table by adding frequencies by rows and columns. 
 
@@ -268,15 +260,14 @@ Quadrant & $(x_i-\bar x)$ & $(y_j-\bar y)$ & $(x_i-\bar x)(y_j-\bar y)$\\
 \frametitle{Sign of the product of deviations from the mean}
 \begin{columns}[t]
 \begin{column}{0.5\textwidth}
-If there is an \emph{increasing linear} relationship between the variables, most of the points will fall in quadrants 1
-and 3, and the sum of the products of deviations from the mean will be positive.
+If there is an \emph{increasing linear} relationship between the variables, most of the points will fall in quadrants 1 and 3, and the sum of the products of deviations from the mean will be positive.
 
 \centering
 \tikzsetnextfilename{regression/increasing_linear_scatterplot}
 \mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/regression/increasing_linear_scatterplot}}}
 \mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/increasing_linear_scatterplot}}}
 
-$$\sum(x_i-\bar x)(y_j-\bar y) >0$$
+\[\sum(x_i-\bar x)(y_j-\bar y) >0\]
 \end{column}
 
 \begin{column}{0.5\textwidth}
@@ -288,7 +279,7 @@ and 4, and the sum of the products of deviations from the mean will be negative.
 \mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/regression/decreasing_linear_scatterplot}}}
 \mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/regression/decreasing_linear_scatterplot}}}
 
-$$\sum(x_i-\bar x)(y_j-\bar y) <0$$
+\[\sum(x_i-\bar x)(y_j-\bar y) <0\]
 \end{column}
 \end{columns}
 \end{frame}
@@ -297,10 +288,9 @@ $$\sum(x_i-\bar x)(y_j-\bar y) <0$$
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Covariance}
-Using the products of deviations from the mean we get the statistic
+Using the products of deviations from the means we get the statistic
 \begin{definition}[Sample covariance]
-The \emph{sample covariance} of a two-dimensional variable $(X,Y)$ is the average of the products of deviations from
-the respective means.
+The \emph{sample covariance} of a two-dimensional variable $(X,Y)$ is the average of the products of deviations from the respective means.
 \[
 s_{xy}=\frac{\sum (x_i-\bar x)(y_j-\bar y)n_{ij}}{n}
 \]
@@ -359,8 +349,7 @@ This means that there is a increasing linear relation between the weight and the
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Regression}
-In most cases the goal of a dependency study is not only to detect a relation between two variables, but also to express
-that relation with a mathematical function, 
+In most cases the goal of a dependency study is not only to detect a relation between two variables, but also to express that relation with a mathematical function, 
 \[y=f(x)\]
 in order to predict the dependent variable for every value of the independent one.   
 
@@ -398,18 +387,13 @@ The model choice depends on the shape of the points cloud in the scatter plot.
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Residuals or predictive errors}
-Once chosen the type of regression model, we have to determine which function of that family explains better the
-relation between the dependent and the independent variables, that is, the function that predicts better the
-dependent variable. 
+Once chosen the type of regression model, we have to determine which function of that family explains better the relation between the dependent and the independent variables, that is, the function that predicts better the dependent variable. 
 
-That function is the function that minimizes the distances from the observed values for $Y$ in the sample to the
-predicted values of the regression function.
+That function is the function that minimizes the distances from the observed values for $Y$ in the sample to the predicted values of the regression function.
 These distances are known as \emph{residuals} or \emph{predictive errors}.
 
 \begin{definition}[Residuals or predictive errors]
-Given a regression model $y=f(x)$ for a two-dimensional variable $(X,Y)$, the \emph{residual} or \emph{predictive error}
-for every pair $(x_i,y_j)$ of the sample is the difference between the observed value of the dependent variable $y_j$
-and the predicted value of the regression function for $x_i$,
+Given a regression model $y=f(x)$ for a two-dimensional variable $(X,Y)$, the \emph{residual} or \emph{predictive error} for every pair $(x_i,y_j)$ of the sample is the difference between the observed value of the dependent variable $y_j$ and the predicted value of the regression function for $x_i$,
 \[
 e_{ij} = y_j-f(x_i).
 \]
@@ -435,8 +419,7 @@ A way to get the regression function is the \emph{least squares method}, that de
 \sum e_{ij}^2.
 \]
 
-For a linear model $f(x) = a + bx$, the sum depends on two parameters, the intercept $a$, and the slope $b$ of the
-straight line,
+For a linear model $f(x) = a + bx$, the sum depends on two parameters, the intercept $a$, and the slope $b$ of the straight line,
 \[
 \theta(a,b) = \sum e_{ij}^2 =\sum (y_j - f(x_i))^2 =\sum (y_j-a-bx_i)^2.
 \]
@@ -523,8 +506,7 @@ on $Y$ are not the same, but they always intersect in the mean point $(\bar x,\b
 \medskip
 \begin{columns}[t]
 \begin{column}{0.48\textwidth}
-If there is a perfect linear relation between the variables, then both regression lines are the same, as that line
-makes both $X$-residuals and $Y$-residuals zero.
+If there is a perfect linear relation between the variables, then both regression lines are the same, as that line makes both $X$-residuals and $Y$-residuals zero.
 \begin{center}
 \tikzsetnextfilename{regression/perfect_linear_regression}
 \mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/regression/perfect_linear_regression}}}
@@ -554,8 +536,7 @@ So, they intersect perpendicularly.
 The most important parameter of a regression line is the slope. 
 
 \begin{definition}[Regression coefficient $b_{yx}$]
-Given a sample of a two-dimensional variable $(X,Y)$, the \emph{regression coefficient} of the regression line of $Y$ on
-$X$ is its slope,
+Given a sample of a two-dimensional variable $(X,Y)$, the \emph{regression coefficient} of the regression line of $Y$ on $X$ is its slope,
 \[
 b_{yx} = \frac{s_{xy}}{s_x^2}
 \]
@@ -593,8 +574,7 @@ That means that, according to the regression line of weight on height, the weigh
 \framesubtitle{Example of heights and weights}
 Usually the regression models are used to predict the dependent variable for some values of the independent variable.
 \begin{center}
-\alert{\emph{Watch out! To get the best predictions of a variable you have to use the regression line where that
-variable plays the dependent variable role.}}
+\alert{\emph{Watch out! To get the best predictions of a variable you have to use the regression line where that variable plays the dependent variable role.}}
 \end{center}
 
 Thus, in the sample of heights and weights, to predict the weight of a person with a height of 180 cm, we have to use the regression line of weight on height,
@@ -636,8 +616,7 @@ s_{ry}^2 = \frac{\sum e_{ij}^2n_{ij}}{n} = \frac{\sum (y_j - f(x_i))^2n_{ij}}{n}
 The greater the residuals, the greater the residual variance and the smaller the goodness of fit. 
 
 When the linear relation is perfect, the residuals are zero and the residual variance is zero. 
-Conversely, when there are no relation, the residuals coincide with deviations from the mean, and the residual
-variance is equal to the variance of the dependent variable.
+Conversely, when there are no relation, the residuals coincide with deviations from the mean, and the residual variance is equal to the variance of the dependent variable.
 \[
 0\leq s_{ry}^2\leq s_y^2
 \]
@@ -672,8 +651,7 @@ As the residual variance ranges from 0 to $s_y^2$, we have
 \alert{0\leq r^2\leq 1}
 \]
 
-The greater $r^2$ is, the greater the goodness of fit of the regression model, and the more reliable will its
-predictions be. 
+The greater $r^2$ is, the greater the goodness of fit of the regression model, and the more reliable will its predictions be. 
 In particular, 
 \begin{itemize}
 \item If $r^2 =0$ then there is no relation as set by the regression model.
@@ -715,8 +693,7 @@ Thus, the linear coefficient of determination is
 \[
 r^2 = \frac{s_{xy}^2}{s_x^2s_y^2} = \frac{(104.07 \mbox{ cm\cdot Kg})^2}{102.06 \mbox{ cm}^2 \cdot 164.42 \mbox{ Kg}^2} = 0.65.
 \]
-This means that the linear model of weight on height explains the 65\% of the variation of weight, and the linear
-model of height on weight also explains 65\% of the variation of height. 
+This means that the linear model of weight on height explains the 65\% of the variation of weight, and the linear model of height on weight also explains 65\% of the variation of height. 
 \end{frame}
 
 
@@ -726,8 +703,7 @@ model of height on weight also explains 65\% of the variation of height.
 % Another common statistics to measure the linear association between two variables is the \emph{correlation
 % coefficient}.
 \begin{definition}[Sample correlation coefficient]
-Given a sample of a two-dimensional variable $(X,Y)$, the \emph{sample correlation coefficient} is the square
-root of the linear coefficient of determination, with the sign of the covariance,
+Given a sample of a two-dimensional variable $(X,Y)$, the \emph{sample correlation coefficient} is the square root of the linear coefficient of determination, with the sign of the covariance,
 \[
 r = \dfrac{s_{xy}}{s_xs_y}.
 \]
@@ -777,8 +753,7 @@ This means that there is a rather strong linear, increasing, relation between he
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Reliability of regression predictions}
-The coefficient of determination explains the goodness of fit of a regression model, but there are other factors that
-influence the reliability of regression predictions:
+The coefficient of determination explains the goodness of fit of a regression model, but there are other factors that influence the reliability of regression predictions:
 
 \begin{itemize}
 \item The coefficient of determination: The greater $r^2$, the greater the goodness of fit and the more reliable the predictions are.
@@ -904,11 +879,9 @@ Fitting a linear model we get
 \begin{frame}
 \frametitle{Fitting an exponential regression model}
 \framesubtitle{Example of evolution of a bacterial culture}
-Although the linear model is not bad, according to the shape of the point cloud of the scatter plot, an exponential
-model looks more suitable. 
+Although the linear model is not bad, according to the shape of the point cloud of the scatter plot, an exponential model looks more suitable. 
 
-To construct an exponential model $y = e^{a+bx}$ we can apply the transformation $z=\log y$, that is, applying
-a logarithmic transformation to the dependent variable.
+To construct an exponential model $y = e^{a+bx}$ we can apply the transformation $z=\log y$, that is, applying a logarithmic transformation to the dependent variable.
 \begin{columns}
 \begin{column}{0.45\textwidth}
 \[
