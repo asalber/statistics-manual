@@ -14,16 +14,13 @@
 \frametitle{Introduction}
 Descriptive Statistics provides methods to describe the variables measured in the sample and their relations, but it does not allow to draw any conclusion about the population.
 
-Now it is time to take the leap from the sample to the population and the bridge for that is
-\highlight{probability theory}.
+Now it is time to take the leap from the sample to the population and the bridge for that is \highlight{probability theory}.
 
-Remember that the sample has a limited information about the population, and in order to draw valid conclusions for the
-population the sample must be representative of it.
+Remember that the sample has a limited information about the population, and in order to draw valid conclusions for the population the sample must be representative of it.
 For that reason, to guarantee the representativeness of the sample, this must be drawn randomly. 
 This means that the choice of individuals in the sample is by chance. 
 
-Probability theory will provide us the tools to control the random in the sampling and to determine the level of
-reliability of the conclusions drawn from the sample. 
+Probability theory will provide us the tools to control the random in the sampling and to determine the level of reliability of the conclusions drawn from the sample. 
 \end{frame}
 
 
@@ -48,8 +45,8 @@ The roll of a dice, for example, is a random experiment because
 \item Before rolling the dice, it is impossible to predict with absolute certainty the outcome. 
 \end{enumerate}
 
-Another non-gambling example is the random choice of an individual of a human population and the determination of its
-blood type. 
+Another non-gambling example is the random choice of an individual of a human population and the determination of its blood type. 
+
 Generally, the draw of a sample by a random method  is an random experiment.
 \end{frame}
 
@@ -243,7 +240,7 @@ Given the sample space of rolling a dice $\Omega=\{1,2,3,4,5,6\}$ and the events
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Algebra of events}
-Given the events $A,B,C\subseteq \Omega$, the following properties are meet. 
+Given the events $A,B,C\subseteq \Omega$, the following properties are meet: 
 \begin{enumerate}[<+->]
 \item $A\cup A=A$,\quad $A\cap A=A$ (idempotency).
 \item $A\cup B=B\cup A$,\quad $A\cap B = B\cap A$ (commutative).
@@ -429,7 +426,7 @@ In a certain way, this number expresses the plausibility of the event, that is, 
 Therefore, it also gives a measure of the uncertainty about the event.
 \begin{itemize}
 \item The maximum uncertainty correspond to probability $P(A)=0.5$ ($A$ and $\overline A$ have the same chances of happening).
-\item The minimum uncertainty correspond to probability $P(A)=1$ ($A$ will happen with absolute certainty) and $P(A)=0$ ($A$ won't happen with absolute certainty)
+\item The minimum uncertainty correspond to probability $P(A)=1$ ($A$ will happen with absolute certainty) and $P(A)=0$ ($A$ won't happen with absolute certainty).
 \end{itemize} 
 
 When $P(A)$ is closer to 0 than to 1, the chances of not happening $A$ are greater than the chances of happening $A$.
@@ -443,8 +440,7 @@ On the contrary, when $P(A)$ is closer to 1 than to 0, the chances of happening 
 \begin{frame}
 \frametitle{Conditional experiments}
 Occasionally, we can get some information about the experiment before its realization. 
-Usually that information is given as an event $B$ of the same sample space that we know that is true before we
-conduct the experiment.
+Usually that information is given as an event $B$ of the same sample space that we know that is true before we conduct the experiment.
 
 In such a case, we will say that $B$ is a \emph{conditioning} event and the probability of another event $A$ is known as a \highlight{conditional probability} and expressed 
 \[
@@ -476,8 +472,7 @@ P(\mbox{Smoker})= \frac{60}{200}=0.3.
 
 \pause
 
-However, if we know that the person is a woman, then the sample is reduced to the first row, and the probability of
-being smoker is 
+However, if we know that the person is a woman, then the sample is reduced to the first row, and the probability of being smoker is 
 \[
 P(\mbox{Smoker}|\mbox{Female})=\frac{20}{100}=0.2.
 \]
@@ -488,8 +483,7 @@ P(\mbox{Smoker}|\mbox{Female})=\frac{20}{100}=0.2.
 \begin{frame}
 \frametitle{Conditional probability}
 \begin{definition}[Conditional probability]
-Given a sample space $\Omega$ of a random experiment, and two events $A,B\subseteq \Omega$, the probability of $A$
-conditional on $B$ occurring is
+Given a sample space $\Omega$ of a random experiment, and two events $A,B\subseteq \Omega$, the probability of $A$ \emph{conditional} on $B$ occurring is
 \[
 P(A|B) = \frac{P(A\cap B)}{P(B)},
 \]
@@ -500,8 +494,7 @@ This definition allows to calculate conditional probabilities without changing t
 
 \textbf{Example}. In the previous example
 \[
-P(\mbox{Smoker}|\mbox{Female})= \frac{P(\mbox{Smoker}\cap \mbox{Female})}{P(\mbox{Female})} =
-\frac{20/200}{100/200}=\frac{20}{100}=0.2.
+P(\mbox{Smoker}|\mbox{Female})= \frac{P(\mbox{Smoker}\cap \mbox{Female})}{P(\mbox{Female})} = \frac{20/200}{100/200}=\frac{20}{100}=0.2.
 \]
 \end{frame}
 
@@ -509,14 +502,12 @@ P(\mbox{Smoker}|\mbox{Female})= \frac{P(\mbox{Smoker}\cap \mbox{Female})}{P(\mbo
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Probability of the intersection event}
-From the definition of conditional probability it is possible to derive the formula for the probability of the
-intersection of two events. 
+From the definition of conditional probability it is possible to derive the formula for the probability of the intersection of two events. 
 \[
 P(A\cap B) = P(A)P(B|A) = P(B)P(A|B).
 \]
 
-\textbf{Example}. In a population there are a 30\% of smokers and we know that there are a 40\% of smokers with breast
-cancer. 
+\textbf{Example}. In a population there are a 30\% of smokers and we know that there are a 40\% of smokers with breast cancer. 
 The probability of a random person being smoker and having breast cancer is 
 \[
 P(\mbox{Smoker}\cap \mbox{Cancer})= P(\mbox{Smoker})P(\mbox{Cancer}|\mbox{Smoker}) =
@@ -528,9 +519,9 @@ P(\mbox{Smoker}\cap \mbox{Cancer})= P(\mbox{Smoker})P(\mbox{Cancer}|\mbox{Smoker
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Independence of events}
-Sometimes, the probability of the conditioning event does not change the original probability of the main event. 
+Sometimes, the conditioning event does not change the original probability of the main event. 
 \begin{definition}[Independent events]
-Given a sample space $\Omega$ of a random experiment, two events  $A,B\subseteq \Omega$ are \emph{independents} if the probability of $A$ does not change when conditioning on $B$, and vice-versa, that is,
+Given a sample space $\Omega$ of a random experiment, two events $A,B\subseteq \Omega$ are \emph{independents} if the probability of $A$ does not change when conditioning on $B$, and vice-versa, that is,
 \[
 P(A|B) = P(A) \quad \mbox{and} \quad P(B|A)=P(B),
 \]
@@ -578,8 +569,7 @@ A \emph{probability space} of a random experiment is a triplet $(\Omega,\mathcal
 \end{itemize} 
 \end{definition}
 
-If we know the probabilities of all the elements of $\Omega$, then we can calculate the probability of every event in
-$\mathcal{F}$ and we can construct easily the probability space. 
+If we know the probabilities of all the elements of $\Omega$, then we can calculate the probability of every event in $\mathcal{F}$ and we can construct easily the probability space. 
 \end{frame}
 
 
@@ -588,8 +578,7 @@ $\mathcal{F}$ and we can construct easily the probability space.
 \frametitle{Probability space construction}
 In order to determine the probability of every elemental event we can use a tree diagram, using the following rules:
 \begin{enumerate}
-\item For every node of the tree, label the incoming edge with the probability of the variable in that level having the
-value of the node, conditioned by events corresponding to its ancestor nodes in the tree.
+\item For every node of the tree, label the incoming edge with the probability of the variable in that level having the value of the node, conditioned by events corresponding to its ancestor nodes in the tree.
 \item The probability of every elemental event in the leaves is the product of the probabilities on edges
 that go form the root to the leave.
 \end{enumerate}
@@ -667,8 +656,7 @@ Usually it is easy to get a partition of the sample space splitting a population
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Total probability theorem}
-If we have a partition of a sample space, we can use it to calculate the probabilities of other events in the same
-sample space.
+If we have a partition of a sample space, we can use it to calculate the probabilities of other events in the same sample space.
 \begin{theorem}[Total probability]
 Given a partition $A_1,\ldots,A_n$ of a sample space $\Omega$, the probability of any other event $B$ of the same sample
 space can be calculated with the formula
@@ -708,12 +696,11 @@ P(B) &= P((B\cap A_1)\cup \cdots \cup (B\cap A_n)) = P(B\cap A_1)+\cdots + P(B\c
 \framesubtitle{Example of diagnosis}
 A symptom $S$ can be caused by a disease $D$, but it can also be present in persons without the disease.
 In a population, the rate of people with the disease is $0.2$. 
-We know also that $90\%$ of persons with the disease have the symptom, while only $40\%$ of persons without the
-disease have it. 
+We know also that $90\%$ of persons with the disease have the symptom, while only $40\%$ of persons without the disease have it. 
 
 \emph{What is the probability that a random person of the population has the symptom?}
 
-To answer the question we can apply the total probability theorem using the partition $\{A,\overline A\}$:
+To answer the question we can apply the total probability theorem using the partition $\{D,\overline D\}$:
 \[
 P(S) = P(D)P(S|D)+P(\overline D)P(S|\overline D) = 0.2\cdot 0.9 + 0.8\cdot 0.4 = 0.5.
 \]
@@ -845,7 +832,7 @@ P(-|\overline{D})=\frac{TN}{TN+FP}
 Usually, there is a trade-off between sensitivity and specificity.  
 
 A test with high sensitivity will detect the disease in most sick persons, but it will produce also more false positives than a less sensitive test. 
-This way, a positive outcome in a test with high sensitivity is not useful for confirming the disease, but a negative outcome is useful for ruling out the disease, since it rarely misdiagnoses those who have the disease.
+This way, a positive outcome in a test with high sensitivity is not useful for confirming the disease, but a negative outcome is useful for ruling out the disease, since it rarely give negative outcomes in sick people.
 
 On the other hand, a test with a high specificity will rule out the disease in most healthy persons, but it will produce also more false negatives than a less specific test. 
 Thus, a negative outcome in a test with high specificity is not useful for ruling out the disease, but a positive is useful to confirm the disease, since it rarely give positive outcomes in healthy people.  
@@ -864,7 +851,7 @@ In general, we will use a sensitive test when:
 \item The false positives do not provoke serious traumas.
 \end{itemize}
 
-An we will use a specific test when:
+And we will use a specific test when:
 \begin{itemize}
 \item The disease is important but difficult or impossible to cure.
 \item The false positives provoke serious traumas. 
