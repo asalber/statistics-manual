@@ -45,7 +45,7 @@ box()
 #tikz(file="img/regression/quadratic_scatterplot.tex", width=7, height=5)
 par(mar=c(1,1,1.4,1))
 y=(x+rnorm(100,0,1))^2
-plot(x,y, col=color1, main="Cuadratic relation", xlab="$X$", ylab="$Y$", pch=16, axes=F)
+plot(x,y, col=color1, main="Quadratic relation", xlab="$X$", ylab="$Y$", pch=16, axes=F)
 box()
 #dev.off()
 
