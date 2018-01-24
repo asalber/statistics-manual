@@ -1,6 +1,6 @@
 # Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 
-setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_course")
+setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_manual")
 library(tikzDevice)
 library(plyr)
 library(plotly)
@@ -45,7 +45,7 @@ tikz(file="img/descriptive/cum_abs_freq_bar_chart_polygon.tex", width=7, height=
 tabcum <- cumsum(tab)
 par(cex.lab=1.2)
 barplot(tabcum, space=0.5, main="Cumulative absolute frequency distribution of number of children", xlab="Number of children", ylab="Cumulative absolute frequency $N_i$", col=blueceulight)
-lines(c(0,1,1,2.5,2.5,4,4,5.5,5.5,7,7,8.5),c(0,0,2,2,8,8,22,22,24,24,25,25),col="royalblue", lwd=3)
+lines(c(0,1,1,2.5,2.5,4,4,5.5,5.5,7,7,8.5),c(0,0,2,2,8,8,22,22,24,24,25,25),col=redceu, lwd=3)
 dev.off()
 
 cumfreq<-cumsum(freq[["freq"]])
