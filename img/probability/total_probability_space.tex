@@ -14,13 +14,13 @@ prob/.style={font=\footnotesize,above}
 \node (root) {}
 	child {node {$D$}
 		child {node {$S$}
-			child {node[color=color2]{$(D,S)$}
+			child {node[color=color2]{$D\cap S$}
 				child {node[color=color2]{$0.18$} edge from parent node[prob] {$0.2\cdot 0.9$}}
 			}
 			edge from parent node[prob] {$0.9$}
 		}
 		child {node {$\bar S$}
-			child {node{$(D,\bar S)$}
+			child {node{$D\cap\bar S$}
 				child {node{$0.02$} edge from parent node[prob] {$0.2\cdot 0.1$}}
 			}
 			edge from parent node[prob,below] {$0.1$}
@@ -29,13 +29,13 @@ prob/.style={font=\footnotesize,above}
 	}
 	child {node {$\bar D$}
 		child {node {$S$}
-			child {node[color=color2]{$(\bar D,S)$}
+			child {node[color=color2]{$\bar D\cap S$}
 				child {node[color=color2]{$0.32$} edge from parent node[prob] {$0.8\cdot 0.4$}}
 			}
 			edge from parent node[prob] {$0.4$}
 		}
 		child {node {$\bar S$}
-			child {node{$(\bar D,\bar S)$}
+			child {node{$\bar D\cap \bar S$}
 				child {node{$0.48$} edge from parent node[prob] {$0.8\cdot 0.6$}}
 			}
 			edge from parent node[prob,below] {$0.6$}

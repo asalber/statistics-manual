@@ -13,7 +13,7 @@
 %---------------------------------------------------------------------slide----
 \begin{frame} 
 \frametitle{Descriptive Statistics}
-Descriptive Statistics is the part of Statistics in charge of representing, analysing and summarizing the information contained in the sample.
+Descriptive Statistics is the part of Statistics in charge of representing, analyzing and summarizing the information contained in the sample.
 
 After the sampling process, this is the next step in every statistical study and usually consists of:
 \begin{enumerate}
@@ -68,7 +68,7 @@ $X=$Height
 \begin{frame}
 \frametitle{Sample frequencies}
 \begin{definition}[Sample frequencies]
-Given a sample of $n$ values of a variable $X$, for every value $x_i$ of the variable we define 
+Given a sample of $n$ values of a variable $X$, for every value $x_i$ we define 
 \begin{itemize}
 \item \highlight{Absolute frequency $n_i$}: The number of times that value $x_i$ appears in the sample.
 \item \highlight{Relative frequency $f_i$}: The proportion of times that value $x_i$ appears in the sample.
@@ -608,7 +608,7 @@ From the frequency table can be calculated with the formula
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Weighted mean calculation}
-Assume that a student wants to calculate a representative measure of his/her performance in a course. 
+A student wants to calculate a representative measure of his/her performance in a course. 
 The grade and the credits of every subjects are 
 \begin{center}
 \footnotesize
@@ -629,9 +629,7 @@ The arithmetic mean is
 However, this measure does not represent well the performance of the student, as not all the subjects have the same
 importance and require the same effort to pass. 
 Subjects with more credits require more work and must have more weight in the calculation of the mean. 
-
-In this case it is better to use the weighted mean, using the credits as the
-weights of grades, as a representative measure of the student effort
+In this case it is better to use the weighted mean, using the credits as weights.
 \[
 \bar{x}_w = \frac{\sum x_iw_i}{\sum w_i} = \frac{5\cdot 6+3\cdot 4+6\cdot 8}{6+4+8}= \frac{90}{18} = 5 \text{ points}.
 \]
@@ -1087,7 +1085,7 @@ s = +\sqrt{s^2}
 Both variance and standard deviation measure the spread of data around the mean. 
 When the variance or the standard deviation are small, the sample data are concentrated around the mean, and the mean is
 a good representative measure. 
-In contrast, when variance or the standard deviation are high, the sample data are far from the mean, and the mean does not represent so well. 
+In contrast, when they are big, the sample data are far from the mean, and the mean does not represent so well. 
 \begin{center}
 \begin{tabular}{lcl}
 \emph{Standard deviation small} & $\Rightarrow$ & \emph{Mean is representative}\\
@@ -1177,19 +1175,19 @@ distribution of heights has little dispersion and the mean is very representativ
 \begin{frame}
 \frametitle{Coefficient of variation}
 Both, variance and standard deviation, have units and that makes difficult to interpret them, specially when comparing distributions of variables with different units.
-
 For that reason it is also common to use the following dispersion measure that has no units.  
+
 \begin{definition}[Sample coefficient of variation $cv$]
-The \emph{sample coefficient of variation} of a variable $X$ is the quotient between the sample standard deviation and the absolute value of the sample mean.
+The \emph{sample coefficient of variation} of a variable $X$ is the quotient between the standard deviation and the absolute value of the mean of the sample.
 \[
 cv = \frac{s}{|\bar x|}
 \]
 \end{definition}
+
 The coefficient of variation measures the relative dispersion of data around the sample mean.  
+The bigger the coefficient of variation, the bigger the relative dispersion with respect to the mean and the less representative the mean is.
+Since it has no units, the coefficient of variation it is very helpful to compare dispersion in distributions of different variables.
 
-As it has no units, it is easier to interpret: The higher the coefficient of variation is, the higher the relative dispersion with respect to the mean and the less representative the mean is.
-
-The coefficient of variation it is very helpful to compare dispersion in distributions of different variables, even if variables have different units.
 \begin{center}
 \alert{\emph{Watch out! It makes no sense when the mean is 0 or close to 0.}}
 \end{center}
@@ -1226,7 +1224,7 @@ In particular, the most important aspects are:
 \begin{description}
 \item[Symmetry:] It measures the symmetry of the distribution with respect to the mean. \\
 The statistics most used is the \emph{coefficient of skewness}.
-\item[Kurtosis:] It measures the length of tails or the peakness of distribution. \\
+\item[Kurtosis:] It measures the length of tails or the peakedness of distribution. \\
 The statistics most used is the \emph{coefficient of kurtosis}.
 \end{description}
 \end{frame}
@@ -1244,14 +1242,22 @@ g_1 = \frac{\sum (x_i-\bar x)^3 n_i/n}{s^3} = \frac{\sum (x_i-\bar x)^3 f_i}{s^3
 \end{definition}
 
 The coefficient of skewness measures the symmetry of the distribution, that is, how many values in the sample are above or below the mean and how far from it. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Interpretation of the coefficient of skewness}
+
+According to the sign of $g_1$ we have:
 \begin{itemize}
 \item $g_1=0$ indicates that there are the same number of values in the sample above and below the mean and equally deviated from it, and the distribution is symmetrical.
 \item $g_1<0$ indicates that there are more values above the mean than below it, but the values below are further from it, and the distribution is left-skewed (it has longer tail to the left). 
 \item $g_1>0$ indicates that there are more values below the mean than above it, but the values above are further from it, and the distribution is right-skewed (it has longer tail to the right).  
 \end{itemize}
 \end{frame}
-
-
+  
+  
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Coefficient of skewness}
@@ -1325,7 +1331,14 @@ mean to the fourth power, divided by the standard deviation to the fourth power 
 \end{definition}
 
 The coefficient of kurtosis measures the concentration of values around the mean and the length of the tails of the distribution. 
-The normal (Gausssian bell-shaped) distribution is taken as a reference.
+The normal (Gaussian bell-shaped) distribution is taken as a reference.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Coefficient of kurtosis}
+According to the sign fo $g_2$ we have:
 
 \begin{itemize}
 \item $g_2=0$ indicates that the kurtosis is normal, that is, the concentration of values around the mean is the same than in a Gaussian bell-shaped distribution (\emph{mesokurtic}).
@@ -1333,7 +1346,7 @@ The normal (Gausssian bell-shaped) distribution is taken as a reference.
 \item $g_2>0$ indicates that the kurtosis is greater than normal, that is, the concentration of values around the mean is greater than in a Gaussian bell-shaped distribution (\emph{leptokurtic}).
 \end{itemize}
 \end{frame}
-
+  
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -1526,9 +1539,9 @@ X: & 2 & 5 & 4 & \alert{8} & 6 & \qquad & \bar x = 5 & \quad s_x = 2\\
 Y: & 1 & 9 & \alert{8} & 5 & 2 & \qquad & \bar y = 5 & \quad s_y = 3.16\\
 \end{array}
 \]
-\begin{center}
+
 \emph{Did the fourth student get the same performance in subject $X$ than the third student in subject $Y$?}
-\end{center}
+
 It might seem that both students had the same performance in every subject because they have the same
 grade, but in order to get the performance of every student relative to the group of students, the dispersion
 of grades in every subject must be considered.
@@ -1548,10 +1561,8 @@ Therefore, the first student had a higher performance in $X$ than the second in 
 \begin{frame}
 \frametitle{Standardization and standard scores}
 \framesubtitle{Example}
-Following with the previous example and considering both subjects,
-\begin{center}
-\emph{which is the best student?}
-\end{center}
+Following with the previous example and considering both subjects, \emph{which is the best student?}
+
 If we only consider the sum of grades
 \[
 \begin{array}{rccccc}

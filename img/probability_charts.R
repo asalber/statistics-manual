@@ -1,7 +1,32 @@
 # Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 
-setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_course")
+setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_manual")
 library(tikzDevice)
+
+# Relation between the relative risk and the odds ratio for various incidence rates
+# incidences 
+r <- c(0.01, 0.05, 0.1, 0.2, 0.3, 0.5)
+# odds ratio
+or <- seq(1,10,0.1)
+tikz("img/probability/odd_ratio_vs_relative_risk.tex", width=4.5, height=4.5)
+# empty plot
+plot(1, type="n", xlim=c(1,9), ylim=c(1,10), xlab="Relative Risk", ylab="Odds Ratio",  xaxt="n", yaxt="n")
+axis(2, at=1:10, las=2)
+axis(1, at=1:9)
+abline(h=1:10, v=1:9, col="gray", lty=3)
+title("Odds Ratio vs Relative Risk", line=3)
+# color scale
+library(RColorBrewer) 
+cols<-brewer.pal(n=9,name="Blues")
+# Relative risk computation and plot
+for(i in 1:length(r)){
+  rr <- or/(1-r[i]+r[i]*or)
+  lines(rr,or, col=cols[i+3], )
+  mtext(r[i],3, at=tail(rr,1))
+}
+mtext("Risk in control group",3,1)
+dev.off()
+
 
 # Likelihood ratios
 tikz(file="img/probability/likelihood_ratios.tex", width=4.5, height=3.3)

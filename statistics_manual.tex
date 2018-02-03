@@ -3,15 +3,15 @@
 % ASPECT RATIO FOR YOUTUBE VIDEO
 % \documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
 % ASPECT RATIO FOR PROJECTOR
-\documentclass[profesionalfont,10pt,svgnames,xcolor=table]{beamer}
+% \documentclass[profesionalfont,10pt,svgnames,xcolor=table]{beamer}
 
 % BEAMER THEME
-\usetheme[progressbar=frametitle,background=light,titleformat=smallcaps,block=fill]{metropolis}
+% \usetheme[progressbar=frametitle,background=light,titleformat=smallcaps,block=fill]{metropolis}
 
 % ARTICLE VERSION
 % \pdfminorversion=4 % for solving some problems with png graphics in acrobat reader
-% \documentclass[10pt,a4paper,titlepage]{article}
-% \usepackage[hyperref]{beamerarticle}
+\documentclass[10pt,a4paper,titlepage]{article}
+\usepackage[hyperref]{beamerarticle}
 
 % LANGUAGE
 \usepackage{polyglossia}
@@ -22,7 +22,7 @@
 \usepackage{fontspec}
 \setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
 \usepackage{unicode-math}
-\setmathfont[math-style=ISO,bold-style=ISO,vargreek-shape=TeX]{TeX Gyre Pagella Math}
+\setmathfont[math-style=ISO,bold-style=ISO]{TeX Gyre Pagella Math}
 %\usepackage[sc]{mathpazo}
 %\setromanfont[Mapping=tex-text]{Linux Libertine}
 %\setsansfont[Mapping=tex-text]{Myriad Pro}
@@ -63,6 +63,8 @@
 \usepgfplotslibrary{fillbetween}
 % pgfplots styles
 \input{settings/pgfplots}
+\usepackage{tkz-euclide}
+\usetkzobj{all}  
 \usepackage{tikz}
 \usetikzlibrary{external, arrows, arrows.meta, calc, shapes, shapes.arrows, positioning, decorations.pathreplacing, intersections, fillbetween, snakes}
 % TIKZ SETTINGS
@@ -208,7 +210,7 @@ Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})
 \setbeamertemplate{section in toc}[sections numbered]
 \tableofcontents[hideallsubsections]
 \end{frame}
-
+ 
 \include{chapters/introduction}
 \include{chapters/descriptive}
 \include{chapters/regression}

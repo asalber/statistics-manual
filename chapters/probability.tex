@@ -242,7 +242,7 @@ Given the sample space of rolling a dice $\Omega=\{1,2,3,4,5,6\}$ and the events
 \frametitle{Algebra of events}
 Given the events $A,B,C\subseteq \Omega$, the following properties are meet: 
 \begin{enumerate}[<+->]
-\item $A\cup A=A$,\quad $A\cap A=A$ (idempotency).
+\item $A\cup A=A$,\quad $A\cap A=A$ (idempotence).
 \item $A\cup B=B\cup A$,\quad $A\cap B = B\cap A$ (commutative).
 \item $(A\cup B)\cup C = A\cup (B\cup C)$,\quad $(A\cap B)\cap C = A\cap (B\cap C)$ (associative).
 \item $(A\cup B)\cap C = (A\cap C)\cup (B\cap C)$,\quad $(A\cap B)\cup C = (A\cup C)\cap (B\cup C)$ (distributive).
@@ -725,7 +725,7 @@ The answer to the previous question is even clearer with the tree diagram of the
 \end{center}
 
 \begin{align*}
-P(S) &= P(D,S) + P(\overline D,S) = P(D)P(S|D)+P(\overline D)P(S|\overline D)\\
+P(S) &= P(D\cap S) + P(\overline D\cap S) = P(D)P(S|D)+P(\overline D)P(S|\overline D)\\
 & = 0.2\cdot 0.9+ 0.8\cdot 0.4 = 0.18 + 0.32 = 0.5.
 \end{align*}
 \end{frame}
@@ -783,6 +783,329 @@ reason, the diagnosis is not having the disease.
 
 In this case it is said the the symptom $S$ is \emph{not decisive} in order to diagnose the disease.
 \end{frame}
+
+
+\subsection{Epidemiology}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Epidemiology}
+One of the branches of Medicine that makes an intensive use of probability is \highlight{Epidemilogy}, that study the distribution and causes of diseases in populations identifying risk factors for disease and targets for preventive healthcare.
+
+In Epidemiology we are interested in how often appears an event or \emph{medical condition} $D$ (typically a disease like flu, a risk factor like smoking or a protection factor like a vaccine) that is measured as a nominal variable with two categories (presence or absence of the condition). 
+
+There are different measures related to the frequency of a medical condition.
+The most important are:
+\begin{itemize}
+  \item Prevalence
+  \item Incidence
+  \item Relative risk
+  \item Odds ratio
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Prevalence}
+\begin{definition}[Prevalence]
+The \emph{prevalence} of a medical condition $D$ is the proportion of a particular population that is affected by a medical condition.
+\[
+  \mbox{Prevalence}(D) = \frac{\mbox{Num people affected by $D$}}{\mbox{Population size}}
+\]
+\end{definition}
+
+Often, the prevalence is estimated from a sample as the relative frequency of people affected by the condition in the sample.
+It is also common to express that frequency as a percentage. 
+
+\textbf{Example}. To estimate the prevalence of flu a sample of 1000 persons has been studied and 150 of them had flu. 
+Thus, the prevalence of flu is approximately 150/1000=0.15, that is, a 15\%. 
+
+\end{frame}
+  
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Incidence proportion}
+\highlight{Incidence} measures the probability of occurrence of a medical condition in a population within a given period of time.
+Incidence can be measured as a proportion or as a rate.
+
+\begin{definition}[Incidence proportion]
+The \emph{incidence proportion} of a medical condition $D$ is the proportion of people that acquired the condition in a period of time, that is, the number of new cases with the condition in the period of time divided by the size of the population initially at risk.
+\[
+  R(D)=\frac{\mbox{Num of new cases with $D$}}{\mbox{Population at risk size}}
+\]
+\end{definition}
+
+\textbf{Example}. A population initially contains $1000$ persons without flu and after two years of observation 160 of them got the flu. 
+The incidence proportion of flu is 160 cases per $1000$ persons per two years, i.e. 16\% per two years.
+\end{frame}
+  
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Incidence rate}
+  
+\begin{definition}[Incidence rate]
+The \emph{incidence rate} or of a medical condition $D$ is the number of new cases with the condition per population at risk in a given time period.
+\[
+  R(D)=\frac{\mbox{Num of new cases with $D$}}{\mbox{Population at risk size}\times \mbox{Num of unit time intervals}}
+\]
+\end{definition}
+
+\textbf{Example}. A population initially contains $1000$ persons without flu and after two years of observation 160 of them got the flu. 
+If we consider the year as the unit of time, the incidence rate of flu is 160 cases per $1000$ persons divided by two years, i.e. 80 cases per 1000 persons-year.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Prevalence vs Incidence}
+Prevalence must not be confused with incidence. Prevalence indicates how widespread the medical condition is, and is more a measure of the burden of the condition on society with no regard to time at risk or when subjects may have been exposed to a possible risk factor, whereas incidence conveys information about the risk of contracting the condition.
+
+Prevalence can be measured in cross-sectional studies at a particular time, while in order to measure incidence we need a longitudinal study observing the individuals during a period of time.
+
+Incidence is usually more useful than prevalence in understanding the condition etiology: for example, if the incidence of a disease in a population increases, then there is a risk factor that promotes it.
+
+When the incidence is approximately constant for the duration of the condition, prevalence is approximately the product of condition incidence and average condition duration, so 
+\begin{center}
+  prevalence = incidence $\times$ duration
+\end{center}
+\end{frame}
+  
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Comparing risks}
+In Epidemiology the \emph{risk} of a medical condition is the probability of acquire the condition in a period of time, that is, the incidence. 
+
+In order to determine if a factor or characteristic is associated with the medical condition we need to compare the risk of the medical condition in two populations, one exposed to the factor and the other not exposed.
+The group of people exposed to the factor is known as the \emph{treatment group} and the group of people unexposed as the \emph{control group}.
+
+Usually the cases observed for each group are represented in a 2$\times$2 table like the one below. 
+
+\begin{center}
+  \begin{tabular}{|m{3cm}|m{3cm}<{\centering}|m{3cm}<{\centering}|}
+  \cline{2-3}
+  \multicolumn{1}{c|}{} & Condition $D$ & No condition $\overline D$\\ 
+  \hline
+  Treatment group\newline (exposed) & $a$ & $b$\\ 
+  \hline 
+  Control group\newline (unexposed) & $c$ & $d$\\ 
+  \hline
+  \end{tabular}
+\end{center}
+\end{frame}
+  
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Relative risk $RR$}
+\begin{definition}[Relative risk]
+The \emph{relative risk} of a medical condition $D$ for people exposed to a factor is the quotient between the proportions of people that acquired the condition in a period of time in the treatment and control groups.
+That is, the quotient between the incidences of the treatment and the control groups.
+\[
+  RR(D)=\frac{\mbox{Risk in treatment group}}{\mbox{Risk in control group}}=\frac{R_1(D)}{R_0(D)}=\frac{a/(a+b)}{c/(c+d)}
+\]
+\end{definition}
+
+Relative risk compares the risk of a medical condition between the treatment and the control groups. 
+\begin{itemize}
+  \item $RR=1$ $\Rightarrow$ There is no association between the condition and the exposure to the factor. 
+  \item $RR<1$ $\Rightarrow$ Exposure to the factor decreases the risk of the condition.
+  \item $RR>1$ $\Rightarrow$ Exposure to the factor increases the risk of the condition.
+\end{itemize}
+The further from 1, the stronger the association. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Relative risk $RR$}
+\framesubtitle{Example of a vaccine}
+To determine the effectiveness of a vaccine against the flu, a sample of 1000 person without flu was selected at the beginning of the year.
+Half of them were vaccinated (treatment group) and the other received a placebo (control group).
+The table below summarize the results at the end of the year. 
+
+\begin{center}
+  \begin{tabular}{|m{2.7cm}|m{1.5cm}<{\centering}|m{1.5cm}<{\centering}|}
+  \cline{2-3}
+  \multicolumn{1}{c|}{} & Flu $D$ & No flu $\overline D$\\ 
+  \hline
+  Treatment group\newline (vaccinated) & $20$ & $480$\\ 
+  \hline 
+  Control group\newline (Unvaccinated) & $80$ & $420$\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+The relative risk of getting the flu for people vaccinated is
+\[
+  RR(D) = \frac{20/(20+480)}{80/(80+420)} = 0.25.
+\]
+This means that vaccinated people were only one-fourth as likely to develop flu as were unvaccinated people.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Odds}
+An alternative way of measuring the risk of a medical condition is the \emph{odds}.
+
+\begin{definition}[Odds]
+The \emph{odds} of a medical condition $D$ in a population is the quotient between the people that acquired the condition and people that not in a period of time. 
+\end{definition}
+
+Unlike incidence or absolute risk, that is a proportion less than 1, the odds can be greater than 1. 
+However, it is possible to convert an odd into a probability with the formula
+\[
+  P(D) = \frac{\mbox{ODDS}(D)}{\mbox{ODDS}(D)+1}
+\]
+
+\textbf{Example} A population initially contains $1000$ persons without flu and after a year 160 of them got the flu. 
+The odds of flu is 160/840.
+
+Observe that the incidence is 160/1000. 
+\end{frame}
+ 
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Odds ratio $OR$}
+\begin{definition}[Odds ratio]
+The \emph{odds ratio} of a medical condition $D$ for people exposed to a factor is the quotient between the odds of people that acquired the condition in a period of time in the treatment and control groups.
+\[
+  OR(D)=\frac{\mbox{Odds in treatment group}}{\mbox{Odds in control group}}=\frac{a/b}{c/d}=\frac{ad}{bc}
+\]
+\end{definition}
+
+Odds ratio compares the odds of a medical condition between the treatment and the control groups. 
+The interpretation is similar to the relative risk. 
+\begin{itemize}
+  \item $OR=1$ $\Rightarrow$ There is no association between the condition and the exposure to the factor. 
+  \item $OR<1$ $\Rightarrow$ Exposure to the factor decreases the risk of the condition.
+  \item $OR>1$ $\Rightarrow$ Exposure to the factor increases the risk of the condition.
+\end{itemize}
+The further from 1, the stronger the association. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Odds ratio $OR$}
+\framesubtitle{Example of a vaccine}
+To determine the effectiveness of a vaccine against the flu, a sample of 1000 person without flu was selected at the beginning of the year.
+Half of them were vaccinated (treatment group) and the other received a placebo (control group).
+The table below summarize the results at the end of the year. 
+
+\begin{center}
+  \begin{tabular}{|m{2.7cm}|m{1.5cm}<{\centering}|m{1.5cm}<{\centering}|}
+  \cline{2-3}
+  \multicolumn{1}{c|}{} & Flu $D$ & No flu $\overline D$\\ 
+  \hline
+  Treatment group\newline (vaccinated) & $20$ & $480$\\ 
+  \hline 
+  Control group\newline (Unvaccinated) & $80$ & $420$\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+The odds ratio of getting the flu for people vaccinated is
+\[
+  OR(D) = \frac{20/480}{80/420} = 0.21875.
+\]
+This means that the odds of getting the flu versus not getting the flu in the treatment group is almost one fifth of that in the control group.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Relative risk vs Odds ratio} 
+Relative risk and odds ratio are two measures of association but their interpretation is slightly different.
+While the relative risk expresses a comparison of risks between the treatment and control groups, the odds ratio expresses a comparison of odds, that is not the same than the risk.
+Thus, an odds ratio of 2 \emph{does not} mean that the treatment group has the double of risk of acquire the medical condition. 
+
+The interpretation of the odds ratio is trickier because is counterfactual, and give us how many times is more frequent the condition in the treatment group assuming that in the control group the condition is as frequent as the non-condition.
+
+The advantage of the odds ratio is that it does not depend on the prevalence or the incidence of the condition, and must be used necessarily when the number of people with the medical condition is selected arbitrarily in both groups, like in the case-control studies.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Relative risk vs Odds ratio}
+\framesubtitle{Example of lung cancer and smoking}
+In order to determine the association between lung cancer and smoking two samples were selected (the second one with the double of non-cancer individuals) getting the following results:
+
+\bigskip
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{Sample 1}
+\begin{center}
+\small
+\begin{tabular}{|m{1.9cm}|m{1.2cm}<{\centering}|m{1.5cm}<{\centering}|}
+\cline{2-3}
+\multicolumn{1}{c|}{} & Cancer & No cancer\\ 
+\hline
+Smokers & $60$ & $80$\\ 
+\hline 
+Non-smokers & $40$ & $320$\\ 
+\hline
+\end{tabular}
+\end{center}
+
+\begin{align*}
+RR(D) &= \frac{60/(60+80)}{40/(40+320)} = 3.86.\\
+OR(D) &= \frac{60/80}{40/320} = 6. 
+\end{align*}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Sample 2}
+\begin{center}
+\small
+\begin{tabular}{|m{1.9cm}|m{1.2cm}<{\centering}|m{1.5cm}<{\centering}|}
+\cline{2-3}
+\multicolumn{1}{c|}{} & Cancer & No cancer\\ 
+\hline
+Smokers & $60$ & $160$\\ 
+\hline 
+Non-smokers & $40$ & $640$\\ 
+\hline
+\end{tabular}
+\end{center}
+
+\begin{align*}
+RR(D) &= \frac{60/(60+160)}{40/(40+640)} = 4.64.\\
+OR(D) &= \frac{60/160}{40/640} = 6. 
+\end{align*}
+\end{column}
+\end{columns}
+Thus, when we change the incidence or the prevalence of the condition (lung cancer) the relative risk changes, while the odds ratio not. 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Relative risk vs Odds ratio} 
+The relation between the relative risk and the odds ratio is given by the following formula
+
+\[
+  RR = \frac{OR}{1-R_0+R_0*OR}=OR*\frac{1-R_1}{1-R_0},
+\]
+
+where $R_0$ and $R_1$ are the prevalence or the incidence in control and treatment groups respectively.
+
+The odds ratio always overestimate the relative risk. 
+However, with rare medical conditions (with very small prevalence or incidence) the relative risk and the odds ratio are almost the same. 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Relative risk vs Odds ratio} 
+\begin{center}
+\tikzsetnextfilename{probability/odd_ratio_vs_relative_risk}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/probability/odd_ratio_vs_relative_risk}}}
+\mode<presentation>{\resizebox{!}{\textheight}{\input{img/probability/odd_ratio_vs_relative_risk}}}
+\end{center}
+\end{frame}
+
 
 
 \subsection{Diagnostic tests}
@@ -891,7 +1214,7 @@ NPV>0.5 & \Rightarrow & \mbox{Not disease diagnostic}
 \end{array}
 \]
 
-However, these probabilities depends on the proportion of persons with the disease in the population $P(D)$ that is known as \highlight{prevalence} of the disease.
+However, these probabilities depends on prevalence of the disease $P(D)$.
 They can be calculated from the sensitivity and the specificity of the diagnostic test using the Bayes theorem.
 
 \begin{align*}
@@ -899,7 +1222,7 @@ PPV=P(D|+) &= \frac{P(D)P(+|D)}{P(D)P(+|D)+P(\overline{D})P(+|\overline{D})}\\
 NPV=P(\overline{D}|-) &= \frac{P(\overline{D})P(-|\overline{D})}{P(D)P(-|D)+P(\overline{D})P(-|\overline{D})}
 %  = \frac{\mbox{Prevalence}\cdot
 % \mbox{Sensitivity}}{\mbox{Prevalence}\cdot \mbox{Sensitivity}+(1-\mbox{Prevalence})\cdot (1-\mbox{Specificity})}
-\end{align*} 
+\end{align*}
 
 Thus, with frequent diseases, the positive predictive value increases, and with rare diseases, the negative predictive value increases. 
 \end{frame}

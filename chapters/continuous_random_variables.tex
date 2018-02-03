@@ -98,14 +98,12 @@ e^{-x} & \mbox{si $x\geq 0$},
 let's check that is a density function. 
 
 As this function is clearly non-negative, we have to check that total area bounded by the curve and the x-axis is 1.
-
 \begin{align*}
 \int_{-\infty}^\infty f(x)\;dx &= \int_{-\infty}^0 f(x)\;dx +\int_0^\infty f(x)\;dx = \int_{-\infty}^0 0\;dx +\int_0^\infty e^{-x}\;dx =\\
 &= \left[-e^{-x}\right]_0^{\infty} = -e^{-\infty}+e^0 = 1.
 \end{align*}
 
 Now, let's calculate the probability of $X$ having a value between 0 and 2. 
-
 \begin{align*}
 P(0\leq X\leq 2) &= \int_0^2 f(x)\;dx = \int_0^2 e^{-x}\;dx = \left[-e^{-x}\right]_0^2 = -e^{-2}+e^0 = 0.8646.
 \end{align*}
@@ -149,14 +147,12 @@ e^{-x} & \mbox{si $x\geq 0$}
 \]
 
 The mean is 
-
 \begin{align*}
 \mu &= \int_{-\infty}^\infty xf(x)\;dx = \int_{-\infty}^0 xf(x)\;dx +\int_0^\infty xf(x)\;dx = \int_{-\infty}^0 0\;dx +\int_0^\infty xe^{-x}\;dx =\\
 &= \left[-e^{-x}(1+x)\right]_0^{\infty} = 1.
 \end{align*}
 
 and the variance is
-
 \begin{align*}
 \sigma^2 &= \int_{-\infty}^\infty x^2f(x)\;dx -\mu^2 = \int_{-\infty}^0 x^2f(x)\;dx +\int_0^\infty x^2f(x)\;dx -\mu^2 = \\
 &= \int_{-\infty}^0 0\;dx +\int_0^\infty x^2e^{-x}\;dx -\mu^2= \left[-e^{-x}(x^2+2x+2)\right]_0^{\infty} - 1^2= 2e^0-1 = 1.
