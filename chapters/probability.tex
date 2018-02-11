@@ -792,7 +792,7 @@ In this case it is said the the symptom $S$ is \emph{not decisive} in order to d
 \frametitle{Epidemiology}
 One of the branches of Medicine that makes an intensive use of probability is \highlight{Epidemilogy}, that study the distribution and causes of diseases in populations identifying risk factors for disease and targets for preventive healthcare.
 
-In Epidemiology we are interested in how often appears an event or \emph{medical event} $D$ (typically a disease like flu, a risk factor like smoking or a protection factor like a vaccine) that is measured as a nominal variable with two categories (occurrence or not of the event). 
+In Epidemiology we are interested in how often appears a \emph{medical event} $D$ (typically a disease like flu, a risk factor like smoking or a protection factor like a vaccine) that is measured as a nominal variable with two categories (occurrence or not of the event). 
 
 There are different measures related to the frequency of a medical event.
 The most important are:
@@ -887,7 +887,7 @@ Usually the cases observed for each group are represented in a 2$\times$2 table 
 \begin{center}
   \begin{tabular}{|m{3cm}|m{3cm}<{\centering}|m{3cm}<{\centering}|}
   \cline{2-3}
-  \multicolumn{1}{c|}{} & event $D$ & No event $\overline D$\\ 
+  \multicolumn{1}{c|}{} & Event $D$ & No event $\overline D$\\ 
   \hline
   Treatment group\newline (exposed) & $a$ & $b$\\ 
   \hline 
@@ -905,7 +905,7 @@ Usually the cases observed for each group are represented in a 2$\times$2 table 
 The \emph{relative risk} of a medical event $D$ for people exposed to a factor is the quotient between the proportions of people that acquired the event in a period of time in the treatment and control groups.
 That is, the quotient between the incidences of the treatment and the control groups.
 \[
-  RR(D)=\frac{\mbox{Risk in treatment group}}{\mbox{Risk in control group}}=\frac{R_1(D)}{R_0(D)}=\frac{a/(a+b)}{c/(c+d)}
+  RR(D)=\frac{\mbox{Risk in treatment group}}{\mbox{Risk in control group}}=\frac{R_T(D)}{R_C(D)}=\frac{a/(a+b)}{c/(c+d)}
 \]
 \end{definition}
 
@@ -953,13 +953,16 @@ This means that vaccinated people were only one-fourth as likely to develop flu 
 An alternative way of measuring the risk of a medical event is the \emph{odds}.
 
 \begin{definition}[Odds]
-The \emph{odds} of a medical event $D$ in a population is the quotient between the people that acquired the event and people that not in a period of time. 
+The \emph{odds} of a medical event $D$ in a population is the quotient between the people that acquired the event and people that not in a period of time.
+\[
+	ODDS(D)=\frac{\mbox{Num new cases with $D$}}{\mbox{Num cases without $D$}}=\frac{P(D)}{P(\overline D)}
+\]
 \end{definition}
 
-Unlike incidence or absolute risk, that is a proportion less than 1, the odds can be greater than 1. 
-However, it is possible to convert an odd into a probability with the formula
+Unlike incidence, that is a proportion less than or equal to 1, the odds can be greater than 1. 
+However, it is possible to convert an odds into a probability with the formula
 \[
-  P(D) = \frac{\mbox{ODDS}(D)}{\mbox{ODDS}(D)+1}
+  P(D) = \frac{ODDS(D)}{ODDS(D)+1}
 \]
 
 \textbf{Example} A population initially contains $1000$ persons without flu and after a year 160 of them got the flu. 
@@ -973,7 +976,7 @@ Observe that the incidence is 160/1000.
 \begin{frame}
 \frametitle{Odds ratio $OR$}
 \begin{definition}[Odds ratio]
-The \emph{odds ratio} of a medical event $D$ for people exposed to a factor is the quotient between the odds of people that acquired the event in a period of time in the treatment and control groups.
+The \emph{odds ratio} of a medical event $D$ for people exposed to a factor is the quotient between the odds of the event of the treatment and the control groups.
 \[
   OR(D)=\frac{\mbox{Odds in treatment group}}{\mbox{Odds in control group}}=\frac{a/b}{c/d}=\frac{ad}{bc}
 \]
@@ -1014,7 +1017,7 @@ The odds ratio of getting the flu for people vaccinated is
 \[
   OR(D) = \frac{20/480}{80/420} = 0.21875.
 \]
-This means that the odds of getting the flu versus not getting the flu in the treatment group is almost one fifth of that in the control group.
+This means that the odds of getting the flu versus not getting the flu in vaccinated individuals is almost one fifth of that in unvaccinated.
 \end{frame}
 
 
@@ -1024,7 +1027,7 @@ Relative risk and odds ratio are two measures of association but their interpret
 While the relative risk expresses a comparison of risks between the treatment and control groups, the odds ratio expresses a comparison of odds, that is not the same than the risk.
 Thus, an odds ratio of 2 \emph{does not} mean that the treatment group has the double of risk of acquire the medical event. 
 
-The interpretation of the odds ratio is trickier because is counterfactual, and give us how many times is more frequent the event in the treatment group assuming that in the control group the event is as frequent as the non-event.
+The interpretation of the odds ratio is trickier because is counterfactual, and give us how many times is more frequent the event in the treatment group in comarison with the control group, assuming that in the control group the event is as frequent as the non-event.
 
 The advantage of the odds ratio is that it does not depend on the prevalence or the incidence of the event, and must be used necessarily when the number of people with the medical event is selected arbitrarily in both groups, like in the case-control studies.
 \end{frame}
@@ -1087,10 +1090,10 @@ Thus, when we change the incidence or the prevalence of the event (lung cancer) 
 The relation between the relative risk and the odds ratio is given by the following formula
 
 \[
-  RR = \frac{OR}{1-R_0+R_0*OR}=OR*\frac{1-R_1}{1-R_0},
+  RR = \frac{OR}{1-R_C+R_C*OR}=OR*\frac{1-R_T}{1-R_C},
 \]
 
-where $R_0$ and $R_1$ are the prevalence or the incidence in control and treatment groups respectively.
+where $R_C$ and $R_T$ are the prevalence or the incidence in control and treatment groups respectively.
 
 The odds ratio always overestimate the relative risk. 
 However, with rare medical events (with very small prevalence or incidence) the relative risk and the odds ratio are almost the same. 
@@ -1100,9 +1103,9 @@ However, with rare medical events (with very small prevalence or incidence) the 
 \begin{frame}
 \frametitle{Relative risk vs Odds ratio} 
 \begin{center}
-\tikzsetnextfilename{probability/odd_ratio_vs_relative_risk}
-\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/probability/odd_ratio_vs_relative_risk}}}
-\mode<presentation>{\resizebox{!}{\textheight}{\input{img/probability/odd_ratio_vs_relative_risk}}}
+\tikzsetnextfilename{probability/odds_ratio_vs_relative_risk}
+\mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/probability/odds_ratio_vs_relative_risk}}}
+\mode<presentation>{\resizebox{!}{\textheight}{\input{img/probability/odds_ratio_vs_relative_risk}}}
 \end{center}
 \end{frame}
 
@@ -1338,6 +1341,6 @@ Thus,
 \begin{center}
 \tikzsetnextfilename{probability/likelihood_ratios}
 \mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/probability/likelihood_ratios}}}
-\mode<presentation>{\resizebox{\textwidth}{!}{\input{img/probability/likelihood_ratios}}}
+\mode<presentation>{\resizebox{0.95\textwidth}{!}{\input{img/probability/likelihood_ratios}}}
 \end{center}
 \end{frame}
