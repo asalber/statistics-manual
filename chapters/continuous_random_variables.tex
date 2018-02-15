@@ -30,11 +30,11 @@ Hence, for continuous variables, \alert{\emph{it makes no sense to calculate the
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Densidad de probabilidad function}
-To model the probability distribution of a continuous random variable we use a Densidad de probabilidad function.
+\frametitle{Probability density function}
+To model the probability distribution of a continuous random variable we use a probability density function.
 
-\begin{definition}[Densidad de probabilidad function]
-The \emph{Densidad de probabilidad function} of a continuous random variable $X$ is a function $f(x)$ that meets the following conditions:
+\begin{definition}[Probability density function]
+The \emph{probability density function} of a continuous random variable $X$ is a function $f(x)$ that meets the following conditions:
 \begin {itemize}
 \item It is non-negative: $f(x)\geq 0$ $\forall x\in \mathbb{R}$,
 \item The area bounded by the curve of the density function and the x-axis is equal to 1, that is,
@@ -49,7 +49,7 @@ P(a\leq X\leq b) = \int_a^b f(x)\; dx
 \end{itemize}
 \end{definition}
 
-The Densidad de probabilidad function measures the relative likelihood of every value, but \alert{\emph{watch out!, $f(x)$ is not the probability of $x$}},because $P(X=x)=0$ for every $x$ value by definition.
+The probability density function measures the relative likelihood of every value, but \alert{\emph{watch out!, $f(x)$ is not the probability of $x$}},because $P(X=x)=0$ for every $x$ value by definition.
 \end{frame}
 
 
@@ -137,7 +137,7 @@ The most important are:
 \begin{frame}
 \frametitle{Population statistics}
 \framesubtitle{Example}
-Let $X$ be a variable with the following Densidad de probabilidad function
+Let $X$ be a variable with the following probability density function
 \[
 f(x) =
 \begin{cases}
@@ -203,7 +203,7 @@ The mean and the variance are
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Continuous uniform Densidad de probabilidad function}
+\frametitle{Continuous uniform probability density function}
 \framesubtitle{Example}
 
 The generation of a random number between 0 and 1 is follows a continuous uniform distribution $U(0,1)$.
@@ -277,8 +277,8 @@ The two parameters $\mu$ and $\sigma$ are the mean and the standard deviation of
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Normal Densidad de probabilidad function}
-The plot of the Densidad de probabilidad function of a normal distribution $N(\mu,\sigma)$ is bell shaped and it is known as a \emph{Gauss bell}.
+\frametitle{Normal probability density function}
+The plot of the probability density function of a normal distribution $N(\mu,\sigma)$ is bell shaped and it is known as a \emph{Gauss bell}.
 \begin{center}
 \tikzsetnextfilename{continuous_random_variables/normal_density_function}
 \mode<article>{\resizebox{0.6\textwidth}{!}{\input{img/continuous_random_variables/normal_density_function}}}
@@ -289,7 +289,7 @@ The plot of the Densidad de probabilidad function of a normal distribution $N(\m
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Normal Densidad de probabilidad function}
+\frametitle{Normal probability density function}
 The bell shape depends on the mean $\mu$ and the standard deviation $\sigma$,
 \begin{itemize}
 \item The mean $\mu$ sets the center of the bell.
@@ -536,7 +536,7 @@ As we will see in the next chapter, the chi-square distribution plays an importa
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Chi-square Densidad de probabilidad function}
+\frametitle{Chi-square probability density function}
 
 \begin{center}
 \tikzsetnextfilename{continuous_random_variables/chi_square_density_function}
@@ -587,7 +587,7 @@ As we will see in the next chapter, the Student's t distribution plays an import
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Student's t Densidad de probabilidad function}
+\frametitle{Student's t probability density function}
 
 \begin{center}
 \tikzsetnextfilename{continuous_random_variables/student_t_density_function}
@@ -638,7 +638,7 @@ As we will see in the next chapter, the Fisher-Snedecor's F distribution plays a
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Fisher-Snedecor's F Densidad de probabilidad function}
+\frametitle{Fisher-Snedecor's F probability density function}
 
 \begin{center}
 \tikzsetnextfilename{continuous_random_variables/fisher_f_density_function}

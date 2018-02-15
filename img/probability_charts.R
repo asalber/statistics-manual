@@ -7,13 +7,13 @@ library(tikzDevice)
 # incidences 
 r <- c(0.01, 0.05, 0.1, 0.2, 0.3, 0.5)
 # odds ratio
-or <- seq(1,10,0.1)
+or <- seq(0,10,0.1)
 tikz("img/probability/odds_ratio_vs_relative_risk.tex", width=4.5, height=4.5)
 # empty plot
-plot(1, type="n", xlim=c(1,9), ylim=c(1,10), xlab="Relative risk", ylab="Odds ratio",  xaxt="n", yaxt="n")
-axis(2, at=1:10, las=2)
-axis(1, at=1:9)
-abline(h=1:10, v=1:9, col="gray", lty=3)
+plot(1, type="n", xlim=c(0,9), ylim=c(0,10), xlab="Relative risk", ylab="Odds ratio",  xaxt="n", yaxt="n")
+axis(2, at=0:10, las=2)
+axis(1, at=0:9)
+abline(h=0:10, v=0:9, col="gray", lty=3)
 title("Relative risk vs Odds ratio", line=3)
 # color scale
 library(RColorBrewer) 
