@@ -47,9 +47,4 @@
 #Others
 *.sh
 /tmp/
-/statistics_course.pdf
-/statistics_course.toc
-/statistics_manual.pdf
-/statistics_manual.toc
-/animation.pdf
-/animation.toc
+

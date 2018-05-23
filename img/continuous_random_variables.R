@@ -1,4 +1,4 @@
-setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_course")
+setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_manual")
 library(tikzDevice)
 library(plyr)
 library(plotly)
@@ -176,7 +176,7 @@ lines(x, y, col=color1, lwd=2)
 box()
 dev.off()
 
-# Computing probabilities with the normal distribution (left-tail)
+# Computing probabilities with the standard normal distribution (left-tail)
 tikz(file="img/continuous_random_variables/normal_probability_calculation_left_tail.tex", width=4, height=4)
 par(mar=c(3.5,3.5,3,1), mgp=c(2.2,0.6,0), las=1)
 x = seq(-3.32, 3.32, by=0.04)
@@ -188,6 +188,21 @@ axis(side=1, at=x0)
 polygon(c(x[1],x[1:97],x[97]), c(0,y[1:97],0), col=color5, lty=0)
 lines (x, y, type="l", col=color1, lwd=2)
 text(-0.7,0.06,paste("F(",x0,")=",p0))
+box()
+dev.off()
+
+# Standard normal distribution function
+tikz(file="img/continuous_random_variables/standard_normal_distribution_function.tex", width=4, height=4)
+par(mar=c(3.5,3.5,3,1), mgp=c(2.2,0.6,0), las=1)
+x = seq(-3.32, 3.32, by=0.04)
+y = dnorm(x,mean=0,sd=1)
+x0 = x[97]
+p0 = floor(pnorm(x0, mean=0, sd=1, lower.tail=TRUE)*10000)/10000
+plot(x, y, ylim=c(0,0.45), xlab="$Z$", ylab="Probability density $f(z)$", main="Standard normal distribution $N(0,1)$", type="n", yaxs="i")
+axis(side=1, at=x0, labels="$z_0$")
+polygon(c(x[1],x[1:97],x[97]), c(0,y[1:97],0), col=color5, lty=0)
+lines (x, y, type="l", col=color1, lwd=2)
+text(-0.7,0.06,"$F(z_0)=P(Z\\leq z_0)$")
 box()
 dev.off()
 
