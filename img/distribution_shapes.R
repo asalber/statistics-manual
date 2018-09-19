@@ -34,7 +34,7 @@ hist(data, main="Distribution of age at death of australian males",  xlab="Age o
 axis(side=1, at=breaks, labels=breaks)
 dev.off()
 
-# Symmetric distribution
+# Bimodal distribution
 tikz(file="img/descriptive/bimodal_distribution_example.tex", width=7, height=5)
 par(cex.lab=1.2)
 counts <- c(35, 20, 18, 48, 75, 67, 43, 22, 14, 21, 23, 47, 63, 44, 25, 15)
@@ -43,4 +43,18 @@ data <- rep(breaks, counts)
 breaks <- seq(8,24)
 hist(data, main="Distribution of clients arrival times in a restaurant",  xlab="Time", ylab="Relative frequency", breaks = breaks, xaxt="n", col=blueceulight, prob=T)
 axis(side=1, at=breaks, labels=breaks)
+dev.off()
+
+# 
+# Right-skewed and platikurtic distribution
+tikz(file="img/descriptive/right_skewed_platykurtic_distribution_example.tex", width=7, height=5)
+par(cex.lab=1.2)
+income <- seq(2500,207500,10000)/1000
+counts <- c(3635, 4324, 4465, 4354, 4203, 4078, 3867, 3683, 3354, 2850, 2392, 2158, 1987, 1474, 1220, 1313, 993, 822, 677, 561, 314)
+breaks <- seq(0,210000,10000)/1000
+data <- rep(income, counts)
+hist(data, main="", breaks=breaks, xaxt="n", xlab="", ylab="Relative frequency", col=blueceulight, prob=T)
+axis(side=1, at=breaks, labels=breaks, las=2)
+curve(dnorm(x, mean=mean(data), sd=sd(data)), col="red", lwd=2, add=TRUE, yaxt="n")
+
 dev.off()
