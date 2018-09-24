@@ -1,4 +1,4 @@
-setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_course")
+setwd("/media/alf/datos/drive/CEU/DOCENCIA/materiales/estadistica/presentaciones/statistics_manual")
 library(tikzDevice)
 library(plyr)
 library(plotly)
@@ -241,8 +241,20 @@ box()
 }
 dev.off()
 
-data <- read.table("data/hours_bacteria.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+png(file="img/regression/linear-correlation-0.75.png")
+n <- 100
+r <- 0.75
+x1 <- rnorm(n)
+x2 <- rnorm(n)
+y <- scale(x2) * r  +  scale(residuals(lm(x1~x2))) * sqrt(1-r*r)
+#tikz(file=paste("img/regression/correlation_",i,".tex",sep=""), width=7, height=5)
+par(mgp=c(1,0,0))
+par(mar=c(3,2,1.4,1))
+plot(y~x2, col=color1, xlab="X", ylab="Y", pch=16, xaxt="n", yaxt="n")
+dev.off()
+
 # Scatter plot bacteria evolution
+data <- read.table("data/hours_bacteria.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 tikz(file="img/regression/bacteria_evolution.tex", width=4.5, height=3.3)
 par(mar=c(2.9,2.9,2,1), mgp=c(1.8,0.4,0), cex.lab=1, cex.axis=0.8, las=1, tck=-0.02)
 plot(bacteria~hours, col=color1, main="Evolution of bacteria", xlab="Hours", ylab="Bacteria", pch=16, data=data)
