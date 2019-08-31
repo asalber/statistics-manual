@@ -243,7 +243,7 @@ dev.off()
 
 png(file="img/regression/linear-correlation-0.75.png")
 n <- 100
-r <- 0.75
+r <- -0.75
 x1 <- rnorm(n)
 x2 <- rnorm(n)
 y <- scale(x2) * r  +  scale(residuals(lm(x1~x2))) * sqrt(1-r*r)
