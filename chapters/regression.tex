@@ -1,3 +1,5 @@
+% Author: Alfredo Sánchez Alberca (asalber@gmail.com)
+% !TEX main = statistics_manual.tex
 \section{Regression and correlation}
 
 \mode<presentation>{
@@ -939,6 +941,7 @@ Thus, the exponential model fits much better than the linear model.
 \end{columns}
 \end{frame}
 
+\subsection{Regression risks}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -976,9 +979,32 @@ Outliers in regression studies can provoke drastic changes in the regression mod
 \end{center}
 \end{frame}
 
-% TODO: Include simpson's paradox https://en.wikipedia.org/wiki/Simpson%27s_paradox
 
-%   
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Simpson's paradox}
+Sometimes a trend can disappears or even reverses when we split the sample into groups according to a qualitative variable that is related to the dependent variable.
+This is known as the \emph{Simpson's paradox}. 
+\begin{center}
+\tikzsetnextfilename{regression/simpson_paradox_1}
+\resizebox{0.7\textwidth}{!}{\input{img/regression/simpson_paradox_1}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+
+\begin{frame}
+\frametitle{Simpson's paradox}
+Sometimes a trend can disappears or even reverses when we split the sample into groups according to a qualitative variable that is related to the dependent variable.
+This is known as the \emph{Simpson's paradox}. 
+\begin{center}
+\tikzsetnextfilename{regression/simpson_paradox_2}
+\resizebox{0.7\textwidth}{!}{\input{img/regression/simpson_paradox_2}}
+\end{center}
+\end{frame}
+
+
 % \subsection{Medidas de relación entre atributos}
 % %---------------------------------------------------------------------slide----
 % \begin{frame}

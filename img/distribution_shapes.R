@@ -13,6 +13,16 @@ orangeceu <- rgb(248,131,121,255,maxColorValue = 255)#F88379
 purpleceu <- rgb(169,78,145,255,maxColorValue = 255) #996699
 greyceu <- rgb(117,117,97,255,maxColorValue = 255) #666666
 
+# Uniform distribution
+tikz(file="img/descriptive/uniform_distribution_example.tex", width=7, height=5)
+par(cex.lab=1.2)
+set.seed(123)
+time <- runif(1000, min = 0, max = 15)
+breaks <- seq(0, 15)
+hist(time, main="Subway waiting time", breaks=breaks, xaxt = "n", xlab = "Waiting time (min)", ylab = "Relative frequency", col = blueceulight, prob = T)
+axis(side = 1, at = breaks, labels = breaks)
+dev.off()
+
 # Right-skewed distribution
 tikz(file="img/descriptive/right_skewed_distribution_example.tex", width=7, height=5)
 par(cex.lab=1.2)
@@ -30,7 +40,7 @@ par(cex.lab=1.2)
 counts <- c(65, 116, 69, 78, 319, 501, 633, 655, 848, 1226, 1633, 2459, 3375, 4669, 6152, 7436, 9526, 12619, 12455, 7113, 2104)
 breaks <- seq(0,100,5)
 data <- rep(breaks, counts)
-hist(data, main="Distribution of age at death of australian males",  xlab="Age of dead", ylab="Relative frequency", breaks = breaks, xaxt="n", col=blueceulight, prob=T)
+hist(data, main="Distribution of age at death of australian males",  xlab="Age of dead", ylab="Relative frequency", breaks = breaks, xaxt = "n", col = blueceulight, prob=T)
 axis(side=1, at=breaks, labels=breaks)
 dev.off()
 

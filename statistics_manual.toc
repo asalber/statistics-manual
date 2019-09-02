@@ -1,0 +1,47 @@
+\select@language {english}
+\select@language {english}
+\contentsline {section}{\numberline {1}Intoduction to Statistics}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Statistics as a scientific tool}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Population and sample}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Sampling}{8}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Statistical variables}{9}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Phases of a statistical study}{11}{subsection.1.5}
+\contentsline {section}{\numberline {2}Frequency distributions: Tabulation and charts}{13}{section.2}
+\contentsline {subsection}{\numberline {2.1}Frequency distribution}{13}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Frequency distribution graphs}{16}{subsection.2.2}
+\contentsline {section}{\numberline {3}Sample statistics}{27}{section.3}
+\contentsline {subsection}{\numberline {3.1}Location statistics}{28}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Dispersion statistics}{35}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Shape statistics}{40}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Variable transformations}{46}{subsection.3.4}
+\contentsline {section}{\numberline {4}Regression and correlation}{50}{section.4}
+\contentsline {subsection}{\numberline {4.1}Joint frequency distribution}{50}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Covariance}{53}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Regression}{56}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Regression line}{58}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Correlation}{61}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Correlation coefficients}{62}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Non-linear regression}{64}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Regression risks}{69}{subsection.4.8}
+\contentsline {section}{\numberline {5}Probability}{72}{section.5}
+\contentsline {subsection}{\numberline {5.1}Random experiments and events}{72}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Set theory}{73}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Probability definition}{76}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Conditional probability}{79}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Probability space}{80}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Total probability theorem}{82}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}Bayes theorem}{84}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.8}Epidemiology}{85}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.9}Diagnostic tests}{90}{subsection.5.9}
+\contentsline {section}{\numberline {6}Discrete random variables}{94}{section.6}
+\contentsline {subsection}{\numberline {6.1}Probability distribution of a discrete random variable}{94}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Discrete uniform distribution}{97}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Binomial distribution}{98}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Poisson distribution}{100}{subsection.6.4}
+\contentsline {section}{\numberline {7}Continuous random variables}{103}{section.7}
+\contentsline {subsection}{\numberline {7.1}Probability distribution of a continuous random variable}{103}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Continuous uniform distribution}{105}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Normal distribution}{108}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Chi-square distribution}{114}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Student's t distribution}{115}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}Fisher-Snedecor's F distribution}{116}{subsection.7.6}
