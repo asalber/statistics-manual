@@ -30,7 +30,7 @@ income <- seq(2500,207500,5000)/1000
 counts <- c(4235, 4071, 6324, 6470, 6765, 6222, 6354, 5743, 5203, 5002, 5078, 4140, 4367, 3733, 3683, 3650, 3354, 2893, 2850, 2452, 2792, 2232, 2158, 1748, 1987, 1675, 1474, 1380, 1220, 1111, 1313, 1017, 993, 761, 822, 700, 677, 536, 561, 431, 314, 215)
 breaks <- seq(0,210000,5000)/1000
 data <- rep(income, counts)
-hist(data, main="USA househod income dristribution", breaks=breaks, xaxt="n", xlab="Yearly income (thousand dollars)", ylab="Relative frequency", col=blueceulight, prob=T)
+hist(data, main="USA household income dristribution", breaks=breaks, xaxt="n", xlab="Yearly income (thousand dollars)", ylab="Relative frequency", col=blueceulight, prob=T)
 axis(side=1, at=breaks, labels=breaks, las=2)
 dev.off()
 
